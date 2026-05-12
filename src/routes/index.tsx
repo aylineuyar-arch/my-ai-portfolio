@@ -91,10 +91,13 @@ function Index() {
     undertone: "warm",
     face: "oval",
     eye: "almond",
+    skill: "beginner",
   });
+  const [openFaceGuide, setOpenFaceGuide] = useState(false);
+  const [openEyeGuide, setOpenEyeGuide] = useState(false);
 
   const result = useMemo(() => recommend(profile), [profile]);
-  const profileLabel = `${profile.undertone[0].toUpperCase()}${profile.undertone.slice(1)} undertone · ${profile.face[0].toUpperCase()}${profile.face.slice(1)} face · ${profile.eye[0].toUpperCase()}${profile.eye.slice(1)} eyes`;
+  const profileLabel = `${cap(profile.undertone)} undertone · ${cap(profile.face)} face · ${cap(profile.eye)} eyes · ${cap(profile.skill)}`;
 
   return (
     <div className="min-h-screen bg-canvas text-ink">
