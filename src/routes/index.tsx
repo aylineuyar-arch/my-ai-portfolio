@@ -3,11 +3,15 @@ import React from "react";
 import { useMemo, useState } from "react";
 import heroImg from "@/assets/hero.jpg";
 import {
+  BRUSH_KIT,
+  EYE_SHAPE_GUIDE,
+  FACE_SHAPE_GUIDE,
   recommend,
   SKIN_SWATCHES,
   type EyeShape,
   type FaceShape,
   type Profile,
+  type SkillLevel,
   type SkinTone,
   type Undertone,
 } from "@/lib/recommendations";
