@@ -1,6 +1,6 @@
-# Aura — Personalized Makeup Recommender
+# Aura — A Loveable App
 
-A Lovable application that maps your skin tone, undertone, face shape, and eye shape to a curated kit and a step-by-step makeup routine tailored to your skill level.
+A loveable application that maps your skin tone, undertone, face shape, and eye shape to a curated kit and a step-by-step makeup routine tailored to your skill level.
 
 ## About
 
