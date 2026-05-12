@@ -106,9 +106,11 @@ function Index() {
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <span className="text-sm font-semibold tracking-[0.2em] uppercase">Aura</span>
           <div className="hidden md:flex gap-8 text-sm text-muted-foreground">
-            <a href="#diagnostic" className="hover:text-ink transition-colors">Consultation</a>
+            <a href="#diagnostic" className="hover:text-ink transition-colors">Profile</a>
             <a href="#kit" className="hover:text-ink transition-colors">Kit</a>
             <a href="#routine" className="hover:text-ink transition-colors">Routine</a>
+            <a href="#brushes" className="hover:text-ink transition-colors">Brushes</a>
+            <a href="#tutorials" className="hover:text-ink transition-colors">Tutorials</a>
           </div>
           <a href="#diagnostic" className="text-xs uppercase tracking-widest font-medium text-accent hover:opacity-70 transition-opacity">Begin →</a>
         </div>
