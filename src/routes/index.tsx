@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import React from "react";
 import { useMemo, useState } from "react";
 import heroImg from "@/assets/hero.jpg";
 import {
@@ -46,7 +47,7 @@ const EYE_SHAPES: { id: EyeShape; label: string }[] = [
 ];
 
 function FaceIcon({ shape }: { shape: FaceShape }) {
-  const paths: Record<FaceShape, JSX.Element> = {
+  const paths: Record<FaceShape, React.ReactNode> = {
     oval: <ellipse cx="32" cy="34" rx="18" ry="24" />,
     round: <circle cx="32" cy="34" r="22" />,
     square: <rect x="12" y="12" width="40" height="44" rx="8" />,
@@ -62,7 +63,7 @@ function FaceIcon({ shape }: { shape: FaceShape }) {
 }
 
 function EyeIcon({ shape }: { shape: EyeShape }) {
-  const paths: Record<EyeShape, JSX.Element> = {
+  const paths: Record<EyeShape, React.ReactNode> = {
     almond: <path d="M4 16 Q32 0 60 16 Q32 32 4 16 Z" />,
     hooded: (
       <>
