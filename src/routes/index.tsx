@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Github } from "lucide-react";
 import dashboardImg from "@/assets/portfolio-dashboard.jpg";
 import auraLanding from "@/assets/aura-landing.jpg";
 import auraProfile from "@/assets/aura-profile.jpg";
@@ -39,30 +40,51 @@ const TAG_COLORS: Record<string, string> = {
   TanStack: "bg-teal-50 text-teal-800 border-teal-300",
 };
 
-// Small circular brand-letter badges for tool stacks
-const TOOL_STYLES: Record<string, string> = {
-  Claude: "bg-orange-500 text-white",
-  Python: "bg-blue-500 text-white",
+// Real brand logos via simpleicons CDN. Fallback to colored letter badge for non-brand items.
+const TOOL_LOGOS: Record<string, { slug: string; bg: string }> = {
+  Claude: { slug: "claude", bg: "bg-orange-50 ring-orange-200" },
+  Python: { slug: "python", bg: "bg-blue-50 ring-blue-200" },
+  Railway: { slug: "railway", bg: "bg-violet-50 ring-violet-200" },
+  React: { slug: "react", bg: "bg-sky-50 ring-sky-200" },
+  TypeScript: { slug: "typescript", bg: "bg-blue-50 ring-blue-200" },
+};
+const TOOL_FALLBACK: Record<string, string> = {
   Lovable: "bg-rose-500 text-white",
-  React: "bg-sky-500 text-white",
-  TypeScript: "bg-blue-700 text-white",
-  Railway: "bg-violet-600 text-white",
   RAG: "bg-emerald-600 text-white",
   ATS: "bg-amber-600 text-white",
 };
 
 function ToolIcons({ tools }: { tools: string[] }) {
   return (
-    <div className="mt-3 flex items-center gap-1.5">
-      {tools.map((t) => (
-        <span
-          key={t}
-          title={t}
-          className={`inline-flex items-center justify-center w-6 h-6 rounded-full text-[10px] font-bold ring-2 ring-white shadow-sm ${TOOL_STYLES[t] ?? "bg-stone-400 text-white"}`}
-        >
-          {t[0]}
-        </span>
-      ))}
+    <div className="mt-3 flex items-center gap-2">
+      {tools.map((t) => {
+        const logo = TOOL_LOGOS[t];
+        if (logo) {
+          return (
+            <span
+              key={t}
+              title={t}
+              className={`inline-flex items-center justify-center w-7 h-7 rounded-full ring-1 shadow-sm ${logo.bg}`}
+            >
+              <img
+                src={`https://cdn.simpleicons.org/${logo.slug}`}
+                alt={t}
+                className="w-4 h-4"
+                loading="lazy"
+              />
+            </span>
+          );
+        }
+        return (
+          <span
+            key={t}
+            title={t}
+            className={`inline-flex items-center justify-center w-7 h-7 rounded-full text-[10px] font-bold ring-1 ring-white shadow-sm ${TOOL_FALLBACK[t] ?? "bg-stone-400 text-white"}`}
+          >
+            {t[0]}
+          </span>
+        );
+      })}
     </div>
   );
 }
@@ -207,9 +229,12 @@ function PortfolioPage() {
               href="https://github.com/aylineuyar-arch/ai-workflow-demo"
               target="_blank"
               rel="noreferrer"
-              className="mt-8 inline-flex items-center gap-1 text-sm font-medium text-orange-800 hover:text-orange-900 underline underline-offset-4 decoration-orange-400/60"
+              aria-label="View repository on GitHub"
+              title="View repository on GitHub"
+              className="mt-8 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
             >
-              View repository ↗
+              <Github className="w-4 h-4" />
+              <span>Repository</span>
             </a>
           </div>
 
@@ -303,9 +328,12 @@ function PortfolioPage() {
               href="https://github.com/aylineuyar-arch/compliance-rag-demo"
               target="_blank"
               rel="noreferrer"
-              className="mt-8 inline-flex items-center gap-1 text-sm font-medium text-emerald-800 hover:text-emerald-900 underline underline-offset-4 decoration-emerald-400/60"
+              aria-label="View repository on GitHub"
+              title="View repository on GitHub"
+              className="mt-8 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
             >
-              View repository ↗
+              <Github className="w-4 h-4" />
+              <span>Repository</span>
             </a>
           </div>
 
@@ -352,12 +380,12 @@ function PortfolioPage() {
                 ),
               )}
             </div>
-            <div className="mt-8 space-y-2 text-sm">
+            <div className="mt-8 flex flex-wrap items-center gap-2">
               <a
                 href="https://face-harmony-helper.lovable.app"
                 target="_blank"
                 rel="noreferrer"
-                className="block font-medium text-rose-800 hover:text-rose-900 underline underline-offset-4 decoration-rose-400/60"
+                className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-rose-600 text-white hover:bg-rose-700 transition-colors text-xs font-medium"
               >
                 Live app ↗
               </a>
@@ -365,9 +393,12 @@ function PortfolioPage() {
                 href="https://github.com/aylineuyar-arch/your-makeup-muse"
                 target="_blank"
                 rel="noreferrer"
-                className="block font-medium text-rose-800 hover:text-rose-900 underline underline-offset-4 decoration-rose-400/60"
+                aria-label="View repository on GitHub"
+                title="View repository on GitHub"
+                className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
               >
-                View repository ↗
+                <Github className="w-4 h-4" />
+                <span>Repository</span>
               </a>
             </div>
           </div>
