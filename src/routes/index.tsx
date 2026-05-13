@@ -380,12 +380,12 @@ function PortfolioPage() {
                 ),
               )}
             </div>
-            <div className="mt-8 space-y-2 text-sm">
+            <div className="mt-8 flex flex-wrap items-center gap-2">
               <a
                 href="https://face-harmony-helper.lovable.app"
                 target="_blank"
                 rel="noreferrer"
-                className="block font-medium text-rose-800 hover:text-rose-900 underline underline-offset-4 decoration-rose-400/60"
+                className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-rose-600 text-white hover:bg-rose-700 transition-colors text-xs font-medium"
               >
                 Live app ↗
               </a>
@@ -393,9 +393,12 @@ function PortfolioPage() {
                 href="https://github.com/aylineuyar-arch/your-makeup-muse"
                 target="_blank"
                 rel="noreferrer"
-                className="block font-medium text-rose-800 hover:text-rose-900 underline underline-offset-4 decoration-rose-400/60"
+                aria-label="View repository on GitHub"
+                title="View repository on GitHub"
+                className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
               >
-                View repository ↗
+                <Github className="w-4 h-4" />
+                <span>Repository</span>
               </a>
             </div>
           </div>
