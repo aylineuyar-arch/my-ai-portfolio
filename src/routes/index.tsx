@@ -57,33 +57,24 @@ const TOOL_FALLBACK: Record<string, string> = {
 };
 
 function ToolIcons({ tools }: { tools: string[] }) {
+  const withLogos = tools.filter((t) => TOOL_LOGOS[t]);
+  if (withLogos.length === 0) return null;
   return (
     <div className="mt-3 flex items-center gap-2">
-      {tools.map((t) => {
-        const logo = TOOL_LOGOS[t];
-        if (logo) {
-          return (
-            <span
-              key={t}
-              title={t}
-              className={`inline-flex items-center justify-center w-7 h-7 rounded-full ring-1 shadow-sm ${logo.bg}`}
-            >
-              <img
-                src={`https://cdn.simpleicons.org/${logo.slug}`}
-                alt={t}
-                className="w-4 h-4"
-                loading="lazy"
-              />
-            </span>
-          );
-        }
+      {withLogos.map((t) => {
+        const logo = TOOL_LOGOS[t]!;
         return (
           <span
             key={t}
             title={t}
-            className={`inline-flex items-center justify-center h-7 px-2.5 rounded-full text-[10px] font-bold tracking-wide ring-1 ring-white shadow-sm ${TOOL_FALLBACK[t] ?? "bg-stone-400 text-white"}`}
+            className={`inline-flex items-center justify-center w-7 h-7 rounded-full ring-1 shadow-sm ${logo.bg}`}
           >
-            {t}
+            <img
+              src={`https://cdn.simpleicons.org/${logo.slug}`}
+              alt={t}
+              className="w-4 h-4"
+              loading="lazy"
+            />
           </span>
         );
       })}
