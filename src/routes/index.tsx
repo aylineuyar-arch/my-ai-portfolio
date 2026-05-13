@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import dashboardImg from "@/assets/portfolio-dashboard.jpg";
-import auraImg from "@/assets/portfolio-aura.jpg";
+import auraLanding from "@/assets/aura-landing.jpg";
+import auraProfile from "@/assets/aura-profile.jpg";
+import auraTutorials from "@/assets/aura-tutorials.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
