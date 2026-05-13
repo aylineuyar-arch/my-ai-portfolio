@@ -39,6 +39,34 @@ const TAG_COLORS: Record<string, string> = {
   TanStack: "bg-teal-50 text-teal-800 border-teal-300",
 };
 
+// Small circular brand-letter badges for tool stacks
+const TOOL_STYLES: Record<string, string> = {
+  Claude: "bg-orange-500 text-white",
+  Python: "bg-blue-500 text-white",
+  Lovable: "bg-rose-500 text-white",
+  React: "bg-sky-500 text-white",
+  TypeScript: "bg-blue-700 text-white",
+  Railway: "bg-violet-600 text-white",
+  RAG: "bg-emerald-600 text-white",
+  ATS: "bg-amber-600 text-white",
+};
+
+function ToolIcons({ tools }: { tools: string[] }) {
+  return (
+    <div className="mt-3 flex items-center gap-1.5">
+      {tools.map((t) => (
+        <span
+          key={t}
+          title={t}
+          className={`inline-flex items-center justify-center w-6 h-6 rounded-full text-[10px] font-bold ring-2 ring-white shadow-sm ${TOOL_STYLES[t] ?? "bg-stone-400 text-white"}`}
+        >
+          {t[0]}
+        </span>
+      ))}
+    </div>
+  );
+}
+
 function Tag({ label }: { label: string }) {
   const key = Object.keys(TAG_COLORS).find((k) => label.includes(k)) ?? "default";
   return (
