@@ -52,6 +52,8 @@ const TOOL_FALLBACK: Record<string, string> = {
   Lovable: "bg-rose-500 text-white",
   RAG: "bg-emerald-600 text-white",
   ATS: "bg-amber-600 text-white",
+  Triage: "bg-indigo-600 text-white",
+  NLP: "bg-cyan-600 text-white",
 };
 
 function ToolIcons({ tools }: { tools: string[] }) {
