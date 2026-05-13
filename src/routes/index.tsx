@@ -40,20 +40,14 @@ const TAG_COLORS: Record<string, string> = {
   TanStack: "bg-teal-50 text-teal-800 border-teal-300",
 };
 
-// Real brand logos via simpleicons CDN. Fallback to colored letter badge for non-brand items.
-const TOOL_LOGOS: Record<string, { slug: string; bg: string }> = {
-  Claude: { slug: "claude", bg: "bg-orange-50 ring-orange-200" },
-  Python: { slug: "python", bg: "bg-blue-50 ring-blue-200" },
-  Railway: { slug: "railway", bg: "bg-violet-50 ring-violet-200" },
-  React: { slug: "react", bg: "bg-sky-50 ring-sky-200" },
-  TypeScript: { slug: "typescript", bg: "bg-blue-50 ring-blue-200" },
-};
-const TOOL_FALLBACK: Record<string, string> = {
-  Lovable: "bg-rose-500 text-white",
-  RAG: "bg-emerald-600 text-white",
-  ATS: "bg-amber-600 text-white",
-  Triage: "bg-indigo-600 text-white",
-  NLP: "bg-cyan-600 text-white",
+// Real brand logos. simpleicons CDN for most; Lovable uses its own favicon.
+const TOOL_LOGOS: Record<string, { src: string; bg: string }> = {
+  Claude: { src: "https://cdn.simpleicons.org/claude", bg: "bg-orange-50 ring-orange-200" },
+  Python: { src: "https://cdn.simpleicons.org/python", bg: "bg-blue-50 ring-blue-200" },
+  Railway: { src: "https://cdn.simpleicons.org/railway", bg: "bg-violet-50 ring-violet-200" },
+  React: { src: "https://cdn.simpleicons.org/react", bg: "bg-sky-50 ring-sky-200" },
+  TypeScript: { src: "https://cdn.simpleicons.org/typescript", bg: "bg-blue-50 ring-blue-200" },
+  Lovable: { src: "https://lovable.dev/favicon.ico", bg: "bg-rose-50 ring-rose-200" },
 };
 
 function ToolIcons({ tools }: { tools: string[] }) {
@@ -69,12 +63,7 @@ function ToolIcons({ tools }: { tools: string[] }) {
             title={t}
             className={`inline-flex items-center justify-center w-7 h-7 rounded-full ring-1 shadow-sm ${logo.bg}`}
           >
-            <img
-              src={`https://cdn.simpleicons.org/${logo.slug}`}
-              alt={t}
-              className="w-4 h-4"
-              loading="lazy"
-            />
+            <img src={logo.src} alt={t} className="w-4 h-4" loading="lazy" />
           </span>
         );
       })}
