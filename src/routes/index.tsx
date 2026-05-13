@@ -197,7 +197,7 @@ function PortfolioPage() {
                   Live
                 </span>
               </div>
-              <div className="mt-3 text-lg font-medium text-stone-900 leading-snug">AI CS Triage</div>
+              <div className="mt-3 text-lg font-medium text-stone-900 leading-snug">AI Customer Service Triage</div>
               <div className="mt-1 text-xs text-stone-600">Claude · Python · NLP routing</div>
               <ToolIcons tools={["Claude", "Python", "Triage", "NLP"]} />
             </a>
@@ -469,7 +469,7 @@ function PortfolioPage() {
 
       <GradientDivider />
 
-      {/* Project 4 — AI CS Triage */}
+      {/* Project 4 — AI Customer Service Triage */}
       <section id="project-4" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
@@ -477,7 +477,7 @@ function PortfolioPage() {
               No. 04 · Built with Claude
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
-              AI CS Triage
+              AI Customer Service Triage
             </h2>
             <div className="mt-6 flex flex-wrap gap-2">
               {["Claude", "Python", "NLP", "Routing"].map((t) => (
