@@ -147,11 +147,11 @@ function PortfolioPage() {
         </div>
 
         {/* Project navigation bubbles */}
-        <div className="mt-14">
+        <div className="mt-14 lg:-mx-16 xl:-mx-24">
           <p className="text-xs uppercase tracking-[0.3em] text-stone-500 font-medium mb-4">
             Four live projects · jump to →
           </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
             <a href="#project-1" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-orange-200 hover:border-orange-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
               <div className="flex items-center justify-between">
                 <span className="text-xs uppercase tracking-wider text-orange-700 font-semibold">No. 01</span>
