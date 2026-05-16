@@ -182,7 +182,7 @@ function PortfolioPage() {
               </div>
               <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">Compliance RAG Chatbot</div>
               <div className="mt-1 text-xs text-stone-600">Financial services · Python</div>
-              <ToolIcons tools={["Claude", "Python", "RAG"]} />
+              <ToolIcons tools={["Claude", "Python", "Streamlit", "RAG"]} />
             </a>
             <a href="#project-3" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-indigo-200 hover:border-indigo-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
               <div className="flex items-center justify-between">
