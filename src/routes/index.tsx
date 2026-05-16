@@ -334,29 +334,41 @@ function PortfolioPage() {
                 <Tag key={t} label={t} />
               ))}
             </div>
-            <a
-              href="https://github.com/aylineuyar-arch/compliance-rag-demo"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="View repository on GitHub"
-              title="View repository on GitHub"
-              className="mt-8 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
-            >
-              <Github className="w-4 h-4" />
-              <span>Repository</span>
-            </a>
+            <div className="mt-8 flex flex-wrap gap-2">
+              <a
+                href="https://compliance-rag-demo-mrwtbs4k7gvdvmiuck8mdn.streamlit.app"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open live demo"
+                title="Open live demo"
+                className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-emerald-700 text-white hover:bg-emerald-800 transition-colors text-xs font-medium"
+              >
+                <span>Live Demo</span>
+              </a>
+              <a
+                href="https://github.com/aylineuyar-arch/compliance-rag-demo"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="View repository on GitHub"
+                title="View repository on GitHub"
+                className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
+              >
+                <Github className="w-4 h-4" />
+                <span>Repository</span>
+              </a>
+            </div>
           </div>
 
           <div className="md:col-span-8 space-y-6">
             <p className="text-base md:text-lg leading-relaxed text-stone-700">
-              A chatbot that answers <strong className="text-stone-900">financial services compliance questions</strong> by retrieving from internal policy documents and grounding Claude's responses in cited source passages — built to mirror the kind of internal tooling a regulated fintech (Revolut, Ramp, Stripe) actually needs.
+              A live chatbot that answers <strong className="text-stone-900">financial services compliance questions</strong> — streams Claude's responses token by token, grounds every answer in retrieved policy passages, and falls back honestly when the docs don't cover the question. Built to mirror the internal tooling a regulated fintech (Revolut, Ramp, Stripe) actually needs.
             </p>
 
             <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
-              <li className="flex gap-3"><span className="text-emerald-500">▸</span>Retrieval-augmented generation over policy PDFs — answers cite source passages, not hallucinations</li>
-              <li className="flex gap-3"><span className="text-emerald-500">▸</span>Built for regulated environments where every answer needs an auditable trail</li>
-              <li className="flex gap-3"><span className="text-emerald-500">▸</span>Demonstrates judgment on where LLMs help (synthesis) vs. where they hurt (unsourced claims)</li>
-              <li className="flex gap-3"><span className="text-emerald-500">▸</span>Same operator pattern as the job dashboard: real problem → reliable pipeline → useful output</li>
+              <li className="flex gap-3"><span className="text-emerald-500">▸</span>Streaming answers with conversation memory — follow-ups like "what about exceptions?" work in context</li>
+              <li className="flex gap-3"><span className="text-emerald-500">▸</span>Confidence threshold + cross-document synthesis callout — no weak answers, flags when reasoning spans AML + KYC</li>
+              <li className="flex gap-3"><span className="text-emerald-500">▸</span>Suggested follow-up questions and CSV session export — built for analyst workflows and audit trails</li>
+              <li className="flex gap-3"><span className="text-emerald-500">▸</span>Deployed live on Streamlit Cloud: claude-haiku-4-5 + local sentence-transformers embeddings, zero API cost on retrieval</li>
             </ul>
 
             <div className="mt-8 p-6 rounded-xl bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200">
