@@ -385,10 +385,47 @@ function PortfolioPage() {
               Supabase, sent via Resend.
             </p>
 
+            <div className="grid grid-cols-3 gap-4 border-y border-amber-200/60 py-6">
+              {[
+                ["8am ET", "Daily cron trigger"],
+                ["0", "Manual touches per run"],
+                ["4", "Tools orchestrated"],
+              ].map(([n, l]) => (
+                <div key={l}>
+                  <div className="text-2xl md:text-3xl font-light text-amber-900">
+                    {n}
+                  </div>
+                  <div className="text-xs uppercase tracking-wider text-stone-500 mt-1">
+                    {l}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="p-4 rounded-lg bg-amber-50/60 border border-amber-200">
+                <div className="text-xs uppercase tracking-wider text-amber-700 font-semibold">
+                  Agentic Workflow
+                </div>
+                <p className="mt-1.5 text-sm text-stone-700 leading-snug">
+                  n8n orchestrates search → Claude scoring → dedupe → email, no human in the loop.
+                </p>
+              </div>
+              <div className="p-4 rounded-lg bg-amber-50/60 border border-amber-200">
+                <div className="text-xs uppercase tracking-wider text-amber-700 font-semibold">
+                  Persistent Memory
+                </div>
+                <p className="mt-1.5 text-sm text-stone-700 leading-snug">
+                  Supabase stores every prior run so today's digest never repeats yesterday's roles.
+                </p>
+              </div>
+            </div>
+
             <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
               <li className="flex gap-3"><span className="text-amber-500">▸</span>Cron-triggered daily — zero manual touch, runs while I sleep</li>
-              <li className="flex gap-3"><span className="text-amber-500">▸</span>Claude scores every posting on relevance, dedupes against yesterday's run</li>
+              <li className="flex gap-3"><span className="text-amber-500">▸</span>Claude scores every posting on relevance, dedupes against yesterday's run via Supabase</li>
               <li className="flex gap-3"><span className="text-amber-500">▸</span>Self-hosted n8n on Railway — own the workflow, no per-execution SaaS fees</li>
+              <li className="flex gap-3"><span className="text-amber-500">▸</span>Resend delivers a clean HTML digest straight to inbox — ready to skim with morning coffee</li>
               <li className="flex gap-3"><span className="text-amber-500">▸</span>Built to demonstrate AI fluency across orchestration tools, not just one</li>
             </ul>
 
