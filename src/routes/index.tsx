@@ -385,14 +385,14 @@ function PortfolioPage() {
               Supabase, sent via Resend.
             </p>
 
-            <div className="grid grid-cols-3 gap-4 border-y border-amber-200/60 py-6">
+            <div className="grid grid-cols-3 gap-4 border-y-2 border-amber-400 py-6">
               {[
                 ["8am ET", "Daily cron trigger"],
                 ["0", "Manual touches per run"],
                 ["4", "Tools orchestrated"],
               ].map(([n, l]) => (
                 <div key={l}>
-                  <div className="text-2xl md:text-3xl font-light text-amber-900">
+                  <div className="text-2xl md:text-3xl font-light text-amber-700">
                     {n}
                   </div>
                   <div className="text-xs uppercase tracking-wider text-stone-500 mt-1">
@@ -403,16 +403,16 @@ function PortfolioPage() {
             </div>
 
             <div className="grid sm:grid-cols-2 gap-4">
-              <div className="p-4 rounded-lg bg-amber-50/60 border border-amber-200">
-                <div className="text-xs uppercase tracking-wider text-amber-700 font-semibold">
+              <div className="p-4 rounded-lg bg-amber-100 border border-amber-300">
+                <div className="text-xs uppercase tracking-wider text-amber-800 font-semibold">
                   Agentic Workflow
                 </div>
                 <p className="mt-1.5 text-sm text-stone-700 leading-snug">
                   n8n orchestrates search → Claude scoring → dedupe → email, no human in the loop.
                 </p>
               </div>
-              <div className="p-4 rounded-lg bg-amber-50/60 border border-amber-200">
-                <div className="text-xs uppercase tracking-wider text-amber-700 font-semibold">
+              <div className="p-4 rounded-lg bg-amber-100 border border-amber-300">
+                <div className="text-xs uppercase tracking-wider text-amber-800 font-semibold">
                   Persistent Memory
                 </div>
                 <p className="mt-1.5 text-sm text-stone-700 leading-snug">
@@ -422,18 +422,18 @@ function PortfolioPage() {
             </div>
 
             <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
-              <li className="flex gap-3"><span className="text-amber-500">▸</span>Cron-triggered daily — zero manual touch, runs while I sleep</li>
-              <li className="flex gap-3"><span className="text-amber-500">▸</span>Claude scores every posting on relevance, dedupes against yesterday's run via Supabase</li>
-              <li className="flex gap-3"><span className="text-amber-500">▸</span>Self-hosted n8n on Railway — own the workflow, no per-execution SaaS fees</li>
-              <li className="flex gap-3"><span className="text-amber-500">▸</span>Resend delivers a clean HTML digest straight to inbox — ready to skim with morning coffee</li>
-              <li className="flex gap-3"><span className="text-amber-500">▸</span>Built to demonstrate AI fluency across orchestration tools, not just one</li>
+              <li className="flex gap-3"><span className="text-amber-600">▸</span>Cron-triggered daily — zero manual touch, runs while I sleep</li>
+              <li className="flex gap-3"><span className="text-amber-600">▸</span>Claude scores every posting on relevance, dedupes against yesterday's run via Supabase</li>
+              <li className="flex gap-3"><span className="text-amber-600">▸</span>Self-hosted n8n on Railway — own the workflow, no per-execution SaaS fees</li>
+              <li className="flex gap-3"><span className="text-amber-600">▸</span>Resend delivers a clean HTML digest straight to inbox — ready to skim with morning coffee</li>
+              <li className="flex gap-3"><span className="text-amber-600">▸</span>Built to demonstrate AI fluency across orchestration tools, not just one</li>
             </ul>
 
-            <div className="mt-8 p-6 rounded-xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200">
-              <p className="text-xs uppercase tracking-wider text-amber-700 font-semibold mb-2">
+            <div className="mt-8 p-6 rounded-xl bg-gradient-to-br from-amber-200 to-orange-200 border-2 border-amber-400">
+              <p className="text-xs uppercase tracking-wider text-amber-900 font-semibold mb-2">
                 Why a second job-search tool
               </p>
-              <p className="text-sm text-stone-700 leading-relaxed">
+              <p className="text-sm text-stone-800 leading-relaxed">
                 Project 01 is a Python pipeline I trigger on-demand. This one
                 proves the same outcome can be built agentically in a visual
                 workflow tool — same problem, different stack, deliberately. AI
