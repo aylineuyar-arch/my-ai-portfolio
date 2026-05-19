@@ -106,7 +106,9 @@ function Tag({ label }: { label: string }) {
 function GradientDivider() {
   return (
     <div className="mx-auto max-w-6xl px-6">
-      <div className="h-[2px] bg-gradient-to-r from-transparent via-rose-400 to-transparent" />
+      <div className="h-px bg-gradient-to-r from-transparent via-rose-300/40 to-transparent" />
+      <div className="mt-1 h-[3px] bg-gradient-to-r from-transparent via-rose-500 to-transparent rounded-full" />
+      <div className="mt-1 h-px bg-gradient-to-r from-transparent via-rose-300/40 to-transparent" />
     </div>
   );
 }
@@ -187,7 +189,19 @@ function PortfolioPage() {
               <div className="mt-1 text-xs text-stone-600">Claude · n8n · Railway · 8am ET</div>
               <ToolIcons tools={["Claude", "n8n", "Railway", "Resend", "Supabase"]} />
             </a>
-            <a href="#project-2" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-emerald-200 hover:border-emerald-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+            <a href="#project-2" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-amber-200 hover:border-amber-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+              <div className="flex items-center justify-between">
+                <span className="text-xs uppercase tracking-wider text-amber-700 font-semibold">No. 02</span>
+                <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                  Live
+                </span>
+              </div>
+              <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">Agentic AI Email Generator</div>
+              <div className="mt-1 text-xs text-stone-600">Claude · n8n · Railway · 8am ET</div>
+              <ToolIcons tools={["Claude", "n8n", "Railway", "Resend", "Supabase"]} />
+            </a>
+            <a href="#project-3" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-emerald-200 hover:border-emerald-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
               <div className="flex items-center justify-between">
                 <span className="text-xs uppercase tracking-wider text-emerald-700 font-semibold">No. 03</span>
                 <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
@@ -199,7 +213,7 @@ function PortfolioPage() {
               <div className="mt-1 text-xs text-stone-600">Financial services · Python</div>
               <ToolIcons tools={["Claude", "Python", "Streamlit", "RAG"]} />
             </a>
-            <a href="#project-3" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-indigo-200 hover:border-indigo-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+            <a href="#project-4" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-indigo-200 hover:border-indigo-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
               <div className="flex items-center justify-between">
                 <span className="text-xs uppercase tracking-wider text-indigo-700 font-semibold">No. 04</span>
                 <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
@@ -211,7 +225,7 @@ function PortfolioPage() {
               <div className="mt-1 text-xs text-stone-600">Claude · Python · NLP routing</div>
               <ToolIcons tools={["Claude", "Python", "Triage", "NLP"]} />
             </a>
-            <a href="#project-4" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-rose-200 hover:border-rose-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+            <a href="#project-5" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-rose-200 hover:border-rose-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
               <div className="flex items-center justify-between">
                 <span className="text-xs uppercase tracking-wider text-rose-700 font-semibold">No. 05</span>
                 <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
@@ -336,12 +350,71 @@ function PortfolioPage() {
 
       <GradientDivider />
 
-      {/* Project 2 — Compliance RAG */}
+      {/* Project 2 — Agentic AI Email Generator */}
       <section id="project-2" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
+            <p className="text-xs uppercase tracking-[0.3em] text-amber-700 font-medium">
+              No. 02 · Built with n8n + Claude
+            </p>
+            <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
+              Agentic AI Email Generator
+            </h2>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {["n8n", "Claude", "Railway", "Supabase", "Resend", "Cron"].map((t) => (
+                <Tag key={t} label={t} />
+              ))}
+            </div>
+            <a
+              href="https://agentic-ai-email-generator.lovable.app"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-8 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-amber-600 text-white hover:bg-amber-700 transition-colors text-xs font-medium"
+            >
+              Live app ↗
+            </a>
+          </div>
+
+          <div className="md:col-span-8 space-y-6">
+            <p className="text-base md:text-lg leading-relaxed text-stone-700">
+              A fully autonomous agent that runs every morning at{" "}
+              <strong className="text-stone-900">8am ET</strong> — searches fresh
+              job postings against my target keywords, has Claude filter and rank
+              them for fit, and delivers a clean, ready-to-skim digest straight
+              to my inbox. Built in n8n, deployed on Railway, persisted in
+              Supabase, sent via Resend.
+            </p>
+
+            <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
+              <li className="flex gap-3"><span className="text-amber-500">▸</span>Cron-triggered daily — zero manual touch, runs while I sleep</li>
+              <li className="flex gap-3"><span className="text-amber-500">▸</span>Claude scores every posting on relevance, dedupes against yesterday's run</li>
+              <li className="flex gap-3"><span className="text-amber-500">▸</span>Self-hosted n8n on Railway — own the workflow, no per-execution SaaS fees</li>
+              <li className="flex gap-3"><span className="text-amber-500">▸</span>Built to demonstrate AI fluency across orchestration tools, not just one</li>
+            </ul>
+
+            <div className="mt-8 p-6 rounded-xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200">
+              <p className="text-xs uppercase tracking-wider text-amber-700 font-semibold mb-2">
+                Why a second job-search tool
+              </p>
+              <p className="text-sm text-stone-700 leading-relaxed">
+                Project 01 is a Python pipeline I trigger on-demand. This one
+                proves the same outcome can be built agentically in a visual
+                workflow tool — same problem, different stack, deliberately. AI
+                fluency means picking the right tool, not defaulting to code.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <GradientDivider />
+
+      {/* Project 3 — Compliance RAG */}
+      <section id="project-3" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
+        <div className="grid md:grid-cols-12 gap-10">
+          <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-emerald-700 font-medium">
-              No. 02 · Built with Claude
+              No. 03 · Built with Claude
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
               Compliance RAG Chatbot
@@ -402,12 +475,12 @@ function PortfolioPage() {
 
       <GradientDivider />
 
-      {/* Project 3 — Aura */}
-      <section id="project-3" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
+      {/* Project 4 — Customer Service Triage */}
+      <section id="project-4" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-indigo-700 font-medium">
-              No. 03 · Built with Claude
+              No. 04 · Built with Claude
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
               AI Customer Service Triage
@@ -452,12 +525,12 @@ function PortfolioPage() {
 
       <GradientDivider />
 
-      {/* Project 4 — Aura */}
-      <section id="project-4" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
+      {/* Project 5 — Aura */}
+      <section id="project-5" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-rose-700 font-medium">
-              No. 04 · Built with Lovable
+              No. 05 · Built with Lovable
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
               Aura — Makeup Assistant
