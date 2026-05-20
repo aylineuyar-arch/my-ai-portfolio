@@ -15,7 +15,10 @@ await page.evaluate(async () => {
 });
 await new Promise(r => setTimeout(r, 1500));
 // hide lovable badge
-await page.addStyleTag({ content: `#lovable-badge, [class*="lovable-badge"], a[href*="lovable.dev"][class*="fixed"] { display:none !important; }` });
+await page.addStyleTag({ content: `
+  #lovable-badge, [class*="lovable-badge"], a[href*="lovable.dev"][class*="fixed"] { display:none !important; }
+  .whitespace-nowrap { white-space: normal !important; }
+` });
 await page.emulateMediaType('screen');
 await page.pdf({
   path: '/mnt/documents/aylin-uyar-portfolio.pdf',
