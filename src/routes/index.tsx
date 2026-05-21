@@ -428,6 +428,15 @@ function PortfolioPage() {
           </div>
 
           <div className="md:col-span-8 space-y-6">
+            <div className="p-5 rounded-xl bg-stone-50 border-l-4 border-stone-400">
+              <p className="text-xs uppercase tracking-wider text-stone-600 font-semibold mb-2">
+                How this differs from Project 01
+              </p>
+              <p className="text-sm md:text-base text-stone-700 leading-relaxed">
+                Project 01 is a <strong className="text-stone-900">Python pipeline</strong> I run on-demand — I pull the data into a dashboard when I want it. This one is an <strong className="text-stone-900">always-on agent</strong> in n8n that runs itself on a daily cron and pushes a ranked digest to my inbox — the data comes to me. Same problem, deliberately different architectures: scripted pull vs. agentic push, code-first vs. visual orchestration.
+              </p>
+            </div>
+
             <p className="text-base md:text-lg leading-relaxed text-stone-700">
               A fully autonomous agent that runs every morning at{" "}
               <strong className="text-stone-900">8am ET</strong> — searches fresh
