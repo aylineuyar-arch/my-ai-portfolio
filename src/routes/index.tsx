@@ -619,12 +619,22 @@ function PortfolioPage() {
           </div>
 
           <div className="md:col-span-8 space-y-6">
+            <div className="p-5 rounded-xl bg-stone-50 border-l-4 border-indigo-400">
+              <p className="text-xs uppercase tracking-wider text-indigo-700 font-semibold mb-2">
+                Why this matters
+              </p>
+              <p className="text-sm md:text-base text-stone-700 leading-relaxed">
+                Support inboxes are the highest-volume unstructured-text workflow most companies have. Replacing brittle rule-based routing with a single grounded LLM call collapses triage time to sub-second and frees agents to start from a working draft instead of a blank box — directly relevant to ops, CX, and AI deployment roles.
+              </p>
+            </div>
+
             <p className="text-base md:text-lg leading-relaxed text-stone-700">
               An AI triage layer for customer support inboxes — classifies
               incoming tickets by intent, urgency, and team, then drafts a
               first-response so human agents start from a working reply
               instead of a blank box.
             </p>
+
 
             {/* Mock Streamlit UI render */}
             <figure>
