@@ -626,14 +626,75 @@ function PortfolioPage() {
               instead of a blank box.
             </p>
 
+            {/* Mock Streamlit UI render */}
+            <figure>
+              <div className="rounded-xl overflow-hidden ring-1 ring-stone-200 shadow-lg bg-[#0e1117] text-stone-100 font-mono">
+                {/* fake browser chrome */}
+                <div className="flex items-center gap-1.5 px-4 py-2.5 bg-stone-900 border-b border-stone-800">
+                  <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
+                  <span className="ml-3 text-[10px] text-stone-500 truncate">ai-cs-triage · localhost:8501</span>
+                </div>
+
+                <div className="p-6 space-y-5">
+                  <div>
+                    <div className="text-[11px] uppercase tracking-[0.2em] text-indigo-400 font-semibold">AI Customer Support Triage</div>
+                    <div className="text-lg text-stone-100 mt-1 font-sans">Classify and route inbound tickets</div>
+                  </div>
+
+                  <div>
+                    <label className="text-[11px] uppercase tracking-wider text-stone-500 font-sans">Incoming ticket</label>
+                    <div className="mt-1.5 p-3 rounded-md bg-stone-950 border border-stone-800 text-sm text-stone-200 leading-relaxed font-sans">
+                      "I was charged twice this month — two charges of £29 on the same day. Need this refunded ASAP."
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <button className="px-3 py-1.5 rounded-md bg-indigo-600 text-white text-xs font-sans font-medium">▶ Run triage</button>
+                    <span className="text-[11px] text-stone-500 font-sans">claude-haiku-4-5 · ~640ms</span>
+                  </div>
+
+                  <div className="pt-4 border-t border-stone-800 space-y-3">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="px-2.5 py-1 rounded-md bg-red-500/15 text-red-300 text-[11px] font-sans font-semibold uppercase tracking-wider ring-1 ring-red-500/30">Priority · High</span>
+                      <span className="px-2.5 py-1 rounded-md bg-indigo-500/15 text-indigo-300 text-[11px] font-sans font-semibold uppercase tracking-wider ring-1 ring-indigo-500/30">Category · Billing</span>
+                      <span className="px-2.5 py-1 rounded-md bg-stone-500/15 text-stone-300 text-[11px] font-sans font-semibold uppercase tracking-wider ring-1 ring-stone-500/30">Route → Payments team</span>
+                    </div>
+
+                    <div>
+                      <div className="text-[11px] uppercase tracking-wider text-stone-500 font-sans">Summary</div>
+                      <div className="mt-1 text-sm text-stone-200 font-sans">Customer reports a duplicate billing charge of £29 and requests an urgent refund.</div>
+                    </div>
+
+                    <div>
+                      <div className="text-[11px] uppercase tracking-wider text-stone-500 font-sans">Suggested next action</div>
+                      <div className="mt-1 text-sm text-stone-200 font-sans">Pull transaction history, confirm duplicate charge, issue refund within 24h, send confirmation email.</div>
+                    </div>
+                  </div>
+
+                  <pre className="mt-2 p-3 rounded-md bg-stone-950 border border-stone-800 text-[11px] text-emerald-300 overflow-x-auto leading-relaxed">{`{
+  "summary": "Customer reports a duplicate billing charge of £29",
+  "category": "billing",
+  "priority": "high",
+  "next_action": "Pull transaction history, confirm duplicate charge, issue refund"
+}`}</pre>
+                </div>
+              </div>
+              <figcaption className="mt-3 text-xs text-stone-500 italic">
+                Mock render of the Streamlit UI — single Claude prompt returns structured JSON (summary, category, priority, next_action) with color-coded badges, ready to route.
+              </figcaption>
+            </figure>
+
             <div className="p-6 rounded-xl bg-gradient-to-br from-indigo-50 to-blue-50 border border-indigo-200">
               <p className="text-xs uppercase tracking-wider text-indigo-700 font-semibold mb-2">
-                Screenshots coming soon
+                Why this matters
               </p>
               <p className="text-sm text-stone-700 leading-relaxed">
-                Visuals are being prepared. In the meantime, the repository has the full pipeline, prompts, and evaluation notes.
+                Support inboxes are the highest-volume unstructured-text workflow most companies have. Replacing brittle rule-based routing with a single grounded LLM call collapses triage time to sub-second and frees agents to start from a working draft instead of a blank box — directly relevant to ops, CX, and AI deployment roles.
               </p>
             </div>
+
           </div>
         </div>
       </section>
