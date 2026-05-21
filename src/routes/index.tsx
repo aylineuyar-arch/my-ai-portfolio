@@ -586,14 +586,6 @@ function PortfolioPage() {
               <li className="flex gap-3"><span className="text-emerald-500">▸</span>Deployed live on Streamlit Cloud: claude-haiku-4-5 + local sentence-transformers embeddings, zero API cost on retrieval</li>
             </ul>
 
-            <div className="mt-8 p-6 rounded-xl bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200">
-              <p className="text-xs uppercase tracking-wider text-emerald-700 font-semibold mb-2">
-                Why this matters
-              </p>
-              <p className="text-sm text-stone-700 leading-relaxed">
-                Compliance and policy lookups are exactly the kind of high-volume, judgment-heavy workflow where grounded LLM retrieval delivers measurable time savings — directly relevant to ops teams at fintechs operating under FCA, SEC, and multi-jurisdiction frameworks.
-              </p>
-            </div>
           </div>
         </div>
       </section>
