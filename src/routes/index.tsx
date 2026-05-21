@@ -334,7 +334,7 @@ function PortfolioPage() {
           <div className="md:col-span-8 space-y-6">
             <p className="text-base md:text-lg leading-relaxed text-stone-700">
               An AI-powered pipeline that aggregates live postings from{" "}
-              <strong className="text-stone-900">130+ company ATSs</strong> and
+              <strong className="text-stone-900">130+ company Applicant Tracking Systems (ATSs)</strong> and
               major job boards, scores each role with Claude on fit and
               realistic conversion likelihood, and renders results in a
               filterable web dashboard.
