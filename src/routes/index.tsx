@@ -504,18 +504,10 @@ function PortfolioPage() {
               <li className="flex gap-3"><span className="text-stone-500">▸</span>Built to demonstrate AI fluency across orchestration tools, not just one</li>
             </ul>
 
-            <div className="mt-8 p-6 rounded-xl bg-stone-50 border border-stone-200">
-              <p className="text-xs uppercase tracking-wider text-stone-600 font-semibold mb-2">
-                How this differs from Project 01
-              </p>
-              <p className="text-sm text-stone-700 leading-relaxed">
-                Project 01 is a <strong className="text-stone-900">Python pipeline</strong> I run on-demand and review in a dashboard — I pull the data when I want it. This one is an <strong className="text-stone-900">always-on agent</strong> built in n8n that runs itself on a daily cron and pushes a ranked digest to my inbox — the data comes to me. Same underlying problem, deliberately different architectures: scripted pull vs. agentic push, code-first vs. visual orchestration. The point is showing fluency across both patterns, because real AI deployment work requires picking the right one for the job.
-              </p>
-            </div>
-
           </div>
         </div>
       </section>
+
 
       <GradientDivider />
 
