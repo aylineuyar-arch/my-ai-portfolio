@@ -167,11 +167,15 @@ function PortfolioPage() {
 
         <p className="mt-8 max-w-4xl text-lg md:text-2xl text-stone-700 leading-snug font-light">
           I ship AI systems end-to-end — from strategy to deployment to daily ops.
+          <span className="block mt-2 text-base md:text-xl text-stone-700 italic">
+            Operator-level AI thinking.
+          </span>
           <span className="block mt-2 text-base md:text-lg text-stone-600">
             Tuck MBA 2026 · Ex-Deloitte Tech Strategy · PM Intern at Skild AI ·
             5 live AI products built and operated solo.
           </span>
         </p>
+
 
         {/* By the numbers — quantified impact strip */}
         <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl">
