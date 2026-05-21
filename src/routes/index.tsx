@@ -198,8 +198,11 @@ function PortfolioPage() {
 
       {/* Hero */}
       <header className="mx-auto max-w-6xl px-6 pt-4 pb-16 md:pt-6 md:pb-20">
-        <h1 className="mt-6 text-5xl md:text-7xl font-light leading-[1.05] tracking-tight">
-          Aylin Uyar
+        <h1 className="mt-6 text-5xl md:text-7xl font-light leading-[1.05] tracking-tight flex flex-wrap items-end gap-x-5 gap-y-2">
+          <span>Aylin Uyar</span>
+          <span className="text-base md:text-lg uppercase tracking-[0.3em] text-amber-800 font-medium pb-2 md:pb-3">
+            AI Portfolio
+          </span>
         </h1>
 
         {/* Tagline — the through-line of the work */}
