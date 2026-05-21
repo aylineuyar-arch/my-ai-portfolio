@@ -183,7 +183,7 @@ function PortfolioPage() {
         <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl">
           {[
             ["5", "Live AI products"],
-            ["130+", "ATSs automated"],
+            ["130+", "Applicant Tracking Systems automated"],
             ["~3 min", "Pipeline runtime"],
             ["8am ET", "Daily agentic send"],
           ].map(([n, l]) => (
@@ -238,7 +238,7 @@ function PortfolioPage() {
                 </span>
               </div>
               <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">AI Job Search Dashboard</div>
-              <div className="mt-1 text-xs text-stone-600">Claude · Python · 130+ ATSs</div>
+              <div className="mt-1 text-xs text-stone-600">Claude · Python · 130+ Applicant Tracking Systems</div>
               <ToolIcons tools={["Claude", "Python", "Railway", "ATS"]} />
             </a>
             <a href="#project-2" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-stone-200 hover:border-stone-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
