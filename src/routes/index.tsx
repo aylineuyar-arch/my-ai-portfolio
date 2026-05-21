@@ -254,8 +254,23 @@ function PortfolioPage() {
           </a>
         </div>
 
+        {/* By the numbers — quantified impact strip */}
+        <div className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl">
+          {[
+            ["5", "Live AI products"],
+            ["130+", "Applicant Tracking Systems automated"],
+            ["~3 min", "Pipeline runtime"],
+            ["8am ET", "Daily agentic send"],
+          ].map(([n, l]) => (
+            <div key={l} className="border-l-2 border-rose-300 pl-3">
+              <div className="text-2xl md:text-3xl font-light text-stone-900">{n}</div>
+              <div className="text-[11px] uppercase tracking-wider text-stone-500 mt-0.5">{l}</div>
+            </div>
+          ))}
+        </div>
+
         {/* Project navigation bubbles */}
-        <div className="mt-14 lg:-mx-16 xl:-mx-24">
+        <div className="mt-12 lg:-mx-16 xl:-mx-24">
           <p className="text-xs uppercase tracking-[0.3em] text-stone-500 font-medium mb-4">
             Five live projects · jump to →
           </p>
