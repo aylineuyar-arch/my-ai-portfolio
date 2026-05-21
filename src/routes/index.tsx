@@ -175,7 +175,7 @@ function PortfolioPage() {
       </div>
 
       {/* Hero */}
-      <header className="mx-auto max-w-6xl px-6 pt-20 pb-16 md:pt-28 md:pb-20">
+      <header className="mx-auto max-w-6xl px-6 pt-4 pb-16 md:pt-6 md:pb-20">
         <h1 className="mt-6 text-5xl md:text-7xl font-light leading-[1.05] tracking-tight">
           Aylin Uyar
         </h1>
