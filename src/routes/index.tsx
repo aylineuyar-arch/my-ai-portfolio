@@ -183,7 +183,7 @@ function PortfolioPage() {
         <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl">
           {[
             ["5", "Live AI products"],
-            ["130+", "ATSs automated"],
+            ["130+", "Applicant Tracking Systems automated"],
             ["~3 min", "Pipeline runtime"],
             ["8am ET", "Daily agentic send"],
           ].map(([n, l]) => (
@@ -238,7 +238,7 @@ function PortfolioPage() {
                 </span>
               </div>
               <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">AI Job Search Dashboard</div>
-              <div className="mt-1 text-xs text-stone-600">Claude · Python · 130+ ATSs</div>
+              <div className="mt-1 text-xs text-stone-600">Claude · Python · 130+ Applicant Tracking Systems</div>
               <ToolIcons tools={["Claude", "Python", "Railway", "ATS"]} />
             </a>
             <a href="#project-2" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-stone-200 hover:border-stone-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
@@ -334,7 +334,7 @@ function PortfolioPage() {
           <div className="md:col-span-8 space-y-6">
             <p className="text-base md:text-lg leading-relaxed text-stone-700">
               An AI-powered pipeline that aggregates live postings from{" "}
-              <strong className="text-stone-900">130+ company ATSs</strong> and
+              <strong className="text-stone-900">130+ company Applicant Tracking Systems (ATSs)</strong> and
               major job boards, scores each role with Claude on fit and
               realistic conversion likelihood, and renders results in a
               filterable web dashboard.
@@ -619,12 +619,22 @@ function PortfolioPage() {
           </div>
 
           <div className="md:col-span-8 space-y-6">
+            <div className="p-5 rounded-xl bg-stone-50 border-l-4 border-indigo-400">
+              <p className="text-xs uppercase tracking-wider text-indigo-700 font-semibold mb-2">
+                Why this matters
+              </p>
+              <p className="text-sm md:text-base text-stone-700 leading-relaxed">
+                Support inboxes are the highest-volume unstructured-text workflow most companies have. Replacing brittle rule-based routing with a single grounded LLM call collapses triage time to sub-second and frees agents to start from a working draft instead of a blank box — directly relevant to ops, CX, and AI deployment roles.
+              </p>
+            </div>
+
             <p className="text-base md:text-lg leading-relaxed text-stone-700">
               An AI triage layer for customer support inboxes — classifies
               incoming tickets by intent, urgency, and team, then drafts a
               first-response so human agents start from a working reply
               instead of a blank box.
             </p>
+
 
             {/* Mock Streamlit UI render */}
             <figure>
@@ -686,18 +696,10 @@ function PortfolioPage() {
               </figcaption>
             </figure>
 
-            <div className="p-6 rounded-xl bg-gradient-to-br from-indigo-50 to-blue-50 border border-indigo-200">
-              <p className="text-xs uppercase tracking-wider text-indigo-700 font-semibold mb-2">
-                Why this matters
-              </p>
-              <p className="text-sm text-stone-700 leading-relaxed">
-                Support inboxes are the highest-volume unstructured-text workflow most companies have. Replacing brittle rule-based routing with a single grounded LLM call collapses triage time to sub-second and frees agents to start from a working draft instead of a blank box — directly relevant to ops, CX, and AI deployment roles.
-              </p>
-            </div>
-
           </div>
         </div>
       </section>
+
 
       <GradientDivider />
 
