@@ -185,69 +185,45 @@ function PortfolioPage() {
           Rewiring the workflows you already run.
         </p>
 
-        {/* Tools & concepts marquee — recruiter-friendly breadth */}
-        <div className="relative mt-8 overflow-hidden border-y border-amber-700/30 bg-white/60 backdrop-blur-sm py-4 -mx-6 md:mx-0 md:rounded-xl md:border">
-          <div className="flex items-center gap-3 px-4 md:px-6 mb-3">
-            <span className="text-[10px] uppercase tracking-[0.22em] text-amber-800 font-semibold">
-              Tools & concepts across these projects
-            </span>
-            <span className="h-px flex-1 bg-stone-300/60" />
-          </div>
-          <div className="relative">
-            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#fdf8f3] to-transparent z-10" />
-            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#f5ede2] to-transparent z-10" />
-            <div className="flex w-max animate-marquee gap-2">
-              {(() => {
-                const items = [
-                  "Claude (Anthropic API)", "OpenAI API", "ChatGPT", "Prompt engineering", "Structured outputs",
-                  "AI agents", "Multi-step reasoning", "Tool use", "Function calling", "Autonomous workflows",
-                  "Retrieval-Augmented Generation (RAG)", "Vector search", "Embeddings", "Semantic search", "Document chunking",
-                  "n8n", "Workflow automation", "Cron scheduling", "Event-driven pipelines", "API integration",
-                  "Python", "SQL", "React + TypeScript", "TanStack Start", "Lovable", "GitHub", "Railway",
-                  "Supabase", "Postgres", "Streamlit", "Resend (transactional email)", "REST APIs",
-                  "Greenhouse API", "Lever API", "Ashby API", "JSearch API",
-                  "Product strategy", "User research", "Rapid prototyping", "MVP delivery", "A/B evaluation",
-                  "Evaluation & QA", "Guardrails", "Cost & latency tuning", "Observability",
-                ];
-                const loop = [...items, ...items];
-                return loop.map((t, i) => (
+        {/* Tools & concepts — 3 scannable groups */}
+        <div className="mt-8 rounded-2xl border border-stone-300/70 bg-white/60 backdrop-blur-sm p-5 md:p-6 space-y-4">
+          {[
+            {
+              label: "AI",
+              items: ["Claude API", "OpenAI API", "RAG", "AI agents", "Function calling", "Prompt engineering"],
+            },
+            {
+              label: "Automation",
+              items: ["n8n", "Cron pipelines", "Greenhouse / Lever / Ashby APIs", "Resend"],
+            },
+            {
+              label: "Engineering",
+              items: ["Python", "SQL", "Supabase / Postgres", "React + TypeScript", "Streamlit"],
+            },
+          ].map((g) => (
+            <div key={g.label} className="flex flex-col sm:flex-row sm:items-center gap-x-4 gap-y-2">
+              <span className="shrink-0 w-28 text-[10px] uppercase tracking-[0.22em] text-amber-800 font-semibold">
+                {g.label}
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {g.items.map((t) => (
                   <span
-                    key={i}
-                    className="shrink-0 inline-flex items-center gap-2 rounded-full border border-stone-300/70 bg-white/80 px-3.5 py-1.5 text-[13px] text-stone-800 hover:border-amber-700 transition-colors"
+                    key={t}
+                    className="inline-flex items-center gap-2 rounded-full border border-stone-300/70 bg-white/80 px-3 py-1 text-[12px] text-stone-800"
                   >
                     <span className="h-1.5 w-1.5 rounded-full bg-amber-700" />
                     {t}
                   </span>
-                ));
-              })()}
+                ))}
+              </div>
             </div>
-          </div>
+          ))}
         </div>
-
-
-
 
         <p className="mt-8 max-w-4xl text-lg md:text-2xl text-stone-700 leading-snug font-light">
           Tuck MBA <span className="text-stone-400">|</span> Ex Deloitte and Skild AI <span className="text-stone-400">|</span> AI Deployment, Strategy, Ops
         </p>
 
-
-
-
-        {/* By the numbers — quantified impact strip */}
-        <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl">
-          {[
-            ["5", "Live AI products"],
-            ["130+", "Applicant Tracking Systems automated"],
-            ["~3 min", "Pipeline runtime"],
-            ["8am ET", "Daily agentic send"],
-          ].map(([n, l]) => (
-            <div key={l} className="border-l-2 border-rose-300 pl-3">
-              <div className="text-2xl md:text-3xl font-light text-stone-900">{n}</div>
-              <div className="text-[11px] uppercase tracking-wider text-stone-500 mt-0.5">{l}</div>
-            </div>
-          ))}
-        </div>
 
 
         {/* Pronounced links */}
@@ -278,8 +254,23 @@ function PortfolioPage() {
           </a>
         </div>
 
+        {/* By the numbers — quantified impact strip */}
+        <div className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl">
+          {[
+            ["5", "Live AI products"],
+            ["130+", "Applicant Tracking Systems automated"],
+            ["~3 min", "Pipeline runtime"],
+            ["8am ET", "Daily agentic send"],
+          ].map(([n, l]) => (
+            <div key={l} className="border-l-2 border-rose-300 pl-3">
+              <div className="text-2xl md:text-3xl font-light text-stone-900">{n}</div>
+              <div className="text-[11px] uppercase tracking-wider text-stone-500 mt-0.5">{l}</div>
+            </div>
+          ))}
+        </div>
+
         {/* Project navigation bubbles */}
-        <div className="mt-14 lg:-mx-16 xl:-mx-24">
+        <div className="mt-12 lg:-mx-16 xl:-mx-24">
           <p className="text-xs uppercase tracking-[0.3em] text-stone-500 font-medium mb-4">
             Five live projects · jump to →
           </p>
