@@ -552,9 +552,19 @@ function PortfolioPage() {
           </div>
 
           <div className="md:col-span-8 space-y-6">
+            <div className="p-5 rounded-xl bg-stone-50 border-l-4 border-emerald-400">
+              <p className="text-xs uppercase tracking-wider text-emerald-700 font-semibold mb-2">
+                Why this matters
+              </p>
+              <p className="text-sm md:text-base text-stone-700 leading-relaxed">
+                Compliance and policy lookups are exactly the kind of high-volume, judgment-heavy workflow where grounded LLM retrieval delivers measurable time savings — directly relevant to ops teams at fintechs operating under FCA, SEC, and multi-jurisdiction frameworks.
+              </p>
+            </div>
+
             <p className="text-base md:text-lg leading-relaxed text-stone-700">
               A live chatbot that answers <strong className="text-stone-900">financial services compliance questions</strong> — streams Claude's responses token by token, grounds every answer in retrieved policy passages, and falls back honestly when the docs don't cover the question. Built to mirror the internal tooling a regulated fintech (Revolut, Ramp, Stripe) actually needs.
             </p>
+
 
             <figure>
               <img
