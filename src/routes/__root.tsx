@@ -72,18 +72,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Aura — A Loveable App" },
-      { name: "description", content: "Aura is a personalized makeup recommender built with Lovable — get a precision routine for your unique skin tone, face shape, and eye shape." },
-      { name: "author", content: "Built with Lovable" },
-      { property: "og:title", content: "Aura — A Loveable App" },
-      { property: "og:description", content: "Aura is a personalized makeup recommender built with Lovable — get a precision routine for your unique skin tone, face shape, and eye shape." },
+      { name: "author", content: "Aylin Uyar" },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Aura — A Loveable App" },
-      { name: "twitter:description", content: "Aura is a personalized makeup recommender built with Lovable — get a precision routine for your unique skin tone, face shape, and eye shape." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d0495a03-e38f-4230-b11f-626209bb7732/id-preview-b6e446af--b6f89626-9c2b-48b7-9862-25c8b1db3169.lovable.app-1778641834035.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d0495a03-e38f-4230-b11f-626209bb7732/id-preview-b6e446af--b6f89626-9c2b-48b7-9862-25c8b1db3169.lovable.app-1778641834035.png" },
+      { property: "og:site_name", content: "Aylin Uyar — AI Portfolio" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {

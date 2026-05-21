@@ -10,17 +10,56 @@ import auraTutorials from "@/assets/aura-tutorials.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Aylin Uyar — AI Portfolio" },
+      { title: "Aylin Uyar — AI Deployment, Strategy & Ops Portfolio" },
       {
         name: "description",
         content:
-          "Aylin Uyar — Tuck MBA 2026, ex-Deloitte. Live AI projects: a Claude-powered job search dashboard and Aura, a personalized makeup app built end-to-end with Lovable.",
+          "Aylin Uyar — Tuck MBA 2026, ex-Deloitte Tech Strategy, PM Intern at Skild AI. Five live, shipped AI projects across deployment, strategy, and ops — Claude pipelines, agentic email automation, RAG compliance, and a consumer makeup app.",
       },
-      { property: "og:title", content: "Aylin Uyar — AI Portfolio" },
+      { property: "og:title", content: "Aylin Uyar — AI Deployment, Strategy & Ops Portfolio" },
       {
         property: "og:description",
         content:
-          "Live AI projects built with Claude, Python, and Lovable — shipped end-to-end.",
+          "Five live AI projects shipped end-to-end. Operator-level AI thinking from a Tuck MBA + ex-Deloitte strategist.",
+      },
+      { property: "og:url", content: "https://aylin-uyar-portfolio.lovable.app/" },
+      { name: "twitter:title", content: "Aylin Uyar — AI Deployment, Strategy & Ops Portfolio" },
+      {
+        name: "twitter:description",
+        content:
+          "Five live AI projects shipped end-to-end. Operator-level AI thinking from a Tuck MBA + ex-Deloitte strategist.",
+      },
+    ],
+    links: [
+      { rel: "canonical", href: "https://aylin-uyar-portfolio.lovable.app/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Aylin Uyar",
+          url: "https://aylin-uyar-portfolio.lovable.app/",
+          jobTitle: "MBA Candidate · AI Deployment, Strategy & Ops",
+          alumniOf: [
+            { "@type": "CollegeOrUniversity", name: "Tuck School of Business at Dartmouth" },
+          ],
+          worksFor: { "@type": "Organization", name: "Skild AI" },
+          sameAs: [
+            "https://www.linkedin.com/in/aylinuyar/",
+            "https://github.com/aylineuyar-arch",
+          ],
+          knowsAbout: [
+            "AI Deployment",
+            "AI Strategy",
+            "AI Operations",
+            "Claude",
+            "Agentic Workflows",
+            "RAG",
+            "Product Management",
+          ],
+        }),
       },
     ],
   }),
@@ -120,17 +159,35 @@ function PortfolioPage() {
       {/* Hero */}
       <header className="mx-auto max-w-6xl px-6 pt-20 pb-16 md:pt-28 md:pb-20">
         <p className="text-sm md:text-base uppercase tracking-[0.35em] text-rose-700/80 font-medium">
-          AI Portfolio · 2026
+          AI Deployment · Strategy · Ops · 2026
         </p>
         <h1 className="mt-6 text-5xl md:text-7xl font-light leading-[1.05] tracking-tight">
           Aylin Uyar
         </h1>
 
         <p className="mt-8 max-w-4xl text-lg md:text-2xl text-stone-700 leading-snug font-light">
-          Tuck MBA 2026 · Ex-Deloitte Tech Strategy · PM Intern at Skild AI.
-          Operator-level AI thinking — building reliable pipelines and
-          consumer products end-to-end.
+          I ship AI systems end-to-end — from strategy to deployment to daily ops.
+          <span className="block mt-2 text-base md:text-lg text-stone-600">
+            Tuck MBA 2026 · Ex-Deloitte Tech Strategy · PM Intern at Skild AI ·
+            5 live AI products built and operated solo.
+          </span>
         </p>
+
+        {/* By the numbers — quantified impact strip */}
+        <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl">
+          {[
+            ["5", "Live AI products"],
+            ["130+", "ATSs automated"],
+            ["~3 min", "Pipeline runtime"],
+            ["8am ET", "Daily agentic send"],
+          ].map(([n, l]) => (
+            <div key={l} className="border-l-2 border-rose-300 pl-3">
+              <div className="text-2xl md:text-3xl font-light text-stone-900">{n}</div>
+              <div className="text-[11px] uppercase tracking-wider text-stone-500 mt-0.5">{l}</div>
+            </div>
+          ))}
+        </div>
+
 
         {/* Pronounced links */}
         <div className="mt-10 flex flex-wrap gap-3">
