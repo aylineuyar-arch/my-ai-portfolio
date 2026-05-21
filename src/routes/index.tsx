@@ -171,9 +171,9 @@ function PortfolioPage() {
             Operator-level AI thinking.
           </span>
           <span className="block mt-2 text-base md:text-lg text-stone-600">
-            Tuck MBA 2026 · Ex-Deloitte Tech Strategy · PM Intern at Skild AI ·
-            5 live AI products built and operated solo.
+            Tuck MBA 2026 · Ex-Deloitte Tech Strategy · PM Intern at Skild AI
           </span>
+
         </p>
 
 
