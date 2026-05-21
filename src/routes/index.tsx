@@ -173,6 +173,42 @@ function PortfolioPage() {
           <span className="text-rose-600 font-semibold">Aylin Uyar</span>.
         </p>
       </div>
+
+      {/* Tools marquee — breadth of stack used across projects */}
+      <div className="relative overflow-hidden border-y border-rose-200/70 bg-white/60 backdrop-blur-sm py-3">
+        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#fdf8f3] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#f5ede2] to-transparent z-10 pointer-events-none" />
+        <div className="flex items-center gap-3 px-6 mb-2">
+          <span className="text-[10px] uppercase tracking-[0.22em] text-rose-600 font-semibold">
+            Tools I build with
+          </span>
+          <span className="h-px flex-1 bg-rose-200/60" />
+        </div>
+        <div className="flex w-max animate-marquee gap-3 px-6">
+          {(() => {
+            const tools = [
+              "Claude (Sonnet 4.5)", "GPT-4o", "Cursor", "Claude Code", "Lovable",
+              "n8n", "Zapier", "Make", "Python", "TypeScript", "React", "Next.js",
+              "Supabase", "Postgres", "pgvector", "LangChain", "LlamaIndex", "RAG pipelines",
+              "OpenAI API", "Anthropic API", "Pinecone", "Vercel", "Cloudflare Workers",
+              "Tailwind CSS", "Figma", "Notion API", "Gmail API", "Slack API",
+              "GitHub Actions", "Stripe", "Tavily", "Perplexity API", "Whisper",
+              "Otter.ai", "Granola", "Airtable", "Google Sheets API",
+            ];
+            const loop = [...tools, ...tools];
+            return loop.map((t, i) => (
+              <span
+                key={`${t}-${i}`}
+                className="shrink-0 inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-4 py-1.5 text-xs font-medium text-stone-800 shadow-sm hover:border-rose-400 hover:text-rose-700 transition-colors"
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-rose-400" />
+                {t}
+              </span>
+            ));
+          })()}
+        </div>
+      </div>
+
       {/* Hero */}
       <header className="mx-auto max-w-6xl px-6 pt-20 pb-16 md:pt-28 md:pb-20">
         <p className="text-sm md:text-base uppercase tracking-[0.35em] text-rose-700/80 font-medium">
