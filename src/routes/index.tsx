@@ -174,6 +174,28 @@ function PortfolioPage() {
         </p>
       </div>
 
+      {/* Social links — fixed top-left corner */}
+      <div className="fixed top-7 left-6 z-50 flex items-center gap-4 text-xs uppercase tracking-[0.18em] font-medium text-stone-700">
+        <a
+          href="https://github.com/aylineuyar-arch"
+          target="_blank"
+          rel="noreferrer"
+          className="hover:text-amber-800 transition-colors"
+        >
+          GitHub ↗
+        </a>
+        <span className="text-stone-300">·</span>
+        <a
+          href="https://www.linkedin.com/in/aylinuyar/"
+          target="_blank"
+          rel="noreferrer"
+          className="hover:text-amber-800 transition-colors"
+        >
+          LinkedIn ↗
+        </a>
+      </div>
+
+
       {/* Hero */}
       <header className="mx-auto max-w-6xl px-6 pt-4 pb-16 md:pt-6 md:pb-20">
         <h1 className="mt-6 text-5xl md:text-7xl font-light leading-[1.05] tracking-tight">
