@@ -3,6 +3,7 @@ import { Github, Briefcase, Database, MessageSquare, Workflow, type LucideIcon }
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import dashboardImg from "@/assets/portfolio-dashboard.jpg";
 import emailGenImg from "@/assets/email-generator-screenshot.png";
+import complianceRagImg from "@/assets/project-3-compliance-rag.png";
 import auraLanding from "@/assets/aura-landing.jpg";
 import auraProfile from "@/assets/aura-profile.jpg";
 import auraTutorials from "@/assets/aura-tutorials.jpg";
@@ -553,6 +554,19 @@ function PortfolioPage() {
             <p className="text-base md:text-lg leading-relaxed text-stone-700">
               A live chatbot that answers <strong className="text-stone-900">financial services compliance questions</strong> — streams Claude's responses token by token, grounds every answer in retrieved policy passages, and falls back honestly when the docs don't cover the question. Built to mirror the internal tooling a regulated fintech (Revolut, Ramp, Stripe) actually needs.
             </p>
+
+            <figure>
+              <img
+                src={complianceRagImg}
+                alt="Compliance Policy Q&A chatbot — indexed AML, KYC, Trade Surveillance, and Data Governance documents with example questions"
+                className="w-full rounded-lg shadow-lg ring-1 ring-emerald-200"
+                loading="lazy"
+              />
+              <figcaption className="mt-3 text-xs text-stone-500 italic">
+                Live app — 4 indexed policy domains, 21 chunks, Claude Haiku 4.5 with grounded retrieval.
+              </figcaption>
+            </figure>
+
 
             <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
               <li className="flex gap-3"><span className="text-emerald-500">▸</span>Streaming answers with conversation memory — follow-ups like "what about exceptions?" work in context</li>
