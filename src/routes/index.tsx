@@ -158,67 +158,73 @@ function PortfolioPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#fdf8f3] via-[#faf3ec] to-[#f5ede2] text-stone-900">
       {/* Author badge — fixed corner */}
-      <div className="fixed top-5 right-5 z-50 max-w-[340px] rounded-2xl border-2 border-rose-400 bg-white px-5 py-4 shadow-2xl shadow-rose-500/20 ring-4 ring-rose-100">
+      <div className="fixed top-5 right-5 z-50 max-w-[340px] rounded-2xl border-2 border-amber-700/70 bg-white px-5 py-4 shadow-2xl shadow-stone-900/10 ring-4 ring-amber-100/60">
         <div className="flex items-center gap-2.5">
           <span className="relative flex h-2.5 w-2.5">
-            <span className="absolute inline-flex h-full w-full rounded-full bg-rose-500 opacity-75 animate-ping" />
-            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-rose-500" />
+            <span className="absolute inline-flex h-full w-full rounded-full bg-amber-700 opacity-60 animate-ping" />
+            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-amber-700" />
           </span>
-          <span className="text-xs uppercase tracking-[0.18em] text-rose-600 font-bold">
+          <span className="text-xs uppercase tracking-[0.18em] text-amber-800 font-bold">
             AI Strategist
           </span>
         </div>
         <p className="mt-2 text-sm leading-snug font-medium text-stone-900">
           Every workflow on this site was designed, built, and shipped by{" "}
-          <span className="text-rose-600 font-semibold">Aylin Uyar</span>.
+          <span className="text-amber-800 font-semibold">Aylin Uyar</span>.
         </p>
       </div>
 
       {/* Hero */}
       <header className="mx-auto max-w-6xl px-6 pt-20 pb-16 md:pt-28 md:pb-20">
-        <p className="text-sm md:text-base uppercase tracking-[0.35em] text-rose-700/80 font-medium">
+        <p className="text-sm md:text-base uppercase tracking-[0.35em] text-amber-800/80 font-medium">
           AI Deployment · Strategy · Ops · 2026
         </p>
         <h1 className="mt-6 text-5xl md:text-7xl font-light leading-[1.05] tracking-tight">
           Aylin Uyar
         </h1>
 
-        {/* Tools marquee — breadth of stack used across projects */}
-        <div className="relative mt-6 overflow-hidden border-y border-rose-200/70 bg-white/60 backdrop-blur-sm py-3 -mx-6 md:mx-0 md:rounded-xl md:border">
+        {/* Tagline — the through-line of the work */}
+        <p className="mt-4 text-xl md:text-2xl font-light italic text-stone-700">
+          Rewiring the workflows you already run.
+        </p>
+
+        {/* Tools marquee — actual stack used across projects */}
+        <div className="relative mt-6 overflow-hidden border-y border-stone-300/70 bg-white/70 backdrop-blur-sm py-3 -mx-6 md:mx-0 md:rounded-xl md:border">
           <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#fdf8f3] to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#faf3ec] to-transparent z-10 pointer-events-none" />
           <div className="flex items-center gap-3 px-6 mb-2">
-            <span className="text-[10px] uppercase tracking-[0.22em] text-rose-600 font-semibold">
-              Tools & platforms I work in
+            <span className="text-[10px] uppercase tracking-[0.22em] text-amber-800 font-semibold">
+              Built with
             </span>
-            <span className="h-px flex-1 bg-rose-200/60" />
+            <span className="h-px flex-1 bg-stone-300/60" />
           </div>
           <div className="flex w-max animate-marquee gap-3 px-6">
             {(() => {
               const tools = [
-                "ChatGPT", "Claude", "Gemini", "Microsoft Copilot", "Perplexity",
-                "Cursor", "GitHub Copilot", "Lovable",
-                "Zapier", "Make", "n8n",
-                "Notion", "Airtable", "Google Workspace", "Microsoft 365", "Excel",
-                "Slack", "Gmail", "Outlook", "Salesforce", "HubSpot",
-                "Tableau", "Power BI", "Looker",
-                "Figma", "Canva", "Miro",
-                "Python", "SQL", "Snowflake",
-                "Stripe", "Shopify", "Asana", "Jira", "Linear",
+                "ChatGPT", "Claude", "Gemini", "Perplexity",
+                "Cursor", "Lovable", "GitHub Copilot",
+                "n8n", "Zapier", "Make",
+                "OpenAI API", "Anthropic API",
+                "Notion", "Airtable", "Google Workspace",
+                "Slack", "Gmail", "Calendar",
+                "Figma", "Canva",
+                "Python", "SQL", "Supabase",
+                "Stripe",
               ];
               const loop = [...tools, ...tools];
               return loop.map((t, i) => (
                 <span
                   key={`${t}-${i}`}
-                  className="shrink-0 inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-4 py-1.5 text-xs font-medium text-stone-800 shadow-sm hover:border-rose-400 hover:text-rose-700 transition-colors"
+                  className="shrink-0 inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-4 py-1.5 text-xs font-medium text-stone-800 shadow-sm hover:border-amber-700 hover:text-amber-800 transition-colors"
                 >
-                  <span className="h-1.5 w-1.5 rounded-full bg-rose-400" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-amber-700" />
                   {t}
                 </span>
               ));
             })()}
           </div>
         </div>
+
 
 
         <p className="mt-8 max-w-4xl text-lg md:text-2xl text-stone-700 leading-snug font-light">
