@@ -188,70 +188,42 @@ function PortfolioPage() {
           Rewiring the workflows you already run.
         </p>
 
-        {/* The actual stack — grouped by role, every tool ships in a project on this site */}
-        <div className="mt-8 rounded-2xl border border-stone-300/70 bg-white/70 backdrop-blur-sm p-5 md:p-6">
-          <div className="flex items-center gap-3 mb-5">
+        {/* Tools & concepts marquee — recruiter-friendly breadth */}
+        <div className="relative mt-8 overflow-hidden border-y border-amber-700/30 bg-white/60 backdrop-blur-sm py-4 -mx-6 md:mx-0 md:rounded-xl md:border">
+          <div className="flex items-center gap-3 px-4 md:px-6 mb-3">
             <span className="text-[10px] uppercase tracking-[0.22em] text-amber-800 font-semibold">
-              The stack behind these five projects
+              Tools & concepts across these projects
             </span>
             <span className="h-px flex-1 bg-stone-300/60" />
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-5">
-            {[
-              {
-                role: "Reasoning",
-                note: "the model doing the thinking",
-                tools: ["Claude (Anthropic API)"],
-              },
-              {
-                role: "Orchestration",
-                note: "runs the agents on a schedule",
-                tools: ["n8n", "Python", "Railway (cron + hosting)"],
-              },
-              {
-                role: "Data & delivery",
-                note: "where state lives, how it ships",
-                tools: ["Supabase / Postgres", "Resend (email)", "Streamlit"],
-              },
-              {
-                role: "Product surface",
-                note: "interfaces users actually touch",
-                tools: ["Lovable", "React + TypeScript", "TanStack Start"],
-              },
-              {
-                role: "Job-market APIs",
-                note: "live data for the search dashboard",
-                tools: ["Greenhouse", "Lever", "Ashby", "JSearch"],
-              },
-              {
-                role: "Retrieval (RAG)",
-                note: "compliance chatbot grounding",
-                tools: ["Python", "Vector search", "Chunked policy docs"],
-              },
-              {
-                role: "Domain logic",
-                note: "rules I wrote, not pulled off a shelf",
-                tools: ["Skin-tone × face-shape recommender", "ATS fit scoring"],
-              },
-              {
-                role: "Workflow glue",
-                note: "where I prototype and ship",
-                tools: ["ChatGPT", "GitHub"],
-              },
-            ].map((group) => (
-              <div key={group.role}>
-                <div className="text-xs font-semibold text-stone-900">{group.role}</div>
-                <div className="text-[11px] text-stone-500 mb-2">{group.note}</div>
-                <ul className="space-y-1">
-                  {group.tools.map((t) => (
-                    <li key={t} className="flex items-start gap-2 text-[13px] text-stone-700 leading-snug">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-700" />
-                      <span>{t}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div className="relative">
+            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#fdf8f3] to-transparent z-10" />
+            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#f5ede2] to-transparent z-10" />
+            <div className="flex w-max animate-marquee gap-2">
+              {(() => {
+                const items = [
+                  "Claude (Anthropic API)", "OpenAI API", "ChatGPT", "Prompt engineering", "Structured outputs",
+                  "AI agents", "Multi-step reasoning", "Tool use", "Function calling", "Autonomous workflows",
+                  "Retrieval-Augmented Generation (RAG)", "Vector search", "Embeddings", "Semantic search", "Document chunking",
+                  "n8n", "Workflow automation", "Cron scheduling", "Event-driven pipelines", "API integration",
+                  "Python", "SQL", "React + TypeScript", "TanStack Start", "Lovable", "GitHub", "Railway",
+                  "Supabase", "Postgres", "Streamlit", "Resend (transactional email)", "REST APIs",
+                  "Greenhouse API", "Lever API", "Ashby API", "JSearch API",
+                  "Product strategy", "User research", "Rapid prototyping", "MVP delivery", "A/B evaluation",
+                  "Evaluation & QA", "Guardrails", "Cost & latency tuning", "Observability",
+                ];
+                const loop = [...items, ...items];
+                return loop.map((t, i) => (
+                  <span
+                    key={i}
+                    className="shrink-0 inline-flex items-center gap-2 rounded-full border border-stone-300/70 bg-white/80 px-3.5 py-1.5 text-[13px] text-stone-800 hover:border-amber-700 transition-colors"
+                  >
+                    <span className="h-1.5 w-1.5 rounded-full bg-amber-700" />
+                    {t}
+                  </span>
+                ));
+              })()}
+            </div>
           </div>
         </div>
 
