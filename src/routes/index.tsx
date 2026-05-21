@@ -166,15 +166,14 @@ function PortfolioPage() {
         </h1>
 
         <p className="mt-8 max-w-4xl text-lg md:text-2xl text-stone-700 leading-snug font-light">
-          I ship AI systems end-to-end — from strategy to deployment to daily ops.
-          <span className="block mt-2 text-base md:text-xl text-stone-700 italic">
-            Operator-level AI thinking.
+          MBA candidate at Tuck focused on AI deployment, strategy, and operations.
+          Previously Tech Strategy at Deloitte; currently a Product Management Intern at Skild AI.
+          <span className="block mt-3 text-base md:text-lg text-stone-600">
+            This portfolio brings together the production AI systems I have designed,
+            shipped, and operated independently.
           </span>
-          <span className="block mt-2 text-base md:text-lg text-stone-600">
-            Tuck MBA 2026 · Ex-Deloitte Tech Strategy · PM Intern at Skild AI
-          </span>
-
         </p>
+
 
 
         {/* By the numbers — quantified impact strip */}
