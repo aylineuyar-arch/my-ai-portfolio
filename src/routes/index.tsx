@@ -166,13 +166,13 @@ function PortfolioPage() {
         </h1>
 
         <p className="mt-8 max-w-4xl text-lg md:text-2xl text-stone-700 leading-snug font-light">
-          MBA candidate at Tuck focused on AI deployment, strategy, and operations.
-          Previously Tech Strategy at Deloitte; currently a Product Management Intern at Skild AI.
+          MBA candidate at Tuck. Former Tech Strategy consultant at Deloitte and
+          Product Management intern at Skild AI.
           <span className="block mt-3 text-base md:text-lg text-stone-600">
-            This portfolio brings together the production AI systems I have designed,
-            shipped, and operated independently.
+            Focused on AI deployment, strategy, and operations.
           </span>
         </p>
+
 
 
 
