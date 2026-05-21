@@ -181,12 +181,16 @@ function PortfolioPage() {
         </h1>
 
         {/* Tagline — the through-line of the work */}
-        <p className="mt-4 text-xl md:text-2xl font-light italic text-stone-700">
+        <p className="mt-4 text-xl md:text-2xl font-light italic text-rose-700">
           Rewiring the workflows you already run.
         </p>
 
-        {/* Tools & concepts — 3 scannable groups */}
-        <div className="mt-8 rounded-2xl border border-stone-300/70 bg-white/60 backdrop-blur-sm p-5 md:p-6 space-y-4">
+        <p className="mt-6 max-w-4xl text-lg md:text-2xl text-stone-700 leading-snug font-light">
+          Tuck MBA <span className="text-stone-400">|</span> Ex Deloitte and Skild AI <span className="text-stone-400">|</span> AI Deployment, Strategy, Ops
+        </p>
+
+        {/* Tools & concepts — 3 scannable rows, slow marquee each */}
+        <div className="mt-8 rounded-2xl border border-stone-300/70 bg-white/60 backdrop-blur-sm p-5 md:p-6 space-y-5">
           {[
             {
               label: "AI",
@@ -200,29 +204,33 @@ function PortfolioPage() {
               label: "Engineering",
               items: ["Python", "SQL", "Supabase / Postgres", "React + TypeScript", "Streamlit"],
             },
-          ].map((g) => (
-            <div key={g.label} className="flex flex-col sm:flex-row sm:items-center gap-x-4 gap-y-2">
-              <span className="shrink-0 w-28 text-[10px] uppercase tracking-[0.22em] text-amber-800 font-semibold">
-                {g.label}
-              </span>
-              <div className="flex flex-wrap gap-2">
-                {g.items.map((t) => (
-                  <span
-                    key={t}
-                    className="inline-flex items-center gap-2 rounded-full border border-stone-300/70 bg-white/80 px-3 py-1 text-[12px] text-stone-800"
-                  >
-                    <span className="h-1.5 w-1.5 rounded-full bg-amber-700" />
-                    {t}
-                  </span>
-                ))}
+          ].map((g) => {
+            const loop = [...g.items, ...g.items, ...g.items];
+            return (
+              <div key={g.label} className="flex flex-col sm:flex-row sm:items-center gap-x-5 gap-y-3">
+                <span className="shrink-0 sm:w-32 text-sm uppercase tracking-[0.22em] text-amber-800 font-semibold">
+                  {g.label}
+                </span>
+                <div className="relative flex-1 overflow-hidden">
+                  <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-white/80 to-transparent z-10" />
+                  <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-white/80 to-transparent z-10" />
+                  <div className="flex w-max animate-marquee gap-2">
+                    {loop.map((t, i) => (
+                      <span
+                        key={i}
+                        className="shrink-0 inline-flex items-center gap-2 rounded-full border border-stone-300/70 bg-white/90 px-4 py-1.5 text-[15px] text-stone-800"
+                      >
+                        <span className="h-1.5 w-1.5 rounded-full bg-amber-700" />
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        <p className="mt-8 max-w-4xl text-lg md:text-2xl text-stone-700 leading-snug font-light">
-          Tuck MBA <span className="text-stone-400">|</span> Ex Deloitte and Skild AI <span className="text-stone-400">|</span> AI Deployment, Strategy, Ops
-        </p>
 
 
 
