@@ -188,42 +188,73 @@ function PortfolioPage() {
           Rewiring the workflows you already run.
         </p>
 
-        {/* Tools marquee — actual stack used across projects */}
-        <div className="relative mt-6 overflow-hidden border-y border-stone-300/70 bg-white/70 backdrop-blur-sm py-3 -mx-6 md:mx-0 md:rounded-xl md:border">
-          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#fdf8f3] to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#faf3ec] to-transparent z-10 pointer-events-none" />
-          <div className="flex items-center gap-3 px-6 mb-2">
+        {/* The actual stack — grouped by role, every tool ships in a project on this site */}
+        <div className="mt-8 rounded-2xl border border-stone-300/70 bg-white/70 backdrop-blur-sm p-5 md:p-6">
+          <div className="flex items-center gap-3 mb-5">
             <span className="text-[10px] uppercase tracking-[0.22em] text-amber-800 font-semibold">
-              Built with
+              The stack behind these five projects
             </span>
             <span className="h-px flex-1 bg-stone-300/60" />
           </div>
-          <div className="flex w-max animate-marquee gap-3 px-6">
-            {(() => {
-              const tools = [
-                "ChatGPT", "Claude", "Gemini", "Perplexity",
-                "Cursor", "Lovable", "GitHub Copilot",
-                "n8n", "Zapier", "Make",
-                "OpenAI API", "Anthropic API",
-                "Notion", "Airtable", "Google Workspace",
-                "Slack", "Gmail", "Calendar",
-                "Figma", "Canva",
-                "Python", "SQL", "Supabase",
-                "Stripe",
-              ];
-              const loop = [...tools, ...tools];
-              return loop.map((t, i) => (
-                <span
-                  key={`${t}-${i}`}
-                  className="shrink-0 inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-4 py-1.5 text-xs font-medium text-stone-800 shadow-sm hover:border-amber-700 hover:text-amber-800 transition-colors"
-                >
-                  <span className="h-1.5 w-1.5 rounded-full bg-amber-700" />
-                  {t}
-                </span>
-              ));
-            })()}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-5">
+            {[
+              {
+                role: "Reasoning",
+                note: "the model doing the thinking",
+                tools: ["Claude (Anthropic API)"],
+              },
+              {
+                role: "Orchestration",
+                note: "runs the agents on a schedule",
+                tools: ["n8n", "Python", "Railway (cron + hosting)"],
+              },
+              {
+                role: "Data & delivery",
+                note: "where state lives, how it ships",
+                tools: ["Supabase / Postgres", "Resend (email)", "Streamlit"],
+              },
+              {
+                role: "Product surface",
+                note: "interfaces users actually touch",
+                tools: ["Lovable", "React + TypeScript", "TanStack Start"],
+              },
+              {
+                role: "Job-market APIs",
+                note: "live data for the search dashboard",
+                tools: ["Greenhouse", "Lever", "Ashby", "JSearch"],
+              },
+              {
+                role: "Retrieval (RAG)",
+                note: "compliance chatbot grounding",
+                tools: ["Python", "Vector search", "Chunked policy docs"],
+              },
+              {
+                role: "Domain logic",
+                note: "rules I wrote, not pulled off a shelf",
+                tools: ["Skin-tone × face-shape recommender", "ATS fit scoring"],
+              },
+              {
+                role: "Workflow glue",
+                note: "where I prototype and ship",
+                tools: ["ChatGPT", "GitHub"],
+              },
+            ].map((group) => (
+              <div key={group.role}>
+                <div className="text-xs font-semibold text-stone-900">{group.role}</div>
+                <div className="text-[11px] text-stone-500 mb-2">{group.note}</div>
+                <ul className="space-y-1">
+                  {group.tools.map((t) => (
+                    <li key={t} className="flex items-start gap-2 text-[13px] text-stone-700 leading-snug">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-700" />
+                      <span>{t}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
+
 
 
 
