@@ -158,15 +158,19 @@ function PortfolioPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#fdf8f3] via-[#faf3ec] to-[#f5ede2] text-stone-900">
       {/* Author badge — fixed corner */}
-      <div className="fixed top-4 right-4 z-50 max-w-[240px] rounded-xl border border-rose-200 bg-white/85 backdrop-blur px-3.5 py-2.5 shadow-md">
-        <div className="flex items-center gap-2">
-          <span className="h-2 w-2 rounded-full bg-rose-500 animate-pulse" />
-          <span className="text-[10px] uppercase tracking-[0.14em] text-rose-600 font-semibold">
+      <div className="fixed top-5 right-5 z-50 max-w-[340px] rounded-2xl border-2 border-rose-400 bg-white px-5 py-4 shadow-2xl shadow-rose-500/20 ring-4 ring-rose-100">
+        <div className="flex items-center gap-2.5">
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="absolute inline-flex h-full w-full rounded-full bg-rose-500 opacity-75 animate-ping" />
+            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-rose-500" />
+          </span>
+          <span className="text-xs uppercase tracking-[0.18em] text-rose-600 font-bold">
             AI Strategist
           </span>
         </div>
-        <p className="mt-1 text-[11px] leading-snug text-stone-700">
-          Every workflow on this site was designed, built, and shipped by Aylin Uyar.
+        <p className="mt-2 text-sm leading-snug font-medium text-stone-900">
+          Every workflow on this site was designed, built, and shipped by{" "}
+          <span className="text-rose-600 font-semibold">Aylin Uyar</span>.
         </p>
       </div>
       {/* Hero */}
