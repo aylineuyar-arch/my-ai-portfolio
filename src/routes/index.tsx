@@ -239,9 +239,9 @@ function PortfolioPage() {
               <div className="mt-1 text-xs text-stone-600">Claude · Python · 130+ ATSs</div>
               <ToolIcons tools={["Claude", "Python", "Railway", "ATS"]} />
             </a>
-            <a href="#project-2" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-amber-200 hover:border-amber-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+            <a href="#project-2" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-stone-200 hover:border-stone-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
               <div className="flex items-center justify-between">
-                <span className="text-xs uppercase tracking-wider text-amber-700 font-semibold">No. 02</span>
+                <span className="text-xs uppercase tracking-wider text-stone-600 font-semibold">No. 02</span>
                 <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
                   Live
