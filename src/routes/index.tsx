@@ -176,9 +176,6 @@ function PortfolioPage() {
 
       {/* Hero */}
       <header className="mx-auto max-w-6xl px-6 pt-20 pb-16 md:pt-28 md:pb-20">
-        <p className="text-sm md:text-base uppercase tracking-[0.35em] text-amber-800/80 font-medium">
-          AI Deployment · Strategy · Ops · 2026
-        </p>
         <h1 className="mt-6 text-5xl md:text-7xl font-light leading-[1.05] tracking-tight">
           Aylin Uyar
         </h1>
