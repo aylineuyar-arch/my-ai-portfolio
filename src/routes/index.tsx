@@ -167,8 +167,10 @@ function PortfolioPage() {
         </h1>
 
         <p className="mt-8 max-w-4xl text-lg md:text-2xl text-stone-700 leading-snug font-light">
-          MBA candidate at Tuck. Former Tech Strategy consultant at Deloitte and
-          Product Management intern at Skild AI.
+          MBA candidate at Tuck.
+          <span className="block mt-2">
+            Former Tech Strategy consultant at Deloitte and Product Management intern at Skild AI.
+          </span>
           <span className="block mt-3 text-base md:text-lg text-stone-600">
             Focused on AI deployment, strategy, and operations.
           </span>
