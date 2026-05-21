@@ -696,18 +696,10 @@ function PortfolioPage() {
               </figcaption>
             </figure>
 
-            <div className="p-6 rounded-xl bg-gradient-to-br from-indigo-50 to-blue-50 border border-indigo-200">
-              <p className="text-xs uppercase tracking-wider text-indigo-700 font-semibold mb-2">
-                Why this matters
-              </p>
-              <p className="text-sm text-stone-700 leading-relaxed">
-                Support inboxes are the highest-volume unstructured-text workflow most companies have. Replacing brittle rule-based routing with a single grounded LLM call collapses triage time to sub-second and frees agents to start from a working draft instead of a blank box — directly relevant to ops, CX, and AI deployment roles.
-              </p>
-            </div>
-
           </div>
         </div>
       </section>
+
 
       <GradientDivider />
 
