@@ -239,9 +239,9 @@ function PortfolioPage() {
               <div className="mt-1 text-xs text-stone-600">Claude · Python · 130+ ATSs</div>
               <ToolIcons tools={["Claude", "Python", "Railway", "ATS"]} />
             </a>
-            <a href="#project-2" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-amber-200 hover:border-amber-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+            <a href="#project-2" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-stone-200 hover:border-stone-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
               <div className="flex items-center justify-between">
-                <span className="text-xs uppercase tracking-wider text-amber-700 font-semibold">No. 02</span>
+                <span className="text-xs uppercase tracking-wider text-stone-600 font-semibold">No. 02</span>
                 <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
                   Live
@@ -404,7 +404,7 @@ function PortfolioPage() {
       <section id="project-2" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-amber-700 font-medium">
+            <p className="text-xs uppercase tracking-[0.3em] text-stone-600 font-medium">
               No. 02 · Built with n8n + Claude
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
@@ -419,7 +419,7 @@ function PortfolioPage() {
               href="https://muse-agent-transfer.lovable.app"
               target="_blank"
               rel="noreferrer"
-              className="mt-8 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-amber-600 text-white hover:bg-amber-700 transition-colors text-xs font-medium"
+              className="mt-8 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
             >
               Live app ↗
             </a>
@@ -439,7 +439,7 @@ function PortfolioPage() {
               <img
                 src={emailGenImg}
                 alt="Live countdown to next email release and tracked job titles"
-                className="w-full rounded-lg shadow-lg ring-1 ring-amber-200"
+                className="w-full rounded-lg shadow-lg ring-1 ring-stone-200"
                 loading="lazy"
               />
               <figcaption className="mt-3 text-xs text-stone-500 italic">
@@ -449,14 +449,14 @@ function PortfolioPage() {
 
 
 
-            <div className="grid grid-cols-3 gap-4 border-y-2 border-amber-400 py-6">
+            <div className="grid grid-cols-3 gap-4 border-y border-stone-200 py-6">
               {[
                 ["8am ET", "Daily cron trigger"],
                 ["0", "Manual touches per run"],
                 ["4", "Tools orchestrated"],
               ].map(([n, l]) => (
                 <div key={l}>
-                  <div className="text-2xl md:text-3xl font-light text-amber-700">
+                  <div className="text-2xl md:text-3xl font-light text-stone-800">
                     {n}
                   </div>
                   <div className="text-xs uppercase tracking-wider text-stone-500 mt-1">
@@ -467,16 +467,16 @@ function PortfolioPage() {
             </div>
 
             <div className="grid sm:grid-cols-2 gap-4">
-              <div className="p-4 rounded-lg bg-amber-100 border border-amber-300">
-                <div className="text-xs uppercase tracking-wider text-amber-800 font-semibold">
+              <div className="p-4 rounded-lg bg-stone-50 border border-stone-200">
+                <div className="text-xs uppercase tracking-wider text-stone-600 font-semibold">
                   Agentic Workflow
                 </div>
                 <p className="mt-1.5 text-sm text-stone-700 leading-snug">
                   n8n orchestrates search → Claude scoring → dedupe → email, no human in the loop.
                 </p>
               </div>
-              <div className="p-4 rounded-lg bg-amber-100 border border-amber-300">
-                <div className="text-xs uppercase tracking-wider text-amber-800 font-semibold">
+              <div className="p-4 rounded-lg bg-stone-50 border border-stone-200">
+                <div className="text-xs uppercase tracking-wider text-stone-600 font-semibold">
                   Persistent Memory
                 </div>
                 <p className="mt-1.5 text-sm text-stone-700 leading-snug">
@@ -486,15 +486,15 @@ function PortfolioPage() {
             </div>
 
             <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
-              <li className="flex gap-3"><span className="text-amber-600">▸</span>Cron-triggered daily — zero manual touch, runs while I sleep</li>
-              <li className="flex gap-3"><span className="text-amber-600">▸</span>Claude scores every posting on relevance, dedupes against yesterday's run via Supabase</li>
-              <li className="flex gap-3"><span className="text-amber-600">▸</span>Self-hosted n8n on Railway — own the workflow, no per-execution SaaS fees</li>
-              <li className="flex gap-3"><span className="text-amber-600">▸</span>Resend delivers a clean HTML digest straight to inbox — ready to skim with morning coffee</li>
-              <li className="flex gap-3"><span className="text-amber-600">▸</span>Built to demonstrate AI fluency across orchestration tools, not just one</li>
+              <li className="flex gap-3"><span className="text-stone-500">▸</span>Cron-triggered daily — zero manual touch, runs while I sleep</li>
+              <li className="flex gap-3"><span className="text-stone-500">▸</span>Claude scores every posting on relevance, dedupes against yesterday's run via Supabase</li>
+              <li className="flex gap-3"><span className="text-stone-500">▸</span>Self-hosted n8n on Railway — own the workflow, no per-execution SaaS fees</li>
+              <li className="flex gap-3"><span className="text-stone-500">▸</span>Resend delivers a clean HTML digest straight to inbox — ready to skim with morning coffee</li>
+              <li className="flex gap-3"><span className="text-stone-500">▸</span>Built to demonstrate AI fluency across orchestration tools, not just one</li>
             </ul>
 
-            <div className="mt-8 p-6 rounded-xl bg-amber-50/60 border border-amber-200">
-              <p className="text-xs uppercase tracking-wider text-amber-700 font-semibold mb-2">
+            <div className="mt-8 p-6 rounded-xl bg-stone-50 border border-stone-200">
+              <p className="text-xs uppercase tracking-wider text-stone-600 font-semibold mb-2">
                 How this differs from Project 01
               </p>
               <p className="text-sm text-stone-700 leading-relaxed">
