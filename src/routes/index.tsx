@@ -174,41 +174,6 @@ function PortfolioPage() {
         </p>
       </div>
 
-      {/* Tools marquee — breadth of stack used across projects */}
-      <div className="relative overflow-hidden border-y border-rose-200/70 bg-white/60 backdrop-blur-sm py-3">
-        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#fdf8f3] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#f5ede2] to-transparent z-10 pointer-events-none" />
-        <div className="flex items-center gap-3 px-6 mb-2">
-          <span className="text-[10px] uppercase tracking-[0.22em] text-rose-600 font-semibold">
-            Tools I build with
-          </span>
-          <span className="h-px flex-1 bg-rose-200/60" />
-        </div>
-        <div className="flex w-max animate-marquee gap-3 px-6">
-          {(() => {
-            const tools = [
-              "Claude (Sonnet 4.5)", "GPT-4o", "Cursor", "Claude Code", "Lovable",
-              "n8n", "Zapier", "Make", "Python", "TypeScript", "React", "Next.js",
-              "Supabase", "Postgres", "pgvector", "LangChain", "LlamaIndex", "RAG pipelines",
-              "OpenAI API", "Anthropic API", "Pinecone", "Vercel", "Cloudflare Workers",
-              "Tailwind CSS", "Figma", "Notion API", "Gmail API", "Slack API",
-              "GitHub Actions", "Stripe", "Tavily", "Perplexity API", "Whisper",
-              "Otter.ai", "Granola", "Airtable", "Google Sheets API",
-            ];
-            const loop = [...tools, ...tools];
-            return loop.map((t, i) => (
-              <span
-                key={`${t}-${i}`}
-                className="shrink-0 inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-4 py-1.5 text-xs font-medium text-stone-800 shadow-sm hover:border-rose-400 hover:text-rose-700 transition-colors"
-              >
-                <span className="h-1.5 w-1.5 rounded-full bg-rose-400" />
-                {t}
-              </span>
-            ));
-          })()}
-        </div>
-      </div>
-
       {/* Hero */}
       <header className="mx-auto max-w-6xl px-6 pt-20 pb-16 md:pt-28 md:pb-20">
         <p className="text-sm md:text-base uppercase tracking-[0.35em] text-rose-700/80 font-medium">
@@ -217,6 +182,44 @@ function PortfolioPage() {
         <h1 className="mt-6 text-5xl md:text-7xl font-light leading-[1.05] tracking-tight">
           Aylin Uyar
         </h1>
+
+        {/* Tools marquee — breadth of stack used across projects */}
+        <div className="relative mt-6 overflow-hidden border-y border-rose-200/70 bg-white/60 backdrop-blur-sm py-3 -mx-6 md:mx-0 md:rounded-xl md:border">
+          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#fdf8f3] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#faf3ec] to-transparent z-10 pointer-events-none" />
+          <div className="flex items-center gap-3 px-6 mb-2">
+            <span className="text-[10px] uppercase tracking-[0.22em] text-rose-600 font-semibold">
+              Tools & platforms I work in
+            </span>
+            <span className="h-px flex-1 bg-rose-200/60" />
+          </div>
+          <div className="flex w-max animate-marquee gap-3 px-6">
+            {(() => {
+              const tools = [
+                "ChatGPT", "Claude", "Gemini", "Microsoft Copilot", "Perplexity",
+                "Cursor", "GitHub Copilot", "Lovable",
+                "Zapier", "Make", "n8n",
+                "Notion", "Airtable", "Google Workspace", "Microsoft 365", "Excel",
+                "Slack", "Gmail", "Outlook", "Salesforce", "HubSpot",
+                "Tableau", "Power BI", "Looker",
+                "Figma", "Canva", "Miro",
+                "Python", "SQL", "Snowflake",
+                "Stripe", "Shopify", "Asana", "Jira", "Linear",
+              ];
+              const loop = [...tools, ...tools];
+              return loop.map((t, i) => (
+                <span
+                  key={`${t}-${i}`}
+                  className="shrink-0 inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-4 py-1.5 text-xs font-medium text-stone-800 shadow-sm hover:border-rose-400 hover:text-rose-700 transition-colors"
+                >
+                  <span className="h-1.5 w-1.5 rounded-full bg-rose-400" />
+                  {t}
+                </span>
+              ));
+            })()}
+          </div>
+        </div>
+
 
         <p className="mt-8 max-w-4xl text-lg md:text-2xl text-stone-700 leading-snug font-light">
           MBA candidate at Tuck.
