@@ -472,49 +472,46 @@ function PortfolioPage() {
 
 
 
-            <div className="grid grid-cols-3 gap-4 border-y border-stone-200 py-6">
-              {[
-                ["8am ET", "Daily cron trigger"],
-                ["0", "Manual touches per run"],
-                ["4", "Tools orchestrated"],
-              ].map(([n, l]) => (
-                <div key={l}>
-                  <div className="text-2xl md:text-3xl font-light text-stone-800">
-                    {n}
-                  </div>
-                  <div className="text-xs uppercase tracking-wider text-stone-500 mt-1">
-                    {l}
-                  </div>
+            <Collapsible>
+              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-stone-300 bg-stone-50 px-4 py-3 text-sm font-medium text-stone-700 hover:bg-stone-100 transition-colors">
+                <span className="uppercase tracking-wider text-xs">See technical details</span>
+                <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
+              </CollapsibleTrigger>
+              <CollapsibleContent className="space-y-6 pt-6">
+                <div className="grid grid-cols-3 gap-4 border-y border-stone-200 py-6">
+                  {[
+                    ["8am ET", "Daily cron trigger"],
+                    ["0", "Manual touches per run"],
+                    ["4", "Tools orchestrated"],
+                  ].map(([n, l]) => (
+                    <div key={l}>
+                      <div className="text-2xl md:text-3xl font-light text-stone-800">{n}</div>
+                      <div className="text-xs uppercase tracking-wider text-stone-500 mt-1">{l}</div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
 
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div className="p-4 rounded-lg bg-stone-50 border border-stone-200">
-                <div className="text-xs uppercase tracking-wider text-stone-600 font-semibold">
-                  Agentic Workflow
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="p-4 rounded-lg bg-stone-50 border border-stone-200">
+                    <div className="text-xs uppercase tracking-wider text-stone-600 font-semibold">Agentic Workflow</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">n8n orchestrates search → Claude scoring → dedupe → email, no human in the loop.</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-stone-50 border border-stone-200">
+                    <div className="text-xs uppercase tracking-wider text-stone-600 font-semibold">Persistent Memory</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Supabase stores every prior run so today's digest never repeats yesterday's roles.</p>
+                  </div>
                 </div>
-                <p className="mt-1.5 text-sm text-stone-700 leading-snug">
-                  n8n orchestrates search → Claude scoring → dedupe → email, no human in the loop.
-                </p>
-              </div>
-              <div className="p-4 rounded-lg bg-stone-50 border border-stone-200">
-                <div className="text-xs uppercase tracking-wider text-stone-600 font-semibold">
-                  Persistent Memory
-                </div>
-                <p className="mt-1.5 text-sm text-stone-700 leading-snug">
-                  Supabase stores every prior run so today's digest never repeats yesterday's roles.
-                </p>
-              </div>
-            </div>
 
-            <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
-              <li className="flex gap-3"><span className="text-stone-500">▸</span>Cron-triggered daily — zero manual touch, runs while I sleep</li>
-              <li className="flex gap-3"><span className="text-stone-500">▸</span>Claude scores every posting on relevance, dedupes against yesterday's run via Supabase</li>
-              <li className="flex gap-3"><span className="text-stone-500">▸</span>Self-hosted n8n on Railway — own the workflow, no per-execution SaaS fees</li>
-              <li className="flex gap-3"><span className="text-stone-500">▸</span>Resend delivers a clean HTML digest straight to inbox — ready to skim with morning coffee</li>
-              <li className="flex gap-3"><span className="text-stone-500">▸</span>Built to demonstrate AI fluency across orchestration tools, not just one</li>
-            </ul>
+                <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
+                  <li className="flex gap-3"><span className="text-stone-500">▸</span>Cron-triggered daily — zero manual touch, runs while I sleep</li>
+                  <li className="flex gap-3"><span className="text-stone-500">▸</span>Claude scores every posting on relevance, dedupes against yesterday's run via Supabase</li>
+                  <li className="flex gap-3"><span className="text-stone-500">▸</span>Self-hosted n8n on Railway — own the workflow, no per-execution SaaS fees</li>
+                  <li className="flex gap-3"><span className="text-stone-500">▸</span>Resend delivers a clean HTML digest straight to inbox — ready to skim with morning coffee</li>
+                  <li className="flex gap-3"><span className="text-stone-500">▸</span>Built to demonstrate AI fluency across orchestration tools, not just one</li>
+                </ul>
+              </CollapsibleContent>
+            </Collapsible>
+
 
           </div>
         </div>
