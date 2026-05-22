@@ -217,7 +217,7 @@ function PortfolioPage() {
             ["<1 sec", "Triage classification"],
           ].map(([value, label]) => (
             <div key={label} className="rounded-xl border border-rose-100 bg-white px-3.5 py-3">
-              <div className="text-xl md:text-2xl font-light text-rose-600 leading-none">{value}</div>
+              <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-600 leading-none">{value}</div>
               <div className="mt-1.5 text-[11px] uppercase tracking-[0.16em] text-stone-500 leading-snug">{label}</div>
             </div>
           ))}
@@ -225,56 +225,54 @@ function PortfolioPage() {
 
         <div className="mt-8 h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent" />
 
-        {/* Tools & concepts — pills tinted with brand colors matching project icons */}
-        <div className="mt-6 rounded-2xl border border-stone-300/70 bg-white/60 backdrop-blur-sm p-3 md:p-4 space-y-2.5">
+        {/* Demonstrated skills — category-colored marquee */}
+        <div className="mt-6 flex items-baseline justify-between">
+          <h3 className="text-xs md:text-sm uppercase tracking-[0.25em] text-stone-700 font-semibold">
+            Demonstrated skills
+          </h3>
+          <span className="text-[11px] text-stone-500 italic">color-coded by category</span>
+        </div>
+        <div className="mt-3 rounded-2xl border border-stone-300/70 bg-white/70 backdrop-blur-sm p-4 md:p-5 space-y-3">
           {[
             {
               label: "AI",
-              items: [
-                { name: "Claude API", cls: "bg-orange-50 border-orange-200 text-orange-800" },
-                { name: "OpenAI API", cls: "bg-stone-50 border-stone-300 text-stone-800" },
-                { name: "RAG", cls: "bg-emerald-50 border-emerald-200 text-emerald-800" },
-                { name: "AI agents", cls: "bg-indigo-50 border-indigo-200 text-indigo-800" },
-                { name: "Function calling", cls: "bg-cyan-50 border-cyan-200 text-cyan-800" },
-                { name: "Prompt engineering", cls: "bg-amber-50 border-amber-200 text-amber-800" },
-              ],
+              labelCls: "text-amber-700",
+              dot: "bg-amber-500",
+              chip: "bg-amber-50 border-amber-200 text-amber-900",
+              items: ["Claude API", "OpenAI API", "RAG", "AI agents", "Function calling", "Prompt engineering"],
             },
             {
               label: "Automation",
-              items: [
-                { name: "n8n", cls: "bg-pink-50 border-pink-200 text-pink-800" },
-                { name: "Cron pipelines", cls: "bg-violet-50 border-violet-200 text-violet-800" },
-                { name: "Greenhouse / Lever / Ashby APIs", cls: "bg-green-50 border-green-200 text-green-800" },
-                { name: "Resend", cls: "bg-stone-50 border-stone-300 text-stone-800" },
-              ],
+              labelCls: "text-violet-700",
+              dot: "bg-violet-500",
+              chip: "bg-violet-50 border-violet-200 text-violet-900",
+              items: ["n8n", "Cron pipelines", "Greenhouse / Lever / Ashby APIs", "Resend", "Webhooks"],
             },
             {
               label: "Engineering",
-              items: [
-                { name: "Python", cls: "bg-blue-50 border-blue-200 text-blue-800" },
-                { name: "SQL", cls: "bg-slate-50 border-slate-300 text-slate-800" },
-                { name: "Supabase / Postgres", cls: "bg-emerald-50 border-emerald-200 text-emerald-800" },
-                { name: "React + TypeScript", cls: "bg-sky-50 border-sky-200 text-sky-800" },
-                { name: "Streamlit", cls: "bg-red-50 border-red-200 text-red-800" },
-              ],
+              labelCls: "text-sky-700",
+              dot: "bg-sky-500",
+              chip: "bg-sky-50 border-sky-200 text-sky-900",
+              items: ["Python", "SQL", "Supabase / Postgres", "React + TypeScript", "Streamlit"],
             },
           ].map((g) => {
             const loop = [...g.items, ...g.items];
             return (
               <div key={g.label} className="flex flex-col sm:flex-row sm:items-center gap-x-4 gap-y-1.5">
-                <span className="shrink-0 sm:w-24 text-[10px] uppercase tracking-[0.2em] text-stone-500 font-medium">
+                <span className={`shrink-0 sm:w-28 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] font-semibold ${g.labelCls}`}>
+                  <span className={`w-1.5 h-1.5 rounded-full ${g.dot}`} />
                   {g.label}
                 </span>
                 <div className="relative flex-1 overflow-hidden">
                   <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-white/90 to-transparent z-10" />
                   <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-white/90 to-transparent z-10" />
                   <div className="flex w-max animate-marquee gap-1.5">
-                    {loop.map((t, i) => (
+                    {loop.map((name, i) => (
                       <span
                         key={i}
-                        className="shrink-0 inline-flex items-center rounded-full border border-stone-300 bg-white px-3 py-1 text-[12px] font-medium text-stone-700"
+                        className={`shrink-0 inline-flex items-center rounded-full border px-3 py-1 text-[12px] font-medium ${g.chip}`}
                       >
-                        {t.name}
+                        {name}
                       </span>
                     ))}
                   </div>
@@ -304,7 +302,7 @@ function PortfolioPage() {
                     Live
                   </span>
                 </div>
-                <div className="mt-3 text-xl font-semibold text-stone-900 leading-tight tracking-tight">{p.title}</div>
+                <div className="mt-3 text-2xl font-semibold text-stone-900 leading-tight tracking-tight">{p.title}</div>
                 <p className="mt-2 text-[13px] italic text-rose-700/90 leading-snug">{p.blurb}</p>
                 <div className="mt-2 text-[10px] text-stone-500 uppercase tracking-wider">{p.sub}</div>
                 <ToolIcons tools={p.tools} />
@@ -379,6 +377,96 @@ function PortfolioPage() {
           </div>
 
           <div className="md:col-span-8 space-y-6">
+            <div className="rounded-xl border border-orange-200 bg-orange-50/40 p-5">
+              <div className="text-xs uppercase tracking-[0.22em] text-orange-700 font-bold mb-5">Live signals</div>
+              <div className="grid grid-cols-3 gap-4">
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-orange-900 leading-none">286</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Roles / run</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-orange-900 leading-none">130+</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Companies tracked</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-orange-900 leading-none">~3 min</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Pipeline end-to-end</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-stone-200 bg-stone-50/40 p-5">
+              <div className="text-xs uppercase tracking-[0.22em] text-stone-700 font-bold mb-5">Agent signals</div>
+              <div className="grid grid-cols-3 gap-4">
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-stone-900 leading-none">8am ET</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Daily cron trigger</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-stone-900 leading-none">0</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Manual touches / run</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-stone-900 leading-none">4</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Tools orchestrated</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-emerald-200 bg-emerald-50/40 p-5">
+              <div className="text-xs uppercase tracking-[0.22em] text-emerald-700 font-bold mb-5">Retrieval signals</div>
+              <div className="grid grid-cols-3 gap-4">
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-emerald-900 leading-none">4</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Policy domains indexed</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-emerald-900 leading-none">21</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Doc chunks retrieved</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-emerald-900 leading-none">0 $</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Embedding API cost</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-indigo-200 bg-indigo-50/40 p-5">
+              <div className="text-xs uppercase tracking-[0.22em] text-indigo-700 font-bold mb-5">Inference signals</div>
+              <div className="grid grid-cols-3 gap-4">
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-indigo-900 leading-none">~640ms</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">End-to-end triage</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-indigo-900 leading-none">1</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Claude call / ticket</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-indigo-900 leading-none">JSON</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Structured output</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-rose-200 bg-rose-50/40 p-5">
+              <div className="text-xs uppercase tracking-[0.22em] text-rose-700 font-bold mb-5">Build signals</div>
+              <div className="grid grid-cols-3 gap-4">
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">4</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Dimensions profiled</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">0</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Engineers shipped with</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">Live</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">End-to-end on Lovable</div>
+                </div>
+              </div>
+            </div>
+
             <p className="text-base md:text-lg leading-relaxed text-stone-700">
               An AI-powered pipeline that aggregates live postings from{" "}
               <strong className="text-stone-900">130+ company Applicant Tracking Systems (ATSs)</strong> and
@@ -386,24 +474,6 @@ function PortfolioPage() {
               realistic conversion likelihood, and renders results in a
               filterable web dashboard.
             </p>
-
-            <div className="rounded-xl border border-orange-200 bg-orange-50/40 p-5">
-              <div className="text-[10px] uppercase tracking-[0.2em] text-orange-700 font-semibold mb-4">Live signals</div>
-              <div className="grid grid-cols-3 gap-4">
-                <div>
-                  <div className="text-xl md:text-2xl font-light text-orange-900 leading-none">286</div>
-                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">Roles / run</div>
-                </div>
-                <div>
-                  <div className="text-xl md:text-2xl font-light text-orange-900 leading-none">130+</div>
-                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">Companies tracked</div>
-                </div>
-                <div>
-                  <div className="text-xl md:text-2xl font-light text-orange-900 leading-none">~3 min</div>
-                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">Pipeline end-to-end</div>
-                </div>
-              </div>
-            </div>
 
             <figure className="mt-8">
               <img
@@ -492,24 +562,6 @@ function PortfolioPage() {
               to my inbox. Built in n8n, deployed on Railway, persisted in
               Supabase, sent via Resend.
             </p>
-
-            <div className="rounded-xl border border-stone-200 bg-stone-50/40 p-5">
-              <div className="text-[10px] uppercase tracking-[0.2em] text-stone-700 font-semibold mb-4">Agent signals</div>
-              <div className="grid grid-cols-3 gap-4">
-                <div>
-                  <div className="text-xl md:text-2xl font-light text-stone-900 leading-none">8am ET</div>
-                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">Daily cron trigger</div>
-                </div>
-                <div>
-                  <div className="text-xl md:text-2xl font-light text-stone-900 leading-none">0</div>
-                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">Manual touches / run</div>
-                </div>
-                <div>
-                  <div className="text-xl md:text-2xl font-light text-stone-900 leading-none">4</div>
-                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">Tools orchestrated</div>
-                </div>
-              </div>
-            </div>
 
             <figure>
               <img
@@ -607,24 +659,6 @@ function PortfolioPage() {
               A live chatbot that answers <strong className="text-stone-900">financial services compliance questions</strong> — streams Claude's responses token by token, grounds every answer in retrieved policy passages, and falls back honestly when the docs don't cover the question. Built to mirror the internal tooling a regulated fintech (Revolut, Ramp, Stripe) actually needs.
             </p>
 
-            <div className="rounded-xl border border-emerald-200 bg-emerald-50/40 p-5">
-              <div className="text-[10px] uppercase tracking-[0.2em] text-emerald-700 font-semibold mb-4">Retrieval signals</div>
-              <div className="grid grid-cols-3 gap-4">
-                <div>
-                  <div className="text-xl md:text-2xl font-light text-emerald-900 leading-none">4</div>
-                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">Policy domains indexed</div>
-                </div>
-                <div>
-                  <div className="text-xl md:text-2xl font-light text-emerald-900 leading-none">21</div>
-                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">Doc chunks retrieved</div>
-                </div>
-                <div>
-                  <div className="text-xl md:text-2xl font-light text-emerald-900 leading-none">0 $</div>
-                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">Embedding API cost</div>
-                </div>
-              </div>
-            </div>
-
             <figure>
               <img
                 src={complianceRagImg}
@@ -711,24 +745,6 @@ function PortfolioPage() {
               first-response so human agents start from a working reply
               instead of a blank box.
             </p>
-
-            <div className="rounded-xl border border-indigo-200 bg-indigo-50/40 p-5">
-              <div className="text-[10px] uppercase tracking-[0.2em] text-indigo-700 font-semibold mb-4">Inference signals</div>
-              <div className="grid grid-cols-3 gap-4">
-                <div>
-                  <div className="text-xl md:text-2xl font-light text-indigo-900 leading-none">~640ms</div>
-                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">End-to-end triage</div>
-                </div>
-                <div>
-                  <div className="text-xl md:text-2xl font-light text-indigo-900 leading-none">1</div>
-                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">Claude call / ticket</div>
-                </div>
-                <div>
-                  <div className="text-xl md:text-2xl font-light text-indigo-900 leading-none">JSON</div>
-                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">Structured output</div>
-                </div>
-              </div>
-            </div>
 
             {/* Mock Streamlit UI render */}
             <figure>
@@ -870,24 +886,6 @@ function PortfolioPage() {
               techniques to wear it well. Built end-to-end with Lovable: zero
               engineering team, shipped and live.
             </p>
-
-            <div className="rounded-xl border border-rose-200 bg-rose-50/40 p-5">
-              <div className="text-[10px] uppercase tracking-[0.2em] text-rose-700 font-semibold mb-4">Build signals</div>
-              <div className="grid grid-cols-3 gap-4">
-                <div>
-                  <div className="text-xl md:text-2xl font-light text-rose-900 leading-none">4</div>
-                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">Dimensions profiled</div>
-                </div>
-                <div>
-                  <div className="text-xl md:text-2xl font-light text-rose-900 leading-none">0</div>
-                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">Engineers shipped with</div>
-                </div>
-                <div>
-                  <div className="text-xl md:text-2xl font-light text-rose-900 leading-none">Live</div>
-                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">End-to-end on Lovable</div>
-                </div>
-              </div>
-            </div>
 
             <div className="mt-8 space-y-4">
               <figure>
