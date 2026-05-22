@@ -107,7 +107,7 @@ function ToolIcons({ tools }: { tools: string[] }) {
   if (withLogos.length === 0) return null;
   return (
     <TooltipProvider delayDuration={100}>
-      <div className="mt-3 flex items-center gap-2">
+      <div className="mt-3 flex flex-wrap items-center gap-1.5">
         {withLogos.map((t) => {
           const logo = TOOL_LOGOS[t]!;
           const Icon = logo.icon;
@@ -115,12 +115,12 @@ function ToolIcons({ tools }: { tools: string[] }) {
             <Tooltip key={t}>
               <TooltipTrigger asChild>
                 <span
-                  className={`inline-flex items-center justify-center w-9 h-9 rounded-full ring-1 shadow-sm cursor-default ${logo.bg}`}
+                  className={`inline-flex items-center justify-center w-7 h-7 rounded-full ring-1 shadow-sm cursor-default ${logo.bg}`}
                 >
                   {Icon ? (
-                    <Icon className={`w-5 h-5 ${logo.iconClass ?? ""}`} strokeWidth={2} />
+                    <Icon className={`w-4 h-4 ${logo.iconClass ?? ""}`} strokeWidth={2} />
                   ) : (
-                    <img src={logo.src} alt={t} className="w-5 h-5" loading="lazy" />
+                    <img src={logo.src} alt={t} className="w-4 h-4" loading="lazy" />
                   )}
                 </span>
               </TooltipTrigger>
@@ -157,44 +157,43 @@ function GradientDivider() {
 function PortfolioPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#fdf8f3] via-[#faf3ec] to-[#f5ede2] text-stone-900">
-      {/* Author badge — fixed corner */}
-      <div className="fixed top-5 right-5 z-50 w-[240px] rounded-xl border border-stone-200 bg-white px-3.5 py-2.5 shadow-md shadow-stone-900/5">
-        <p className="text-[13px] leading-snug font-medium text-stone-900 whitespace-nowrap">
-          Built &amp; shipped by{" "}
-          <span className="text-amber-800 font-semibold">Aylin Uyar</span>.
-        </p>
-        <div className="mt-2 grid grid-cols-2 gap-1.5 border-t border-stone-200 pt-2">
-          <a
-            href="https://github.com/aylineuyar-arch"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="GitHub"
-            className="flex items-center justify-center gap-1.5 rounded-lg bg-stone-900 px-2 py-1.5 text-white text-xs font-medium transition-transform hover:scale-[1.02]"
-          >
-            <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="currentColor" aria-hidden="true">
-              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-            </svg>
-            GitHub
-          </a>
-          <a
-            href="https://www.linkedin.com/in/aylinuyar/"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn"
-            className="flex items-center justify-center gap-1.5 rounded-lg bg-[#0A66C2] px-2 py-1.5 text-white text-xs font-medium transition-transform hover:scale-[1.02]"
-          >
-            <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="currentColor" aria-hidden="true">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.268 2.37 4.268 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-            </svg>
-            LinkedIn
-          </a>
-        </div>
-      </div>
-
-
       {/* Hero */}
-      <header className="mx-auto max-w-6xl px-6 pt-4 pb-16 md:pt-6 md:pb-20">
-        <h1 className="mt-6 text-5xl md:text-7xl font-light leading-[1.05] tracking-tight flex flex-wrap items-end gap-x-5 gap-y-2">
+      <header className="relative mx-auto max-w-6xl px-6 pt-4 pb-16 md:pt-6 md:pb-20">
+        {/* Author badge — aligned with name title */}
+        <div className="absolute top-12 right-6 z-40 w-[230px] rounded-xl border border-stone-200 bg-white px-3.5 py-2.5 shadow-md shadow-stone-900/5">
+          <p className="text-[13px] leading-snug font-medium text-stone-900 whitespace-nowrap">
+            Built &amp; shipped by{" "}
+            <span className="text-amber-800 font-semibold">Aylin Uyar</span>.
+          </p>
+          <div className="mt-2 grid grid-cols-2 gap-1.5 border-t border-stone-200 pt-2">
+            <a
+              href="https://github.com/aylineuyar-arch"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+              className="flex items-center justify-center gap-1.5 rounded-lg bg-stone-900 px-2 py-1.5 text-white text-xs font-medium transition-transform hover:scale-[1.02]"
+            >
+              <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="currentColor" aria-hidden="true">
+                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+              </svg>
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/aylinuyar/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+              className="flex items-center justify-center gap-1.5 rounded-lg bg-[#0A66C2] px-2 py-1.5 text-white text-xs font-medium transition-transform hover:scale-[1.02]"
+            >
+              <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="currentColor" aria-hidden="true">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.268 2.37 4.268 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <h1 className="mt-6 text-5xl md:text-7xl font-light leading-[1.05] tracking-tight flex flex-wrap items-end gap-x-5 gap-y-2 pr-[250px]">
           <span>Aylin Uyar</span>
           <span className="text-base md:text-lg uppercase tracking-[0.3em] text-amber-800 font-medium pb-2 md:pb-3">
             AI Portfolio
@@ -211,7 +210,7 @@ function PortfolioPage() {
         </p>
 
         {/* Tools & concepts — 3 scannable marquee rows */}
-        <div className="mt-8 rounded-2xl border border-stone-300/70 bg-white/60 backdrop-blur-sm p-5 md:p-6 space-y-5">
+        <div className="mt-8 max-w-3xl rounded-2xl border border-stone-300/70 bg-white/60 backdrop-blur-sm p-5 md:p-6 space-y-5">
           {[
             {
               label: "AI",
@@ -229,7 +228,7 @@ function PortfolioPage() {
             const loop = [...g.items, ...g.items, ...g.items];
             return (
               <div key={g.label} className="flex flex-col sm:flex-row sm:items-center gap-x-5 gap-y-3">
-                <span className="shrink-0 sm:w-32 text-sm uppercase tracking-[0.22em] text-amber-800 font-semibold">
+                <span className="shrink-0 sm:w-28 text-sm uppercase tracking-[0.22em] text-amber-800 font-semibold">
                   {g.label}
                 </span>
                 <div className="relative flex-1 overflow-hidden">
@@ -252,69 +251,29 @@ function PortfolioPage() {
           })}
         </div>
 
-        {/* Portfolio scope — what this body of work spans */}
-        <div className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl">
-          {[
-            ["5", "Live AI products"],
-            ["4", "Domains: hiring, comms, compliance, consumer"],
-            ["End-to-end", "Strategy → design → ship"],
-            ["Production", "Real users, real workflows"],
-          ].map(([n, l]) => (
-            <div key={l} className="border-l-2 border-rose-300 pl-3">
-              <div className="text-2xl md:text-3xl font-light text-stone-900">{n}</div>
-              <div className="text-[11px] uppercase tracking-wider text-stone-500 mt-0.5">{l}</div>
-            </div>
-          ))}
-        </div>
-
         {/* Project navigation bubbles */}
-        <div className="mt-20 lg:-mx-16 xl:-mx-24">
+        <div className="mt-16 lg:-mx-16 xl:-mx-24">
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 items-stretch">
-            <a href="#project-1" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border border-stone-200 hover:border-amber-700/50 hover:shadow-md hover:-translate-y-0.5 transition-all">
-              <div className="flex items-center justify-between">
-                <span className="text-xs uppercase tracking-wider text-amber-800 font-semibold">No. 01</span>
-                <span className="text-[10px] uppercase tracking-wider text-stone-500">Live</span>
-              </div>
-              <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">AI Job Search Dashboard</div>
-              <div className="mt-1 text-xs text-stone-600">Claude · Python · 130+ Applicant Tracking Systems</div>
-              <ToolIcons tools={["Claude", "Python", "Railway", "ATS"]} />
-            </a>
-            <a href="#project-2" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border border-stone-200 hover:border-amber-700/50 hover:shadow-md hover:-translate-y-0.5 transition-all">
-              <div className="flex items-center justify-between">
-                <span className="text-xs uppercase tracking-wider text-amber-800 font-semibold">No. 02</span>
-                <span className="text-[10px] uppercase tracking-wider text-stone-500">Live</span>
-              </div>
-              <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">Agentic AI Email Generator</div>
-              <div className="mt-1 text-xs text-stone-600">Claude · n8n · Railway · 8am ET</div>
-              <ToolIcons tools={["Claude", "n8n", "Railway", "Resend", "Supabase"]} />
-            </a>
-            <a href="#project-3" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border border-stone-200 hover:border-amber-700/50 hover:shadow-md hover:-translate-y-0.5 transition-all">
-              <div className="flex items-center justify-between">
-                <span className="text-xs uppercase tracking-wider text-amber-800 font-semibold">No. 03</span>
-                <span className="text-[10px] uppercase tracking-wider text-stone-500">Live</span>
-              </div>
-              <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">Compliance RAG Chatbot</div>
-              <div className="mt-1 text-xs text-stone-600">Financial services · Python</div>
-              <ToolIcons tools={["Claude", "Python", "Streamlit", "RAG"]} />
-            </a>
-            <a href="#project-4" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border border-stone-200 hover:border-amber-700/50 hover:shadow-md hover:-translate-y-0.5 transition-all">
-              <div className="flex items-center justify-between">
-                <span className="text-xs uppercase tracking-wider text-amber-800 font-semibold">No. 04</span>
-                <span className="text-[10px] uppercase tracking-wider text-stone-500">Live</span>
-              </div>
-              <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">AI Customer Service Triage</div>
-              <div className="mt-1 text-xs text-stone-600">Claude · Python · NLP routing</div>
-              <ToolIcons tools={["Claude", "Python", "Triage", "NLP"]} />
-            </a>
-            <a href="#project-5" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border border-stone-200 hover:border-amber-700/50 hover:shadow-md hover:-translate-y-0.5 transition-all">
-              <div className="flex items-center justify-between">
-                <span className="text-xs uppercase tracking-wider text-amber-800 font-semibold">No. 05</span>
-                <span className="text-[10px] uppercase tracking-wider text-stone-500">Live</span>
-              </div>
-              <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">Aura — Makeup Assistant</div>
-              <div className="mt-1 text-xs text-stone-600">Lovable · React · Claude</div>
-              <ToolIcons tools={["Lovable", "React", "TypeScript", "Claude"]} />
-            </a>
+            {[
+              { num: "No. 01", id: "project-1", title: "AI Job Search Dashboard", sub: "Claude · Python · 130+ Applicant Tracking Systems", tools: ["Claude", "Python", "Railway", "ATS"] },
+              { num: "No. 02", id: "project-2", title: "Agentic AI Email Generator", sub: "Claude · n8n · Railway · 8am ET", tools: ["Claude", "n8n", "Railway", "Resend", "Supabase"] },
+              { num: "No. 03", id: "project-3", title: "Compliance RAG Chatbot", sub: "Financial services · Python", tools: ["Claude", "Python", "Streamlit", "RAG"] },
+              { num: "No. 04", id: "project-4", title: "AI Customer Service Triage", sub: "Claude · Python · NLP routing", tools: ["Claude", "Python", "Triage", "NLP"] },
+              { num: "No. 05", id: "project-5", title: "Aura — Makeup Assistant", sub: "Lovable · React · Claude", tools: ["Lovable", "React", "TypeScript", "Claude"] },
+            ].map((p) => (
+              <a key={p.id} href={`#${p.id}`} className="block p-5 rounded-2xl bg-white/80 backdrop-blur border border-stone-200 hover:border-rose-400 hover:shadow-md hover:-translate-y-0.5 transition-all">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs uppercase tracking-wider text-rose-600 font-semibold">{p.num}</span>
+                  <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                    Live
+                  </span>
+                </div>
+                <div className="mt-3 text-base font-medium text-stone-900 leading-snug">{p.title}</div>
+                <div className="mt-1 text-xs text-stone-600">{p.sub}</div>
+                <ToolIcons tools={p.tools} />
+              </a>
+            ))}
           </div>
         </div>
       </header>
