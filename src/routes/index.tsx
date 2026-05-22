@@ -159,7 +159,7 @@ function PortfolioPage() {
     <main className="min-h-screen bg-gradient-to-b from-[#fdf8f3] via-[#faf3ec] to-[#f5ede2] text-stone-900">
       {/* Author badge — fixed corner */}
       <div className="fixed top-5 right-5 z-50 w-[360px] rounded-2xl border border-stone-200 bg-white px-5 py-4 shadow-lg shadow-stone-900/5">
-        <p className="text-sm leading-snug font-medium text-stone-900">
+        <p className="text-sm leading-snug font-medium text-stone-900 whitespace-nowrap">
           Designed, built &amp; shipped by{" "}
           <span className="text-amber-800 font-semibold">Aylin Uyar</span>.
         </p>
