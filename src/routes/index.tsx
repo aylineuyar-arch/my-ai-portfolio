@@ -223,6 +223,8 @@ function PortfolioPage() {
           ))}
         </div>
 
+        <div className="mt-8 h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent" />
+
         {/* Tools & concepts — pills tinted with brand colors matching project icons */}
         <div className="mt-6 rounded-2xl border border-stone-300/70 bg-white/60 backdrop-blur-sm p-3 md:p-4 space-y-2.5">
           {[
