@@ -237,7 +237,7 @@ function PortfolioPage() {
                       Live
                     </span>
                   </div>
-                  <div className="mt-3 text-[15px] font-semibold text-rose-700 leading-tight tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">{p.title}</div>
+                  <div className="mt-3 text-[15px] font-semibold text-stone-900 leading-tight tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">{p.title}</div>
                   <p className="mt-2 text-[13px] text-stone-600 leading-snug">{p.blurb}</p>
                   <div className="mt-auto pt-3 flex flex-nowrap -space-x-1.5">
                     {logos.slice(0, 4).map((t) => {
