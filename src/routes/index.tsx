@@ -305,8 +305,8 @@ function PortfolioPage() {
                     Live
                   </span>
                 </div>
-                <div className="mt-3 text-base font-medium text-stone-900 leading-snug">{p.title}</div>
-                <div className="mt-1 text-xs text-stone-600">{p.sub}</div>
+                <div className="mt-3 text-lg font-semibold text-stone-900 leading-snug tracking-tight">{p.title}</div>
+                <div className="mt-1.5 text-[11px] text-stone-500 uppercase tracking-wider">{p.sub}</div>
                 <ToolIcons tools={p.tools} />
               </a>
             ))}
