@@ -287,7 +287,7 @@ function PortfolioPage() {
         <div className="mt-10 h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent" />
 
         {/* Project navigation bubbles */}
-        <div className="mt-10">
+        <div className="mt-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 items-stretch">
             {[
               { num: "No. 01", id: "project-1", title: "AI Job Search Dashboard", blurb: "Scores 130+ ATS feeds for fit and conversion likelihood.", sub: "Claude · Python · Railway", tools: ["Claude", "Python", "Railway", "ATS"] },
