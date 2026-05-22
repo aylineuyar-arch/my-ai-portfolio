@@ -218,7 +218,7 @@ function PortfolioPage() {
           ].map(([value, label]) => (
             <div key={label} className="rounded-xl border border-rose-100 bg-white px-3.5 py-2.5 flex items-baseline gap-2">
               <span className="text-lg md:text-xl font-medium tracking-tight text-rose-600 leading-none">{value}</span>
-              <span className="text-[11px] uppercase tracking-[0.14em] text-stone-500 leading-snug">{label}</span>
+              <span className="text-[11px] uppercase tracking-[0.14em] text-stone-700 leading-snug">{label}</span>
             </div>
           ))}
         </div>
