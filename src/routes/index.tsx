@@ -259,7 +259,7 @@ function PortfolioPage() {
               ],
             },
           ].map((g) => {
-            const loop = [...g.items, ...g.items, ...g.items];
+            const loop = [...g.items, ...g.items];
             return (
               <div key={g.label} className="flex flex-col sm:flex-row sm:items-center gap-x-4 gap-y-1.5">
                 <span className="shrink-0 sm:w-24 text-[10px] uppercase tracking-[0.2em] text-stone-500 font-medium">
