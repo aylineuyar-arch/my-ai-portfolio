@@ -289,10 +289,10 @@ function PortfolioPage() {
               items: ["Python", "SQL", "Supabase / Postgres", "React + TypeScript", "Streamlit"],
             },
           ].map((g) => {
-            const loop = [...g.items, ...g.items];
+            const loop = [...g.items, ...g.items, ...g.items, ...g.items];
             return (
-              <div key={g.label} className="flex flex-col sm:flex-row sm:items-center gap-x-4 gap-y-1">
-                <span className={`shrink-0 sm:w-28 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] font-semibold ${g.labelCls}`}>
+              <div key={g.label} className="flex flex-col sm:flex-row sm:items-center gap-x-3 gap-y-1">
+                <span className={`shrink-0 sm:w-24 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] font-semibold ${g.labelCls}`}>
                   <span className={`w-1.5 h-1.5 rounded-full ${g.dot}`} />
                   {g.label}
                 </span>
