@@ -384,7 +384,7 @@ function PortfolioPage() {
 
           <div className="md:col-span-8 space-y-6">
 
-            <div className="rounded-xl border border-orange-200 bg-orange-50/40 p-5">
+            <div className="rounded-xl border border-stone-200 bg-white p-5">
               <div className="text-xs uppercase tracking-[0.22em] text-orange-700 font-bold mb-5">Live signals</div>
               <div className="grid grid-cols-3 gap-4">
                 <div>
@@ -489,7 +489,7 @@ function PortfolioPage() {
               </p>
             </div>
 
-            <div className="rounded-xl border border-stone-200 bg-stone-50/40 p-5">
+            <div className="rounded-xl border border-stone-200 bg-white p-5">
               <div className="text-xs uppercase tracking-[0.22em] text-stone-700 font-bold mb-5">Agent signals</div>
               <div className="grid grid-cols-3 gap-4">
                 <div>
@@ -608,7 +608,7 @@ function PortfolioPage() {
               </p>
             </div>
 
-            <div className="rounded-xl border border-emerald-200 bg-emerald-50/40 p-5">
+            <div className="rounded-xl border border-stone-200 bg-white p-5">
               <div className="text-xs uppercase tracking-[0.22em] text-emerald-700 font-bold mb-5">Retrieval signals</div>
               <div className="grid grid-cols-3 gap-4">
                 <div>
@@ -710,7 +710,7 @@ function PortfolioPage() {
               </p>
             </div>
 
-            <div className="rounded-xl border border-indigo-200 bg-indigo-50/40 p-5">
+            <div className="rounded-xl border border-stone-200 bg-white p-5">
               <div className="text-xs uppercase tracking-[0.22em] text-indigo-700 font-bold mb-5">Inference signals</div>
               <div className="grid grid-cols-3 gap-4">
                 <div>
@@ -866,7 +866,7 @@ function PortfolioPage() {
           </div>
 
           <div className="md:col-span-8 space-y-6">
-            <div className="rounded-xl border border-rose-200 bg-rose-50/40 p-5">
+            <div className="rounded-xl border border-stone-200 bg-white p-5">
               <div className="text-xs uppercase tracking-[0.22em] text-rose-700 font-bold mb-5">Build signals</div>
               <div className="grid grid-cols-3 gap-4">
                 <div>
