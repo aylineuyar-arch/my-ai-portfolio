@@ -223,16 +223,51 @@ function PortfolioPage() {
           ))}
         </div>
 
-        <div className="mt-8 h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent" />
+        <div className="mt-6 h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent" />
+
+        {/* Project navigation bubbles */}
+        <div className="mt-5 flex items-baseline justify-between">
+          <h3 className="text-xs md:text-sm uppercase tracking-[0.25em] text-stone-700 font-semibold">
+            AI portfolio projects
+          </h3>
+          <span className="text-[11px] text-stone-500 italic">five shipped, all live</span>
+        </div>
+        <div className="mt-3">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3 items-stretch">
+            {[
+              { num: "No. 01", id: "project-1", title: "AI Job Search Dashboard", blurb: "Scores 130+ ATS feeds for fit and conversion likelihood.", sub: "Claude · Python · Railway", tools: ["Claude", "Python", "Railway", "ATS"] },
+              { num: "No. 02", id: "project-2", title: "Agentic Email Generator", blurb: "Always-on agent emails a ranked digest at 8am ET daily.", sub: "n8n · Claude · Supabase", tools: ["Claude", "n8n", "Railway", "Resend", "Supabase"] },
+              { num: "No. 03", id: "project-3", title: "Compliance RAG Chatbot", blurb: "Grounded policy Q&A for regulated financial services teams.", sub: "Claude · Python · Streamlit", tools: ["Claude", "Python", "Streamlit", "RAG"] },
+              { num: "No. 04", id: "project-4", title: "Customer Service Triage", blurb: "Classifies, prioritizes, and drafts replies in under a second.", sub: "Claude · Python · NLP", tools: ["Claude", "Python", "Triage", "NLP"] },
+              { num: "No. 05", id: "project-5", title: "Aura — Makeup Assistant", blurb: "Maps your features to a personalized beauty routine.", sub: "Lovable · React · Claude", tools: ["Lovable", "React", "TypeScript", "Claude"] },
+            ].map((p) => (
+              <a key={p.id} href={`#${p.id}`} className="block p-4 rounded-2xl bg-white/80 backdrop-blur border border-stone-200 hover:border-rose-400 hover:shadow-md hover:-translate-y-0.5 transition-all">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs uppercase tracking-wider text-rose-600 font-semibold">{p.num}</span>
+                  <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                    Live
+                  </span>
+                </div>
+                <div className="mt-2 text-xl font-semibold text-stone-900 leading-tight tracking-tight">{p.title}</div>
+                <p className="mt-1.5 text-[13px] italic text-rose-700/90 leading-snug">{p.blurb}</p>
+                <div className="mt-1.5 text-[10px] text-stone-500 uppercase tracking-wider">{p.sub}</div>
+                <ToolIcons tools={p.tools} />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-6 h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent" />
 
         {/* Demonstrated skills — category-colored marquee */}
-        <div className="mt-6 flex items-baseline justify-between">
+        <div className="mt-5 flex items-baseline justify-between">
           <h3 className="text-xs md:text-sm uppercase tracking-[0.25em] text-stone-700 font-semibold">
             Demonstrated skills
           </h3>
           <span className="text-[11px] text-stone-500 italic">color-coded by category</span>
         </div>
-        <div className="mt-3 rounded-2xl border border-stone-300/70 bg-white/70 backdrop-blur-sm p-4 md:p-5 space-y-3">
+        <div className="mt-3 rounded-2xl border border-stone-300/70 bg-white/70 backdrop-blur-sm p-3 md:p-4 space-y-2">
           {[
             {
               label: "AI",
@@ -258,7 +293,7 @@ function PortfolioPage() {
           ].map((g) => {
             const loop = [...g.items, ...g.items];
             return (
-              <div key={g.label} className="flex flex-col sm:flex-row sm:items-center gap-x-4 gap-y-1.5">
+              <div key={g.label} className="flex flex-col sm:flex-row sm:items-center gap-x-4 gap-y-1">
                 <span className={`shrink-0 sm:w-28 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] font-semibold ${g.labelCls}`}>
                   <span className={`w-1.5 h-1.5 rounded-full ${g.dot}`} />
                   {g.label}
@@ -280,35 +315,6 @@ function PortfolioPage() {
               </div>
             );
           })}
-        </div>
-
-        <div className="mt-10 h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent" />
-
-        {/* Project navigation bubbles */}
-        <div className="mt-8">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 items-stretch">
-            {[
-              { num: "No. 01", id: "project-1", title: "AI Job Search Dashboard", blurb: "Scores 130+ ATS feeds for fit and conversion likelihood.", sub: "Claude · Python · Railway", tools: ["Claude", "Python", "Railway", "ATS"] },
-              { num: "No. 02", id: "project-2", title: "Agentic Email Generator", blurb: "Always-on agent emails a ranked digest at 8am ET daily.", sub: "n8n · Claude · Supabase", tools: ["Claude", "n8n", "Railway", "Resend", "Supabase"] },
-              { num: "No. 03", id: "project-3", title: "Compliance RAG Chatbot", blurb: "Grounded policy Q&A for regulated financial services teams.", sub: "Claude · Python · Streamlit", tools: ["Claude", "Python", "Streamlit", "RAG"] },
-              { num: "No. 04", id: "project-4", title: "Customer Service Triage", blurb: "Classifies, prioritizes, and drafts replies in under a second.", sub: "Claude · Python · NLP", tools: ["Claude", "Python", "Triage", "NLP"] },
-              { num: "No. 05", id: "project-5", title: "Aura — Makeup Assistant", blurb: "Maps your features to a personalized beauty routine.", sub: "Lovable · React · Claude", tools: ["Lovable", "React", "TypeScript", "Claude"] },
-            ].map((p) => (
-              <a key={p.id} href={`#${p.id}`} className="block p-5 rounded-2xl bg-white/80 backdrop-blur border border-stone-200 hover:border-rose-400 hover:shadow-md hover:-translate-y-0.5 transition-all">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs uppercase tracking-wider text-rose-600 font-semibold">{p.num}</span>
-                  <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                    Live
-                  </span>
-                </div>
-                <div className="mt-3 text-2xl font-semibold text-stone-900 leading-tight tracking-tight">{p.title}</div>
-                <p className="mt-2 text-[13px] italic text-rose-700/90 leading-snug">{p.blurb}</p>
-                <div className="mt-2 text-[10px] text-stone-500 uppercase tracking-wider">{p.sub}</div>
-                <ToolIcons tools={p.tools} />
-              </a>
-            ))}
-          </div>
         </div>
       </header>
 
