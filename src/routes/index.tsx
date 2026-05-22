@@ -237,18 +237,20 @@ function PortfolioPage() {
                       Live
                     </span>
                   </div>
-                  <div className="mt-2 flex flex-nowrap -space-x-1.5 justify-end overflow-hidden">
-                    {logos.slice(0, 4).map((t) => {
-                      const logo = TOOL_LOGOS[t]!;
-                      const Icon = logo.icon;
-                      return (
-                        <span key={t} title={t} className={`inline-flex shrink-0 items-center justify-center w-8 h-8 rounded-full ring-1 ring-white shadow-sm ${logo.bg}`}>
-                          {Icon ? <Icon className={`w-4 h-4 ${logo.iconClass ?? ""}`} strokeWidth={2} /> : <img src={logo.src} alt={t} className="w-4 h-4" loading="lazy" />}
-                        </span>
-                      );
-                    })}
+                  <div className="mt-3 flex items-center justify-between gap-2">
+                    <div className="text-[16px] font-semibold text-stone-900 leading-tight tracking-tight flex-1 min-w-0">{p.title}</div>
+                    <div className="flex flex-nowrap -space-x-1.5 shrink-0">
+                      {logos.slice(0, 4).map((t) => {
+                        const logo = TOOL_LOGOS[t]!;
+                        const Icon = logo.icon;
+                        return (
+                          <span key={t} title={t} className={`inline-flex shrink-0 items-center justify-center w-7 h-7 rounded-full ring-1 ring-white shadow-sm ${logo.bg}`}>
+                            {Icon ? <Icon className={`w-3.5 h-3.5 ${logo.iconClass ?? ""}`} strokeWidth={2} /> : <img src={logo.src} alt={t} className="w-3.5 h-3.5" loading="lazy" />}
+                          </span>
+                        );
+                      })}
+                    </div>
                   </div>
-                  <div className="mt-3 text-[16px] font-semibold text-stone-900 leading-tight tracking-tight">{p.title}</div>
                   <p className="mt-2 text-[13px] text-stone-600 leading-snug">{p.blurb}</p>
                 </a>
               );
