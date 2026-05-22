@@ -178,18 +178,18 @@ function PortfolioPage() {
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"
-            className="text-stone-600 hover:text-amber-800 transition-colors"
+            className="text-stone-700 hover:text-amber-800 transition-colors"
           >
-            <Github className="h-5 w-5" />
+            <Github className="h-7 w-7" strokeWidth={1.75} />
           </a>
           <a
             href="https://www.linkedin.com/in/aylinuyar/"
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
-            className="text-stone-600 hover:text-amber-800 transition-colors"
+            className="text-stone-700 hover:text-amber-800 transition-colors"
           >
-            <Linkedin className="h-5 w-5" />
+            <Linkedin className="h-7 w-7" strokeWidth={1.75} />
           </a>
         </div>
       </div>
