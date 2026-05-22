@@ -159,8 +159,8 @@ function PortfolioPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#fdf8f3] via-[#faf3ec] to-[#f5ede2] text-stone-900">
       {/* Built & shipped badge — fixed top right */}
-      <div className="fixed top-4 right-4 z-50 w-[220px] rounded-xl border border-rose-200 bg-white/95 backdrop-blur px-3.5 py-2.5 shadow-lg shadow-rose-900/10">
-        <p className="text-[12px] leading-snug font-medium text-stone-900">
+      <div className="fixed top-4 right-4 z-50 w-[244px] rounded-xl border border-rose-200 bg-white/95 backdrop-blur px-4 py-3 shadow-lg shadow-rose-900/10">
+        <p className="text-[13.5px] leading-snug font-medium text-stone-900">
           Built &amp; shipped by{" "}
           <span className="text-rose-600 font-semibold">Aylin Uyar</span>.
         </p>
