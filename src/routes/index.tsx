@@ -377,6 +377,7 @@ function PortfolioPage() {
           </div>
 
           <div className="md:col-span-8 space-y-6">
+
             <div className="rounded-xl border border-orange-200 bg-orange-50/40 p-5">
               <div className="text-xs uppercase tracking-[0.22em] text-orange-700 font-bold mb-5">Live signals</div>
               <div className="grid grid-cols-3 gap-4">
@@ -391,78 +392,6 @@ function PortfolioPage() {
                 <div>
                   <div className="text-3xl md:text-4xl font-semibold tracking-tight text-orange-900 leading-none">~3 min</div>
                   <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Pipeline end-to-end</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-xl border border-stone-200 bg-stone-50/40 p-5">
-              <div className="text-xs uppercase tracking-[0.22em] text-stone-700 font-bold mb-5">Agent signals</div>
-              <div className="grid grid-cols-3 gap-4">
-                <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-stone-900 leading-none">8am ET</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Daily cron trigger</div>
-                </div>
-                <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-stone-900 leading-none">0</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Manual touches / run</div>
-                </div>
-                <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-stone-900 leading-none">4</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Tools orchestrated</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-xl border border-emerald-200 bg-emerald-50/40 p-5">
-              <div className="text-xs uppercase tracking-[0.22em] text-emerald-700 font-bold mb-5">Retrieval signals</div>
-              <div className="grid grid-cols-3 gap-4">
-                <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-emerald-900 leading-none">4</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Policy domains indexed</div>
-                </div>
-                <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-emerald-900 leading-none">21</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Doc chunks retrieved</div>
-                </div>
-                <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-emerald-900 leading-none">0 $</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Embedding API cost</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-xl border border-indigo-200 bg-indigo-50/40 p-5">
-              <div className="text-xs uppercase tracking-[0.22em] text-indigo-700 font-bold mb-5">Inference signals</div>
-              <div className="grid grid-cols-3 gap-4">
-                <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-indigo-900 leading-none">~640ms</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">End-to-end triage</div>
-                </div>
-                <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-indigo-900 leading-none">1</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Claude call / ticket</div>
-                </div>
-                <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-indigo-900 leading-none">JSON</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Structured output</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-xl border border-rose-200 bg-rose-50/40 p-5">
-              <div className="text-xs uppercase tracking-[0.22em] text-rose-700 font-bold mb-5">Build signals</div>
-              <div className="grid grid-cols-3 gap-4">
-                <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">4</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Dimensions profiled</div>
-                </div>
-                <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">0</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Engineers shipped with</div>
-                </div>
-                <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">Live</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">End-to-end on Lovable</div>
                 </div>
               </div>
             </div>
@@ -552,6 +481,24 @@ function PortfolioPage() {
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
                 Project 01 is a <strong className="text-stone-900">Python pipeline</strong> I run on-demand — I pull the data into a dashboard when I want it. This one is an <strong className="text-stone-900">always-on agent</strong> in n8n that runs itself on a daily cron and pushes a ranked digest to my inbox — the data comes to me. Same problem, deliberately different architectures: scripted pull vs. agentic push, code-first vs. visual orchestration.
               </p>
+            </div>
+
+            <div className="rounded-xl border border-stone-200 bg-stone-50/40 p-5">
+              <div className="text-xs uppercase tracking-[0.22em] text-stone-700 font-bold mb-5">Agent signals</div>
+              <div className="grid grid-cols-3 gap-4">
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-stone-900 leading-none">8am ET</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Daily cron trigger</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-stone-900 leading-none">0</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Manual touches / run</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-stone-900 leading-none">4</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Tools orchestrated</div>
+                </div>
+              </div>
             </div>
 
             <p className="text-base md:text-lg leading-relaxed text-stone-700">
@@ -655,6 +602,24 @@ function PortfolioPage() {
               </p>
             </div>
 
+            <div className="rounded-xl border border-emerald-200 bg-emerald-50/40 p-5">
+              <div className="text-xs uppercase tracking-[0.22em] text-emerald-700 font-bold mb-5">Retrieval signals</div>
+              <div className="grid grid-cols-3 gap-4">
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-emerald-900 leading-none">4</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Policy domains indexed</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-emerald-900 leading-none">21</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Doc chunks retrieved</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-emerald-900 leading-none">0 $</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Embedding API cost</div>
+                </div>
+              </div>
+            </div>
+
             <p className="text-base md:text-lg leading-relaxed text-stone-700">
               A live chatbot that answers <strong className="text-stone-900">financial services compliance questions</strong> — streams Claude's responses token by token, grounds every answer in retrieved policy passages, and falls back honestly when the docs don't cover the question. Built to mirror the internal tooling a regulated fintech (Revolut, Ramp, Stripe) actually needs.
             </p>
@@ -737,6 +702,24 @@ function PortfolioPage() {
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
                 Support inboxes are the highest-volume unstructured-text workflow most companies have. Replacing brittle rule-based routing with a single grounded LLM call collapses triage time to sub-second and frees agents to start from a working draft instead of a blank box — directly relevant to ops, CX, and AI deployment roles.
               </p>
+            </div>
+
+            <div className="rounded-xl border border-indigo-200 bg-indigo-50/40 p-5">
+              <div className="text-xs uppercase tracking-[0.22em] text-indigo-700 font-bold mb-5">Inference signals</div>
+              <div className="grid grid-cols-3 gap-4">
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-indigo-900 leading-none">~640ms</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">End-to-end triage</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-indigo-900 leading-none">1</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Claude call / ticket</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-indigo-900 leading-none">JSON</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Structured output</div>
+                </div>
+              </div>
             </div>
 
             <p className="text-base md:text-lg leading-relaxed text-stone-700">
@@ -877,6 +860,24 @@ function PortfolioPage() {
           </div>
 
           <div className="md:col-span-8 space-y-6">
+            <div className="rounded-xl border border-rose-200 bg-rose-50/40 p-5">
+              <div className="text-xs uppercase tracking-[0.22em] text-rose-700 font-bold mb-5">Build signals</div>
+              <div className="grid grid-cols-3 gap-4">
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">4</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Dimensions profiled</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">0</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Engineers shipped with</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">Live</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">End-to-end on Lovable</div>
+                </div>
+              </div>
+            </div>
+
             <p className="text-base md:text-lg leading-relaxed text-stone-700">
               Aura maps your{" "}
               <strong className="text-stone-900">
