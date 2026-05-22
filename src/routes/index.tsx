@@ -211,7 +211,7 @@ function PortfolioPage() {
         {/* Combined section header — credibility number + section title */}
         <div className="mt-8 flex items-baseline justify-between gap-4 flex-wrap">
           <div className="flex items-baseline gap-3">
-            <span className="text-4xl md:text-5xl font-medium tracking-tight text-rose-600 leading-none">5</span>
+            <span className="text-3xl md:text-4xl font-medium tracking-tight text-rose-600 leading-none">5</span>
             <h3 className="text-base md:text-lg uppercase tracking-[0.18em] text-stone-700 font-semibold">
               AI portfolio projects live in production
             </h3>
