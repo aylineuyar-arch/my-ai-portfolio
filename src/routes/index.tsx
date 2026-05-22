@@ -158,18 +158,9 @@ function PortfolioPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#fdf8f3] via-[#faf3ec] to-[#f5ede2] text-stone-900">
       {/* Author badge — fixed corner */}
-      <div className="fixed top-5 right-5 z-50 w-[260px] rounded-2xl border-2 border-amber-700/70 bg-white px-4 py-3 shadow-2xl shadow-stone-900/10 ring-4 ring-amber-100/60">
-        <div className="flex items-center gap-2.5">
-          <span className="relative flex h-2.5 w-2.5">
-            <span className="absolute inline-flex h-full w-full rounded-full bg-amber-700 opacity-60 animate-ping" />
-            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-amber-700" />
-          </span>
-          <span className="text-xs uppercase tracking-[0.18em] text-amber-800 font-bold">
-            AI Strategist
-          </span>
-        </div>
-        <p className="mt-2 text-sm leading-snug font-medium text-stone-900">
-          Every workflow on this site was designed, built, and shipped by{" "}
+      <div className="fixed top-5 right-5 z-50 w-[260px] rounded-2xl border border-stone-200 bg-white px-4 py-3 shadow-lg shadow-stone-900/5">
+        <p className="text-sm leading-snug font-medium text-stone-900">
+          Designed, built &amp; shipped by{" "}
           <span className="text-amber-800 font-semibold">Aylin Uyar</span>.
         </p>
         <div className="mt-3 grid grid-cols-2 gap-2 border-t border-stone-200 pt-3">
