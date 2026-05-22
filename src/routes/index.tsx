@@ -272,7 +272,7 @@ function PortfolioPage() {
                     {loop.map((t, i) => (
                       <span
                         key={i}
-                        className={`shrink-0 inline-flex items-center rounded-full border px-3 py-1 text-[12px] font-medium ${t.cls}`}
+                        className="shrink-0 inline-flex items-center rounded-full border border-stone-300 bg-white px-3 py-1 text-[12px] font-medium text-stone-700"
                       >
                         {t.name}
                       </span>
@@ -339,28 +339,6 @@ function PortfolioPage() {
                 <Tag key={t} label={t} />
               ))}
             </div>
-            <a
-              href="https://github.com/aylineuyar-arch/ai-workflow-demo"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="View repository on GitHub"
-              title="View repository on GitHub"
-              className="mt-8 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
-            >
-              <Github className="w-4 h-4" />
-              <span>Repository</span>
-            </a>
-          </div>
-
-          <div className="md:col-span-8 space-y-6">
-            <p className="text-base md:text-lg leading-relaxed text-stone-700">
-              An AI-powered pipeline that aggregates live postings from{" "}
-              <strong className="text-stone-900">130+ company Applicant Tracking Systems (ATSs)</strong> and
-              major job boards, scores each role with Claude on fit and
-              realistic conversion likelihood, and renders results in a
-              filterable web dashboard.
-            </p>
-
             <Collapsible>
               <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-orange-200 bg-orange-50/40 px-4 py-3 text-sm font-medium text-orange-800 hover:bg-orange-50 transition-colors">
                 <span className="uppercase tracking-wider text-xs">See technical details</span>
@@ -400,7 +378,27 @@ function PortfolioPage() {
                 </ul>
               </CollapsibleContent>
             </Collapsible>
+            <a
+              href="https://github.com/aylineuyar-arch/ai-workflow-demo"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="View repository on GitHub"
+              title="View repository on GitHub"
+              className="mt-4 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
+            >
+              <Github className="w-4 h-4" />
+              <span>Repository</span>
+            </a>
+          </div>
 
+          <div className="md:col-span-8 space-y-6">
+            <p className="text-base md:text-lg leading-relaxed text-stone-700">
+              An AI-powered pipeline that aggregates live postings from{" "}
+              <strong className="text-stone-900">130+ company Applicant Tracking Systems (ATSs)</strong> and
+              major job boards, scores each role with Claude on fit and
+              realistic conversion likelihood, and renders results in a
+              filterable web dashboard.
+            </p>
 
             <figure className="mt-8">
               <img
@@ -435,35 +433,6 @@ function PortfolioPage() {
                 <Tag key={t} label={t} />
               ))}
             </div>
-            <a
-              href="https://muse-agent-transfer.lovable.app"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-8 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
-            >
-              Live app ↗
-            </a>
-          </div>
-
-          <div className="md:col-span-8 space-y-6">
-            <div className="p-5 rounded-xl bg-stone-50 border-l-4 border-stone-400">
-              <p className="text-xs uppercase tracking-wider text-stone-600 font-semibold mb-2">
-                How this differs from Project 01
-              </p>
-              <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                Project 01 is a <strong className="text-stone-900">Python pipeline</strong> I run on-demand — I pull the data into a dashboard when I want it. This one is an <strong className="text-stone-900">always-on agent</strong> in n8n that runs itself on a daily cron and pushes a ranked digest to my inbox — the data comes to me. Same problem, deliberately different architectures: scripted pull vs. agentic push, code-first vs. visual orchestration.
-              </p>
-            </div>
-
-            <p className="text-base md:text-lg leading-relaxed text-stone-700">
-              A fully autonomous agent that runs every morning at{" "}
-              <strong className="text-stone-900">8am ET</strong> — searches fresh
-              job postings against my target keywords, has Claude filter and rank
-              them for fit, and delivers a clean, ready-to-skim digest straight
-              to my inbox. Built in n8n, deployed on Railway, persisted in
-              Supabase, sent via Resend.
-            </p>
-
             <Collapsible>
               <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-stone-300 bg-stone-50 px-4 py-3 text-sm font-medium text-stone-700 hover:bg-stone-100 transition-colors">
                 <span className="uppercase tracking-wider text-xs">See technical details</span>
@@ -503,6 +472,34 @@ function PortfolioPage() {
                 </ul>
               </CollapsibleContent>
             </Collapsible>
+            <a
+              href="https://muse-agent-transfer.lovable.app"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
+            >
+              Live app ↗
+            </a>
+          </div>
+
+          <div className="md:col-span-8 space-y-6">
+            <div className="p-5 rounded-xl bg-stone-50 border-l-4 border-stone-400">
+              <p className="text-xs uppercase tracking-wider text-stone-600 font-semibold mb-2">
+                How this differs from Project 01
+              </p>
+              <p className="text-sm md:text-base text-stone-700 leading-relaxed">
+                Project 01 is a <strong className="text-stone-900">Python pipeline</strong> I run on-demand — I pull the data into a dashboard when I want it. This one is an <strong className="text-stone-900">always-on agent</strong> in n8n that runs itself on a daily cron and pushes a ranked digest to my inbox — the data comes to me. Same problem, deliberately different architectures: scripted pull vs. agentic push, code-first vs. visual orchestration.
+              </p>
+            </div>
+
+            <p className="text-base md:text-lg leading-relaxed text-stone-700">
+              A fully autonomous agent that runs every morning at{" "}
+              <strong className="text-stone-900">8am ET</strong> — searches fresh
+              job postings against my target keywords, has Claude filter and rank
+              them for fit, and delivers a clean, ready-to-skim digest straight
+              to my inbox. Built in n8n, deployed on Railway, persisted in
+              Supabase, sent via Resend.
+            </p>
 
             <figure>
               <img
@@ -516,12 +513,9 @@ function PortfolioPage() {
               </figcaption>
             </figure>
 
-
-
           </div>
         </div>
       </section>
-
 
       <GradientDivider />
 
@@ -541,6 +535,20 @@ function PortfolioPage() {
               ))}
             </div>
             <div className="mt-8 flex flex-wrap gap-2">
+              <Collapsible>
+                <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-emerald-200 bg-emerald-50/40 px-4 py-3 text-sm font-medium text-emerald-800 hover:bg-emerald-50 transition-colors">
+                  <span className="uppercase tracking-wider text-xs">See technical details</span>
+                  <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
+                </CollapsibleTrigger>
+                <CollapsibleContent className="pt-6">
+                  <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
+                    <li className="flex gap-3"><span className="text-emerald-500">▸</span>Streaming answers with conversation memory — follow-ups like "what about exceptions?" work in context</li>
+                    <li className="flex gap-3"><span className="text-emerald-500">▸</span>Confidence threshold + cross-document synthesis callout — no weak answers, flags when reasoning spans AML + KYC</li>
+                    <li className="flex gap-3"><span className="text-emerald-500">▸</span>Suggested follow-up questions and CSV session export — built for analyst workflows and audit trails</li>
+                    <li className="flex gap-3"><span className="text-emerald-500">▸</span>Deployed live on Streamlit Cloud: claude-haiku-4-5 + local sentence-transformers embeddings, zero API cost on retrieval</li>
+                  </ul>
+                </CollapsibleContent>
+              </Collapsible>
               <a
                 href="https://compliance-rag-demo-mrwtbs4k7gvdvmiuck8mdn.streamlit.app"
                 target="_blank"
@@ -579,22 +587,6 @@ function PortfolioPage() {
               A live chatbot that answers <strong className="text-stone-900">financial services compliance questions</strong> — streams Claude's responses token by token, grounds every answer in retrieved policy passages, and falls back honestly when the docs don't cover the question. Built to mirror the internal tooling a regulated fintech (Revolut, Ramp, Stripe) actually needs.
             </p>
 
-
-            <Collapsible>
-              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-emerald-200 bg-emerald-50/40 px-4 py-3 text-sm font-medium text-emerald-800 hover:bg-emerald-50 transition-colors">
-                <span className="uppercase tracking-wider text-xs">See technical details</span>
-                <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
-              </CollapsibleTrigger>
-              <CollapsibleContent className="pt-6">
-                <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
-                  <li className="flex gap-3"><span className="text-emerald-500">▸</span>Streaming answers with conversation memory — follow-ups like "what about exceptions?" work in context</li>
-                  <li className="flex gap-3"><span className="text-emerald-500">▸</span>Confidence threshold + cross-document synthesis callout — no weak answers, flags when reasoning spans AML + KYC</li>
-                  <li className="flex gap-3"><span className="text-emerald-500">▸</span>Suggested follow-up questions and CSV session export — built for analyst workflows and audit trails</li>
-                  <li className="flex gap-3"><span className="text-emerald-500">▸</span>Deployed live on Streamlit Cloud: claude-haiku-4-5 + local sentence-transformers embeddings, zero API cost on retrieval</li>
-                </ul>
-              </CollapsibleContent>
-            </Collapsible>
-
             <figure>
               <img
                 src={complianceRagImg}
@@ -606,8 +598,6 @@ function PortfolioPage() {
                 Live app — 4 indexed policy domains, 21 chunks, Claude Haiku 4.5 with grounded retrieval.
               </figcaption>
             </figure>
-
-
 
           </div>
         </div>
@@ -630,13 +620,27 @@ function PortfolioPage() {
                 <Tag key={t} label={t} />
               ))}
             </div>
+            <Collapsible>
+              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-indigo-200 bg-indigo-50/40 px-4 py-3 text-sm font-medium text-indigo-800 hover:bg-indigo-50 transition-colors">
+                <span className="uppercase tracking-wider text-xs">See technical details</span>
+                <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
+              </CollapsibleTrigger>
+              <CollapsibleContent className="pt-6">
+                <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
+                  <li className="flex gap-3"><span className="text-indigo-500">▸</span>Single Claude prompt returns structured JSON: summary, category, priority, next_action</li>
+                  <li className="flex gap-3"><span className="text-indigo-500">▸</span>~640ms end-to-end on claude-haiku-4-5 — sub-second triage at scale</li>
+                  <li className="flex gap-3"><span className="text-indigo-500">▸</span>Color-coded badges drop straight into existing ticketing UIs (Zendesk, Intercom, Front)</li>
+                  <li className="flex gap-3"><span className="text-indigo-500">▸</span>Drafts a first-response so agents start from a working reply instead of a blank box</li>
+                </ul>
+              </CollapsibleContent>
+            </Collapsible>
             <a
               href="https://github.com/aylineuyar-arch/ai-cs-triage"
               target="_blank"
               rel="noreferrer"
               aria-label="View repository on GitHub"
               title="View repository on GitHub"
-              className="mt-8 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
+              className="mt-4 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
             >
               <Github className="w-4 h-4" />
               <span>Repository</span>
@@ -659,21 +663,6 @@ function PortfolioPage() {
               first-response so human agents start from a working reply
               instead of a blank box.
             </p>
-
-            <Collapsible>
-              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-indigo-200 bg-indigo-50/40 px-4 py-3 text-sm font-medium text-indigo-800 hover:bg-indigo-50 transition-colors">
-                <span className="uppercase tracking-wider text-xs">See technical details</span>
-                <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
-              </CollapsibleTrigger>
-              <CollapsibleContent className="pt-6">
-                <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
-                  <li className="flex gap-3"><span className="text-indigo-500">▸</span>Single Claude prompt returns structured JSON: summary, category, priority, next_action</li>
-                  <li className="flex gap-3"><span className="text-indigo-500">▸</span>~640ms end-to-end on claude-haiku-4-5 — sub-second triage at scale</li>
-                  <li className="flex gap-3"><span className="text-indigo-500">▸</span>Color-coded badges drop straight into existing ticketing UIs (Zendesk, Intercom, Front)</li>
-                  <li className="flex gap-3"><span className="text-indigo-500">▸</span>Drafts a first-response so agents start from a working reply instead of a blank box</li>
-                </ul>
-              </CollapsibleContent>
-            </Collapsible>
 
             {/* Mock Streamlit UI render */}
             <figure>
@@ -739,7 +728,6 @@ function PortfolioPage() {
         </div>
       </section>
 
-
       <GradientDivider />
 
       {/* Project 5 — Aura */}
@@ -760,6 +748,20 @@ function PortfolioPage() {
               )}
             </div>
             <div className="mt-8 flex flex-wrap items-center gap-2">
+              <Collapsible>
+                <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-rose-200 bg-rose-50/40 px-4 py-3 text-sm font-medium text-rose-800 hover:bg-rose-50 transition-colors">
+                  <span className="uppercase tracking-wider text-xs">See technical details</span>
+                  <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
+                </CollapsibleTrigger>
+                <CollapsibleContent className="pt-6">
+                  <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
+                    <li className="flex gap-3"><span className="text-rose-500">▸</span>5-dimensional profile updates kit and routine in real time</li>
+                    <li className="flex gap-3"><span className="text-rose-500">▸</span>Visual tutorials — technique maps with brush + product callouts</li>
+                    <li className="flex gap-3"><span className="text-rose-500">▸</span>Zero engineering team: design, logic, deployment all in Lovable</li>
+                    <li className="flex gap-3"><span className="text-rose-500">▸</span>Range beyond backend pipelines — same operator mindset, consumer-facing delivery</li>
+                  </ul>
+                </CollapsibleContent>
+              </Collapsible>
               <a
                 href="https://face-harmony-helper.lovable.app"
                 target="_blank"
@@ -792,22 +794,6 @@ function PortfolioPage() {
               techniques to wear it well. Built end-to-end with Lovable: zero
               engineering team, shipped and live.
             </p>
-
-            <Collapsible>
-              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-rose-200 bg-rose-50/40 px-4 py-3 text-sm font-medium text-rose-800 hover:bg-rose-50 transition-colors">
-                <span className="uppercase tracking-wider text-xs">See technical details</span>
-                <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
-              </CollapsibleTrigger>
-              <CollapsibleContent className="pt-6">
-                <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
-                  <li className="flex gap-3"><span className="text-rose-500">▸</span>5-dimensional profile updates kit and routine in real time</li>
-                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Visual tutorials — technique maps with brush + product callouts</li>
-                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Zero engineering team: design, logic, deployment all in Lovable</li>
-                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Range beyond backend pipelines — same operator mindset, consumer-facing delivery</li>
-                </ul>
-              </CollapsibleContent>
-            </Collapsible>
-
 
             <div className="mt-8 space-y-4">
               <figure>
