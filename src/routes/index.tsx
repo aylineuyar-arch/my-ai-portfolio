@@ -237,8 +237,7 @@ function PortfolioPage() {
                       Live
                     </span>
                   </div>
-                  <div className="mt-2 text-[16px] font-semibold text-stone-900 leading-tight tracking-tight">{p.title}</div>
-                  <div className="mt-3 flex flex-nowrap -space-x-1.5 overflow-hidden">
+                  <div className="mt-2 flex flex-nowrap -space-x-1.5 justify-end overflow-hidden">
                     {logos.slice(0, 4).map((t) => {
                       const logo = TOOL_LOGOS[t]!;
                       const Icon = logo.icon;
@@ -249,7 +248,8 @@ function PortfolioPage() {
                       );
                     })}
                   </div>
-                  <p className="mt-3 text-[13px] text-stone-600 leading-snug">{p.blurb}</p>
+                  <div className="mt-3 text-[16px] font-semibold text-stone-900 leading-tight tracking-tight">{p.title}</div>
+                  <p className="mt-2 text-[13px] text-stone-600 leading-snug">{p.blurb}</p>
                 </a>
               );
             })}
