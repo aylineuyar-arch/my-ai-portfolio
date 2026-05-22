@@ -252,7 +252,7 @@ function PortfolioPage() {
                     </span>
                   </div>
                   <div className="mt-1.5 flex items-start justify-between gap-2">
-                    <div className="text-[15px] font-semibold text-stone-900 leading-tight tracking-tight flex-1">{p.title}</div>
+                    <div className="text-base font-semibold text-stone-900 leading-tight tracking-tight flex-1">{p.title}</div>
                   <div className="flex -space-x-1.5 shrink-0">
                     {logos.slice(0, 4).map((t) => {
                       const logo = TOOL_LOGOS[t]!;
@@ -265,7 +265,7 @@ function PortfolioPage() {
                     })}
                   </div>
                   </div>
-                  <p className="mt-1 text-[12px] italic text-rose-700/90 leading-snug">{p.blurb}</p>
+                  <p className="mt-1.5 text-[13px] italic text-rose-700/90 leading-snug">{p.blurb}</p>
                 </a>
               );
             })}
