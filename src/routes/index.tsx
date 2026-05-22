@@ -208,19 +208,12 @@ function PortfolioPage() {
 
         <div className="mt-10 h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent" />
 
-        {/* Portfolio signal banner — meaningful aggregate stats */}
-        <div className="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-3 rounded-2xl border border-rose-200/70 bg-gradient-to-br from-rose-50/80 via-white to-white p-3 md:p-4 shadow-sm shadow-rose-900/5">
-          {[
-            ["5", "Projects live in production"],
-            ["130+", "ATS sources tracked"],
-            ["~3 min", "Avg end-to-end pipeline"],
-            ["<1 sec", "Triage classification"],
-          ].map(([value, label]) => (
-            <div key={label} className="rounded-xl border border-rose-200 bg-rose-50/70 px-3.5 py-2.5 flex items-baseline gap-2">
-              <span className="text-xl md:text-2xl font-medium tracking-tight text-rose-600 leading-none">{value}</span>
-              <span className="text-[13px] md:text-sm uppercase tracking-[0.12em] text-stone-700 leading-snug">{label}</span>
-            </div>
-          ))}
+        {/* Portfolio signal banner — single credibility line */}
+        <div className="mt-8 rounded-2xl border border-rose-200/70 bg-gradient-to-br from-rose-50/80 via-white to-white p-4 md:p-5 shadow-sm shadow-rose-900/5">
+          <div className="flex items-baseline gap-3">
+            <span className="text-3xl md:text-4xl font-medium tracking-tight text-rose-600 leading-none">5</span>
+            <span className="text-sm md:text-base uppercase tracking-[0.14em] text-stone-700">Projects live in production</span>
+          </div>
         </div>
 
         <div className="mt-6 h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent" />
