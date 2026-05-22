@@ -245,14 +245,14 @@ function PortfolioPage() {
               return (
                 <a key={p.id} href={`#${p.id}`} className="block p-3 rounded-2xl bg-white/80 backdrop-blur border border-stone-200 hover:border-rose-400 hover:shadow-md hover:-translate-y-0.5 transition-all">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] uppercase tracking-wider text-rose-600 font-semibold">{p.num}</span>
+                    <span className="text-[11px] uppercase tracking-wider text-rose-600 font-semibold">{p.num}</span>
                     <span className="inline-flex items-center gap-1 text-[9px] uppercase tracking-wider bg-green-100 text-green-800 px-1.5 py-0.5 rounded-full font-medium">
                       <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
                       Live
                     </span>
                   </div>
                   <div className="mt-1.5 flex items-start justify-between gap-2">
-                    <div className="text-base font-semibold text-stone-900 leading-tight tracking-tight flex-1">{p.title}</div>
+                    <div className="text-[17px] font-semibold text-stone-900 leading-tight tracking-tight flex-1">{p.title}</div>
                   <div className="flex -space-x-1.5 shrink-0">
                     {logos.slice(0, 4).map((t) => {
                       const logo = TOOL_LOGOS[t]!;
