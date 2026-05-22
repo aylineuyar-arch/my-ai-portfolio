@@ -206,6 +206,8 @@ function PortfolioPage() {
           Tuck MBA <span className="text-stone-400">|</span> Ex Deloitte and Skild AI <span className="text-stone-400">|</span> AI Deployment, Strategy, Ops
         </p>
 
+        <div className="mt-10 h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent" />
+
         {/* Portfolio signal banner — meaningful aggregate stats */}
         <div className="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-3 rounded-2xl border border-rose-200/70 bg-gradient-to-br from-rose-50/80 via-white to-white p-3 md:p-4 shadow-sm shadow-rose-900/5">
           {[
