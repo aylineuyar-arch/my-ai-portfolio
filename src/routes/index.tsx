@@ -407,7 +407,7 @@ function PortfolioPage() {
                 src={dashboardImg}
                 alt="Job Search Dashboard — color-coded fit and conversion scores"
                 className="w-full rounded-lg shadow-lg ring-1 ring-stone-200"
-                loading="lazy"
+                loading="eager"
               />
               <figcaption className="mt-3 text-xs text-stone-500 italic">
                 Live dashboard — color-coded fit & conversion scores, one-click
@@ -509,7 +509,7 @@ function PortfolioPage() {
                 src={emailGenImg}
                 alt="Live countdown to next email release and tracked job titles"
                 className="w-full rounded-lg shadow-lg ring-1 ring-stone-200"
-                loading="lazy"
+                loading="eager"
               />
               <figcaption className="mt-3 text-xs text-stone-500 italic">
                 Live countdown to the next 8am ET email run + the exact job titles the agent tracks.
@@ -600,7 +600,7 @@ function PortfolioPage() {
                 src={complianceRagImg}
                 alt="Compliance Policy Q&A chatbot — indexed AML, KYC, Trade Surveillance, and Data Governance documents with example questions"
                 className="w-full rounded-lg shadow-lg ring-1 ring-emerald-200"
-                loading="lazy"
+                loading="eager"
               />
               <figcaption className="mt-3 text-xs text-stone-500 italic">
                 Live app — 4 indexed policy domains, 21 chunks, Claude Haiku 4.5 with grounded retrieval.
@@ -815,7 +815,7 @@ function PortfolioPage() {
                   src={auraLanding}
                   alt="Aura — editorial landing page"
                   className="w-full rounded-lg shadow-lg ring-1 ring-stone-200"
-                  loading="lazy"
+                  loading="eager"
                 />
                 <figcaption className="mt-2 text-xs text-stone-500 italic">
                   Editorial landing page — face-harmony-helper.lovable.app
@@ -827,7 +827,7 @@ function PortfolioPage() {
                     src={auraProfile}
                     alt="Aura — The Profile, real-time personalization"
                     className="w-full rounded-lg shadow-md ring-1 ring-stone-200"
-                    loading="lazy"
+                    loading="eager"
                   />
                   <figcaption className="mt-2 text-xs text-stone-500 italic">
                     The Profile — real-time personalization
@@ -838,7 +838,7 @@ function PortfolioPage() {
                     src={auraTutorials}
                     alt="Aura — Universal Tutorials, visual technique guides"
                     className="w-full rounded-lg shadow-md ring-1 ring-stone-200"
-                    loading="lazy"
+                    loading="eager"
                   />
                   <figcaption className="mt-2 text-xs text-stone-500 italic">
                     Universal Tutorials — visual technique guides
