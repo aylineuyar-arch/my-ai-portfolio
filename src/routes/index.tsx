@@ -345,19 +345,6 @@ function PortfolioPage() {
                 <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
               </CollapsibleTrigger>
               <CollapsibleContent className="space-y-6 pt-6">
-                <div className="grid grid-cols-3 gap-4 border-y border-orange-200/60 py-6">
-                  {[
-                    ["286", "Roles per run"],
-                    ["130+", "Companies tracked"],
-                    ["~3 min", "End-to-end pipeline"],
-                  ].map(([n, l]) => (
-                    <div key={l}>
-                      <div className="text-2xl md:text-3xl font-light text-orange-900">{n}</div>
-                      <div className="text-xs uppercase tracking-wider text-stone-500 mt-1">{l}</div>
-                    </div>
-                  ))}
-                </div>
-
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="p-4 rounded-lg bg-orange-50/60 border border-orange-200">
                     <div className="text-xs uppercase tracking-wider text-orange-700 font-semibold">Fit Score (0–100)</div>
@@ -400,6 +387,24 @@ function PortfolioPage() {
               filterable web dashboard.
             </p>
 
+            <div className="rounded-xl border border-orange-200 bg-orange-50/40 p-5">
+              <div className="text-[10px] uppercase tracking-[0.2em] text-orange-700 font-semibold mb-4">Live signals</div>
+              <div className="grid grid-cols-3 gap-4">
+                <div>
+                  <div className="text-xl md:text-2xl font-light text-orange-900 leading-none">286</div>
+                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">Roles / run</div>
+                </div>
+                <div>
+                  <div className="text-xl md:text-2xl font-light text-orange-900 leading-none">130+</div>
+                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">Companies tracked</div>
+                </div>
+                <div>
+                  <div className="text-xl md:text-2xl font-light text-orange-900 leading-none">~3 min</div>
+                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">Pipeline end-to-end</div>
+                </div>
+              </div>
+            </div>
+
             <figure className="mt-8">
               <img
                 src={dashboardImg}
@@ -439,19 +444,6 @@ function PortfolioPage() {
                 <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
               </CollapsibleTrigger>
               <CollapsibleContent className="space-y-6 pt-6">
-                <div className="grid grid-cols-3 gap-4 border-y border-stone-200 py-6">
-                  {[
-                    ["8am ET", "Daily cron trigger"],
-                    ["0", "Manual touches per run"],
-                    ["4", "Tools orchestrated"],
-                  ].map(([n, l]) => (
-                    <div key={l}>
-                      <div className="text-2xl md:text-3xl font-light text-stone-800">{n}</div>
-                      <div className="text-xs uppercase tracking-wider text-stone-500 mt-1">{l}</div>
-                    </div>
-                  ))}
-                </div>
-
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="p-4 rounded-lg bg-stone-50 border border-stone-200">
                     <div className="text-xs uppercase tracking-wider text-stone-600 font-semibold">Agentic Workflow</div>
@@ -501,6 +493,24 @@ function PortfolioPage() {
               Supabase, sent via Resend.
             </p>
 
+            <div className="rounded-xl border border-stone-200 bg-stone-50/40 p-5">
+              <div className="text-[10px] uppercase tracking-[0.2em] text-stone-700 font-semibold mb-4">Agent signals</div>
+              <div className="grid grid-cols-3 gap-4">
+                <div>
+                  <div className="text-xl md:text-2xl font-light text-stone-900 leading-none">8am ET</div>
+                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">Daily cron trigger</div>
+                </div>
+                <div>
+                  <div className="text-xl md:text-2xl font-light text-stone-900 leading-none">0</div>
+                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">Manual touches / run</div>
+                </div>
+                <div>
+                  <div className="text-xl md:text-2xl font-light text-stone-900 leading-none">4</div>
+                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">Tools orchestrated</div>
+                </div>
+              </div>
+            </div>
+
             <figure>
               <img
                 src={emailGenImg}
@@ -540,12 +550,22 @@ function PortfolioPage() {
                   <span className="uppercase tracking-wider text-xs">See technical details</span>
                   <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
                 </CollapsibleTrigger>
-                <CollapsibleContent className="pt-6">
+                <CollapsibleContent className="space-y-6 pt-6">
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="p-4 rounded-lg bg-emerald-50/60 border border-emerald-200">
+                      <div className="text-xs uppercase tracking-wider text-emerald-700 font-semibold">Retrieval pipeline</div>
+                      <p className="mt-1.5 text-sm text-stone-700 leading-snug">Sentence-transformers embeddings → cosine search → top-k chunks injected into Claude prompt with citations.</p>
+                    </div>
+                    <div className="p-4 rounded-lg bg-emerald-50/60 border border-emerald-200">
+                      <div className="text-xs uppercase tracking-wider text-emerald-700 font-semibold">Grounded by default</div>
+                      <p className="mt-1.5 text-sm text-stone-700 leading-snug">Confidence threshold + cross-document synthesis callout — falls back honestly when policies don't cover the question.</p>
+                    </div>
+                  </div>
                   <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
-                    <li className="flex gap-3"><span className="text-emerald-500">▸</span>Streaming answers with conversation memory — follow-ups like "what about exceptions?" work in context</li>
-                    <li className="flex gap-3"><span className="text-emerald-500">▸</span>Confidence threshold + cross-document synthesis callout — no weak answers, flags when reasoning spans AML + KYC</li>
-                    <li className="flex gap-3"><span className="text-emerald-500">▸</span>Suggested follow-up questions and CSV session export — built for analyst workflows and audit trails</li>
-                    <li className="flex gap-3"><span className="text-emerald-500">▸</span>Deployed live on Streamlit Cloud: claude-haiku-4-5 + local sentence-transformers embeddings, zero API cost on retrieval</li>
+                    <li className="flex gap-3"><span className="text-emerald-500">▸</span>Streaming token-by-token answers with conversation memory — follow-ups like "what about exceptions?" stay in context</li>
+                    <li className="flex gap-3"><span className="text-emerald-500">▸</span>Suggested follow-up questions + CSV session export — built for analyst workflows and audit trails</li>
+                    <li className="flex gap-3"><span className="text-emerald-500">▸</span>Local embeddings = $0 per query on retrieval; only generation hits the Claude API</li>
+                    <li className="flex gap-3"><span className="text-emerald-500">▸</span>Deployed on Streamlit Cloud with claude-haiku-4-5 — production-grade UX, demo-grade cost</li>
                   </ul>
                 </CollapsibleContent>
               </Collapsible>
@@ -587,6 +607,24 @@ function PortfolioPage() {
               A live chatbot that answers <strong className="text-stone-900">financial services compliance questions</strong> — streams Claude's responses token by token, grounds every answer in retrieved policy passages, and falls back honestly when the docs don't cover the question. Built to mirror the internal tooling a regulated fintech (Revolut, Ramp, Stripe) actually needs.
             </p>
 
+            <div className="rounded-xl border border-emerald-200 bg-emerald-50/40 p-5">
+              <div className="text-[10px] uppercase tracking-[0.2em] text-emerald-700 font-semibold mb-4">Retrieval signals</div>
+              <div className="grid grid-cols-3 gap-4">
+                <div>
+                  <div className="text-xl md:text-2xl font-light text-emerald-900 leading-none">4</div>
+                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">Policy domains indexed</div>
+                </div>
+                <div>
+                  <div className="text-xl md:text-2xl font-light text-emerald-900 leading-none">21</div>
+                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">Doc chunks retrieved</div>
+                </div>
+                <div>
+                  <div className="text-xl md:text-2xl font-light text-emerald-900 leading-none">0 $</div>
+                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">Embedding API cost</div>
+                </div>
+              </div>
+            </div>
+
             <figure>
               <img
                 src={complianceRagImg}
@@ -625,12 +663,22 @@ function PortfolioPage() {
                 <span className="uppercase tracking-wider text-xs">See technical details</span>
                 <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
               </CollapsibleTrigger>
-              <CollapsibleContent className="pt-6">
+              <CollapsibleContent className="space-y-6 pt-6">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="p-4 rounded-lg bg-indigo-50/60 border border-indigo-200">
+                    <div className="text-xs uppercase tracking-wider text-indigo-700 font-semibold">Prompt → JSON contract</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Single Claude call returns <code className="text-[11px]">{`{summary, category, priority, next_action}`}</code> — drops straight into Zendesk / Intercom / Front.</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-indigo-50/60 border border-indigo-200">
+                    <div className="text-xs uppercase tracking-wider text-indigo-700 font-semibold">Draft-first agent UX</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Triage classifies AND drafts the reply — agents edit instead of writing from scratch, collapsing handle time.</p>
+                  </div>
+                </div>
                 <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
-                  <li className="flex gap-3"><span className="text-indigo-500">▸</span>Single Claude prompt returns structured JSON: summary, category, priority, next_action</li>
-                  <li className="flex gap-3"><span className="text-indigo-500">▸</span>~640ms end-to-end on claude-haiku-4-5 — sub-second triage at scale</li>
-                  <li className="flex gap-3"><span className="text-indigo-500">▸</span>Color-coded badges drop straight into existing ticketing UIs (Zendesk, Intercom, Front)</li>
-                  <li className="flex gap-3"><span className="text-indigo-500">▸</span>Drafts a first-response so agents start from a working reply instead of a blank box</li>
+                  <li className="flex gap-3"><span className="text-indigo-500">▸</span>~640ms end-to-end on claude-haiku-4-5 — sub-second triage at production scale</li>
+                  <li className="flex gap-3"><span className="text-indigo-500">▸</span>Replaces brittle keyword routing with a single grounded LLM call — fewer rules, better recall</li>
+                  <li className="flex gap-3"><span className="text-indigo-500">▸</span>Color-coded priority + category badges built for the ticketing UIs ops teams already use</li>
+                  <li className="flex gap-3"><span className="text-indigo-500">▸</span>Structured output = trivially loggable, A/B-testable, and auditable per ticket</li>
                 </ul>
               </CollapsibleContent>
             </Collapsible>
@@ -663,6 +711,24 @@ function PortfolioPage() {
               first-response so human agents start from a working reply
               instead of a blank box.
             </p>
+
+            <div className="rounded-xl border border-indigo-200 bg-indigo-50/40 p-5">
+              <div className="text-[10px] uppercase tracking-[0.2em] text-indigo-700 font-semibold mb-4">Inference signals</div>
+              <div className="grid grid-cols-3 gap-4">
+                <div>
+                  <div className="text-xl md:text-2xl font-light text-indigo-900 leading-none">~640ms</div>
+                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">End-to-end triage</div>
+                </div>
+                <div>
+                  <div className="text-xl md:text-2xl font-light text-indigo-900 leading-none">1</div>
+                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">Claude call / ticket</div>
+                </div>
+                <div>
+                  <div className="text-xl md:text-2xl font-light text-indigo-900 leading-none">JSON</div>
+                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">Structured output</div>
+                </div>
+              </div>
+            </div>
 
             {/* Mock Streamlit UI render */}
             <figure>
@@ -753,12 +819,22 @@ function PortfolioPage() {
                   <span className="uppercase tracking-wider text-xs">See technical details</span>
                   <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
                 </CollapsibleTrigger>
-                <CollapsibleContent className="pt-6">
+                <CollapsibleContent className="space-y-6 pt-6">
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
+                      <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Reactive personalization</div>
+                      <p className="mt-1.5 text-sm text-stone-700 leading-snug">Each profile dimension updates the kit + routine in real time — no submit button, no full recompute.</p>
+                    </div>
+                    <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
+                      <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Operator-built stack</div>
+                      <p className="mt-1.5 text-sm text-stone-700 leading-snug">Lovable + React + Claude API — design, logic, and deployment shipped by one person, no engineering team.</p>
+                    </div>
+                  </div>
                   <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
-                    <li className="flex gap-3"><span className="text-rose-500">▸</span>5-dimensional profile updates kit and routine in real time</li>
-                    <li className="flex gap-3"><span className="text-rose-500">▸</span>Visual tutorials — technique maps with brush + product callouts</li>
-                    <li className="flex gap-3"><span className="text-rose-500">▸</span>Zero engineering team: design, logic, deployment all in Lovable</li>
-                    <li className="flex gap-3"><span className="text-rose-500">▸</span>Range beyond backend pipelines — same operator mindset, consumer-facing delivery</li>
+                    <li className="flex gap-3"><span className="text-rose-500">▸</span>4-dimensional profile (skin tone, undertone, face shape, eye shape) drives kit + technique recs</li>
+                    <li className="flex gap-3"><span className="text-rose-500">▸</span>Visual tutorials — technique maps with brush + product callouts, not just text</li>
+                    <li className="flex gap-3"><span className="text-rose-500">▸</span>Proves range: same operator-rewires-workflows mindset, applied to a consumer-facing surface</li>
+                    <li className="flex gap-3"><span className="text-rose-500">▸</span>End-to-end on Lovable — repo, preview, deploy in one loop</li>
                   </ul>
                 </CollapsibleContent>
               </Collapsible>
@@ -794,6 +870,24 @@ function PortfolioPage() {
               techniques to wear it well. Built end-to-end with Lovable: zero
               engineering team, shipped and live.
             </p>
+
+            <div className="rounded-xl border border-rose-200 bg-rose-50/40 p-5">
+              <div className="text-[10px] uppercase tracking-[0.2em] text-rose-700 font-semibold mb-4">Build signals</div>
+              <div className="grid grid-cols-3 gap-4">
+                <div>
+                  <div className="text-xl md:text-2xl font-light text-rose-900 leading-none">4</div>
+                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">Dimensions profiled</div>
+                </div>
+                <div>
+                  <div className="text-xl md:text-2xl font-light text-rose-900 leading-none">0</div>
+                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">Engineers shipped with</div>
+                </div>
+                <div>
+                  <div className="text-xl md:text-2xl font-light text-rose-900 leading-none">Live</div>
+                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-stone-500">End-to-end on Lovable</div>
+                </div>
+              </div>
+            </div>
 
             <div className="mt-8 space-y-4">
               <figure>
