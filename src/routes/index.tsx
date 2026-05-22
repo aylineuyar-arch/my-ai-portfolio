@@ -355,49 +355,46 @@ function PortfolioPage() {
               filterable web dashboard.
             </p>
 
-            <div className="grid grid-cols-3 gap-4 border-y border-orange-200/60 py-6">
-              {[
-                ["286", "Roles per run"],
-                ["130+", "Companies tracked"],
-                ["~3 min", "End-to-end pipeline"],
-              ].map(([n, l]) => (
-                <div key={l}>
-                  <div className="text-2xl md:text-3xl font-light text-orange-900">
-                    {n}
-                  </div>
-                  <div className="text-xs uppercase tracking-wider text-stone-500 mt-1">
-                    {l}
-                  </div>
+            <Collapsible>
+              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-orange-200 bg-orange-50/40 px-4 py-3 text-sm font-medium text-orange-800 hover:bg-orange-50 transition-colors">
+                <span className="uppercase tracking-wider text-xs">See technical details</span>
+                <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
+              </CollapsibleTrigger>
+              <CollapsibleContent className="space-y-6 pt-6">
+                <div className="grid grid-cols-3 gap-4 border-y border-orange-200/60 py-6">
+                  {[
+                    ["286", "Roles per run"],
+                    ["130+", "Companies tracked"],
+                    ["~3 min", "End-to-end pipeline"],
+                  ].map(([n, l]) => (
+                    <div key={l}>
+                      <div className="text-2xl md:text-3xl font-light text-orange-900">{n}</div>
+                      <div className="text-xs uppercase tracking-wider text-stone-500 mt-1">{l}</div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
 
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div className="p-4 rounded-lg bg-orange-50/60 border border-orange-200">
-                <div className="text-xs uppercase tracking-wider text-orange-700 font-semibold">
-                  Fit Score (0–100)
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="p-4 rounded-lg bg-orange-50/60 border border-orange-200">
+                    <div className="text-xs uppercase tracking-wider text-orange-700 font-semibold">Fit Score (0–100)</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">How well the role matches background, industry, and stated goals.</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-orange-50/60 border border-orange-200">
+                    <div className="text-xs uppercase tracking-wider text-orange-700 font-semibold">Conversion Score (0–100)</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Realistic offer likelihood, calibrated by company type and competitiveness.</p>
+                  </div>
                 </div>
-                <p className="mt-1.5 text-sm text-stone-700 leading-snug">
-                  How well the role matches background, industry, and stated goals.
-                </p>
-              </div>
-              <div className="p-4 rounded-lg bg-orange-50/60 border border-orange-200">
-                <div className="text-xs uppercase tracking-wider text-orange-700 font-semibold">
-                  Conversion Score (0–100)
-                </div>
-                <p className="mt-1.5 text-sm text-stone-700 leading-snug">
-                  Realistic offer likelihood, calibrated by company type and competitiveness.
-                </p>
-              </div>
-            </div>
 
-            <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
-              <li className="flex gap-3"><span className="text-orange-500">▸</span>~300 deduplicated roles per run across 130+ target companies</li>
-              <li className="flex gap-3"><span className="text-orange-500">▸</span>Honest conversion scoring — Anthropic 10–25, early-stage startups 45–65</li>
-              <li className="flex gap-3"><span className="text-orange-500">▸</span>Apply-now list: fit ≥ 65 AND conversion ≥ 45 — actionable, not a dump</li>
-              <li className="flex gap-3"><span className="text-orange-500">▸</span>Eliminated manual checking of Anthropic, Ramp, Rippling, Databricks + 126 more</li>
-              <li className="flex gap-3"><span className="text-orange-500">▸</span>Deployed on Railway — zero infrastructure overhead</li>
-            </ul>
+                <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
+                  <li className="flex gap-3"><span className="text-orange-500">▸</span>~300 deduplicated roles per run across 130+ target companies</li>
+                  <li className="flex gap-3"><span className="text-orange-500">▸</span>Honest conversion scoring — Anthropic 10–25, early-stage startups 45–65</li>
+                  <li className="flex gap-3"><span className="text-orange-500">▸</span>Apply-now list: fit ≥ 65 AND conversion ≥ 45 — actionable, not a dump</li>
+                  <li className="flex gap-3"><span className="text-orange-500">▸</span>Eliminated manual checking of Anthropic, Ramp, Rippling, Databricks + 126 more</li>
+                  <li className="flex gap-3"><span className="text-orange-500">▸</span>Deployed on Railway — zero infrastructure overhead</li>
+                </ul>
+              </CollapsibleContent>
+            </Collapsible>
+
 
             <figure className="mt-8">
               <img
