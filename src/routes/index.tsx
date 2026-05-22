@@ -208,21 +208,14 @@ function PortfolioPage() {
 
         <div className="mt-10 h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent" />
 
-        {/* Portfolio signal banner — single credibility line */}
-        <div className="mt-8 rounded-2xl border border-rose-200/70 bg-gradient-to-br from-rose-50/80 via-white to-white p-4 md:p-5 shadow-sm shadow-rose-900/5">
+        {/* Combined section header — credibility number + section title */}
+        <div className="mt-8 flex items-baseline justify-between gap-4 flex-wrap">
           <div className="flex items-baseline gap-3">
-            <span className="text-3xl md:text-4xl font-medium tracking-tight text-rose-600 leading-none">5</span>
-            <span className="text-sm md:text-base uppercase tracking-[0.14em] text-stone-700">Projects live in production</span>
+            <span className="text-4xl md:text-5xl font-medium tracking-tight text-rose-600 leading-none">5</span>
+            <h3 className="text-sm md:text-base uppercase tracking-[0.18em] text-stone-700 font-semibold">
+              AI portfolio projects live in production
+            </h3>
           </div>
-        </div>
-
-        <div className="mt-6 h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent" />
-
-        {/* Project navigation bubbles */}
-        <div className="mt-5 flex items-baseline justify-between">
-          <h3 className="text-xs md:text-sm uppercase tracking-[0.25em] text-stone-700 font-semibold">
-            AI portfolio projects
-          </h3>
           <span className="text-[12px] text-rose-700 font-medium">click any card for details ↓</span>
         </div>
         <div className="mt-3">
