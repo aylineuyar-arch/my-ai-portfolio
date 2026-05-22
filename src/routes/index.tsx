@@ -229,16 +229,17 @@ function PortfolioPage() {
             ].map((p) => {
               const logos = p.tools.filter((t) => TOOL_LOGOS[t]);
               return (
-                <a key={p.id} href={`#${p.id}`} className="block p-4 rounded-2xl bg-white/80 backdrop-blur border border-stone-200 hover:border-rose-400 hover:shadow-md hover:-translate-y-0.5 transition-all">
-                  <div className="flex items-center justify-between">
+                <a key={p.id} href={`#${p.id}`} className="flex flex-col p-3.5 rounded-2xl bg-white/80 backdrop-blur border border-stone-200 hover:border-rose-400 hover:shadow-md hover:-translate-y-0.5 transition-all">
+                  <div className="flex items-center justify-between gap-2">
                     <span className="text-[11px] uppercase tracking-wider text-rose-600 font-semibold">{p.num}</span>
                     <span className="inline-flex items-center gap-1 text-[9px] uppercase tracking-wider bg-green-100 text-green-800 px-1.5 py-0.5 rounded-full font-medium">
                       <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
                       Live
                     </span>
                   </div>
-                  <div className="mt-3 text-[15px] font-semibold text-stone-900 leading-tight tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">{p.title}</div>
-                  <div className="mt-2 flex flex-nowrap -space-x-1.5">
+                  <div className="mt-3 text-[14px] font-semibold text-stone-900 leading-tight tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">{p.title}</div>
+                  <p className="mt-2 text-[13px] text-stone-600 leading-snug">{p.blurb}</p>
+                  <div className="mt-auto pt-3 flex flex-nowrap -space-x-1.5">
                     {logos.slice(0, 4).map((t) => {
                       const logo = TOOL_LOGOS[t]!;
                       const Icon = logo.icon;
@@ -249,7 +250,6 @@ function PortfolioPage() {
                       );
                     })}
                   </div>
-                  <p className="mt-2 text-[13px] text-stone-600 leading-snug">{p.blurb}</p>
                 </a>
               );
             })}
