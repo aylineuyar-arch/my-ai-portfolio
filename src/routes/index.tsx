@@ -660,6 +660,20 @@ function PortfolioPage() {
               instead of a blank box.
             </p>
 
+            <Collapsible>
+              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-indigo-200 bg-indigo-50/40 px-4 py-3 text-sm font-medium text-indigo-800 hover:bg-indigo-50 transition-colors">
+                <span className="uppercase tracking-wider text-xs">See technical details</span>
+                <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
+              </CollapsibleTrigger>
+              <CollapsibleContent className="pt-6">
+                <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
+                  <li className="flex gap-3"><span className="text-indigo-500">▸</span>Single Claude prompt returns structured JSON: summary, category, priority, next_action</li>
+                  <li className="flex gap-3"><span className="text-indigo-500">▸</span>~640ms end-to-end on claude-haiku-4-5 — sub-second triage at scale</li>
+                  <li className="flex gap-3"><span className="text-indigo-500">▸</span>Color-coded badges drop straight into existing ticketing UIs (Zendesk, Intercom, Front)</li>
+                  <li className="flex gap-3"><span className="text-indigo-500">▸</span>Drafts a first-response so agents start from a working reply instead of a blank box</li>
+                </ul>
+              </CollapsibleContent>
+            </Collapsible>
 
             {/* Mock Streamlit UI render */}
             <figure>
