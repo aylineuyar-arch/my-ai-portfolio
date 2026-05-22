@@ -158,7 +158,7 @@ function PortfolioPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#fdf8f3] via-[#faf3ec] to-[#f5ede2] text-stone-900">
       {/* Author badge — fixed corner */}
-      <div className="fixed top-5 right-5 z-50 max-w-[340px] rounded-2xl border-2 border-amber-700/70 bg-white px-5 py-4 shadow-2xl shadow-stone-900/10 ring-4 ring-amber-100/60">
+      <div className="fixed top-5 right-5 z-50 w-[260px] rounded-2xl border-2 border-amber-700/70 bg-white px-4 py-3 shadow-2xl shadow-stone-900/10 ring-4 ring-amber-100/60">
         <div className="flex items-center gap-2.5">
           <span className="relative flex h-2.5 w-2.5">
             <span className="absolute inline-flex h-full w-full rounded-full bg-amber-700 opacity-60 animate-ping" />
