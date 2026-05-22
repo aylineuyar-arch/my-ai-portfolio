@@ -339,7 +339,7 @@ function PortfolioPage() {
                 <Tag key={t} label={t} />
               ))}
             </div>
-            <Collapsible>
+            <Collapsible className="mt-8">
               <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-orange-200 bg-orange-50/40 px-4 py-3 text-sm font-medium text-orange-800 hover:bg-orange-50 transition-colors">
                 <span className="uppercase tracking-wider text-xs">See technical details</span>
                 <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
@@ -438,7 +438,7 @@ function PortfolioPage() {
                 <Tag key={t} label={t} />
               ))}
             </div>
-            <Collapsible>
+            <Collapsible className="mt-8">
               <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-stone-300 bg-stone-50 px-4 py-3 text-sm font-medium text-stone-700 hover:bg-stone-100 transition-colors">
                 <span className="uppercase tracking-wider text-xs">See technical details</span>
                 <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
@@ -544,31 +544,31 @@ function PortfolioPage() {
                 <Tag key={t} label={t} />
               ))}
             </div>
-            <div className="mt-8 flex flex-wrap gap-2">
-              <Collapsible>
-                <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-emerald-200 bg-emerald-50/40 px-4 py-3 text-sm font-medium text-emerald-800 hover:bg-emerald-50 transition-colors">
-                  <span className="uppercase tracking-wider text-xs">See technical details</span>
-                  <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
-                </CollapsibleTrigger>
-                <CollapsibleContent className="space-y-6 pt-6">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="p-4 rounded-lg bg-emerald-50/60 border border-emerald-200">
-                      <div className="text-xs uppercase tracking-wider text-emerald-700 font-semibold">Retrieval pipeline</div>
-                      <p className="mt-1.5 text-sm text-stone-700 leading-snug">Sentence-transformers embeddings → cosine search → top-k chunks injected into Claude prompt with citations.</p>
-                    </div>
-                    <div className="p-4 rounded-lg bg-emerald-50/60 border border-emerald-200">
-                      <div className="text-xs uppercase tracking-wider text-emerald-700 font-semibold">Grounded by default</div>
-                      <p className="mt-1.5 text-sm text-stone-700 leading-snug">Confidence threshold + cross-document synthesis callout — falls back honestly when policies don't cover the question.</p>
-                    </div>
+            <Collapsible className="mt-8">
+              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-emerald-200 bg-emerald-50/40 px-4 py-3 text-sm font-medium text-emerald-800 hover:bg-emerald-50 transition-colors">
+                <span className="uppercase tracking-wider text-xs">See technical details</span>
+                <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
+              </CollapsibleTrigger>
+              <CollapsibleContent className="space-y-6 pt-6">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="p-4 rounded-lg bg-emerald-50/60 border border-emerald-200">
+                    <div className="text-xs uppercase tracking-wider text-emerald-700 font-semibold">Retrieval pipeline</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Sentence-transformers embeddings → cosine search → top-k chunks injected into Claude prompt with citations.</p>
                   </div>
-                  <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
-                    <li className="flex gap-3"><span className="text-emerald-500">▸</span>Streaming token-by-token answers with conversation memory — follow-ups like "what about exceptions?" stay in context</li>
-                    <li className="flex gap-3"><span className="text-emerald-500">▸</span>Suggested follow-up questions + CSV session export — built for analyst workflows and audit trails</li>
-                    <li className="flex gap-3"><span className="text-emerald-500">▸</span>Local embeddings = $0 per query on retrieval; only generation hits the Claude API</li>
-                    <li className="flex gap-3"><span className="text-emerald-500">▸</span>Deployed on Streamlit Cloud with claude-haiku-4-5 — production-grade UX, demo-grade cost</li>
-                  </ul>
-                </CollapsibleContent>
-              </Collapsible>
+                  <div className="p-4 rounded-lg bg-emerald-50/60 border border-emerald-200">
+                    <div className="text-xs uppercase tracking-wider text-emerald-700 font-semibold">Grounded by default</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Confidence threshold + cross-document synthesis callout — falls back honestly when policies don't cover the question.</p>
+                  </div>
+                </div>
+                <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
+                  <li className="flex gap-3"><span className="text-emerald-500">▸</span>Streaming token-by-token answers with conversation memory — follow-ups like "what about exceptions?" stay in context</li>
+                  <li className="flex gap-3"><span className="text-emerald-500">▸</span>Suggested follow-up questions + CSV session export — built for analyst workflows and audit trails</li>
+                  <li className="flex gap-3"><span className="text-emerald-500">▸</span>Local embeddings = $0 per query on retrieval; only generation hits the Claude API</li>
+                  <li className="flex gap-3"><span className="text-emerald-500">▸</span>Deployed on Streamlit Cloud with claude-haiku-4-5 — production-grade UX, demo-grade cost</li>
+                </ul>
+              </CollapsibleContent>
+            </Collapsible>
+            <div className="mt-4 flex flex-wrap gap-2">
               <a
                 href="https://compliance-rag-demo-mrwtbs4k7gvdvmiuck8mdn.streamlit.app"
                 target="_blank"
@@ -658,7 +658,7 @@ function PortfolioPage() {
                 <Tag key={t} label={t} />
               ))}
             </div>
-            <Collapsible>
+            <Collapsible className="mt-8">
               <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-indigo-200 bg-indigo-50/40 px-4 py-3 text-sm font-medium text-indigo-800 hover:bg-indigo-50 transition-colors">
                 <span className="uppercase tracking-wider text-xs">See technical details</span>
                 <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
@@ -813,31 +813,31 @@ function PortfolioPage() {
                 ),
               )}
             </div>
-            <div className="mt-8 flex flex-wrap items-center gap-2">
-              <Collapsible>
-                <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-rose-200 bg-rose-50/40 px-4 py-3 text-sm font-medium text-rose-800 hover:bg-rose-50 transition-colors">
-                  <span className="uppercase tracking-wider text-xs">See technical details</span>
-                  <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
-                </CollapsibleTrigger>
-                <CollapsibleContent className="space-y-6 pt-6">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
-                      <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Reactive personalization</div>
-                      <p className="mt-1.5 text-sm text-stone-700 leading-snug">Each profile dimension updates the kit + routine in real time — no submit button, no full recompute.</p>
-                    </div>
-                    <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
-                      <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Operator-built stack</div>
-                      <p className="mt-1.5 text-sm text-stone-700 leading-snug">Lovable + React + Claude API — design, logic, and deployment shipped by one person, no engineering team.</p>
-                    </div>
+            <Collapsible className="mt-8">
+              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-rose-200 bg-rose-50/40 px-4 py-3 text-sm font-medium text-rose-800 hover:bg-rose-50 transition-colors">
+                <span className="uppercase tracking-wider text-xs">See technical details</span>
+                <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
+              </CollapsibleTrigger>
+              <CollapsibleContent className="space-y-6 pt-6">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
+                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Reactive personalization</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Each profile dimension updates the kit + routine in real time — no submit button, no full recompute.</p>
                   </div>
-                  <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
-                    <li className="flex gap-3"><span className="text-rose-500">▸</span>4-dimensional profile (skin tone, undertone, face shape, eye shape) drives kit + technique recs</li>
-                    <li className="flex gap-3"><span className="text-rose-500">▸</span>Visual tutorials — technique maps with brush + product callouts, not just text</li>
-                    <li className="flex gap-3"><span className="text-rose-500">▸</span>Proves range: same operator-rewires-workflows mindset, applied to a consumer-facing surface</li>
-                    <li className="flex gap-3"><span className="text-rose-500">▸</span>End-to-end on Lovable — repo, preview, deploy in one loop</li>
-                  </ul>
-                </CollapsibleContent>
-              </Collapsible>
+                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
+                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Operator-built stack</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Lovable + React + Claude API — design, logic, and deployment shipped by one person, no engineering team.</p>
+                  </div>
+                </div>
+                <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
+                  <li className="flex gap-3"><span className="text-rose-500">▸</span>4-dimensional profile (skin tone, undertone, face shape, eye shape) drives kit + technique recs</li>
+                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Visual tutorials — technique maps with brush + product callouts, not just text</li>
+                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Proves range: same operator-rewires-workflows mindset, applied to a consumer-facing surface</li>
+                  <li className="flex gap-3"><span className="text-rose-500">▸</span>End-to-end on Lovable — repo, preview, deploy in one loop</li>
+                </ul>
+              </CollapsibleContent>
+            </Collapsible>
+            <div className="mt-4 flex flex-wrap items-center gap-2">
               <a
                 href="https://face-harmony-helper.lovable.app"
                 target="_blank"
