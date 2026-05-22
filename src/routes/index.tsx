@@ -251,21 +251,18 @@ function PortfolioPage() {
                       Live
                     </span>
                   </div>
-                  <div className="mt-1.5 flex items-start justify-between gap-2">
-                    <div className="text-[17px] font-semibold text-stone-900 leading-tight tracking-tight flex-1">{p.title}</div>
-                  <div className="flex -space-x-1.5 shrink-0">
+                  <div className="mt-2 text-[15px] font-semibold text-stone-900 leading-tight tracking-tight">{p.title}</div>
+                  <div className="mt-2.5 flex -space-x-1.5">
                     {logos.slice(0, 4).map((t) => {
                       const logo = TOOL_LOGOS[t]!;
                       const Icon = logo.icon;
                       return (
-                        <span key={t} title={t} className={`inline-flex items-center justify-center w-9 h-9 rounded-full ring-1 ring-white shadow-sm ${logo.bg}`}>
-                          {Icon ? <Icon className={`w-5 h-5 ${logo.iconClass ?? ""}`} strokeWidth={2} /> : <img src={logo.src} alt={t} className="w-5 h-5" loading="lazy" />}
+                        <span key={t} title={t} className={`inline-flex items-center justify-center w-7 h-7 rounded-full ring-1 ring-white shadow-sm ${logo.bg}`}>
+                          {Icon ? <Icon className={`w-4 h-4 ${logo.iconClass ?? ""}`} strokeWidth={2} /> : <img src={logo.src} alt={t} className="w-4 h-4" loading="lazy" />}
                         </span>
                       );
                     })}
                   </div>
-                  </div>
-                  <p className="mt-1.5 text-[13px] italic text-rose-700/90 leading-snug">{p.blurb}</p>
                 </a>
               );
             })}
