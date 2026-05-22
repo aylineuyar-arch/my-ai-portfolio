@@ -212,13 +212,13 @@ function PortfolioPage() {
         <div className="mt-8 flex items-baseline justify-between gap-4 flex-wrap">
           <div className="flex items-baseline gap-3">
             <span className="text-4xl md:text-5xl font-medium tracking-tight text-rose-600 leading-none">5</span>
-            <h3 className="text-sm md:text-base uppercase tracking-[0.18em] text-stone-700 font-semibold">
+            <h3 className="text-base md:text-lg uppercase tracking-[0.18em] text-stone-700 font-semibold">
               AI portfolio projects live in production
             </h3>
           </div>
-          <span className="text-[12px] text-rose-700 font-medium">click any card for details ↓</span>
+          <span className="text-sm text-rose-700 font-medium">click any card for details ↓</span>
         </div>
-        <div className="mt-3">
+        <div className="mt-4">
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3 items-stretch">
             {[
               { num: "No. 01", id: "project-1", title: "AI Job Search Dashboard", blurb: "Scores 130+ ATS feeds for fit and conversion likelihood.", sub: "Claude · Python · Railway", tools: ["Claude", "Python", "Railway", "ATS"] },
@@ -229,7 +229,7 @@ function PortfolioPage() {
             ].map((p) => {
               const logos = p.tools.filter((t) => TOOL_LOGOS[t]);
               return (
-                <a key={p.id} href={`#${p.id}`} className="block p-3 rounded-2xl bg-white/80 backdrop-blur border border-stone-200 hover:border-rose-400 hover:shadow-md hover:-translate-y-0.5 transition-all">
+                <a key={p.id} href={`#${p.id}`} className="block p-4 rounded-2xl bg-white/80 backdrop-blur border border-stone-200 hover:border-rose-400 hover:shadow-md hover:-translate-y-0.5 transition-all">
                   <div className="flex items-center justify-between">
                     <span className="text-[11px] uppercase tracking-wider text-rose-600 font-semibold">{p.num}</span>
                     <span className="inline-flex items-center gap-1 text-[9px] uppercase tracking-wider bg-green-100 text-green-800 px-1.5 py-0.5 rounded-full font-medium">
@@ -237,18 +237,19 @@ function PortfolioPage() {
                       Live
                     </span>
                   </div>
-                  <div className="mt-2 text-[15px] font-semibold text-stone-900 leading-tight tracking-tight">{p.title}</div>
-                  <div className="mt-2.5 flex -space-x-1.5">
+                  <div className="mt-2 text-[16px] font-semibold text-stone-900 leading-tight tracking-tight">{p.title}</div>
+                  <div className="mt-3 flex flex-nowrap -space-x-1.5 overflow-hidden">
                     {logos.slice(0, 4).map((t) => {
                       const logo = TOOL_LOGOS[t]!;
                       const Icon = logo.icon;
                       return (
-                        <span key={t} title={t} className={`inline-flex items-center justify-center w-7 h-7 rounded-full ring-1 ring-white shadow-sm ${logo.bg}`}>
+                        <span key={t} title={t} className={`inline-flex shrink-0 items-center justify-center w-8 h-8 rounded-full ring-1 ring-white shadow-sm ${logo.bg}`}>
                           {Icon ? <Icon className={`w-4 h-4 ${logo.iconClass ?? ""}`} strokeWidth={2} /> : <img src={logo.src} alt={t} className="w-4 h-4" loading="lazy" />}
                         </span>
                       );
                     })}
                   </div>
+                  <p className="mt-3 text-[13px] text-stone-600 leading-snug">{p.blurb}</p>
                 </a>
               );
             })}
@@ -258,11 +259,11 @@ function PortfolioPage() {
         <div className="mt-6 h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent" />
 
         {/* Demonstrated skills — category-colored marquee */}
-        <div className="mt-5 flex items-baseline justify-between">
-          <h3 className="text-xs md:text-sm uppercase tracking-[0.25em] text-stone-700 font-semibold">
+        <div className="mt-8 flex items-baseline justify-between gap-4 flex-wrap">
+          <h3 className="text-base md:text-lg uppercase tracking-[0.18em] text-stone-700 font-semibold">
             Demonstrated skills
           </h3>
-          <span className="text-[11px] text-stone-500 italic">color-coded by category</span>
+          <span className="text-sm text-stone-500 italic">color-coded by category</span>
         </div>
         <div className="mt-3 rounded-2xl border border-stone-300/70 bg-white/70 backdrop-blur-sm p-3 md:p-4 space-y-2">
           {[
