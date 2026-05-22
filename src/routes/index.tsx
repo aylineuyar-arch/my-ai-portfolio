@@ -230,7 +230,7 @@ function PortfolioPage() {
           <h3 className="text-xs md:text-sm uppercase tracking-[0.25em] text-stone-700 font-semibold">
             AI portfolio projects
           </h3>
-          <span className="text-[11px] text-stone-500 italic">click any card for details, or scroll for the full write-up</span>
+          <span className="text-[12px] text-rose-700 font-medium">click any card for details ↓</span>
         </div>
         <div className="mt-3">
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3 items-stretch">
