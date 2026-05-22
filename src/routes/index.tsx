@@ -210,8 +210,8 @@ function PortfolioPage() {
           Tuck MBA <span className="text-stone-400">|</span> Ex Deloitte and Skild AI <span className="text-stone-400">|</span> AI Deployment, Strategy, Ops
         </p>
 
-        {/* Tools & concepts — compact static rows */}
-        <div className="mt-8 space-y-3">
+        {/* Tools & concepts — 3 scannable marquee rows */}
+        <div className="mt-8 rounded-2xl border border-stone-300/70 bg-white/60 backdrop-blur-sm p-5 md:p-6 space-y-5">
           {[
             {
               label: "AI",
@@ -225,29 +225,40 @@ function PortfolioPage() {
               label: "Engineering",
               items: ["Python", "SQL", "Supabase / Postgres", "React + TypeScript", "Streamlit"],
             },
-          ].map((g) => (
-            <div key={g.label} className="flex flex-col sm:flex-row sm:items-baseline gap-x-4 gap-y-1">
-              <span className="shrink-0 sm:w-28 text-[11px] uppercase tracking-[0.22em] text-amber-800 font-semibold">
-                {g.label}
-              </span>
-              <p className="text-[15px] text-stone-700 leading-relaxed">
-                {g.items.join(" · ")}
-              </p>
-            </div>
-          ))}
+          ].map((g) => {
+            const loop = [...g.items, ...g.items, ...g.items];
+            return (
+              <div key={g.label} className="flex flex-col sm:flex-row sm:items-center gap-x-5 gap-y-3">
+                <span className="shrink-0 sm:w-32 text-sm uppercase tracking-[0.22em] text-amber-800 font-semibold">
+                  {g.label}
+                </span>
+                <div className="relative flex-1 overflow-hidden">
+                  <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-white/80 to-transparent z-10" />
+                  <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-white/80 to-transparent z-10" />
+                  <div className="flex w-max animate-marquee gap-2">
+                    {loop.map((t, i) => (
+                      <span
+                        key={i}
+                        className="shrink-0 inline-flex items-center gap-2 rounded-full border border-stone-300/70 bg-white/90 px-4 py-1.5 text-[15px] text-stone-800"
+                      >
+                        <span className="h-1.5 w-1.5 rounded-full bg-amber-700" />
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
-
-
-
-
-        {/* By the numbers — quantified impact strip */}
+        {/* Portfolio scope — what this body of work spans */}
         <div className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl">
           {[
             ["5", "Live AI products"],
-            ["130+", "Applicant Tracking Systems automated"],
-            ["~3 min", "Pipeline runtime"],
-            ["8am ET", "Daily agentic send"],
+            ["4", "Domains: hiring, comms, compliance, consumer"],
+            ["End-to-end", "Strategy → design → ship"],
+            ["Production", "Real users, real workflows"],
           ].map(([n, l]) => (
             <div key={l} className="border-l-2 border-rose-300 pl-3">
               <div className="text-2xl md:text-3xl font-light text-stone-900">{n}</div>
@@ -258,12 +269,6 @@ function PortfolioPage() {
 
         {/* Project navigation bubbles */}
         <div className="mt-20 lg:-mx-16 xl:-mx-24">
-          <p className="text-xs uppercase tracking-[0.3em] text-stone-500 font-medium mb-2">
-            Five live projects · jump to →
-          </p>
-          <p className="mb-6 text-sm text-stone-600">
-            Every one below — <span className="text-amber-800 font-semibold">built and shipped end-to-end by me.</span>
-          </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 items-stretch">
             <a href="#project-1" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border border-stone-200 hover:border-amber-700/50 hover:shadow-md hover:-translate-y-0.5 transition-all">
               <div className="flex items-center justify-between">
