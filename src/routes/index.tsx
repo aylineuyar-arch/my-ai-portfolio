@@ -228,38 +228,56 @@ function PortfolioPage() {
           </div>
 
           {/* Tools & concepts — aligned to the same content width */}
-          <div className="mt-6 w-full rounded-2xl border border-stone-300/70 bg-white/60 backdrop-blur-sm p-4 md:p-5 space-y-3.5">
+          <div className="mt-6 w-full rounded-2xl border border-stone-300/70 bg-white/60 backdrop-blur-sm p-3 md:p-4 space-y-2.5">
           {[
             {
               label: "AI",
-              items: ["Claude API", "OpenAI API", "RAG", "AI agents", "Function calling", "Prompt engineering"],
+              items: [
+                { name: "Claude API", dot: "bg-orange-500" },
+                { name: "OpenAI API", dot: "bg-stone-700" },
+                { name: "RAG", dot: "bg-emerald-500" },
+                { name: "AI agents", dot: "bg-indigo-500" },
+                { name: "Function calling", dot: "bg-cyan-500" },
+                { name: "Prompt engineering", dot: "bg-amber-500" },
+              ],
             },
             {
               label: "Automation",
-              items: ["n8n", "Cron pipelines", "Greenhouse / Lever / Ashby APIs", "Resend"],
+              items: [
+                { name: "n8n", dot: "bg-pink-500" },
+                { name: "Cron pipelines", dot: "bg-violet-500" },
+                { name: "Greenhouse / Lever / Ashby APIs", dot: "bg-green-500" },
+                { name: "Resend", dot: "bg-stone-700" },
+              ],
             },
             {
               label: "Engineering",
-              items: ["Python", "SQL", "Supabase / Postgres", "React + TypeScript", "Streamlit"],
+              items: [
+                { name: "Python", dot: "bg-blue-500" },
+                { name: "SQL", dot: "bg-slate-500" },
+                { name: "Supabase / Postgres", dot: "bg-emerald-500" },
+                { name: "React + TypeScript", dot: "bg-sky-500" },
+                { name: "Streamlit", dot: "bg-red-500" },
+              ],
             },
           ].map((g) => {
             const loop = [...g.items, ...g.items, ...g.items];
             return (
-              <div key={g.label} className="flex flex-col sm:flex-row sm:items-center gap-x-5 gap-y-3">
-                <span className="shrink-0 sm:w-28 text-sm uppercase tracking-[0.22em] text-amber-800 font-semibold">
+              <div key={g.label} className="flex flex-col sm:flex-row sm:items-center gap-x-4 gap-y-1.5">
+                <span className="shrink-0 sm:w-24 text-[10px] uppercase tracking-[0.2em] text-stone-500 font-medium">
                   {g.label}
                 </span>
                 <div className="relative flex-1 overflow-hidden">
                   <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-white/80 to-transparent z-10" />
                   <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-white/80 to-transparent z-10" />
-                  <div className="flex w-max animate-marquee gap-2">
+                  <div className="flex w-max animate-marquee gap-1.5">
                     {loop.map((t, i) => (
                       <span
                         key={i}
-                        className="shrink-0 inline-flex items-center gap-2 rounded-full border border-stone-300/70 bg-white/90 px-4 py-1.5 text-[15px] text-stone-800"
+                        className="shrink-0 inline-flex items-center gap-1.5 rounded-full border border-stone-300/70 bg-white/90 px-3 py-1 text-[12px] text-stone-700"
                       >
-                        <span className="h-1.5 w-1.5 rounded-full bg-amber-700" />
-                        {t}
+                        <span className={`h-1.5 w-1.5 rounded-full ${t.dot}`} />
+                        {t.name}
                       </span>
                     ))}
                   </div>
