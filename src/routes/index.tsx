@@ -270,7 +270,7 @@ function PortfolioPage() {
         </div>
 
         {/* Project navigation bubbles */}
-        <div className="mt-16 lg:-mx-16 xl:-mx-24">
+        <div className="mt-10 w-full">
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 items-stretch">
             {[
               { num: "No. 01", id: "project-1", title: "AI Job Search Dashboard", sub: "Claude · Python · 130+ Applicant Tracking Systems", tools: ["Claude", "Python", "Railway", "ATS"] },
@@ -293,6 +293,7 @@ function PortfolioPage() {
               </a>
             ))}
           </div>
+        </div>
         </div>
       </header>
 
