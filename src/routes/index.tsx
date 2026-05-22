@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Github, Briefcase, Database, MessageSquare, Workflow, type LucideIcon } from "lucide-react";
+import { Github, Linkedin, Briefcase, Database, MessageSquare, Workflow, type LucideIcon } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import dashboardImg from "@/assets/portfolio-dashboard.jpg";
 import emailGenImg from "@/assets/email-generator-screenshot.png";
@@ -172,27 +172,26 @@ function PortfolioPage() {
           Every workflow on this site was designed, built, and shipped by{" "}
           <span className="text-amber-800 font-semibold">Aylin Uyar</span>.
         </p>
-      </div>
-
-      {/* Social links — fixed top-left corner */}
-      <div className="fixed top-7 left-6 z-50 flex items-center gap-4 text-xs uppercase tracking-[0.18em] font-medium text-stone-700">
-        <a
-          href="https://github.com/aylineuyar-arch"
-          target="_blank"
-          rel="noreferrer"
-          className="hover:text-amber-800 transition-colors"
-        >
-          GitHub ↗
-        </a>
-        <span className="text-stone-300">·</span>
-        <a
-          href="https://www.linkedin.com/in/aylinuyar/"
-          target="_blank"
-          rel="noreferrer"
-          className="hover:text-amber-800 transition-colors"
-        >
-          LinkedIn ↗
-        </a>
+        <div className="mt-3 flex items-center justify-end gap-3 border-t border-stone-200 pt-3">
+          <a
+            href="https://github.com/aylineuyar-arch"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub"
+            className="text-stone-600 hover:text-amber-800 transition-colors"
+          >
+            <Github className="h-5 w-5" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/aylinuyar/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+            className="text-stone-600 hover:text-amber-800 transition-colors"
+          >
+            <Linkedin className="h-5 w-5" />
+          </a>
+        </div>
       </div>
 
 
