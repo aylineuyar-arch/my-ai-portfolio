@@ -265,7 +265,7 @@ function PortfolioPage() {
                     })}
                   </div>
                   </div>
-                  <p className="mt-1 text-[12px] italic text-rose-700/90 leading-snug">{p.blurb}</p>
+                  <p className="mt-1.5 text-[13px] italic text-rose-700/90 leading-snug">{p.blurb}</p>
                 </a>
               );
             })}
