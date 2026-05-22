@@ -272,9 +272,12 @@ function PortfolioPage() {
         </div>
 
         {/* Project navigation bubbles */}
-        <div className="mt-12 lg:-mx-16 xl:-mx-24">
-          <p className="text-xs uppercase tracking-[0.3em] text-stone-500 font-medium mb-4">
+        <div className="mt-20 lg:-mx-16 xl:-mx-24">
+          <p className="text-xs uppercase tracking-[0.3em] text-stone-500 font-medium mb-2">
             Five live projects · jump to →
+          </p>
+          <p className="mb-6 text-sm text-stone-600">
+            Every one below — <span className="text-amber-800 font-semibold">designed, built, and shipped end-to-end by me.</span>
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 items-stretch">
             <a href="#project-1" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-orange-200 hover:border-orange-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
