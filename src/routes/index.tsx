@@ -262,7 +262,7 @@ function PortfolioPage() {
             Five live projects · jump to →
           </p>
           <p className="mb-6 text-sm text-stone-600">
-            Every one below — <span className="text-amber-800 font-semibold">designed, built, and shipped end-to-end by me.</span>
+            Every one below — <span className="text-amber-800 font-semibold">built and shipped end-to-end by me.</span>
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 items-stretch">
             <a href="#project-1" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border border-stone-200 hover:border-amber-700/50 hover:shadow-md hover:-translate-y-0.5 transition-all">
