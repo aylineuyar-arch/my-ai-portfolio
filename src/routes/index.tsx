@@ -160,7 +160,7 @@ function PortfolioPage() {
       {/* Author badge — fixed corner */}
       <div className="fixed top-5 right-5 z-50 w-[360px] rounded-2xl border border-stone-200 bg-white px-5 py-4 shadow-lg shadow-stone-900/5">
         <p className="text-sm leading-snug font-medium text-stone-900 whitespace-nowrap">
-          Designed, built &amp; shipped by{" "}
+          Built &amp; shipped by{" "}
           <span className="text-amber-800 font-semibold">Aylin Uyar</span>.
         </p>
         <div className="mt-3 grid grid-cols-2 gap-2 border-t border-stone-200 pt-3">
@@ -210,8 +210,8 @@ function PortfolioPage() {
           Tuck MBA <span className="text-stone-400">|</span> Ex Deloitte and Skild AI <span className="text-stone-400">|</span> AI Deployment, Strategy, Ops
         </p>
 
-        {/* Tools & concepts — 3 scannable rows, slow marquee each */}
-        <div className="mt-8 rounded-2xl border border-stone-300/70 bg-white/60 backdrop-blur-sm p-5 md:p-6 space-y-5">
+        {/* Tools & concepts — compact static rows */}
+        <div className="mt-8 space-y-3">
           {[
             {
               label: "AI",
@@ -225,31 +225,16 @@ function PortfolioPage() {
               label: "Engineering",
               items: ["Python", "SQL", "Supabase / Postgres", "React + TypeScript", "Streamlit"],
             },
-          ].map((g) => {
-            const loop = [...g.items, ...g.items, ...g.items];
-            return (
-              <div key={g.label} className="flex flex-col sm:flex-row sm:items-center gap-x-5 gap-y-3">
-                <span className="shrink-0 sm:w-32 text-sm uppercase tracking-[0.22em] text-amber-800 font-semibold">
-                  {g.label}
-                </span>
-                <div className="relative flex-1 overflow-hidden">
-                  <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-white/80 to-transparent z-10" />
-                  <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-white/80 to-transparent z-10" />
-                  <div className="flex w-max animate-marquee gap-2">
-                    {loop.map((t, i) => (
-                      <span
-                        key={i}
-                        className="shrink-0 inline-flex items-center gap-2 rounded-full border border-stone-300/70 bg-white/90 px-4 py-1.5 text-[15px] text-stone-800"
-                      >
-                        <span className="h-1.5 w-1.5 rounded-full bg-amber-700" />
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+          ].map((g) => (
+            <div key={g.label} className="flex flex-col sm:flex-row sm:items-baseline gap-x-4 gap-y-1">
+              <span className="shrink-0 sm:w-28 text-[11px] uppercase tracking-[0.22em] text-amber-800 font-semibold">
+                {g.label}
+              </span>
+              <p className="text-[15px] text-stone-700 leading-relaxed">
+                {g.items.join(" · ")}
+              </p>
+            </div>
+          ))}
         </div>
 
 
@@ -277,7 +262,7 @@ function PortfolioPage() {
             Five live projects · jump to →
           </p>
           <p className="mb-6 text-sm text-stone-600">
-            Every one below — <span className="text-amber-800 font-semibold">designed, built, and shipped end-to-end by me.</span>
+            Every one below — <span className="text-amber-800 font-semibold">built and shipped end-to-end by me.</span>
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 items-stretch">
             <a href="#project-1" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border border-stone-200 hover:border-amber-700/50 hover:shadow-md hover:-translate-y-0.5 transition-all">
