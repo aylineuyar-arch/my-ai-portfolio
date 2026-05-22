@@ -240,21 +240,35 @@ function PortfolioPage() {
               { num: "No. 03", id: "project-3", title: "Compliance RAG Chatbot", blurb: "Grounded policy Q&A for regulated financial services teams.", sub: "Claude · Python · Streamlit", tools: ["Claude", "Python", "Streamlit", "RAG"] },
               { num: "No. 04", id: "project-4", title: "Customer Service Triage", blurb: "Classifies, prioritizes, and drafts replies in under a second.", sub: "Claude · Python · NLP", tools: ["Claude", "Python", "Triage", "NLP"] },
               { num: "No. 05", id: "project-5", title: "Aura — Makeup Assistant", blurb: "Maps your features to a personalized beauty routine.", sub: "Lovable · React · Claude", tools: ["Lovable", "React", "TypeScript", "Claude"] },
-            ].map((p) => (
-              <a key={p.id} href={`#${p.id}`} className="block p-4 rounded-2xl bg-white/80 backdrop-blur border border-stone-200 hover:border-rose-400 hover:shadow-md hover:-translate-y-0.5 transition-all">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs uppercase tracking-wider text-rose-600 font-semibold">{p.num}</span>
-                  <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                    Live
-                  </span>
-                </div>
-                <div className="mt-2 text-xl font-semibold text-stone-900 leading-tight tracking-tight">{p.title}</div>
-                <p className="mt-1.5 text-[13px] italic text-rose-700/90 leading-snug">{p.blurb}</p>
-                <div className="mt-1.5 text-[10px] text-stone-500 uppercase tracking-wider">{p.sub}</div>
-                <ToolIcons tools={p.tools} />
-              </a>
-            ))}
+            ].map((p) => {
+              const logos = p.tools.filter((t) => TOOL_LOGOS[t]);
+              return (
+                <a key={p.id} href={`#${p.id}`} className="block p-3 rounded-2xl bg-white/80 backdrop-blur border border-stone-200 hover:border-rose-400 hover:shadow-md hover:-translate-y-0.5 transition-all">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] uppercase tracking-wider text-rose-600 font-semibold">{p.num}</span>
+                    <span className="inline-flex items-center gap-1 text-[9px] uppercase tracking-wider bg-green-100 text-green-800 px-1.5 py-0.5 rounded-full font-medium">
+                      <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                      Live
+                    </span>
+                  </div>
+                  <div className="mt-1.5 flex items-start justify-between gap-2">
+                    <div className="text-[15px] font-semibold text-stone-900 leading-tight tracking-tight flex-1">{p.title}</div>
+                    <div className="flex -space-x-1 shrink-0">
+                      {logos.slice(0, 4).map((t) => {
+                        const logo = TOOL_LOGOS[t]!;
+                        const Icon = logo.icon;
+                        return (
+                          <span key={t} title={t} className={`inline-flex items-center justify-center w-5 h-5 rounded-full ring-1 ring-white shadow-sm ${logo.bg}`}>
+                            {Icon ? <Icon className={`w-3 h-3 ${logo.iconClass ?? ""}`} strokeWidth={2} /> : <img src={logo.src} alt={t} className="w-3 h-3" loading="lazy" />}
+                          </span>
+                        );
+                      })}
+                    </div>
+                  </div>
+                  <p className="mt-1 text-[12px] italic text-rose-700/90 leading-snug">{p.blurb}</p>
+                </a>
+              );
+            })}
           </div>
         </div>
 
