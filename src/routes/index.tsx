@@ -158,107 +158,100 @@ function GradientDivider() {
 function PortfolioPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#fdf8f3] via-[#faf3ec] to-[#f5ede2] text-stone-900">
+      {/* Built & shipped badge — fixed top right */}
+      <div className="fixed top-4 right-4 z-50 w-[220px] rounded-xl border border-rose-200 bg-white/95 backdrop-blur px-3.5 py-2.5 shadow-lg shadow-rose-900/10">
+        <p className="text-[12px] leading-snug font-medium text-stone-900">
+          Built &amp; shipped by{" "}
+          <span className="text-rose-600 font-semibold">Aylin Uyar</span>.
+        </p>
+        <div className="mt-2 grid grid-cols-2 gap-1.5 border-t border-stone-200 pt-2">
+          <a
+            href="https://github.com/aylineuyar-arch"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub"
+            className="flex items-center justify-center gap-1.5 rounded-lg bg-stone-900 px-2 py-1.5 text-white text-[11px] font-medium transition-transform hover:scale-[1.02]"
+          >
+            <Github className="h-3.5 w-3.5" />
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/aylinuyar/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+            className="flex items-center justify-center gap-1.5 rounded-lg bg-[#0A66C2] px-2 py-1.5 text-white text-[11px] font-medium transition-transform hover:scale-[1.02]"
+          >
+            <Linkedin className="h-3.5 w-3.5" />
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
       {/* Hero */}
-      <header className="relative mx-auto max-w-6xl px-6 pt-4 pb-16 md:pt-6 md:pb-20">
-        <div className="mx-auto w-full max-w-5xl">
-          <div className="mt-6 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-            <h1 className="text-5xl md:text-7xl font-light leading-[1.05] tracking-tight flex flex-wrap items-end gap-x-5 gap-y-2">
-              <span>Aylin Uyar</span>
-              <span className="text-base md:text-lg uppercase tracking-[0.3em] text-amber-800 font-medium pb-2 md:pb-3">
-                AI Portfolio
-              </span>
-            </h1>
+      <header className="relative mx-auto max-w-6xl px-6 pt-8 pb-16 md:pt-10 md:pb-20">
+        <h1 className="text-5xl md:text-7xl font-light leading-[1.05] tracking-tight flex flex-wrap items-end gap-x-5 gap-y-2 pr-[240px]">
+          <span>Aylin Uyar</span>
+          <span className="text-base md:text-lg uppercase tracking-[0.3em] text-rose-600 font-medium pb-2 md:pb-3">
+            AI Portfolio
+          </span>
+        </h1>
 
-            {/* Author badge — centered against the name row */}
-            <div className="w-full max-w-[230px] self-start lg:self-center rounded-xl border border-stone-200 bg-white px-3.5 py-2.5 shadow-md shadow-stone-900/5">
-              <p className="text-[13px] leading-snug font-medium text-stone-900 whitespace-nowrap">
-                Built &amp; shipped by{" "}
-                <span className="text-amber-800 font-semibold">Aylin Uyar</span>.
-              </p>
-              <div className="mt-2 grid grid-cols-2 gap-1.5 border-t border-stone-200 pt-2">
-                <a
-                  href="https://github.com/aylineuyar-arch"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="GitHub"
-                  className="flex items-center justify-center gap-1.5 rounded-lg bg-stone-900 px-2 py-1.5 text-white text-xs font-medium transition-transform hover:scale-[1.02]"
-                >
-                  <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="currentColor" aria-hidden="true">
-                    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-                  </svg>
-                  GitHub
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/aylinuyar/"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="LinkedIn"
-                  className="flex items-center justify-center gap-1.5 rounded-lg bg-[#0A66C2] px-2 py-1.5 text-white text-xs font-medium transition-transform hover:scale-[1.02]"
-                >
-                  <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="currentColor" aria-hidden="true">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.268 2.37 4.268 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                  LinkedIn
-                </a>
-              </div>
+        {/* Tagline — the through-line of the work */}
+        <p className="mt-4 text-xl md:text-2xl font-light italic text-rose-700">
+          Rewiring the workflows you already run.
+        </p>
+
+        <p className="mt-6 max-w-4xl text-lg md:text-2xl text-stone-700 leading-snug font-light">
+          Tuck MBA <span className="text-stone-400">|</span> Ex Deloitte and Skild AI <span className="text-stone-400">|</span> AI Deployment, Strategy, Ops
+        </p>
+
+        {/* Portfolio signal banner — meaningful aggregate stats */}
+        <div className="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-3 rounded-2xl border border-rose-200/70 bg-gradient-to-br from-rose-50/80 via-white to-white p-3 md:p-4 shadow-sm shadow-rose-900/5">
+          {[
+            ["5", "Projects live in production"],
+            ["130+", "ATS sources tracked"],
+            ["~3 min", "Avg end-to-end pipeline"],
+            ["<1 sec", "Triage classification"],
+          ].map(([value, label]) => (
+            <div key={label} className="rounded-xl border border-rose-100 bg-white px-3.5 py-3">
+              <div className="text-xl md:text-2xl font-light text-rose-600 leading-none">{value}</div>
+              <div className="mt-1.5 text-[11px] uppercase tracking-[0.16em] text-stone-500 leading-snug">{label}</div>
             </div>
-          </div>
+          ))}
+        </div>
 
-          {/* Tagline — the through-line of the work */}
-          <p className="mt-4 text-xl md:text-2xl font-light italic text-rose-700">
-            Rewiring the workflows you already run.
-          </p>
-
-          <p className="mt-6 max-w-4xl text-lg md:text-2xl text-stone-700 leading-snug font-light">
-            Tuck MBA <span className="text-stone-400">|</span> Ex Deloitte and Skild AI <span className="text-stone-400">|</span> AI Deployment, Strategy, Ops
-          </p>
-
-          {/* Portfolio signal banner */}
-          <div className="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-3 rounded-2xl border border-stone-300/70 bg-white/70 p-3 md:p-4 shadow-sm shadow-stone-900/5">
-            {[
-              ["130+ ATS", "Hiring pipeline coverage"],
-              ["8am ET", "Automated outreach run"],
-              ["RAG", "Compliance retrieval"],
-              ["Aura", "Consumer AI assistant"],
-            ].map(([value, label]) => (
-              <div key={value} className="rounded-xl border border-stone-200 bg-white px-3.5 py-3">
-                <div className="text-xl md:text-2xl font-light text-rose-600 leading-none">{value}</div>
-                <div className="mt-1.5 text-[11px] uppercase tracking-[0.16em] text-stone-500 leading-snug">{label}</div>
-              </div>
-            ))}
-          </div>
-
-          {/* Tools & concepts — aligned to the same content width */}
-          <div className="mt-6 w-full rounded-2xl border border-stone-300/70 bg-white/60 backdrop-blur-sm p-3 md:p-4 space-y-2.5">
+        {/* Tools & concepts — pills tinted with brand colors matching project icons */}
+        <div className="mt-6 rounded-2xl border border-stone-300/70 bg-white/60 backdrop-blur-sm p-3 md:p-4 space-y-2.5">
           {[
             {
               label: "AI",
               items: [
-                { name: "Claude API", dot: "bg-orange-500" },
-                { name: "OpenAI API", dot: "bg-stone-700" },
-                { name: "RAG", dot: "bg-emerald-500" },
-                { name: "AI agents", dot: "bg-indigo-500" },
-                { name: "Function calling", dot: "bg-cyan-500" },
-                { name: "Prompt engineering", dot: "bg-amber-500" },
+                { name: "Claude API", cls: "bg-orange-50 border-orange-200 text-orange-800" },
+                { name: "OpenAI API", cls: "bg-stone-50 border-stone-300 text-stone-800" },
+                { name: "RAG", cls: "bg-emerald-50 border-emerald-200 text-emerald-800" },
+                { name: "AI agents", cls: "bg-indigo-50 border-indigo-200 text-indigo-800" },
+                { name: "Function calling", cls: "bg-cyan-50 border-cyan-200 text-cyan-800" },
+                { name: "Prompt engineering", cls: "bg-amber-50 border-amber-200 text-amber-800" },
               ],
             },
             {
               label: "Automation",
               items: [
-                { name: "n8n", dot: "bg-pink-500" },
-                { name: "Cron pipelines", dot: "bg-violet-500" },
-                { name: "Greenhouse / Lever / Ashby APIs", dot: "bg-green-500" },
-                { name: "Resend", dot: "bg-stone-700" },
+                { name: "n8n", cls: "bg-pink-50 border-pink-200 text-pink-800" },
+                { name: "Cron pipelines", cls: "bg-violet-50 border-violet-200 text-violet-800" },
+                { name: "Greenhouse / Lever / Ashby APIs", cls: "bg-green-50 border-green-200 text-green-800" },
+                { name: "Resend", cls: "bg-stone-50 border-stone-300 text-stone-800" },
               ],
             },
             {
               label: "Engineering",
               items: [
-                { name: "Python", dot: "bg-blue-500" },
-                { name: "SQL", dot: "bg-slate-500" },
-                { name: "Supabase / Postgres", dot: "bg-emerald-500" },
-                { name: "React + TypeScript", dot: "bg-sky-500" },
-                { name: "Streamlit", dot: "bg-red-500" },
+                { name: "Python", cls: "bg-blue-50 border-blue-200 text-blue-800" },
+                { name: "SQL", cls: "bg-slate-50 border-slate-300 text-slate-800" },
+                { name: "Supabase / Postgres", cls: "bg-emerald-50 border-emerald-200 text-emerald-800" },
+                { name: "React + TypeScript", cls: "bg-sky-50 border-sky-200 text-sky-800" },
+                { name: "Streamlit", cls: "bg-red-50 border-red-200 text-red-800" },
               ],
             },
           ].map((g) => {
@@ -269,15 +262,14 @@ function PortfolioPage() {
                   {g.label}
                 </span>
                 <div className="relative flex-1 overflow-hidden">
-                  <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-white/80 to-transparent z-10" />
-                  <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-white/80 to-transparent z-10" />
+                  <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-white/90 to-transparent z-10" />
+                  <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-white/90 to-transparent z-10" />
                   <div className="flex w-max animate-marquee gap-1.5">
                     {loop.map((t, i) => (
                       <span
                         key={i}
-                        className="shrink-0 inline-flex items-center gap-1.5 rounded-full border border-stone-300/70 bg-white/90 px-3 py-1 text-[12px] text-stone-700"
+                        className={`shrink-0 inline-flex items-center rounded-full border px-3 py-1 text-[12px] font-medium ${t.cls}`}
                       >
-                        <span className={`h-1.5 w-1.5 rounded-full ${t.dot}`} />
                         {t.name}
                       </span>
                     ))}
@@ -289,14 +281,14 @@ function PortfolioPage() {
         </div>
 
         {/* Project navigation bubbles */}
-        <div className="mt-10 w-full">
+        <div className="mt-10">
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 items-stretch">
             {[
-              { num: "No. 01", id: "project-1", title: "AI Job Search Dashboard", sub: "Claude · Python · 130+ Applicant Tracking Systems", tools: ["Claude", "Python", "Railway", "ATS"] },
-              { num: "No. 02", id: "project-2", title: "Agentic AI Email Generator", sub: "Claude · n8n · Railway · 8am ET", tools: ["Claude", "n8n", "Railway", "Resend", "Supabase"] },
-              { num: "No. 03", id: "project-3", title: "Compliance RAG Chatbot", sub: "Financial services · Python", tools: ["Claude", "Python", "Streamlit", "RAG"] },
-              { num: "No. 04", id: "project-4", title: "AI Customer Service Triage", sub: "Claude · Python · NLP routing", tools: ["Claude", "Python", "Triage", "NLP"] },
-              { num: "No. 05", id: "project-5", title: "Aura — Makeup Assistant", sub: "Lovable · React · Claude", tools: ["Lovable", "React", "TypeScript", "Claude"] },
+              { num: "No. 01", id: "project-1", title: "AI Job Search Dashboard", blurb: "Scores 130+ ATS feeds for fit and conversion likelihood.", sub: "Claude · Python · Railway", tools: ["Claude", "Python", "Railway", "ATS"] },
+              { num: "No. 02", id: "project-2", title: "Agentic Email Generator", blurb: "Always-on agent emails a ranked digest at 8am ET daily.", sub: "n8n · Claude · Supabase", tools: ["Claude", "n8n", "Railway", "Resend", "Supabase"] },
+              { num: "No. 03", id: "project-3", title: "Compliance RAG Chatbot", blurb: "Grounded policy Q&A for regulated financial services teams.", sub: "Claude · Python · Streamlit", tools: ["Claude", "Python", "Streamlit", "RAG"] },
+              { num: "No. 04", id: "project-4", title: "Customer Service Triage", blurb: "Classifies, prioritizes, and drafts replies in under a second.", sub: "Claude · Python · NLP", tools: ["Claude", "Python", "Triage", "NLP"] },
+              { num: "No. 05", id: "project-5", title: "Aura — Makeup Assistant", blurb: "Maps your features to a personalized beauty routine.", sub: "Lovable · React · Claude", tools: ["Lovable", "React", "TypeScript", "Claude"] },
             ].map((p) => (
               <a key={p.id} href={`#${p.id}`} className="block p-5 rounded-2xl bg-white/80 backdrop-blur border border-stone-200 hover:border-rose-400 hover:shadow-md hover:-translate-y-0.5 transition-all">
                 <div className="flex items-center justify-between">
@@ -306,13 +298,13 @@ function PortfolioPage() {
                     Live
                   </span>
                 </div>
-                <div className="mt-3 text-lg font-semibold text-stone-900 leading-snug tracking-tight">{p.title}</div>
-                <div className="mt-1.5 text-[11px] text-stone-500 uppercase tracking-wider">{p.sub}</div>
+                <div className="mt-3 text-xl font-semibold text-stone-900 leading-tight tracking-tight">{p.title}</div>
+                <p className="mt-2 text-[13px] italic text-rose-700/90 leading-snug">{p.blurb}</p>
+                <div className="mt-2 text-[10px] text-stone-500 uppercase tracking-wider">{p.sub}</div>
                 <ToolIcons tools={p.tools} />
               </a>
             ))}
           </div>
-        </div>
         </div>
       </header>
 
