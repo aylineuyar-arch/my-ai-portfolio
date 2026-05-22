@@ -244,8 +244,8 @@ function PortfolioPage() {
                       const logo = TOOL_LOGOS[t]!;
                       const Icon = logo.icon;
                       return (
-                        <span key={t} title={t} className={`inline-flex shrink-0 items-center justify-center w-7 h-7 rounded-full ring-1 ring-white shadow-sm ${logo.bg}`}>
-                          {Icon ? <Icon className={`w-3.5 h-3.5 ${logo.iconClass ?? ""}`} strokeWidth={2} /> : <img src={logo.src} alt={t} className="w-3.5 h-3.5" loading="lazy" />}
+                        <span key={t} title={t} className={`inline-flex shrink-0 items-center justify-center w-9 h-9 rounded-full ring-1 ring-white shadow-sm ${logo.bg}`}>
+                          {Icon ? <Icon className={`w-[18px] h-[18px] ${logo.iconClass ?? ""}`} strokeWidth={2} /> : <img src={logo.src} alt={t} className="w-[18px] h-[18px]" loading="lazy" />}
                         </span>
                       );
                     })}
