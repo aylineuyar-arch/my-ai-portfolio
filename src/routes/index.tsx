@@ -280,61 +280,46 @@ function PortfolioPage() {
             Every one below — <span className="text-amber-800 font-semibold">designed, built, and shipped end-to-end by me.</span>
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 items-stretch">
-            <a href="#project-1" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-orange-200 hover:border-orange-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+            <a href="#project-1" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border border-stone-200 hover:border-amber-700/50 hover:shadow-md hover:-translate-y-0.5 transition-all">
               <div className="flex items-center justify-between">
-                <span className="text-xs uppercase tracking-wider text-orange-700 font-semibold">No. 01</span>
-                <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                  Live
-                </span>
+                <span className="text-xs uppercase tracking-wider text-amber-800 font-semibold">No. 01</span>
+                <span className="text-[10px] uppercase tracking-wider text-stone-500">Live</span>
               </div>
               <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">AI Job Search Dashboard</div>
               <div className="mt-1 text-xs text-stone-600">Claude · Python · 130+ Applicant Tracking Systems</div>
               <ToolIcons tools={["Claude", "Python", "Railway", "ATS"]} />
             </a>
-            <a href="#project-2" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-stone-200 hover:border-stone-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+            <a href="#project-2" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border border-stone-200 hover:border-amber-700/50 hover:shadow-md hover:-translate-y-0.5 transition-all">
               <div className="flex items-center justify-between">
-                <span className="text-xs uppercase tracking-wider text-stone-600 font-semibold">No. 02</span>
-                <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                  Live
-                </span>
+                <span className="text-xs uppercase tracking-wider text-amber-800 font-semibold">No. 02</span>
+                <span className="text-[10px] uppercase tracking-wider text-stone-500">Live</span>
               </div>
               <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">Agentic AI Email Generator</div>
               <div className="mt-1 text-xs text-stone-600">Claude · n8n · Railway · 8am ET</div>
               <ToolIcons tools={["Claude", "n8n", "Railway", "Resend", "Supabase"]} />
             </a>
-            <a href="#project-3" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-emerald-200 hover:border-emerald-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+            <a href="#project-3" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border border-stone-200 hover:border-amber-700/50 hover:shadow-md hover:-translate-y-0.5 transition-all">
               <div className="flex items-center justify-between">
-                <span className="text-xs uppercase tracking-wider text-emerald-700 font-semibold">No. 03</span>
-                <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                  Live
-                </span>
+                <span className="text-xs uppercase tracking-wider text-amber-800 font-semibold">No. 03</span>
+                <span className="text-[10px] uppercase tracking-wider text-stone-500">Live</span>
               </div>
               <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">Compliance RAG Chatbot</div>
               <div className="mt-1 text-xs text-stone-600">Financial services · Python</div>
               <ToolIcons tools={["Claude", "Python", "Streamlit", "RAG"]} />
             </a>
-            <a href="#project-4" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-indigo-200 hover:border-indigo-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+            <a href="#project-4" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border border-stone-200 hover:border-amber-700/50 hover:shadow-md hover:-translate-y-0.5 transition-all">
               <div className="flex items-center justify-between">
-                <span className="text-xs uppercase tracking-wider text-indigo-700 font-semibold">No. 04</span>
-                <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                  Live
-                </span>
+                <span className="text-xs uppercase tracking-wider text-amber-800 font-semibold">No. 04</span>
+                <span className="text-[10px] uppercase tracking-wider text-stone-500">Live</span>
               </div>
               <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">AI Customer Service Triage</div>
               <div className="mt-1 text-xs text-stone-600">Claude · Python · NLP routing</div>
               <ToolIcons tools={["Claude", "Python", "Triage", "NLP"]} />
             </a>
-            <a href="#project-5" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-rose-200 hover:border-rose-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+            <a href="#project-5" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border border-stone-200 hover:border-amber-700/50 hover:shadow-md hover:-translate-y-0.5 transition-all">
               <div className="flex items-center justify-between">
-                <span className="text-xs uppercase tracking-wider text-rose-700 font-semibold">No. 05</span>
-                <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                  Live
-                </span>
+                <span className="text-xs uppercase tracking-wider text-amber-800 font-semibold">No. 05</span>
+                <span className="text-[10px] uppercase tracking-wider text-stone-500">Live</span>
               </div>
               <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">Aura — Makeup Assistant</div>
               <div className="mt-1 text-xs text-stone-600">Lovable · React · Claude</div>
