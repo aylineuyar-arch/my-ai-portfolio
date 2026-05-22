@@ -216,7 +216,7 @@ function PortfolioPage() {
             ["~3 min", "Avg end-to-end pipeline"],
             ["<1 sec", "Triage classification"],
           ].map(([value, label]) => (
-            <div key={label} className="rounded-xl border border-rose-100 bg-white px-3.5 py-2.5 flex items-baseline gap-2">
+            <div key={label} className="rounded-xl border border-rose-200 bg-rose-50/70 px-3.5 py-2.5 flex items-baseline gap-2">
               <span className="text-xl md:text-2xl font-medium tracking-tight text-rose-600 leading-none">{value}</span>
               <span className="text-[13px] md:text-sm uppercase tracking-[0.12em] text-stone-700 leading-snug">{label}</span>
             </div>
