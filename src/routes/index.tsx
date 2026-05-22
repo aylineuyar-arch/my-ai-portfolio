@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Github, Briefcase, Database, MessageSquare, Workflow, type LucideIcon } from "lucide-react";
+import { Github, Linkedin, Briefcase, Database, MessageSquare, Workflow, type LucideIcon } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import dashboardImg from "@/assets/portfolio-dashboard.jpg";
 import emailGenImg from "@/assets/email-generator-screenshot.png";
