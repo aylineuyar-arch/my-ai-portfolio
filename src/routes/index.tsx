@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Github, Linkedin, Briefcase, Database, MessageSquare, Workflow, ChevronDown, type LucideIcon } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
@@ -938,17 +938,7 @@ function PortfolioPage() {
       {/* Footer */}
       <footer className="mx-auto max-w-6xl px-6 py-16 text-sm text-stone-600">
         <div className="flex flex-wrap justify-between gap-4">
-          <div>
-            Aylin Uyar · AI Portfolio · 2026
-            <div className="mt-1">
-              <Link
-                to="/aura"
-                className="text-rose-800 underline underline-offset-4 decoration-rose-400/60"
-              >
-                View Aura app →
-              </Link>
-            </div>
-          </div>
+          <div>Aylin Uyar · AI Portfolio · 2026</div>
           <div className="flex gap-6">
             <a
               href="https://github.com/aylineuyar-arch"
