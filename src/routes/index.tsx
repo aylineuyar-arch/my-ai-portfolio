@@ -519,7 +519,7 @@ function PortfolioPage() {
                 Why this one is the most complex
               </p>
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                A <strong className="text-stone-900">team of AI agents</strong> that understand, search, rank, and actually book the table — then email you to confirm.
+                Finding the <strong className="text-stone-900">perfect reservation</strong> takes a team of AI agents — they understand the ask, search, rank the best fit, actually book the table, and email you to confirm.
               </p>
             </div>
 
@@ -653,7 +653,7 @@ function PortfolioPage() {
                 How this differs from Project 01
               </p>
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                Project 01 waits for me to open it. This one wakes up every morning, ranks fresh roles overnight, and pushes a digest to my inbox. <strong className="text-stone-900">Pull vs. push — same problem, opposite architecture.</strong>
+                Job hunting is a daily grind of refreshing the same boards. This agent wakes up every morning, scours fresh roles overnight, ranks them against my profile, and drops a curated digest in my inbox before coffee. <strong className="text-stone-900">Pull vs. push — same problem, opposite architecture.</strong>
               </p>
             </div>
 
@@ -772,7 +772,7 @@ function PortfolioPage() {
                 Why this matters
               </p>
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                Compliance lookups are slow, high-stakes, and constant. Grounding every answer in the actual policy doc turns hours of reading into <strong className="text-stone-900">seconds of trustworthy answers</strong> — exactly what regulated fintechs need.
+                Compliance teams spend hours hunting through dense policy PDFs for a single answer — and one wrong call can mean a fine. This grounds every answer in the actual policy doc, with citations, turning that hunt into <strong className="text-stone-900">seconds of trustworthy answers</strong> — exactly what regulated fintechs need.
               </p>
             </div>
 
@@ -874,7 +874,7 @@ function PortfolioPage() {
                 Why this matters
               </p>
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                Support inboxes are the biggest pile of unstructured text most companies own. One grounded LLM call replaces brittle rules — <strong className="text-stone-900">sub-second triage</strong> and a working draft instead of a blank reply box.
+                Support inboxes are the biggest pile of unstructured text most companies own — and agents burn hours sorting and reply-starting before they ever help a customer. One grounded LLM call sorts the ticket, pulls the right help-doc, and drafts a reply: <strong className="text-stone-900">sub-second triage</strong> and a working draft instead of a blank reply box.
               </p>
             </div>
 
