@@ -734,19 +734,19 @@ function PortfolioPage() {
               </p>
             </div>
 
-            <div className="rounded-xl border border-stone-300 bg-stone-100/70 p-5">
-              <div className="text-xs uppercase tracking-[0.22em] text-stone-700 font-bold mb-5">Agent signals</div>
+            <div className="rounded-xl border border-amber-200 bg-amber-50/40 p-5">
+              <div className="text-xs uppercase tracking-[0.22em] text-amber-700 font-bold mb-5">Agent signals</div>
               <div className="grid grid-cols-3 gap-4">
                 <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-stone-900 leading-none">8am ET</div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-amber-900 leading-none">8am ET</div>
                   <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Daily cron trigger</div>
                 </div>
                 <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-stone-900 leading-none">0</div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-amber-900 leading-none">0</div>
                   <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Manual touches / run</div>
                 </div>
                 <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-stone-900 leading-none">4</div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-amber-900 leading-none">4</div>
                   <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Tools orchestrated</div>
                 </div>
               </div>
