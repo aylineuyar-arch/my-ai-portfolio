@@ -519,7 +519,7 @@ function PortfolioPage() {
                 Why this one is the most complex
               </p>
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                A <strong className="text-stone-900">team of AI agents</strong> that understand, search, rank, and actually book the table — then email you to confirm.
+                Finding the <strong className="text-stone-900">perfect reservation</strong> takes a team of AI agents — they understand the ask, search, rank the best fit, actually book the table, and email you to confirm.
               </p>
             </div>
 
