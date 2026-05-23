@@ -469,8 +469,8 @@ function PortfolioPage() {
               <CollapsibleContent className="space-y-6 pt-6">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
-                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Two-model routing</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Claude Haiku parses intent (cheap + fast); Claude Sonnet ranks the top 3 across price tiers with reasoning.</p>
+                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Role-based model routing</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Each sub-agent gets its own model: Haiku for fast parsing, Sonnet for deep ranking — no single model does everything.</p>
                   </div>
                   <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
                     <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Persistent vector memory</div>
