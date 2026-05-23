@@ -768,7 +768,7 @@ function PortfolioPage() {
                 Why this matters
               </p>
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                Compliance and policy lookups are exactly the kind of high-volume, judgment-heavy workflow where grounded LLM retrieval delivers measurable time savings — directly relevant to ops teams at fintechs operating under FCA, SEC, and multi-jurisdiction frameworks.
+                Compliance lookups are slow, high-stakes, and constant. Grounding every answer in the actual policy doc turns hours of reading into <strong className="text-stone-900">seconds of trustworthy answers</strong> — exactly what regulated fintechs need.
               </p>
             </div>
 
