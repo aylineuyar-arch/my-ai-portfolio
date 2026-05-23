@@ -438,7 +438,7 @@ function PortfolioPage() {
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-stone-600 font-medium">
-              No. 02 · Built with n8n + Claude
+              No. 03 · Built with n8n + Claude
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
               Agentic AI Email Generator
