@@ -706,7 +706,7 @@ function PortfolioPage() {
                 rel="noreferrer"
                 aria-label="Open live app"
                 title="Open live app"
-                className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
+                className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-amber-700 text-white hover:bg-amber-800 transition-colors text-xs font-medium"
               >
                 <span>Live App</span>
               </a>
