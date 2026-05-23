@@ -555,114 +555,51 @@ function PortfolioPage() {
               </div>
             </div>
 
-            <div className="relative rounded-2xl border border-stone-800 bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 text-stone-100 p-7 md:p-9 overflow-hidden shadow-2xl">
-              {/* subtle grid backdrop */}
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 opacity-[0.07]"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px)",
-                  backgroundSize: "32px 32px",
-                }}
-              />
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-rose-500/10 blur-3xl"
-              />
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-indigo-500/10 blur-3xl"
-              />
-
-              <div className="relative flex items-center justify-between mb-6">
-                <div className="text-[11px] uppercase tracking-[0.24em] text-rose-300 font-bold">Agent flow</div>
-                <div className="text-[10px] uppercase tracking-[0.2em] text-stone-400 font-medium">LangGraph · 7 nodes</div>
+            <div className="rounded-xl border border-stone-200 bg-white/60 p-5 md:p-6">
+              <div className="flex items-baseline justify-between mb-4">
+                <div className="text-xs uppercase tracking-[0.22em] text-stone-700 font-bold">Agent flow</div>
+                <div className="text-[10px] uppercase tracking-[0.18em] text-stone-500">LangGraph · 7 nodes</div>
               </div>
 
               {(() => {
-                const nodes: {
-                  label: string;
-                  kind: string;
-                  detail: string;
-                  badges: { text: string; tone: "rose" | "violet" | "amber" | "emerald" | "sky" | "stone" }[];
-                  branch?: string;
-                }[] = [
-                  { label: "User query", kind: "Input", detail: "Natural-language reservation request", badges: [{ text: "Email / Chat", tone: "stone" }] },
-                  { label: "parse_input", kind: "Node", detail: "Extracts city, cuisine, date, party size", badges: [{ text: "Claude Haiku 4.5", tone: "amber" }] },
-                  { label: "check_memory", kind: "Node", detail: "Recalls past searches & user preferences", badges: [{ text: "ChromaDB", tone: "violet" }] },
-                  { label: "research", kind: "Node", detail: "Discovers candidate restaurants on OpenTable", badges: [{ text: "Tavily", tone: "sky" }, { text: "OpenTable", tone: "rose" }], branch: "< 3 results → retry_research (broader query)" },
-                  { label: "enrich", kind: "Node", detail: "Ratings, neighborhood, price tier", badges: [{ text: "Tavily", tone: "sky" }] },
-                  { label: "rank", kind: "Node", detail: "Top 3 across price tiers with rationale", badges: [{ text: "Claude Sonnet", tone: "amber" }] },
-                  { label: "/book", kind: "Endpoint", detail: "Server-side booking orchestrator", badges: [{ text: "FastAPI", tone: "emerald" }] },
-                  { label: "Playwright + CDP", kind: "Automation", detail: "Isolated Chrome session secures the time slot", badges: [{ text: "Playwright", tone: "violet" }, { text: "Chrome DevTools", tone: "stone" }] },
-                  { label: "Confirmation email", kind: "Output", detail: '"Complete your reservation →"', badges: [{ text: "Gmail SMTP", tone: "rose" }] },
+                const steps: { label: string; tool: string; tone: "rose" | "amber" | "violet" | "emerald" | "sky" | "stone" }[] = [
+                  { label: "parse", tool: "Haiku", tone: "amber" },
+                  { label: "memory", tool: "Chroma", tone: "violet" },
+                  { label: "research", tool: "Tavily", tone: "sky" },
+                  { label: "enrich", tool: "Tavily", tone: "sky" },
+                  { label: "rank", tool: "Sonnet", tone: "amber" },
+                  { label: "book", tool: "FastAPI", tone: "emerald" },
+                  { label: "reserve", tool: "Playwright", tone: "rose" },
                 ];
-                const toneMap: Record<string, string> = {
-                  rose: "bg-rose-500/15 text-rose-200 ring-rose-400/30",
-                  violet: "bg-violet-500/15 text-violet-200 ring-violet-400/30",
-                  amber: "bg-amber-500/15 text-amber-200 ring-amber-400/30",
-                  emerald: "bg-emerald-500/15 text-emerald-200 ring-emerald-400/30",
-                  sky: "bg-sky-500/15 text-sky-200 ring-sky-400/30",
-                  stone: "bg-stone-500/15 text-stone-200 ring-stone-400/30",
-                };
-                const kindMap: Record<string, string> = {
-                  Input: "text-stone-400",
-                  Node: "text-rose-300",
-                  Endpoint: "text-emerald-300",
-                  Automation: "text-violet-300",
-                  Output: "text-amber-300",
+                const tones: Record<string, string> = {
+                  rose: "bg-rose-50 text-rose-700 ring-rose-200",
+                  amber: "bg-amber-50 text-amber-800 ring-amber-200",
+                  violet: "bg-violet-50 text-violet-700 ring-violet-200",
+                  emerald: "bg-emerald-50 text-emerald-700 ring-emerald-200",
+                  sky: "bg-sky-50 text-sky-700 ring-sky-200",
+                  stone: "bg-stone-100 text-stone-700 ring-stone-200",
                 };
                 return (
-                  <ol className="relative space-y-3">
-                    {nodes.map((n, i) => (
-                      <li key={n.label} className="relative">
-                        <div className="group relative rounded-xl border border-stone-700/60 bg-stone-900/70 backdrop-blur-sm px-4 py-3 md:px-5 md:py-4 hover:border-rose-400/40 hover:bg-stone-900 transition-colors">
-                          <div className="flex items-start gap-4">
-                            <div className="flex flex-col items-center pt-0.5 shrink-0">
-                              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-stone-800 ring-1 ring-stone-700 text-[11px] font-mono text-stone-300 tabular-nums">
-                                {String(i + 1).padStart(2, "0")}
-                              </span>
-                            </div>
-                            <div className="min-w-0 flex-1">
-                              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                                <span className="font-mono text-[13px] md:text-[14px] font-semibold text-stone-50 tracking-tight">
-                                  {n.label}
-                                </span>
-                                <span className={`text-[10px] uppercase tracking-[0.18em] font-semibold ${kindMap[n.kind]}`}>
-                                  {n.kind}
-                                </span>
-                              </div>
-                              <p className="mt-1 text-[12.5px] md:text-[13px] text-stone-400 leading-snug">{n.detail}</p>
-                              <div className="mt-2.5 flex flex-wrap gap-1.5">
-                                {n.badges.map((b) => (
-                                  <span
-                                    key={b.text}
-                                    className={`inline-flex items-center rounded-md px-2 py-0.5 text-[10.5px] font-medium ring-1 ${toneMap[b.tone]}`}
-                                  >
-                                    {b.text}
-                                  </span>
-                                ))}
-                              </div>
-                              {n.branch && (
-                                <div className="mt-2.5 flex items-start gap-2 rounded-md border border-dashed border-amber-400/30 bg-amber-500/5 px-2.5 py-1.5">
-                                  <span className="text-amber-300 text-[11px] mt-px">↻</span>
-                                  <span className="text-[11px] text-amber-200/90 font-mono leading-snug">{n.branch}</span>
-                                </div>
-                              )}
-                            </div>
-                          </div>
+                  <div className="flex items-stretch gap-1 overflow-x-auto pb-1 -mx-1 px-1">
+                    {steps.map((s, i) => (
+                      <div key={s.label} className="flex items-stretch gap-1 shrink-0">
+                        <div className={`rounded-lg px-2.5 py-2 ring-1 ${tones[s.tone]} flex flex-col items-center justify-center min-w-[78px]`}>
+                          <div className="font-mono text-[12px] font-semibold leading-none">{s.label}</div>
+                          <div className="mt-1 text-[10px] uppercase tracking-wider opacity-75 leading-none">{s.tool}</div>
                         </div>
-                        {i < nodes.length - 1 && (
-                          <div aria-hidden className="flex justify-start pl-[26px] md:pl-[30px]">
-                            <div className="h-3 w-px bg-gradient-to-b from-stone-600 to-stone-700" />
-                          </div>
+                        {i < steps.length - 1 && (
+                          <div className="flex items-center text-stone-400 text-sm" aria-hidden>→</div>
                         )}
-                      </li>
+                      </div>
                     ))}
-                  </ol>
+                  </div>
                 );
               })()}
+
+              <div className="mt-3 flex items-center gap-2 text-[11px] text-stone-600">
+                <span className="text-amber-600">↻</span>
+                <span><span className="font-mono text-stone-700">research</span> retries with a broader query when fewer than 3 candidates return.</span>
+              </div>
             </div>
           </div>
         </div>
