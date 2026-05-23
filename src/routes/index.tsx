@@ -519,12 +519,7 @@ function PortfolioPage() {
                 Why this one is the most complex
               </p>
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                Most AI projects ask one model to do one thing. This one runs a whole{" "}
-                <strong className="text-stone-900">team of specialized AI agents</strong> — one understands your
-                request, another remembers your past preferences, others search the web, score the
-                options, and finally open a real browser to book the table. A coordinator hands work
-                between them, retries when results look thin, and emails you a one-click confirmation
-                at the end.
+                A whole <strong className="text-stone-900">team of AI agents</strong> working together — one understands the request, one remembers your tastes, others search, score, and finally open a real browser to book the table. You get a one-click confirmation in your inbox.
               </p>
             </div>
 
@@ -654,7 +649,7 @@ function PortfolioPage() {
                 How this differs from Project 01
               </p>
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                Project 01 is a <strong className="text-stone-900">Python pipeline</strong> I run on-demand — I pull the data into a dashboard when I want it. This one is an <strong className="text-stone-900">always-on agent</strong> in n8n that runs itself on a daily cron and pushes a ranked digest to my inbox — the data comes to me. Same problem, deliberately different architectures: scripted pull vs. agentic push, code-first vs. visual orchestration.
+                Project 01 waits for me to open it. This one wakes up every morning, ranks fresh roles overnight, and pushes a digest to my inbox. <strong className="text-stone-900">Pull vs. push — same problem, opposite architecture.</strong>
               </p>
             </div>
 
@@ -773,7 +768,7 @@ function PortfolioPage() {
                 Why this matters
               </p>
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                Compliance and policy lookups are exactly the kind of high-volume, judgment-heavy workflow where grounded LLM retrieval delivers measurable time savings — directly relevant to ops teams at fintechs operating under FCA, SEC, and multi-jurisdiction frameworks.
+                Compliance lookups are slow, high-stakes, and constant. Grounding every answer in the actual policy doc turns hours of reading into <strong className="text-stone-900">seconds of trustworthy answers</strong> — exactly what regulated fintechs need.
               </p>
             </div>
 
@@ -875,7 +870,7 @@ function PortfolioPage() {
                 Why this matters
               </p>
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                Support inboxes are the highest-volume unstructured-text workflow most companies have. Replacing brittle rule-based routing with a single grounded LLM call collapses triage time to sub-second and frees agents to start from a working draft instead of a blank box — directly relevant to ops, CX, and AI deployment roles.
+                Support inboxes are the biggest pile of unstructured text most companies own. One grounded LLM call replaces brittle rules — <strong className="text-stone-900">sub-second triage</strong> and a working draft instead of a blank reply box.
               </p>
             </div>
 
