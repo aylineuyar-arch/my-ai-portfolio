@@ -874,7 +874,7 @@ function PortfolioPage() {
                 Why this matters
               </p>
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                Support inboxes are the biggest pile of unstructured text most companies own. One grounded LLM call replaces brittle rules — <strong className="text-stone-900">sub-second triage</strong> and a working draft instead of a blank reply box.
+                Support inboxes are the biggest pile of unstructured text most companies own — and agents burn hours sorting and reply-starting before they ever help a customer. One grounded LLM call sorts the ticket, pulls the right help-doc, and drafts a reply: <strong className="text-stone-900">sub-second triage</strong> and a working draft instead of a blank reply box.
               </p>
             </div>
 
