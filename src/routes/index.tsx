@@ -9,6 +9,7 @@ import auraLanding from "@/assets/aura-landing.jpg";
 import auraProfile from "@/assets/aura-profile.jpg";
 import auraTutorials from "@/assets/aura-tutorials.jpg";
 import forkYeahResults from "@/assets/fork-yeah-results.png";
+import forkYeahLoading from "@/assets/fork-yeah-loading.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -607,17 +608,34 @@ function PortfolioPage() {
               </div>
             </div>
 
-            <figure className="overflow-hidden rounded-xl border border-rose-200 bg-stone-950 shadow-lg">
-              <img
-                src={forkYeahResults}
-                alt="Fork Yeah! agent results — ranked restaurant picks with location, price tier, vibe tags, and a confirmed reservation."
-                loading="lazy"
-                className="w-full h-auto block"
-              />
-              <figcaption className="px-4 py-3 text-xs text-stone-500 italic bg-white/60 border-t border-rose-100">
-                Live output — ranked top pick with neighborhood, price tier, vibe tags, and a one-click confirmation in your inbox.
-              </figcaption>
-            </figure>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <figure className="overflow-hidden rounded-xl border border-rose-200 bg-stone-950 shadow-lg flex flex-col">
+                <div className="flex-1 flex items-center justify-center">
+                  <img
+                    src={forkYeahLoading}
+                    alt="Fork Yeah! agent working — sub-agents checking past searches, querying OpenTable, enriching with Maps & reviews."
+                    loading="lazy"
+                    className="w-full h-auto block"
+                  />
+                </div>
+                <figcaption className="px-3 py-2.5 text-xs text-stone-500 italic bg-white/60 border-t border-rose-100">
+                  Agents at work — Haiku, ChromaDB, Tavily and Sonnet running in sequence.
+                </figcaption>
+              </figure>
+              <figure className="overflow-hidden rounded-xl border border-rose-200 bg-stone-950 shadow-lg flex flex-col">
+                <div className="flex-1 flex items-center justify-center">
+                  <img
+                    src={forkYeahResults}
+                    alt="Fork Yeah! agent results — ranked top pick with neighborhood, price tier and vibe tags."
+                    loading="lazy"
+                    className="w-full h-auto block"
+                  />
+                </div>
+                <figcaption className="px-3 py-2.5 text-xs text-stone-500 italic bg-white/60 border-t border-rose-100">
+                  Ranked result — top pick with price tier, vibe tags and a one-click booking link.
+                </figcaption>
+              </figure>
+            </div>
           </div>
         </div>
       </section>
