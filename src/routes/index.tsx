@@ -653,7 +653,7 @@ function PortfolioPage() {
                 How this differs from Project 01
               </p>
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                Project 01 waits for me to open it. This one wakes up every morning, ranks fresh roles overnight, and pushes a digest to my inbox. <strong className="text-stone-900">Pull vs. push — same problem, opposite architecture.</strong>
+                Job hunting is a daily grind of refreshing the same boards. This agent wakes up every morning, scours fresh roles overnight, ranks them against my profile, and drops a curated digest in my inbox before coffee. <strong className="text-stone-900">Pull vs. push — same problem, opposite architecture.</strong>
               </p>
             </div>
 
