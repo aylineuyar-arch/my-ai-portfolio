@@ -231,18 +231,18 @@ function PortfolioPage() {
         <div className="mt-4">
           <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-3 items-stretch">
             {[
-              { num: "No. 01", id: "project-1", title: "AI Job Search Dashboard", blurb: "Scores 130+ ATS feeds for fit and conversion likelihood.", sub: "Claude · Python · Railway", tools: ["Claude", "Python", "Railway", "ATS"] },
-              { num: "No. 02", id: "project-restaurant", title: "Fork Yea! — Restaurant Reservation Agent", blurb: "Finds the right restaurant, ranks the options, and books the reservation.", sub: "LangGraph · Claude · Playwright", tools: ["Cursor", "LangGraph", "Claude", "Playwright", "Tavily", "FastAPI"] },
-              { num: "No. 03", id: "project-2", title: "Agentic Email Generator", blurb: "Always-on agent emails a ranked digest at 8am ET daily.", sub: "n8n · Claude · Supabase", tools: ["Claude", "n8n", "Railway", "Resend", "Supabase"] },
-              { num: "No. 04", id: "project-3", title: "Compliance RAG Chatbot", blurb: "Grounded policy Q&A for regulated financial services teams.", sub: "Claude · Python · Streamlit", tools: ["Claude", "Python", "Streamlit", "RAG"] },
-              { num: "No. 05", id: "project-4", title: "Customer Service Triage", blurb: "Classifies, prioritizes, and drafts replies in under a second.", sub: "Claude · Python · NLP", tools: ["Claude", "Python", "Triage", "NLP"] },
-              { num: "No. 06", id: "project-5", title: "Aura — Makeup Assistant", blurb: "Maps your features to a personalized beauty routine.", sub: "Lovable · React · Claude", tools: ["Lovable", "React", "TypeScript", "Claude"] },
+              { num: "No. 01", id: "project-1", numCls: "text-orange-700", title: "AI Job Search Dashboard", blurb: "Scores 130+ ATS feeds for fit and conversion likelihood.", sub: "Claude · Python · Railway", tools: ["Claude", "Python", "Railway", "ATS"] },
+              { num: "No. 02", id: "project-restaurant", numCls: "text-rose-600", title: "Fork Yea! — Restaurant Reservation Agent", blurb: "Finds the right restaurant, ranks the options, and books the reservation.", sub: "LangGraph · Claude · Playwright", tools: ["Cursor", "LangGraph", "Claude", "Playwright", "Tavily", "FastAPI"] },
+              { num: "No. 03", id: "project-2", numCls: "text-amber-700", title: "Agentic Email Generator", blurb: "Always-on agent emails a ranked digest at 8am ET daily.", sub: "n8n · Claude · Supabase", tools: ["Claude", "n8n", "Railway", "Resend", "Supabase"] },
+              { num: "No. 04", id: "project-3", numCls: "text-emerald-700", title: "Compliance RAG Chatbot", blurb: "Grounded policy Q&A for regulated financial services teams.", sub: "Claude · Python · Streamlit", tools: ["Claude", "Python", "Streamlit", "RAG"] },
+              { num: "No. 05", id: "project-4", numCls: "text-indigo-700", title: "Customer Service Triage", blurb: "Classifies, prioritizes, and drafts replies in under a second.", sub: "Claude · Python · NLP", tools: ["Claude", "Python", "Triage", "NLP"] },
+              { num: "No. 06", id: "project-5", numCls: "text-fuchsia-700", title: "Aura — Makeup Assistant", blurb: "Maps your features to a personalized beauty routine.", sub: "Lovable · React · Claude", tools: ["Lovable", "React", "TypeScript", "Claude"] },
             ].map((p) => {
               const logos = p.tools.filter((t) => TOOL_LOGOS[t]);
               return (
                 <a key={p.id} href={`#${p.id}`} className="flex flex-col p-3.5 rounded-2xl bg-white/80 backdrop-blur border border-stone-200 hover:border-rose-400 hover:shadow-md hover:-translate-y-0.5 transition-all">
                   <div className="flex items-center justify-between gap-2">
-                    <span className="text-[11px] uppercase tracking-wider text-rose-600 font-semibold">{p.num}</span>
+                    <span className={`text-[11px] uppercase tracking-wider font-semibold ${p.numCls}`}>{p.num}</span>
                     <span className="inline-flex items-center gap-1 text-[9px] uppercase tracking-wider bg-green-100 text-green-800 px-1.5 py-0.5 rounded-full font-medium">
                       <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
                       Live
@@ -1050,7 +1050,7 @@ function PortfolioPage() {
       <section id="project-5" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-rose-700 font-medium">
+            <p className="text-xs uppercase tracking-[0.3em] text-fuchsia-700 font-medium">
               No. 06 · Built with Lovable
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
@@ -1064,26 +1064,26 @@ function PortfolioPage() {
               )}
             </div>
             <Collapsible className="mt-8">
-              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-rose-200 bg-rose-50/40 px-4 py-3 text-sm font-medium text-rose-800 hover:bg-rose-50 transition-colors">
+              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-fuchsia-200 bg-fuchsia-50/40 px-4 py-3 text-sm font-medium text-fuchsia-800 hover:bg-fuchsia-50 transition-colors">
                 <span className="uppercase tracking-wider text-xs">See technical details</span>
                 <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
               </CollapsibleTrigger>
               <CollapsibleContent className="space-y-6 pt-6">
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
-                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Reactive personalization</div>
+                  <div className="p-4 rounded-lg bg-fuchsia-50/60 border border-fuchsia-200">
+                    <div className="text-xs uppercase tracking-wider text-fuchsia-700 font-semibold">Reactive personalization</div>
                     <p className="mt-1.5 text-sm text-stone-700 leading-snug">Each profile dimension updates the kit + routine in real time — no submit button, no full recompute.</p>
                   </div>
-                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
-                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Operator-built stack</div>
+                  <div className="p-4 rounded-lg bg-fuchsia-50/60 border border-fuchsia-200">
+                    <div className="text-xs uppercase tracking-wider text-fuchsia-700 font-semibold">Operator-built stack</div>
                     <p className="mt-1.5 text-sm text-stone-700 leading-snug">Lovable + React + Claude API — design, logic, and deployment shipped by one person, no engineering team.</p>
                   </div>
                 </div>
                 <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
-                  <li className="flex gap-3"><span className="text-rose-500">▸</span>4-dimensional profile (skin tone, undertone, face shape, eye shape) drives kit + technique recs</li>
-                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Visual tutorials — technique maps with brush + product callouts, not just text</li>
-                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Proves range: same operator-rewires-workflows mindset, applied to a consumer-facing surface</li>
-                  <li className="flex gap-3"><span className="text-rose-500">▸</span>End-to-end on Lovable — repo, preview, deploy in one loop</li>
+                  <li className="flex gap-3"><span className="text-fuchsia-500">▸</span>4-dimensional profile (skin tone, undertone, face shape, eye shape) drives kit + technique recs</li>
+                  <li className="flex gap-3"><span className="text-fuchsia-500">▸</span>Visual tutorials — technique maps with brush + product callouts, not just text</li>
+                  <li className="flex gap-3"><span className="text-fuchsia-500">▸</span>Proves range: same operator-rewires-workflows mindset, applied to a consumer-facing surface</li>
+                  <li className="flex gap-3"><span className="text-fuchsia-500">▸</span>End-to-end on Lovable — repo, preview, deploy in one loop</li>
                 </ul>
               </CollapsibleContent>
             </Collapsible>
@@ -1092,7 +1092,7 @@ function PortfolioPage() {
                 href="https://face-harmony-helper.lovable.app"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-rose-600 text-white hover:bg-rose-700 transition-colors text-xs font-medium"
+                className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-fuchsia-600 text-white hover:bg-fuchsia-700 transition-colors text-xs font-medium"
               >
                 Live app ↗
               </a>
@@ -1111,19 +1111,19 @@ function PortfolioPage() {
           </div>
 
           <div className="md:col-span-8 space-y-6">
-            <div className="rounded-xl border border-rose-200 bg-rose-50/60 p-5">
-              <div className="text-xs uppercase tracking-[0.22em] text-rose-700 font-bold mb-5">Build signals</div>
+            <div className="rounded-xl border border-fuchsia-200 bg-fuchsia-50/60 p-5">
+              <div className="text-xs uppercase tracking-[0.22em] text-fuchsia-700 font-bold mb-5">Build signals</div>
               <div className="grid grid-cols-3 gap-4">
                 <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">4</div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-fuchsia-900 leading-none">4</div>
                   <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Dimensions profiled</div>
                 </div>
                 <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">0</div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-fuchsia-900 leading-none">0</div>
                   <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Engineers shipped with</div>
                 </div>
                 <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">Live</div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-fuchsia-900 leading-none">Live</div>
                   <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">End-to-end on Lovable</div>
                 </div>
               </div>
