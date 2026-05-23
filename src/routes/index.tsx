@@ -725,8 +725,8 @@ function PortfolioPage() {
           </div>
 
           <div className="md:col-span-8 space-y-6">
-            <div className="p-5 rounded-xl bg-stone-50 border-l-4 border-stone-400">
-              <p className="text-xs uppercase tracking-wider text-stone-600 font-semibold mb-2">
+            <div className="p-5 rounded-xl bg-amber-50/70 border-l-4 border-amber-400">
+              <p className="text-xs uppercase tracking-wider text-amber-700 font-semibold mb-2">
                 Why this matters
               </p>
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
