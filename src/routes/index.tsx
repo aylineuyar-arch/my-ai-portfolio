@@ -101,6 +101,12 @@ const TOOL_LOGOS: Record<string, ToolLogo> = {
   n8n: { src: "https://cdn.simpleicons.org/n8n/EA4B71", bg: "bg-pink-50 ring-pink-200" },
   Resend: { src: "https://cdn.simpleicons.org/resend/000000", bg: "bg-stone-50 ring-stone-200" },
   Supabase: { src: "https://cdn.simpleicons.org/supabase/3FCF8E", bg: "bg-emerald-50 ring-emerald-200" },
+  LangGraph: { src: "https://cdn.simpleicons.org/langchain/1C3C3C", bg: "bg-teal-50 ring-teal-200" },
+  Playwright: { src: "https://cdn.simpleicons.org/playwright/2EAD33", bg: "bg-green-50 ring-green-200" },
+  Tavily: { icon: Workflow, bg: "bg-violet-50 ring-violet-200", iconClass: "text-violet-700" },
+  FastAPI: { src: "https://cdn.simpleicons.org/fastapi/009688", bg: "bg-teal-50 ring-teal-200" },
+  ChromaDB: { icon: Database, bg: "bg-amber-50 ring-amber-200", iconClass: "text-amber-700" },
+  OpenTable: { icon: Briefcase, bg: "bg-red-50 ring-red-200", iconClass: "text-red-700" },
 };
 
 function ToolIcons({ tools }: { tools: string[] }) {
