@@ -230,7 +230,7 @@ function PortfolioPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-3 items-stretch">
             {[
               { num: "No. 01", id: "project-1", title: "AI Job Search Dashboard", blurb: "Scores 130+ ATS feeds for fit and conversion likelihood.", sub: "Claude · Python · Railway", tools: ["Claude", "Python", "Railway", "ATS"] },
-              { num: "No. 02", id: "project-restaurant", title: "Restaurant Reservation Agent", blurb: "Agentic orchestration with specialized sub-agents — parses, researches, ranks & books.", sub: "LangGraph · Claude · Playwright", tools: ["LangGraph", "Claude", "Playwright", "Tavily", "FastAPI", "Cursor"] },
+              { num: "No. 02", id: "project-restaurant", title: "Fork Yea", blurb: "Agentic orchestration with specialized sub-agents — parses, researches, ranks & books.", sub: "LangGraph · Claude · Playwright", tools: ["LangGraph", "Claude", "Playwright", "Tavily", "FastAPI", "Cursor"] },
               { num: "No. 03", id: "project-2", title: "Agentic Email Generator", blurb: "Always-on agent emails a ranked digest at 8am ET daily.", sub: "n8n · Claude · Supabase", tools: ["Claude", "n8n", "Railway", "Resend", "Supabase"] },
               { num: "No. 04", id: "project-3", title: "Compliance RAG Chatbot", blurb: "Grounded policy Q&A for regulated financial services teams.", sub: "Claude · Python · Streamlit", tools: ["Claude", "Python", "Streamlit", "RAG"] },
               { num: "No. 05", id: "project-4", title: "Customer Service Triage", blurb: "Classifies, prioritizes, and drafts replies in under a second.", sub: "Claude · Python · NLP", tools: ["Claude", "Python", "Triage", "NLP"] },
@@ -450,7 +450,7 @@ function PortfolioPage() {
               No. 02 · Built with LangGraph + Claude
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
-              Restaurant Reservation Agent
+              Fork Yea
             </h2>
             <p className="mt-3 text-sm text-rose-700 font-medium uppercase tracking-wider">
               Agentic orchestration · 7-node graph · role-specific sub-agents
@@ -613,10 +613,10 @@ function PortfolioPage() {
               No. 03 · Built with n8n + Claude
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
-              Fork Yea
+              Agentic AI Email Generator
             </h2>
             <p className="mt-3 text-sm text-stone-600 font-medium uppercase tracking-wider">
-              Agentic AI job-search agent · daily cron · ranked digest to inbox
+              Always-on agent · daily cron · ranked digest to inbox
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {["n8n", "Claude", "Railway", "Supabase", "Resend", "Cron"].map((t) => (
