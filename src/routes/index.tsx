@@ -505,7 +505,7 @@ function PortfolioPage() {
                   <li className="flex gap-3"><span className="text-rose-500">▸</span>Single natural-language input — "Italian in NYC for 2 on June 1" — drives the full pipeline</li>
                   <li className="flex gap-3"><span className="text-rose-500">▸</span>Tavily searches OpenTable, then enriches each candidate with ratings, neighborhood, price tier</li>
                   <li className="flex gap-3"><span className="text-rose-500">▸</span>FastAPI exposes the agent to a React + Vite + Tailwind frontend</li>
-                  <li className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Notify</span><span className="text-rose-500">▸</span>Emails a pre-filled one-click checkout link via Gmail SMTP — agent handles every step up to confirm</li>
+                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Emails a pre-filled one-click checkout link via Gmail SMTP — agent handles every step up to confirm</li>
                   <li className="flex gap-3"><span className="text-rose-500">▸</span>Isolated <code className="text-xs bg-rose-100 px-1.5 py-0.5 rounded">.chrome-dev-profile/</code> — never touches personal Chrome data</li>
                 </ul>
               </CollapsibleContent>
