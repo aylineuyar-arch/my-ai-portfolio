@@ -247,15 +247,22 @@ function PortfolioPage() {
                   <div className="mt-3 text-[15px] font-semibold text-stone-900 leading-tight tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">{p.title}</div>
                   <p className="mt-2 text-[13px] text-stone-600 leading-snug">{p.blurb}</p>
                   <div className="mt-auto pt-3 flex flex-nowrap -space-x-1.5">
-                    {logos.slice(0, 4).map((t) => {
-                      const logo = TOOL_LOGOS[t]!;
-                      const Icon = logo.icon;
-                      return (
-                        <span key={t} title={t} className={`inline-flex shrink-0 items-center justify-center w-9 h-9 rounded-full ring-1 ring-white shadow-sm ${logo.bg}`}>
-                          {Icon ? <Icon className={`w-[18px] h-[18px] ${logo.iconClass ?? ""}`} strokeWidth={2} /> : <img src={logo.src} alt={t} className="w-[18px] h-[18px]" loading="lazy" />}
-                        </span>
-                      );
-                    })}
+                    <TooltipProvider delayDuration={100}>
+                      {logos.slice(0, 4).map((t) => {
+                        const logo = TOOL_LOGOS[t]!;
+                        const Icon = logo.icon;
+                        return (
+                          <Tooltip key={t}>
+                            <TooltipTrigger asChild>
+                              <span className={`inline-flex shrink-0 items-center justify-center w-9 h-9 rounded-full ring-1 ring-white shadow-sm cursor-default ${logo.bg}`}>
+                                {Icon ? <Icon className={`w-[18px] h-[18px] ${logo.iconClass ?? ""}`} strokeWidth={2} /> : <img src={logo.src} alt={t} className="w-[18px] h-[18px]" loading="lazy" />}
+                              </span>
+                            </TooltipTrigger>
+                            <TooltipContent>{t}</TooltipContent>
+                          </Tooltip>
+                        );
+                      })}
+                    </TooltipProvider>
                   </div>
                 </a>
               );
