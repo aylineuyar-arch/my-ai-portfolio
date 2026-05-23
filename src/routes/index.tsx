@@ -99,6 +99,7 @@ const TOOL_LOGOS: Record<string, ToolLogo> = {
   NLP: { icon: MessageSquare, bg: "bg-cyan-50 ring-cyan-200", iconClass: "text-cyan-700" },
   Triage: { icon: Workflow, bg: "bg-indigo-50 ring-indigo-200", iconClass: "text-indigo-700" },
   n8n: { src: "https://cdn.simpleicons.org/n8n/EA4B71", bg: "bg-pink-50 ring-pink-200" },
+  Cursor: { src: "https://cdn.simpleicons.org/cursor", bg: "bg-slate-50 ring-slate-200" },
   Resend: { src: "https://cdn.simpleicons.org/resend/000000", bg: "bg-stone-50 ring-stone-200" },
   Supabase: { src: "https://cdn.simpleicons.org/supabase/3FCF8E", bg: "bg-emerald-50 ring-emerald-200" },
   LangGraph: { src: "https://cdn.simpleicons.org/langchain/1C3C3C", bg: "bg-teal-50 ring-teal-200" },
@@ -229,7 +230,7 @@ function PortfolioPage() {
             {[
               { num: "No. 01", id: "project-1", title: "AI Job Search Dashboard", blurb: "Scores 130+ ATS feeds for fit and conversion likelihood.", sub: "Claude · Python · Railway", tools: ["Claude", "Python", "Railway", "ATS"] },
               { num: "No. 02", id: "project-restaurant", title: "Restaurant Reservation Agent", blurb: "Agentic orchestration with specialized sub-agents — parses, researches, ranks & books.", sub: "LangGraph · Claude · Playwright", tools: ["LangGraph", "Claude", "Playwright", "Tavily", "FastAPI", "ChromaDB"] },
-              { num: "No. 03", id: "project-2", title: "Agentic Email Generator", blurb: "Always-on agent emails a ranked digest at 8am ET daily.", sub: "n8n · Claude · Supabase", tools: ["Claude", "n8n", "Railway", "Resend", "Supabase"] },
+              { num: "No. 03", id: "project-2", title: "Agentic Email Generator", blurb: "Always-on agent emails a ranked digest at 8am ET daily.", sub: "n8n · Claude · Supabase", tools: ["Claude", "n8n", "Railway", "Resend", "Supabase", "Cursor"] },
               { num: "No. 04", id: "project-3", title: "Compliance RAG Chatbot", blurb: "Grounded policy Q&A for regulated financial services teams.", sub: "Claude · Python · Streamlit", tools: ["Claude", "Python", "Streamlit", "RAG"] },
               { num: "No. 05", id: "project-4", title: "Customer Service Triage", blurb: "Classifies, prioritizes, and drafts replies in under a second.", sub: "Claude · Python · NLP", tools: ["Claude", "Python", "Triage", "NLP"] },
               { num: "No. 06", id: "project-5", title: "Aura — Makeup Assistant", blurb: "Maps your features to a personalized beauty routine.", sub: "Lovable · React · Claude", tools: ["Lovable", "React", "TypeScript", "Claude"] },
