@@ -870,7 +870,7 @@ function PortfolioPage() {
                 Why this matters
               </p>
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                Support inboxes are the highest-volume unstructured-text workflow most companies have. Replacing brittle rule-based routing with a single grounded LLM call collapses triage time to sub-second and frees agents to start from a working draft instead of a blank box — directly relevant to ops, CX, and AI deployment roles.
+                Support inboxes are the biggest pile of unstructured text most companies own. One grounded LLM call replaces brittle rules — <strong className="text-stone-900">sub-second triage</strong> and a working draft instead of a blank reply box.
               </p>
             </div>
 
