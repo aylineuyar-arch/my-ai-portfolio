@@ -606,6 +606,18 @@ function PortfolioPage() {
                 <span>If <span className="font-medium text-stone-800">Research</span> finds fewer than 3 options, the agent automatically broadens the search and tries again.</span>
               </div>
             </div>
+
+            <figure className="overflow-hidden rounded-xl border border-rose-200 bg-stone-950 shadow-lg">
+              <img
+                src={forkYeahResults}
+                alt="Fork Yeah! agent results — ranked restaurant picks with location, price tier, vibe tags, and a confirmed reservation."
+                loading="lazy"
+                className="w-full h-auto block"
+              />
+              <figcaption className="px-4 py-3 text-xs text-stone-500 italic bg-white/60 border-t border-rose-100">
+                Live output — ranked top pick with neighborhood, price tier, vibe tags, and a one-click confirmation in your inbox.
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
