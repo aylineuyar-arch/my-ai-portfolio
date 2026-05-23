@@ -447,17 +447,7 @@ function PortfolioPage() {
               Agentic orchestration · 7-node graph · role-specific sub-agents
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
-              {[
-                "LangGraph",
-                "Claude Haiku",
-                "Claude Sonnet",
-                "Tavily",
-                "ChromaDB",
-                "Playwright",
-                "FastAPI",
-                "React",
-                "Chrome CDP",
-              ].map((t) => (
+              {["LangGraph", "Claude", "Playwright", "Tavily"].map((t) => (
                 <Tag key={t} label={t} />
               ))}
             </div>
@@ -483,6 +473,21 @@ function PortfolioPage() {
                   <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
                     <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Self-healing graph</div>
                     <p className="mt-1.5 text-sm text-stone-700 leading-snug">If research returns &lt; 3 candidates, LangGraph routes back through a broader retry node before enriching and ranking.</p>
+                  </div>
+                </div>
+
+                <div className="rounded-lg border border-stone-200 bg-white/70 p-4">
+                  <div className="text-xs uppercase tracking-[0.22em] text-stone-700 font-bold mb-3">The tool stack</div>
+                  <div className="grid sm:grid-cols-2 gap-2.5 text-sm">
+                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Agent graph</span><span className="text-stone-600">LangGraph — stateful, conditional</span></div>
+                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Parsing LLM</span><span className="text-stone-600">Claude Haiku 4.5</span></div>
+                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Ranking LLM</span><span className="text-stone-600">Claude Sonnet</span></div>
+                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Web search</span><span className="text-stone-600">Tavily API → OpenTable + Google Maps</span></div>
+                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Vector memory</span><span className="text-stone-600">ChromaDB (local persistence)</span></div>
+                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Browser</span><span className="text-stone-600">Playwright over Chrome CDP</span></div>
+                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">API</span><span className="text-stone-600">FastAPI (Python 3.10+)</span></div>
+                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Frontend</span><span className="text-stone-600">React + Vite + Tailwind</span></div>
+                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Notify</span><span className="text-stone-600">Gmail SMTP (App Password)</span></div>
                   </div>
                 </div>
 
@@ -540,36 +545,21 @@ function PortfolioPage() {
               </div>
             </div>
 
-            <div className="rounded-xl border border-stone-200 bg-white/60 p-6">
-              <div className="text-xs uppercase tracking-[0.22em] text-stone-700 font-bold mb-4">The tool stack</div>
-              <div className="grid sm:grid-cols-2 gap-3 text-sm">
-                <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Agent graph</span><span className="text-stone-600">LangGraph — stateful, conditional</span></div>
-                <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Parsing LLM</span><span className="text-stone-600">Claude Haiku 4.5</span></div>
-                <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Ranking LLM</span><span className="text-stone-600">Claude Sonnet</span></div>
-                <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Web search</span><span className="text-stone-600">Tavily API → OpenTable + Google Maps</span></div>
-                <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Vector memory</span><span className="text-stone-600">ChromaDB (local persistence)</span></div>
-                <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Browser</span><span className="text-stone-600">Playwright over Chrome CDP</span></div>
-                <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">API</span><span className="text-stone-600">FastAPI (Python 3.10+)</span></div>
-                <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Frontend</span><span className="text-stone-600">React + Vite + Tailwind</span></div>
-                <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Notify</span><span className="text-stone-600">Gmail SMTP (App Password)</span></div>
-              </div>
-            </div>
-
             <div className="rounded-xl border border-stone-200 bg-white/60 p-5 md:p-6">
               <div className="flex items-baseline justify-between mb-4">
                 <div className="text-xs uppercase tracking-[0.22em] text-stone-700 font-bold">Agent flow</div>
-                <div className="text-[10px] uppercase tracking-[0.18em] text-stone-500">LangGraph · 7 nodes</div>
+                <div className="text-[10px] uppercase tracking-[0.18em] text-stone-500">7 specialized sub-agents</div>
               </div>
 
               {(() => {
-                const steps: { label: string; tool: string; tone: "rose" | "amber" | "violet" | "emerald" | "sky" | "stone" }[] = [
-                  { label: "parse", tool: "Haiku", tone: "amber" },
-                  { label: "memory", tool: "Chroma", tone: "violet" },
-                  { label: "research", tool: "Tavily", tone: "sky" },
-                  { label: "enrich", tool: "Tavily", tone: "sky" },
-                  { label: "rank", tool: "Sonnet", tone: "amber" },
-                  { label: "book", tool: "FastAPI", tone: "emerald" },
-                  { label: "reserve", tool: "Playwright", tone: "rose" },
+                const steps: { label: string; sub: string; tone: "rose" | "amber" | "violet" | "emerald" | "sky" }[] = [
+                  { label: "Parse", sub: "understand request", tone: "amber" },
+                  { label: "Recall", sub: "past preferences", tone: "violet" },
+                  { label: "Research", sub: "find options", tone: "sky" },
+                  { label: "Enrich", sub: "add context", tone: "sky" },
+                  { label: "Rank", sub: "score best fit", tone: "amber" },
+                  { label: "Book", sub: "reserve slot", tone: "emerald" },
+                  { label: "Confirm", sub: "email you", tone: "rose" },
                 ];
                 const tones: Record<string, string> = {
                   rose: "bg-rose-50 text-rose-700 ring-rose-200",
@@ -577,15 +567,14 @@ function PortfolioPage() {
                   violet: "bg-violet-50 text-violet-700 ring-violet-200",
                   emerald: "bg-emerald-50 text-emerald-700 ring-emerald-200",
                   sky: "bg-sky-50 text-sky-700 ring-sky-200",
-                  stone: "bg-stone-100 text-stone-700 ring-stone-200",
                 };
                 return (
                   <div className="flex items-stretch gap-1 overflow-x-auto pb-1 -mx-1 px-1">
                     {steps.map((s, i) => (
                       <div key={s.label} className="flex items-stretch gap-1 shrink-0">
-                        <div className={`rounded-lg px-3.5 py-3 ring-1 ${tones[s.tone]} flex flex-col items-center justify-center min-w-[92px]`}>
-                          <div className="font-mono text-[13px] font-semibold leading-none">{s.label}</div>
-                          <div className="mt-1.5 text-[11px] uppercase tracking-wider opacity-75 leading-none">{s.tool}</div>
+                        <div className={`rounded-lg px-3.5 py-3 ring-1 ${tones[s.tone]} flex flex-col items-center justify-center min-w-[96px]`}>
+                          <div className="text-[13px] font-semibold leading-none">{s.label}</div>
+                          <div className="mt-1.5 text-[10.5px] tracking-wide opacity-70 leading-none">{s.sub}</div>
                         </div>
                         {i < steps.length - 1 && (
                           <div className="flex items-center text-stone-400 text-sm" aria-hidden>→</div>
@@ -598,7 +587,7 @@ function PortfolioPage() {
 
               <div className="mt-3 flex items-center gap-2 text-[11px] text-stone-600">
                 <span className="text-amber-600">↻</span>
-                <span><span className="font-mono text-stone-700">research</span> retries with a broader query when fewer than 3 candidates return.</span>
+                <span>If <span className="font-medium text-stone-800">Research</span> finds fewer than 3 options, the agent automatically broadens the search and tries again.</span>
               </div>
             </div>
           </div>
