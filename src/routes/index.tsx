@@ -16,20 +16,20 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Aylin Uyar — Tuck MBA 2026, ex-Deloitte Tech Strategy, PM Intern at Skild AI. Five live, shipped AI projects across deployment, strategy, and ops — Claude pipelines, agentic email automation, RAG compliance, and a consumer makeup app.",
+          "Aylin Uyar — Tuck MBA 2026, ex-Deloitte Tech Strategy, PM Intern at Skild AI. Six live, shipped AI projects across deployment, strategy, and ops — Claude pipelines, agentic email automation, RAG compliance, and a consumer makeup app.",
       },
       { property: "og:title", content: "Aylin Uyar — AI Deployment, Strategy & Ops Portfolio" },
       {
         property: "og:description",
         content:
-          "Five live AI projects shipped end-to-end. Operator-level AI thinking from a Tuck MBA + ex-Deloitte strategist.",
+          "Six live AI projects shipped end-to-end. Operator-level AI thinking from a Tuck MBA + ex-Deloitte strategist.",
       },
       { property: "og:url", content: "https://aylin-uyar-portfolio.lovable.app/" },
       { name: "twitter:title", content: "Aylin Uyar — AI Deployment, Strategy & Ops Portfolio" },
       {
         name: "twitter:description",
         content:
-          "Five live AI projects shipped end-to-end. Operator-level AI thinking from a Tuck MBA + ex-Deloitte strategist.",
+          "Six live AI projects shipped end-to-end. Operator-level AI thinking from a Tuck MBA + ex-Deloitte strategist.",
       },
     ],
     links: [
@@ -217,7 +217,7 @@ function PortfolioPage() {
         {/* Combined section header — credibility number + section title */}
         <div className="mt-8 flex items-baseline justify-between gap-4 flex-wrap">
           <div className="flex items-baseline gap-3">
-            <span className="text-3xl md:text-4xl font-medium tracking-tight text-rose-600 leading-none">5</span>
+            <span className="text-3xl md:text-4xl font-medium tracking-tight text-rose-600 leading-none">6</span>
             <h3 className="text-base md:text-lg uppercase tracking-[0.18em] text-stone-700 font-semibold">
               AI portfolio projects live in production
             </h3>
