@@ -228,7 +228,7 @@ function PortfolioPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-3 items-stretch">
             {[
               { num: "No. 01", id: "project-1", title: "AI Job Search Dashboard", blurb: "Scores 130+ ATS feeds for fit and conversion likelihood.", sub: "Claude · Python · Railway", tools: ["Claude", "Python", "Railway", "ATS"] },
-              { num: "No. 02", id: "project-restaurant", title: "Restaurant Reservation Agent", blurb: "Multi-step LangGraph agent that researches, ranks & books on OpenTable.", sub: "LangGraph · Claude · Playwright", tools: ["LangGraph", "Claude", "Playwright", "Tavily", "FastAPI", "ChromaDB"] },
+              { num: "No. 02", id: "project-restaurant", title: "Restaurant Reservation Agent", blurb: "Agentic orchestration with specialized sub-agents — parses, researches, ranks & books.", sub: "LangGraph · Claude · Playwright", tools: ["LangGraph", "Claude", "Playwright", "Tavily", "FastAPI", "ChromaDB"] },
               { num: "No. 03", id: "project-2", title: "Agentic Email Generator", blurb: "Always-on agent emails a ranked digest at 8am ET daily.", sub: "n8n · Claude · Supabase", tools: ["Claude", "n8n", "Railway", "Resend", "Supabase"] },
               { num: "No. 04", id: "project-3", title: "Compliance RAG Chatbot", blurb: "Grounded policy Q&A for regulated financial services teams.", sub: "Claude · Python · Streamlit", tools: ["Claude", "Python", "Streamlit", "RAG"] },
               { num: "No. 05", id: "project-4", title: "Customer Service Triage", blurb: "Classifies, prioritizes, and drafts replies in under a second.", sub: "Claude · Python · NLP", tools: ["Claude", "Python", "Triage", "NLP"] },
@@ -444,7 +444,7 @@ function PortfolioPage() {
               Restaurant Reservation Agent
             </h2>
             <p className="mt-3 text-sm text-rose-700 font-medium uppercase tracking-wider">
-              Most complex build · 7-node agent graph
+              Agentic orchestration · 7-node graph · role-specific sub-agents
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {[
@@ -469,8 +469,8 @@ function PortfolioPage() {
               <CollapsibleContent className="space-y-6 pt-6">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
-                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Two-model routing</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Claude Haiku parses intent (cheap + fast); Claude Sonnet ranks the top 3 across price tiers with reasoning.</p>
+                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Role-based model routing</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Each sub-agent gets its own model: Haiku for fast parsing, Sonnet for deep ranking — no single model does everything.</p>
                   </div>
                   <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
                     <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Persistent vector memory</div>
@@ -514,11 +514,11 @@ function PortfolioPage() {
                 Why this one is the most complex
               </p>
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                Most of the other projects are one-shot LLM calls or scripted pipelines. This is a true{" "}
-                <strong className="text-stone-900">multi-step agent</strong> — a LangGraph state machine that
-                chains parsing, memory lookup, web search, enrichment, ranking, and{" "}
-                <strong className="text-stone-900">real browser automation</strong> — with conditional
-                retries and persistent vector memory across runs.
+                Most projects call a single LLM or run a fixed script. This is a true{" "}
+                <strong className="text-stone-900">agentic orchestration system</strong> — a LangGraph state machine that
+                delegates each phase to a specialized sub-agent (parser, researcher, enricher,
+                ranker, booker) with its own model, tools, and retry logic, then coordinates them
+                through conditional edges with persistent vector memory across runs.
               </p>
             </div>
 
