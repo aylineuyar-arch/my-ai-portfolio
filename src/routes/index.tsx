@@ -619,7 +619,7 @@ function PortfolioPage() {
               Agentic AI job-search agent · daily cron · ranked digest to inbox
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
-              {["n8n", "Claude", "Railway", "Supabase", "Resend", "Cursor", "Cron"].map((t) => (
+              {["n8n", "Claude", "Railway", "Supabase", "Resend", "Cron"].map((t) => (
                 <Tag key={t} label={t} />
               ))}
             </div>
