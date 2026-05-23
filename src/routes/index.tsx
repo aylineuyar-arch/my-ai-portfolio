@@ -649,7 +649,7 @@ function PortfolioPage() {
                 How this differs from Project 01
               </p>
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                Project 01 is a <strong className="text-stone-900">Python pipeline</strong> I run on-demand — I pull the data into a dashboard when I want it. This one is an <strong className="text-stone-900">always-on agent</strong> in n8n that runs itself on a daily cron and pushes a ranked digest to my inbox — the data comes to me. Same problem, deliberately different architectures: scripted pull vs. agentic push, code-first vs. visual orchestration.
+                Project 01 waits for me to open it. This one wakes up every morning, ranks fresh roles overnight, and pushes a digest to my inbox. <strong className="text-stone-900">Pull vs. push — same problem, opposite architecture.</strong>
               </p>
             </div>
 
