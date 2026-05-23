@@ -450,7 +450,7 @@ function PortfolioPage() {
               No. 02 · Built with LangGraph + Claude
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
-              Restaurant Reservation Agent
+              Fork Yea
             </h2>
             <p className="mt-3 text-sm text-rose-700 font-medium uppercase tracking-wider">
               Agentic orchestration · 7-node graph · role-specific sub-agents
