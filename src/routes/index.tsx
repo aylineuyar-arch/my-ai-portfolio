@@ -514,11 +514,11 @@ function PortfolioPage() {
                 Why this one is the most complex
               </p>
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                Most of the other projects are one-shot LLM calls or scripted pipelines. This is a true{" "}
-                <strong className="text-stone-900">multi-step agent</strong> — a LangGraph state machine that
-                chains parsing, memory lookup, web search, enrichment, ranking, and{" "}
-                <strong className="text-stone-900">real browser automation</strong> — with conditional
-                retries and persistent vector memory across runs.
+                Most projects call a single LLM or run a fixed script. This is a true{" "}
+                <strong className="text-stone-900">agentic orchestration system</strong> — a LangGraph state machine that
+                delegates each phase to a specialized sub-agent (parser, researcher, enricher,
+                ranker, booker) with its own model, tools, and retry logic, then coordinates them
+                through conditional edges with persistent vector memory across runs.
               </p>
             </div>
 
