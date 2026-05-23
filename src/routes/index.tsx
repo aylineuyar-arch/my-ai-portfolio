@@ -519,12 +519,7 @@ function PortfolioPage() {
                 Why this one is the most complex
               </p>
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                Most AI projects ask one model to do one thing. This one runs a whole{" "}
-                <strong className="text-stone-900">team of specialized AI agents</strong> — one understands your
-                request, another remembers your past preferences, others search the web, score the
-                options, and finally open a real browser to book the table. A coordinator hands work
-                between them, retries when results look thin, and emails you a one-click confirmation
-                at the end.
+                A whole <strong className="text-stone-900">team of AI agents</strong> working together — one understands the request, one remembers your tastes, others search, score, and finally open a real browser to book the table. You get a one-click confirmation in your inbox.
               </p>
             </div>
 
