@@ -699,14 +699,29 @@ function PortfolioPage() {
                 </ul>
               </CollapsibleContent>
             </Collapsible>
-            <a
-              href="https://muse-agent-transfer.lovable.app"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-4 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
-            >
-              Live app ↗
-            </a>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <a
+                href="https://muse-agent-transfer.lovable.app"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open live app"
+                title="Open live app"
+                className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
+              >
+                <span>Live App</span>
+              </a>
+              <a
+                href="https://github.com/aylineuyar-arch/agentic-ai-email-generator"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="View repository on GitHub"
+                title="View repository on GitHub"
+                className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
+              >
+                <Github className="w-4 h-4" />
+                <span>Repository</span>
+              </a>
+            </div>
           </div>
 
           <div className="md:col-span-8 space-y-6">
