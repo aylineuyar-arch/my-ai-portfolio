@@ -9,6 +9,7 @@ import auraLanding from "@/assets/aura-landing.jpg";
 import auraProfile from "@/assets/aura-profile.jpg";
 import auraTutorials from "@/assets/aura-tutorials.jpg";
 import forkYeahResults from "@/assets/fork-yeah-results.png";
+import forkYeahLoading from "@/assets/fork-yeah-loading.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
