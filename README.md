@@ -1,36 +1,59 @@
 # Aylin Uyar — AI Portfolio
 
-
 A personal portfolio site showcasing five live, shipped AI projects across deployment, strategy, and operations. Built and maintained by [Aylin Uyar](https://www.linkedin.com/in/aylinuyar/) — Tuck MBA 2026, ex-Deloitte Tech Strategy, PM Intern at Skild AI.
 
 **Live site:** https://aylin-uyar-portfolio.lovable.app/
 
+![React 19](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
+![TanStack Start](https://img.shields.io/badge/TanStack-Start_v1-FF4154?logo=react-router&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38BDF8?logo=tailwindcss&logoColor=white)
+![Cloudflare Workers](https://img.shields.io/badge/Deployed-Cloudflare_Workers-F38020?logo=cloudflare&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)
+
 ---
 
-## What this repo is
+## Table of contents
+
+- [About](#about)
+- [Featured projects](#featured-projects)
+- [Tech stack](#tech-stack)
+- [Project structure](#project-structure)
+- [Getting started](#getting-started)
+- [Editing the portfolio](#editing-the-portfolio)
+- [SEO & accessibility](#seo--accessibility)
+- [Deployment](#deployment)
+- [Roadmap](#roadmap)
+- [Contact](#contact)
+
+---
+
+## About
 
 A single-page portfolio web app built on **TanStack Start** (React 19 + Vite 7), deployed to Cloudflare Workers via the Lovable platform. It renders a static portfolio — no database, no auth, no backend functions. All content lives in `src/routes/index.tsx`.
 
 The site presents:
-- A hero with positioning and credentials
-- A 5-card project grid (each card scrolls to a detailed case-study section)
-- A demonstrated-skills marquee grouped by AI / Automation / Engineering
-- Five long-form project sections (Job Search Dashboard, Agentic Email Generator, Compliance RAG Chatbot, Customer Service Triage, Aura Makeup Assistant)
-- Footer with GitHub + LinkedIn
+- A **hero** with positioning, credentials, and CTAs
+- A **5-card project grid** (each card scrolls to a detailed case-study section)
+- A **demonstrated-skills marquee** grouped by AI / Automation / Engineering
+- **Five long-form project sections** (Job Search Dashboard, Agentic Email Generator, Compliance RAG Chatbot, Customer Service Triage, Aura Makeup Assistant)
+- A **footer** with GitHub and LinkedIn links
+
+Design goals: editorial layout, dense-but-scannable case studies, fast first paint, zero client-side state beyond UI primitives.
 
 ---
 
-## Featured projects (showcased in the portfolio)
+## Featured projects
 
-| # | Project | Stack |
-|---|---------|-------|
-| 01 | AI Job Search Dashboard — scores 130+ ATS feeds for fit and conversion likelihood | Claude · Python · Railway · Greenhouse/Lever/Ashby/JSearch APIs |
-| 02 | Agentic Email Generator — always-on agent that emails a ranked digest at 8am ET daily | n8n · Claude · Supabase · Railway · Resend |
-| 03 | Compliance RAG Chatbot — grounded policy Q&A for regulated financial services teams | Claude · Python · Streamlit · RAG |
-| 04 | Customer Service Triage — classifies, prioritizes, and drafts replies in under a second | Claude · Python · NLP |
-| 05 | Aura — Makeup Assistant — maps facial features to a personalized beauty routine | Lovable · React · TypeScript · Claude |
+| # | Project | What it does | Stack |
+|---|---------|--------------|-------|
+| 01 | **AI Job Search Dashboard** | Scores 130+ ATS feeds for fit and conversion likelihood | Claude · Python · Railway · Greenhouse / Lever / Ashby / JSearch APIs |
+| 02 | **Agentic Email Generator** | Always-on agent that emails a ranked digest at 8am ET daily | n8n · Claude · Supabase · Railway · Resend |
+| 03 | **Compliance RAG Chatbot** | Grounded policy Q&A for regulated financial services teams | Claude · Python · Streamlit · RAG |
+| 04 | **Customer Service Triage** | Classifies, prioritizes, and drafts replies in under a second | Claude · Python · NLP |
+| 05 | **Aura — Makeup Assistant** | Maps facial features to a personalized beauty routine | Lovable · React · TypeScript · Claude |
 
-Project 05 (Aura / "Makeup Muse") lives in its **own separate repository**. This repo only contains the portfolio site that showcases it.
+> Project 05 (Aura / "Makeup Muse") lives in its **own separate repository**. This repo only contains the portfolio site that showcases it.
 
 ---
 
@@ -38,34 +61,37 @@ Project 05 (Aura / "Makeup Muse") lives in its **own separate repository**. This
 
 - **Framework:** TanStack Start v1 (React 19, file-based routing in `src/routes/`)
 - **Build tool:** Vite 7
-- **Styling:** Tailwind CSS v4 (configured via `src/styles.css` with `@import` and `@theme`)
-- **UI primitives:** shadcn/ui (Radix) — only `collapsible` and `tooltip` are used on the live page; the rest ship with the template
+- **Language:** TypeScript (strict mode)
+- **Styling:** Tailwind CSS v4 (configured via `src/styles.css` with `@import` and `@theme` — no `tailwind.config.js`)
+- **UI primitives:** shadcn/ui (Radix) — only `collapsible` and `tooltip` are used on the live page; the rest ship with the template and are tree-shaken out of the build
 - **Icons:** lucide-react, simpleicons CDN, Lovable favicon
-- **Animation:** CSS keyframes (marquee), no Motion runtime
-- **Runtime target:** Cloudflare Workers (via `@cloudflare/vite-plugin`)
+- **Animation:** CSS keyframes (marquee). No Motion / Framer Motion runtime.
+- **Runtime target:** Cloudflare Workers via `@cloudflare/vite-plugin`
 - **Package manager:** Bun
 
-No database, no Supabase tables, no server functions, no auth, no AI runtime calls — the site is fully static at the data layer.
+No database, no Supabase tables, no server functions, no auth, no AI runtime calls — the site is fully static at the data layer. This keeps cold starts at zero and hosting cost effectively free.
 
 ---
 
 ## Project structure
 
-```
+```text
 src/
 ├── routes/
 │   ├── __root.tsx        # HTML shell, global head tags, <Outlet />
 │   └── index.tsx         # The entire portfolio page (single route)
 ├── components/
-│   └── ui/               # shadcn primitives
+│   └── ui/               # shadcn primitives (collapsible, tooltip in use)
 ├── lib/
 │   ├── utils.ts          # cn() classname helper
 │   ├── error-capture.ts  # template error boundary helper
 │   └── error-page.ts     # template error UI helper
 ├── hooks/                # template hooks (useMobile, useToast)
-├── assets/               # Portfolio screenshots (portfolio-dashboard.jpg,
-│                         # email-generator-screenshot.png, project-3-compliance-rag.png,
-│                         # aura-landing.jpg, aura-profile.jpg, aura-tutorials.jpg, etc.)
+├── assets/               # Portfolio screenshots
+│                         #   portfolio-dashboard.jpg
+│                         #   email-generator-screenshot.png
+│                         #   project-3-compliance-rag.png
+│                         #   aura-landing.jpg / aura-profile.jpg / aura-tutorials.jpg
 ├── styles.css            # Tailwind v4 entry + design tokens + marquee keyframes
 ├── router.tsx            # Router instance
 ├── routeTree.gen.ts      # Auto-generated by TanStack Router plugin — DO NOT EDIT
@@ -79,7 +105,7 @@ src/
 
 ### Prerequisites
 - Node 20+
-- Bun (or npm/pnpm)
+- [Bun](https://bun.sh) (recommended) or npm / pnpm
 
 ### Install & run
 
@@ -94,32 +120,70 @@ bun run format       # Prettier
 
 Routes auto-register when files are added to `src/routes/`. `routeTree.gen.ts` is regenerated on dev/build — never edit it by hand.
 
+### Environment variables
+
+None required. The site has no backend integrations or API keys.
+
 ---
 
 ## Editing the portfolio
 
 Almost everything lives in **`src/routes/index.tsx`**. Common edits:
 
-- **Project cards** — edit the array around line 222 (`{ num: "No. 01", id: "project-1", title: ..., blurb: ..., sub: ..., tools: [...] }`).
-- **Project case-study sections** — each `<section id="project-N">` block further down the file.
-- **Skills marquee** — the `AI / Automation / Engineering` array around line 269.
-- **Tag colors** — `TAG_COLORS` map at the top of the file.
-- **Tech logos** — `TOOL_LOGOS` map (simpleicons URLs, lucide fallback icons).
-- **SEO** — the `head()` block in `createFileRoute("/")` (title, meta description, OpenGraph, JSON-LD Person schema).
+| Want to change... | Where to look |
+|-------------------|---------------|
+| Project cards (titles, blurbs, tools) | `projects` array around line 222 |
+| Project case-study sections | each `<section id="project-N">` block further down the file |
+| Skills marquee | the `AI / Automation / Engineering` array around line 269 |
+| Tag colors | `TAG_COLORS` map at the top of the file |
+| Tech logos | `TOOL_LOGOS` map (simpleicons URLs + lucide fallbacks) |
+| SEO / OpenGraph / JSON-LD | the `head()` block in `createFileRoute("/")` |
+| Global theme tokens, fonts, marquee speed | `src/styles.css` |
 
 To swap a screenshot: drop the image in `src/assets/` and update the `import ... from "@/assets/..."` lines at the top of `index.tsx`.
 
 ---
 
-## Deployment
+## SEO & accessibility
 
-This project is built and deployed through Lovable, which targets Cloudflare Workers using the `@cloudflare/vite-plugin`. Pushing to the connected GitHub repo (this one) auto-syncs to the Lovable project; publishing from Lovable promotes the latest build to the live URL.
-
-The repo is also fully portable — `bun run build` produces a standard Vite output that can be deployed to any host that supports Cloudflare Workers / Vercel / Netlify edge runtimes.
+- Single semantic `<h1>` in the hero; section headings step down from `<h2>`.
+- Per-route `head()` sets `<title>`, meta description, OpenGraph, Twitter card, and a JSON-LD `Person` schema.
+- All images use descriptive `alt` text.
+- Color tokens defined in `oklch()` for predictable contrast in light/dark.
+- Marquee animation pauses on `prefers-reduced-motion`.
+- Responsive viewport set in `__root.tsx`; layout tested down to ~360px wide.
 
 ---
 
-## Links
+## Deployment
+
+This project is built and deployed through **Lovable**, which targets Cloudflare Workers using the `@cloudflare/vite-plugin`. Pushing to the connected GitHub repo (this one) auto-syncs to the Lovable project; publishing from Lovable promotes the latest build to the live URL.
+
+The repo is also fully portable — `bun run build` produces a standard Vite output that can be deployed to any host supporting Cloudflare Workers, Vercel, or Netlify edge runtimes.
+
+### Lovable ↔ GitHub sync
+
+- **Two-way sync.** Edits made in Lovable push commits to this repo; pushes from your local clone sync back into Lovable within seconds.
+- To work locally:
+  ```bash
+  git clone https://github.com/aylineuyar-arch/my-ai-portfolio.git
+  cd my-ai-portfolio
+  bun install
+  bun run dev
+  ```
+
+---
+
+## Roadmap
+
+- [ ] Add `/case-studies/[slug]` routes for deeper writeups
+- [ ] Generate per-project `og:image` cards
+- [ ] Add a lightweight contact form (Lovable Cloud)
+- [ ] Add `/notes` for shorter posts
+
+---
+
+## Contact
 
 - **Portfolio:** https://aylin-uyar-portfolio.lovable.app/
 - **LinkedIn:** https://www.linkedin.com/in/aylinuyar/
@@ -127,4 +191,4 @@ The repo is also fully portable — `bun run build` produces a standard Vite out
 
 ---
 
-© 2026 Aylin Uyar
+© 2026 Aylin Uyar. All content and project writeups are personal work; the underlying portfolio code is provided as-is for reference.
