@@ -8,6 +8,7 @@ import complianceRagImg from "@/assets/project-3-compliance-rag.png";
 import auraLanding from "@/assets/aura-landing.jpg";
 import auraProfile from "@/assets/aura-profile.jpg";
 import auraTutorials from "@/assets/aura-tutorials.jpg";
+import forkYeahResults from "@/assets/fork-yeah-results.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
