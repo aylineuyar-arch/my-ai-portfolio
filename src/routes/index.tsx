@@ -225,13 +225,14 @@ function PortfolioPage() {
           <span className="text-sm text-rose-700 font-medium">click any card for details ↓</span>
         </div>
         <div className="mt-4">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3 items-stretch">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-3 items-stretch">
             {[
               { num: "No. 01", id: "project-1", title: "AI Job Search Dashboard", blurb: "Scores 130+ ATS feeds for fit and conversion likelihood.", sub: "Claude · Python · Railway", tools: ["Claude", "Python", "Railway", "ATS"] },
-              { num: "No. 02", id: "project-2", title: "Agentic Email Generator", blurb: "Always-on agent emails a ranked digest at 8am ET daily.", sub: "n8n · Claude · Supabase", tools: ["Claude", "n8n", "Railway", "Resend", "Supabase"] },
-              { num: "No. 03", id: "project-3", title: "Compliance RAG Chatbot", blurb: "Grounded policy Q&A for regulated financial services teams.", sub: "Claude · Python · Streamlit", tools: ["Claude", "Python", "Streamlit", "RAG"] },
-              { num: "No. 04", id: "project-4", title: "Customer Service Triage", blurb: "Classifies, prioritizes, and drafts replies in under a second.", sub: "Claude · Python · NLP", tools: ["Claude", "Python", "Triage", "NLP"] },
-              { num: "No. 05", id: "project-5", title: "Aura — Makeup Assistant", blurb: "Maps your features to a personalized beauty routine.", sub: "Lovable · React · Claude", tools: ["Lovable", "React", "TypeScript", "Claude"] },
+              { num: "No. 02", id: "project-restaurant", title: "Restaurant Reservation Agent", blurb: "Multi-step LangGraph agent that researches, ranks & books on OpenTable.", sub: "LangGraph · Claude · Playwright", tools: ["LangGraph", "Claude", "Playwright", "Tavily", "FastAPI", "ChromaDB"] },
+              { num: "No. 03", id: "project-2", title: "Agentic Email Generator", blurb: "Always-on agent emails a ranked digest at 8am ET daily.", sub: "n8n · Claude · Supabase", tools: ["Claude", "n8n", "Railway", "Resend", "Supabase"] },
+              { num: "No. 04", id: "project-3", title: "Compliance RAG Chatbot", blurb: "Grounded policy Q&A for regulated financial services teams.", sub: "Claude · Python · Streamlit", tools: ["Claude", "Python", "Streamlit", "RAG"] },
+              { num: "No. 05", id: "project-4", title: "Customer Service Triage", blurb: "Classifies, prioritizes, and drafts replies in under a second.", sub: "Claude · Python · NLP", tools: ["Claude", "Python", "Triage", "NLP"] },
+              { num: "No. 06", id: "project-5", title: "Aura — Makeup Assistant", blurb: "Maps your features to a personalized beauty routine.", sub: "Lovable · React · Claude", tools: ["Lovable", "React", "TypeScript", "Claude"] },
             ].map((p) => {
               const logos = p.tools.filter((t) => TOOL_LOGOS[t]);
               return (
