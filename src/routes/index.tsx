@@ -246,7 +246,13 @@ function PortfolioPage() {
                       Live
                     </span>
                   </div>
-                  <div className="mt-3 text-[15px] font-semibold text-stone-900 leading-tight tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">{p.title}</div>
+                  <div className="mt-3 text-[15px] font-semibold text-stone-900 leading-tight tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">
+                    {p.title.startsWith("Fork Yea!") ? (
+                      <><em className="italic">Fork Yea!</em> — Restaurant Reservation Agent</>
+                    ) : (
+                      p.title
+                    )}
+                  </div>
                   <p className="mt-2 text-[13px] text-stone-600 leading-snug">{p.blurb}</p>
                   <div className="mt-auto pt-3 flex flex-nowrap -space-x-1.5">
                     <TooltipProvider delayDuration={100}>
