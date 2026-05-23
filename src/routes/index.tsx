@@ -547,6 +547,10 @@ function PortfolioPage() {
                 <div className="text-[10px] uppercase tracking-[0.18em] text-stone-500">7 specialized sub-agents</div>
               </div>
 
+              <p className="text-sm text-stone-600 mb-4 leading-relaxed">
+                You type something like <span className="font-medium text-stone-800">"Find me a quiet Italian spot for four this Saturday, outdoor seating, something with handmade pasta"</span> — and the system figures out the rest.
+              </p>
+
               {(() => {
                 const steps: { label: string; sub: string; tone: "rose" | "amber" | "violet" | "emerald" | "sky" }[] = [
                   { label: "Parse", sub: "understand request", tone: "amber" },
