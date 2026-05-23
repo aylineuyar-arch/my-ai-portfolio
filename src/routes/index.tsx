@@ -608,7 +608,7 @@ function PortfolioPage() {
               </div>
             </div>
 
-            <div className="grid gap-6">
+            <div className="grid sm:grid-cols-2 gap-4">
               <figure className="overflow-hidden rounded-xl border border-rose-200 bg-stone-950 shadow-lg flex flex-col">
                 <div className="flex-1 flex items-center justify-center">
                   <img
@@ -618,7 +618,7 @@ function PortfolioPage() {
                     className="w-full h-auto block"
                   />
                 </div>
-                <figcaption className="px-4 py-3.5 text-sm text-stone-600 italic bg-white/60 border-t border-rose-100">
+                <figcaption className="px-4 py-3 text-sm text-stone-800 bg-rose-50 border-t border-rose-200">
                   Agents at work — Haiku, ChromaDB, Tavily and Sonnet running in sequence.
                 </figcaption>
               </figure>
@@ -631,11 +631,12 @@ function PortfolioPage() {
                     className="w-full h-auto block"
                   />
                 </div>
-                <figcaption className="px-4 py-3.5 text-sm text-stone-600 italic bg-white/60 border-t border-rose-100">
+                <figcaption className="px-4 py-3 text-sm text-stone-800 bg-rose-50 border-t border-rose-200">
                   Ranked result — top pick with price tier, vibe tags and a one-click booking link.
                 </figcaption>
               </figure>
             </div>
+
           </div>
         </div>
       </section>
