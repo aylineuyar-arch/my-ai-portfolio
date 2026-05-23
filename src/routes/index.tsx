@@ -613,10 +613,10 @@ function PortfolioPage() {
               No. 03 · Built with n8n + Claude
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
-              Fork Yea
+              Agentic AI Email Generator
             </h2>
             <p className="mt-3 text-sm text-stone-600 font-medium uppercase tracking-wider">
-              Agentic AI job-search agent · daily cron · ranked digest to inbox
+              Always-on agent · daily cron · ranked digest to inbox
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {["n8n", "Claude", "Railway", "Supabase", "Resend", "Cron"].map((t) => (
