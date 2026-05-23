@@ -1,5 +1,6 @@
 # Aylin Uyar — AI Portfolio
 
+
 A personal portfolio site showcasing five live, shipped AI projects across deployment, strategy, and operations. Built and maintained by [Aylin Uyar](https://www.linkedin.com/in/aylinuyar/) — Tuck MBA 2026, ex-Deloitte Tech Strategy, PM Intern at Skild AI.
 
 **Live site:** https://aylin-uyar-portfolio.lovable.app/
