@@ -82,6 +82,7 @@ const TAG_COLORS: Record<string, string> = {
   TypeScript: "bg-sky-50 text-sky-800 border-sky-300",
   TanStack: "bg-teal-50 text-teal-800 border-teal-300",
   Streamlit: "bg-red-50 text-red-800 border-red-300",
+  Cursor: "bg-slate-100 text-slate-800 border-slate-300",
 };
 
 // Real brand logos. simpleicons CDN for most; Lovable uses its own favicon; concepts use Lucide icons.
