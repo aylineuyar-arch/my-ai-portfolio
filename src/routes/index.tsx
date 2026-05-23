@@ -447,17 +447,7 @@ function PortfolioPage() {
               Agentic orchestration · 7-node graph · role-specific sub-agents
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
-              {[
-                "LangGraph",
-                "Claude Haiku",
-                "Claude Sonnet",
-                "Tavily",
-                "ChromaDB",
-                "Playwright",
-                "FastAPI",
-                "React",
-                "Chrome CDP",
-              ].map((t) => (
+              {["LangGraph", "Claude", "Playwright", "Tavily"].map((t) => (
                 <Tag key={t} label={t} />
               ))}
             </div>
