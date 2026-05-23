@@ -433,6 +433,162 @@ function PortfolioPage() {
 
       <GradientDivider />
 
+      {/* Project Restaurant — Restaurant Reservation Agent */}
+      <section id="project-restaurant" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
+        <div className="grid md:grid-cols-12 gap-10">
+          <div className="md:col-span-4">
+            <p className="text-xs uppercase tracking-[0.3em] text-rose-700 font-medium">
+              No. 02 · Built with LangGraph + Claude
+            </p>
+            <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
+              Restaurant Reservation Agent
+            </h2>
+            <p className="mt-3 text-sm text-rose-700 font-medium uppercase tracking-wider">
+              Most complex build · 7-node agent graph
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {[
+                "LangGraph",
+                "Claude Haiku",
+                "Claude Sonnet",
+                "Tavily",
+                "ChromaDB",
+                "Playwright",
+                "FastAPI",
+                "React",
+                "Chrome CDP",
+              ].map((t) => (
+                <Tag key={t} label={t} />
+              ))}
+            </div>
+            <Collapsible className="mt-8">
+              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-rose-200 bg-rose-50/60 px-4 py-3 text-sm font-medium text-rose-800 hover:bg-rose-50 transition-colors">
+                <span className="uppercase tracking-wider text-xs">See technical details</span>
+                <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
+              </CollapsibleTrigger>
+              <CollapsibleContent className="space-y-6 pt-6">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
+                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Two-model routing</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Claude Haiku parses intent (cheap + fast); Claude Sonnet ranks the top 3 across price tiers with reasoning.</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
+                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Persistent vector memory</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">ChromaDB stores past searches so recommendations personalize over time, not just per session.</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
+                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Real browser automation</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Playwright over Chrome DevTools Protocol drives an isolated profile — navigates OpenTable, selects a slot, sandboxed from personal Chrome.</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
+                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Self-healing graph</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">If research returns &lt; 3 candidates, LangGraph routes back through a broader retry node before enriching and ranking.</p>
+                  </div>
+                </div>
+
+                <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
+                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Single natural-language input — "Italian in NYC for 2 on June 1" — drives the full pipeline</li>
+                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Tavily searches OpenTable, then enriches each candidate with ratings, neighborhood, price tier</li>
+                  <li className="flex gap-3"><span className="text-rose-500">▸</span>FastAPI exposes the agent to a React + Vite + Tailwind frontend</li>
+                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Emails a pre-filled one-click checkout link via Gmail SMTP — agent handles every step up to confirm</li>
+                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Isolated <code className="text-xs bg-rose-100 px-1.5 py-0.5 rounded">.chrome-dev-profile/</code> — never touches personal Chrome data</li>
+                </ul>
+              </CollapsibleContent>
+            </Collapsible>
+            <a
+              href="https://github.com/aylineuyar-arch/restaurant-agent"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="View repository on GitHub"
+              title="View repository on GitHub"
+              className="mt-4 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
+            >
+              <Github className="w-4 h-4" />
+              <span>Repository</span>
+            </a>
+          </div>
+
+          <div className="md:col-span-8 space-y-6">
+            <div className="p-5 rounded-xl bg-rose-50/70 border-l-4 border-rose-400">
+              <p className="text-xs uppercase tracking-wider text-rose-700 font-semibold mb-2">
+                Why this one is the most complex
+              </p>
+              <p className="text-sm md:text-base text-stone-700 leading-relaxed">
+                Most of the other projects are one-shot LLM calls or scripted pipelines. This is a true{" "}
+                <strong className="text-stone-900">multi-step agent</strong> — a LangGraph state machine that
+                chains parsing, memory lookup, web search, enrichment, ranking, and{" "}
+                <strong className="text-stone-900">real browser automation</strong> — with conditional
+                retries and persistent vector memory across runs.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-rose-200 bg-rose-50/40 p-5">
+              <div className="text-xs uppercase tracking-[0.22em] text-rose-700 font-bold mb-5">Agent signals</div>
+              <div className="grid grid-cols-3 gap-4">
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">7</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Graph nodes</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">2</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Claude models routed</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">1-click</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">From inbox to booked</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-stone-200 bg-white/60 p-6">
+              <div className="text-xs uppercase tracking-[0.22em] text-stone-700 font-bold mb-4">The tool stack</div>
+              <div className="grid sm:grid-cols-2 gap-3 text-sm">
+                <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Agent graph</span><span className="text-stone-600">LangGraph — stateful, conditional</span></div>
+                <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Parsing LLM</span><span className="text-stone-600">Claude Haiku 4.5</span></div>
+                <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Ranking LLM</span><span className="text-stone-600">Claude Sonnet</span></div>
+                <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Web search</span><span className="text-stone-600">Tavily API → OpenTable + Google Maps</span></div>
+                <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Vector memory</span><span className="text-stone-600">ChromaDB (local persistence)</span></div>
+                <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Browser</span><span className="text-stone-600">Playwright over Chrome CDP</span></div>
+                <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">API</span><span className="text-stone-600">FastAPI (Python 3.10+)</span></div>
+                <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Frontend</span><span className="text-stone-600">React + Vite + Tailwind</span></div>
+                <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Notify</span><span className="text-stone-600">Gmail SMTP (App Password)</span></div>
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-stone-200 bg-stone-900 text-stone-100 p-6 overflow-x-auto">
+              <div className="text-xs uppercase tracking-[0.22em] text-rose-300 font-bold mb-4">Agent flow</div>
+              <pre className="text-[12px] md:text-[13px] leading-relaxed font-mono whitespace-pre">{`User query
+    │
+    ▼
+parse_input        (Claude Haiku — city, cuisine, date, party)
+    │
+    ▼
+check_memory       (ChromaDB — past searches & preferences)
+    │
+    ▼
+research           (Tavily → OpenTable)
+    │  ├─ < 3 results → retry_research (broader query)
+    ▼
+enrich             (Tavily → ratings, neighborhood, price)
+    │
+    ▼
+rank               (Claude Sonnet — top 3 across price tiers)
+    │
+    ▼
+/book endpoint     (FastAPI)
+    │
+    ▼
+Playwright + CDP   (isolated Chrome → OpenTable time slot)
+    │
+    ▼
+Email: "Complete your reservation →"`}</pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <GradientDivider />
+
       {/* Project 2 — Agentic AI Email Generator */}
       <section id="project-2" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
         <div className="grid md:grid-cols-12 gap-10">
