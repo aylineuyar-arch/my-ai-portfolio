@@ -519,11 +519,12 @@ function PortfolioPage() {
                 Why this one is the most complex
               </p>
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                Most projects call a single LLM or run a fixed script. This is a true{" "}
-                <strong className="text-stone-900">agentic orchestration system</strong> — a LangGraph state machine that
-                delegates each phase to a specialized sub-agent (parser, researcher, enricher,
-                ranker, booker) with its own model, tools, and retry logic, then coordinates them
-                through conditional edges with persistent vector memory across runs.
+                Most AI projects ask one model to do one thing. This one runs a whole{" "}
+                <strong className="text-stone-900">team of specialized AI agents</strong> — one understands your
+                request, another remembers your past preferences, others search the web, score the
+                options, and finally open a real browser to book the table. A coordinator hands work
+                between them, retries when results look thin, and emails you a one-click confirmation
+                at the end.
               </p>
             </div>
 
