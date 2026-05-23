@@ -772,7 +772,7 @@ function PortfolioPage() {
                 Why this matters
               </p>
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                Compliance lookups are slow, high-stakes, and constant. Grounding every answer in the actual policy doc turns hours of reading into <strong className="text-stone-900">seconds of trustworthy answers</strong> — exactly what regulated fintechs need.
+                Compliance teams spend hours hunting through dense policy PDFs for a single answer — and one wrong call can mean a fine. This grounds every answer in the actual policy doc, with citations, turning that hunt into <strong className="text-stone-900">seconds of trustworthy answers</strong> — exactly what regulated fintechs need.
               </p>
             </div>
 
