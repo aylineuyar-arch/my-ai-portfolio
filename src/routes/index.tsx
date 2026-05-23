@@ -461,7 +461,7 @@ function PortfolioPage() {
               <em className="italic">Fork Yea!</em> — Restaurant Reservation Agent
             </h2>
             <p className="mt-3 text-sm text-rose-700 font-medium uppercase tracking-wider">
-              Agentic orchestration · 7-node graph · books reservations end-to-end
+              Agentic orchestration · 7-node graph · role-specific sub-agents
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {["Cursor", "LangGraph", "Claude", "Playwright", "Tavily", "FastAPI", "ChromaDB"].map((t) => (
@@ -536,7 +536,7 @@ function PortfolioPage() {
                 Why this one is the most complex
               </p>
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                Finding the <strong className="text-stone-900">perfect reservation</strong> takes a team of AI agents — they understand the ask, search, rank the best fit, actually book the table, and email you to confirm.
+                Finding the <strong className="text-stone-900">perfect reservation</strong> takes a team of AI agents — they understand the ask, search, rank the best fit, <strong className="text-stone-900">books the reservation</strong>, and emails you to confirm.
               </p>
             </div>
 
