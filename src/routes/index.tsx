@@ -250,7 +250,7 @@ function PortfolioPage() {
                   <p className="mt-2 text-[13px] text-stone-600 leading-snug">{p.blurb}</p>
                   <div className="mt-auto pt-3 flex flex-nowrap -space-x-1.5">
                     <TooltipProvider delayDuration={100}>
-                      {logos.slice(0, 4).map((t) => {
+                      {logos.slice(0, 6).map((t) => {
                         const logo = TOOL_LOGOS[t]!;
                         const Icon = logo.icon;
                         return (
