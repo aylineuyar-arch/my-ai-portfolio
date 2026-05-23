@@ -583,9 +583,9 @@ function PortfolioPage() {
                   <div className="flex items-stretch gap-1 overflow-x-auto pb-1 -mx-1 px-1">
                     {steps.map((s, i) => (
                       <div key={s.label} className="flex items-stretch gap-1 shrink-0">
-                        <div className={`rounded-lg px-2.5 py-2 ring-1 ${tones[s.tone]} flex flex-col items-center justify-center min-w-[78px]`}>
-                          <div className="font-mono text-[12px] font-semibold leading-none">{s.label}</div>
-                          <div className="mt-1 text-[10px] uppercase tracking-wider opacity-75 leading-none">{s.tool}</div>
+                        <div className={`rounded-lg px-3.5 py-3 ring-1 ${tones[s.tone]} flex flex-col items-center justify-center min-w-[92px]`}>
+                          <div className="font-mono text-[13px] font-semibold leading-none">{s.label}</div>
+                          <div className="mt-1.5 text-[11px] uppercase tracking-wider opacity-75 leading-none">{s.tool}</div>
                         </div>
                         {i < steps.length - 1 && (
                           <div className="flex items-center text-stone-400 text-sm" aria-hidden>→</div>
