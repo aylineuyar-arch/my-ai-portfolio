@@ -658,7 +658,7 @@ function PortfolioPage() {
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-indigo-700 font-medium">
-              No. 04 · Built with Claude
+              No. 05 · Built with Claude
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
               AI Customer Service Triage
