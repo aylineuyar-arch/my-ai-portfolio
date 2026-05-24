@@ -248,7 +248,7 @@ function PortfolioPage() {
                       Live
                     </span>
                   </div>
-                  <div className="mt-3 text-[15px] font-semibold text-stone-900 leading-tight tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">
+                  <div className="mt-3 text-[15px] font-semibold text-stone-900 leading-tight tracking-tight">
                     {p.title.startsWith("Fork Yea!") ? (
                       <><em className="italic">Fork Yea!</em> — Restaurant Reservation Agent</>
                     ) : (
