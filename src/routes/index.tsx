@@ -616,17 +616,15 @@ function PortfolioPage() {
                         {loop.map((item, i) => {
                           if (item.kind === "start") {
                             return (
-                              <div key={`s-${i}`} className="flex items-center gap-2 shrink-0 px-3 mx-1 rounded-lg bg-emerald-600 text-white">
-                                <span className="text-sm leading-none">▶</span>
-                                <span className="text-[10px] uppercase tracking-[0.2em] font-bold">Start</span>
+                              <div key={`s-${i}`} className="flex items-center shrink-0 px-2 text-emerald-600" aria-label="start">
+                                <span className="text-base leading-none">▶</span>
                               </div>
                             );
                           }
                           if (item.kind === "end") {
                             return (
-                              <div key={`e-${i}`} className="flex items-center gap-2 shrink-0 px-3 mx-1 rounded-lg bg-rose-600 text-white">
-                                <span className="text-amber-200 text-sm leading-none">★</span>
-                                <span className="text-[10px] uppercase tracking-[0.2em] font-bold">End — booked</span>
+                              <div key={`e-${i}`} className="flex items-center shrink-0 px-2 text-amber-500" aria-label="end">
+                                <span className="text-base leading-none">★</span>
                               </div>
                             );
                           }
