@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Github, Linkedin, Briefcase, Database, MessageSquare, Workflow, ChevronDown, type LucideIcon } from "lucide-react";
+import { Github, Linkedin, Briefcase, Database, MessageSquare, Workflow, ChevronDown, Languages, History, Search, Sparkles, ListOrdered, CalendarCheck, MailCheck, type LucideIcon } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import dashboardImg from "@/assets/portfolio-dashboard.jpg";
@@ -585,14 +585,14 @@ function PortfolioPage() {
               </p>
 
               {(() => {
-                const steps: { label: string; sub: string; tone: "rose" | "amber" | "violet" | "emerald" | "sky" }[] = [
-                  { label: "Parse", sub: "understand request", tone: "amber" },
-                  { label: "Recall", sub: "past preferences", tone: "violet" },
-                  { label: "Research", sub: "find options", tone: "sky" },
-                  { label: "Enrich", sub: "add context", tone: "sky" },
-                  { label: "Rank", sub: "score best fit", tone: "amber" },
-                  { label: "Book", sub: "reserve slot", tone: "emerald" },
-                  { label: "Confirm", sub: "email you", tone: "rose" },
+                const steps: { label: string; sub: string; tone: "rose" | "amber" | "violet" | "emerald" | "sky"; Icon: LucideIcon }[] = [
+                  { label: "Parse", sub: "understand request", tone: "amber", Icon: Languages },
+                  { label: "Recall", sub: "past preferences", tone: "violet", Icon: History },
+                  { label: "Research", sub: "find options", tone: "sky", Icon: Search },
+                  { label: "Enrich", sub: "add context", tone: "sky", Icon: Sparkles },
+                  { label: "Rank", sub: "score best fit", tone: "amber", Icon: ListOrdered },
+                  { label: "Book", sub: "reserve slot", tone: "emerald", Icon: CalendarCheck },
+                  { label: "Confirm", sub: "email you", tone: "rose", Icon: MailCheck },
                 ];
                 const tones: Record<string, string> = {
                   rose: "bg-rose-50 text-rose-700 ring-rose-200",
@@ -629,12 +629,14 @@ function PortfolioPage() {
                             );
                           }
                           const s = item;
+                          const Icon = s.Icon;
                           const isLastStep = i > 0 && loop[i + 1]?.kind === "end";
                           return (
                             <div key={`${s.label}-${i}`} className="flex items-stretch gap-1 shrink-0">
                               <div className={`rounded-lg px-3.5 py-3 ring-1 ${tones[s.tone]} flex flex-col items-center justify-center min-w-[100px]`}>
-                                <div className="text-[13px] font-semibold leading-none">{s.label}</div>
-                                <div className="mt-1.5 text-[10.5px] tracking-wide opacity-70 leading-none">{s.sub}</div>
+                                <Icon className="w-4 h-4" strokeWidth={1.75} aria-hidden />
+                                <div className="mt-1.5 text-[13px] font-semibold leading-none">{s.label}</div>
+                                <div className="mt-1 text-[10.5px] tracking-wide opacity-70 leading-none">{s.sub}</div>
                               </div>
                               {!isLastStep && (
                                 <div className="flex items-center text-stone-400 text-sm" aria-hidden>→</div>
