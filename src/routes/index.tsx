@@ -597,19 +597,24 @@ function PortfolioPage() {
                   emerald: "bg-emerald-50 text-emerald-700 ring-emerald-200",
                   sky: "bg-sky-50 text-sky-700 ring-sky-200",
                 };
+                const loop = [...steps, ...steps, ...steps, ...steps];
                 return (
-                  <div className="flex items-stretch gap-1 overflow-x-auto pb-1 -mx-1 px-1">
-                    {steps.map((s, i) => (
-                      <div key={s.label} className="flex items-stretch gap-1 shrink-0">
-                        <div className={`rounded-lg px-3.5 py-3 ring-1 ${tones[s.tone]} flex flex-col items-center justify-center min-w-[96px]`}>
-                          <div className="text-[13px] font-semibold leading-none">{s.label}</div>
-                          <div className="mt-1.5 text-[10.5px] tracking-wide opacity-70 leading-none">{s.sub}</div>
+                  <div className="relative overflow-hidden">
+                    <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-white/90 to-transparent z-10" />
+                    <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-white/90 to-transparent z-10" />
+                    <div className="flex w-max animate-marquee gap-1">
+                      {loop.map((s, i) => (
+                        <div key={`${s.label}-${i}`} className="flex items-stretch gap-1 shrink-0">
+                          <div className={`rounded-lg px-3.5 py-3 ring-1 ${tones[s.tone]} flex flex-col items-center justify-center min-w-[96px]`}>
+                            <div className="text-[13px] font-semibold leading-none">{s.label}</div>
+                            <div className="mt-1.5 text-[10.5px] tracking-wide opacity-70 leading-none">{s.sub}</div>
+                          </div>
+                          {i % steps.length < steps.length - 1 && (
+                            <div className="flex items-center text-stone-400 text-sm" aria-hidden>→</div>
+                          )}
                         </div>
-                        {i < steps.length - 1 && (
-                          <div className="flex items-center text-stone-400 text-sm" aria-hidden>→</div>
-                        )}
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 );
               })()}
