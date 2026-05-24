@@ -554,7 +554,7 @@ function PortfolioPage() {
 
             <div className="rounded-xl border border-rose-200 bg-rose-50/40 p-5">
               <div className="text-xs uppercase tracking-[0.22em] text-rose-700 font-bold mb-5">Agent signals</div>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="flex flex-col gap-4">
                 <div>
                   <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">7</div>
                   <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Graph nodes</div>
