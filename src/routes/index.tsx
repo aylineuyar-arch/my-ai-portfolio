@@ -554,18 +554,18 @@ function PortfolioPage() {
 
             <div className="rounded-xl border border-rose-200 bg-rose-50/40 p-5">
               <div className="text-xs uppercase tracking-[0.22em] text-rose-700 font-bold mb-5">Agent signals</div>
-              <div className="flex flex-col gap-4">
+              <div className="grid grid-cols-3 gap-4">
                 <div>
                   <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">7</div>
                   <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Graph nodes</div>
                 </div>
                 <div>
                   <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">2</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Claude models routed</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Claude models</div>
                 </div>
                 <div>
                   <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">1-click</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">From inbox to booked</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Inbox to booked</div>
                 </div>
               </div>
             </div>
@@ -597,23 +597,27 @@ function PortfolioPage() {
                   emerald: "bg-emerald-50 text-emerald-700 ring-emerald-200",
                   sky: "bg-sky-50 text-sky-700 ring-sky-200",
                 };
-                const loop = [...steps, ...steps, ...steps, ...steps];
                 return (
-                  <div className="relative overflow-hidden">
-                    <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-white/90 to-transparent z-10" />
-                    <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-white/90 to-transparent z-10" />
-                    <div className="flex w-max animate-marquee gap-1">
-                      {loop.map((s, i) => (
-                        <div key={`${s.label}-${i}`} className="flex items-stretch gap-1 shrink-0">
-                          <div className={`rounded-lg px-3.5 py-3 ring-1 ${tones[s.tone]} flex flex-col items-center justify-center min-w-[96px]`}>
-                            <div className="text-[13px] font-semibold leading-none">{s.label}</div>
-                            <div className="mt-1.5 text-[10.5px] tracking-wide opacity-70 leading-none">{s.sub}</div>
-                          </div>
-                          {i % steps.length < steps.length - 1 && (
-                            <div className="flex items-center text-stone-400 text-sm" aria-hidden>→</div>
-                          )}
+                  <div className="flex flex-col gap-1.5">
+                    <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-stone-500 font-semibold pl-1">
+                      <span className="text-emerald-600 text-sm leading-none">▶</span>
+                      <span>Start</span>
+                    </div>
+                    {steps.map((s, i) => (
+                      <div key={s.label} className="flex flex-col">
+                        <div className={`rounded-lg px-3.5 py-2.5 ring-1 ${tones[s.tone]} flex items-baseline gap-3`}>
+                          <div className="text-[11px] font-mono opacity-60 w-5">0{i + 1}</div>
+                          <div className="text-[13px] font-semibold">{s.label}</div>
+                          <div className="text-[11.5px] tracking-wide opacity-70">{s.sub}</div>
                         </div>
-                      ))}
+                        {i < steps.length - 1 && (
+                          <div className="text-stone-300 text-sm leading-none pl-6 py-0.5" aria-hidden>↓</div>
+                        )}
+                      </div>
+                    ))}
+                    <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-rose-700 font-semibold pl-1 mt-1">
+                      <span className="text-amber-500 text-sm leading-none">★</span>
+                      <span>End — reservation booked</span>
                     </div>
                   </div>
                 );
