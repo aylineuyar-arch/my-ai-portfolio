@@ -805,17 +805,12 @@ function PortfolioPage() {
               Supabase, sent via Resend.
             </p>
 
-            <figure>
-              <img
-                src={emailGenImg}
-                alt="Live countdown to next email release and tracked job titles"
-                className="w-full rounded-lg shadow-lg ring-1 ring-stone-200"
-                loading="eager"
-              />
-              <figcaption className="mt-3 text-xs text-stone-500 italic">
-                Live countdown to the next 8am ET email run + the exact job titles the agent tracks.
-              </figcaption>
-            </figure>
+            <img
+              src={emailGenImg}
+              alt="Live countdown to next email release and tracked job titles"
+              className="w-full rounded-lg shadow-lg ring-1 ring-stone-200"
+              loading="eager"
+            />
 
           </div>
         </div>
