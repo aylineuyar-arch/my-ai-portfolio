@@ -461,7 +461,11 @@ function PortfolioPage() {
               <em className="italic">Fork Yea!</em> — Restaurant Reservation Agent
             </h2>
             <p className="mt-3 text-sm text-rose-700 font-medium uppercase tracking-wider">
-              Agentic orchestration · 7-node graph · role-specific sub-agents
+              <span className="inline-block whitespace-nowrap">Agentic orchestration</span>
+              <span className="mx-2">·</span>
+              <span className="inline-block whitespace-nowrap">7-node graph</span>
+              <span className="mx-2">·</span>
+              <span className="inline-block whitespace-nowrap">role-specific sub-agents</span>
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {["Cursor", "LangGraph", "Claude", "Playwright", "Tavily", "FastAPI", "ChromaDB"].map((t) => (
@@ -597,29 +601,60 @@ function PortfolioPage() {
                   emerald: "bg-emerald-50 text-emerald-700 ring-emerald-200",
                   sky: "bg-sky-50 text-sky-700 ring-sky-200",
                 };
+                const cycle = [
+                  { kind: "start" as const },
+                  ...steps.map((s) => ({ kind: "step" as const, ...s })),
+                  { kind: "end" as const },
+                ];
+                const loop = [...cycle, ...cycle, ...cycle, ...cycle];
                 return (
-                  <div className="flex flex-col gap-1.5">
-                    <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-stone-500 font-semibold pl-1">
-                      <span className="text-emerald-600 text-sm leading-none">▶</span>
-                      <span>Start</span>
-                    </div>
-                    {steps.map((s, i) => (
-                      <div key={s.label} className="flex flex-col">
-                        <div className={`rounded-lg px-3.5 py-2.5 ring-1 ${tones[s.tone]} flex items-baseline gap-3`}>
-                          <div className="text-[11px] font-mono opacity-60 w-5">0{i + 1}</div>
-                          <div className="text-[13px] font-semibold">{s.label}</div>
-                          <div className="text-[11.5px] tracking-wide opacity-70">{s.sub}</div>
-                        </div>
-                        {i < steps.length - 1 && (
-                          <div className="text-stone-300 text-sm leading-none pl-6 py-0.5" aria-hidden>↓</div>
-                        )}
+                  <>
+                    <div className="relative overflow-hidden">
+                      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-white/95 to-transparent z-10" />
+                      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-white/95 to-transparent z-10" />
+                      <div className="flex w-max animate-marquee gap-1.5 py-1">
+                        {loop.map((item, i) => {
+                          if (item.kind === "start") {
+                            return (
+                              <div key={`s-${i}`} className="flex items-center gap-2 shrink-0 px-3 mx-1 rounded-lg bg-emerald-600 text-white">
+                                <span className="text-sm leading-none">▶</span>
+                                <span className="text-[10px] uppercase tracking-[0.2em] font-bold">Start</span>
+                              </div>
+                            );
+                          }
+                          if (item.kind === "end") {
+                            return (
+                              <div key={`e-${i}`} className="flex items-center gap-2 shrink-0 px-3 mx-1 rounded-lg bg-rose-600 text-white">
+                                <span className="text-amber-200 text-sm leading-none">★</span>
+                                <span className="text-[10px] uppercase tracking-[0.2em] font-bold">End — booked</span>
+                              </div>
+                            );
+                          }
+                          const s = item;
+                          const isLastStep = i > 0 && loop[i + 1]?.kind === "end";
+                          return (
+                            <div key={`${s.label}-${i}`} className="flex items-stretch gap-1 shrink-0">
+                              <div className={`rounded-lg px-3.5 py-3 ring-1 ${tones[s.tone]} flex flex-col items-center justify-center min-w-[100px]`}>
+                                <div className="text-[13px] font-semibold leading-none">{s.label}</div>
+                                <div className="mt-1.5 text-[10.5px] tracking-wide opacity-70 leading-none">{s.sub}</div>
+                              </div>
+                              {!isLastStep && (
+                                <div className="flex items-center text-stone-400 text-sm" aria-hidden>→</div>
+                              )}
+                            </div>
+                          );
+                        })}
                       </div>
-                    ))}
-                    <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-rose-700 font-semibold pl-1 mt-1">
-                      <span className="text-amber-500 text-sm leading-none">★</span>
-                      <span>End — reservation booked</span>
                     </div>
-                  </div>
+                    <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[10.5px] uppercase tracking-[0.14em] text-stone-600">
+                      <span className="font-semibold text-stone-700">Color key:</span>
+                      <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-amber-200 ring-1 ring-amber-300" />Reasoning</span>
+                      <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-violet-200 ring-1 ring-violet-300" />Memory</span>
+                      <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-sky-200 ring-1 ring-sky-300" />Search</span>
+                      <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-emerald-200 ring-1 ring-emerald-300" />Action</span>
+                      <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-rose-200 ring-1 ring-rose-300" />Notify</span>
+                    </div>
+                  </>
                 );
               })()}
 
