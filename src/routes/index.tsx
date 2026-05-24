@@ -264,8 +264,8 @@ function PortfolioPage() {
                         return (
                           <Tooltip key={t}>
                             <TooltipTrigger asChild>
-                              <span className={`inline-flex shrink-0 items-center justify-center w-9 h-9 rounded-full ring-1 ring-white shadow-sm cursor-default ${logo.bg}`}>
-                                {Icon ? <Icon className={`w-[18px] h-[18px] ${logo.iconClass ?? ""}`} strokeWidth={2} /> : <img src={logo.src} alt={t} className="w-[18px] h-[18px]" loading="lazy" />}
+                              <span className={`inline-flex shrink-0 items-center justify-center w-8 h-8 rounded-full ring-1 ring-white shadow-sm cursor-default ${logo.bg}`}>
+                                {Icon ? <Icon className={`w-[15px] h-[15px] ${logo.iconClass ?? ""}`} strokeWidth={2} /> : <img src={logo.src} alt={t} className="w-[15px] h-[15px]" loading="lazy" />}
                               </span>
                             </TooltipTrigger>
                             <TooltipContent>{t}</TooltipContent>
