@@ -5,9 +5,6 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import dashboardImg from "@/assets/portfolio-dashboard.jpg";
 import emailGenImg from "@/assets/email-generator-screenshot.png";
 import complianceRagImg from "@/assets/project-3-compliance-rag.png";
-import auraLanding from "@/assets/aura-landing.jpg";
-import auraProfile from "@/assets/aura-profile.jpg";
-import auraTutorials from "@/assets/aura-tutorials.jpg";
 import forkYeahResults from "@/assets/fork-yeah-results.png";
 import forkYeahLoading from "@/assets/fork-yeah-loading.png";
 import gtmHome from "@/assets/gtm-pricing-home.png";
