@@ -8,7 +8,6 @@ import complianceRagImg from "@/assets/project-3-compliance-rag.png";
 import forkYeahResults from "@/assets/fork-yeah-results.png";
 import forkYeahLoading from "@/assets/fork-yeah-loading.png";
 import gtmHome from "@/assets/gtm-pricing-home.png";
-import gtmHome from "@/assets/gtm-pricing-home.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
