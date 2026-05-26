@@ -510,6 +510,17 @@ function PortfolioPage() {
               >
                 Live app ↗
               </a>
+              <a
+                href="https://github.com/aylineuyar-arch/gtm-pricing-tool"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="View repository on GitHub"
+                title="View repository on GitHub"
+                className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
+              >
+                <Github className="w-4 h-4" />
+                <span>Repository</span>
+              </a>
             </div>
           </div>
 
