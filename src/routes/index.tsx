@@ -8,7 +8,7 @@ import complianceRagImg from "@/assets/project-3-compliance-rag.png";
 import forkYeahResults from "@/assets/fork-yeah-results.png";
 import forkYeahLoading from "@/assets/fork-yeah-loading.png";
 import gtmHome from "@/assets/gtm-pricing-home.png";
-import gtmExplorer from "@/assets/gtm-pricing-explorer.png";
+import gtmHome from "@/assets/gtm-pricing-home.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -550,30 +550,17 @@ function PortfolioPage() {
               Four roles, one engine. <strong className="text-stone-900">Founders</strong> define ICP and model revenue from scratch. <strong className="text-stone-900">Consultants</strong> get market sizing and defensible financial models for clients. <strong className="text-stone-900">Operators</strong> benchmark current performance and optimize pricing. <strong className="text-stone-900">Investors</strong> validate unit economics and stress-test scenarios.
             </p>
 
-            <div className="mt-2 space-y-4">
-              <figure>
-                <img
-                  src={gtmHome}
-                  alt="GTM Pricing Tool — role-selection home screen with Founder, Consultant, GTM Operator, and Investor paths."
-                  className="w-full rounded-lg shadow-lg ring-1 ring-stone-200"
-                  loading="lazy"
-                />
-                <figcaption className="mt-2 text-xs text-stone-500 italic">
-                  Role selection — Founder, Consultant, GTM Operator, Investor.
-                </figcaption>
-              </figure>
-              <figure>
-                <img
-                  src={gtmExplorer}
-                  alt="GTM Pricing Tool — Market Explorer with AI Market Advisor and industry / segment selection."
-                  className="w-full rounded-lg shadow-lg ring-1 ring-stone-200"
-                  loading="lazy"
-                />
-                <figcaption className="mt-2 text-xs text-stone-500 italic">
-                  Market Explorer — Claude-recommended ICP, industry, and segment.
-                </figcaption>
-              </figure>
-            </div>
+            <figure>
+              <img
+                src={gtmHome}
+                alt="GTM Pricing Tool — role-selection home screen with Founder, Consultant, GTM Operator, and Investor paths."
+                className="w-full rounded-lg shadow-lg ring-1 ring-stone-200"
+                loading="lazy"
+              />
+              <figcaption className="mt-2 text-xs text-stone-500 italic">
+                Role selection — Founder, Consultant, GTM Operator, Investor.
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
