@@ -10,6 +10,8 @@ import auraProfile from "@/assets/aura-profile.jpg";
 import auraTutorials from "@/assets/aura-tutorials.jpg";
 import forkYeahResults from "@/assets/fork-yeah-results.png";
 import forkYeahLoading from "@/assets/fork-yeah-loading.png";
+import gtmHome from "@/assets/gtm-pricing-home.png";
+import gtmExplorer from "@/assets/gtm-pricing-explorer.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -232,11 +234,11 @@ function PortfolioPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-3 items-stretch">
             {[
               { num: "No. 01", id: "project-1", numCls: "text-orange-700", title: "AI Job Search Dashboard", blurb: "Scores 130+ ATS feeds for fit and conversion likelihood.", sub: "Claude · Python · Railway", tools: ["Claude", "Python", "Railway", "ATS"] },
-              { num: "No. 02", id: "project-restaurant", numCls: "text-rose-600", title: "Fork Yea! — Restaurant Reservation Agent", blurb: "Finds the right restaurant, ranks the options, and books the reservation.", sub: "LangGraph · Claude · Playwright", tools: ["Cursor", "LangGraph", "Claude", "Playwright", "Tavily", "FastAPI"] },
-              { num: "No. 03", id: "project-2", numCls: "text-amber-700", title: "Agentic Email Generator", blurb: "Always-on agent emails a ranked digest at 8am ET daily.", sub: "n8n · Claude · Supabase", tools: ["Claude", "n8n", "Railway", "Resend", "Supabase"] },
-              { num: "No. 04", id: "project-3", numCls: "text-emerald-700", title: "Compliance RAG Chatbot", blurb: "Grounded policy Q&A for regulated financial services teams.", sub: "Claude · Python · Streamlit", tools: ["Claude", "Python", "Streamlit", "RAG"] },
-              { num: "No. 05", id: "project-4", numCls: "text-indigo-700", title: "Customer Service Triage", blurb: "Classifies, prioritizes, and drafts replies in under a second.", sub: "Claude · Python · NLP", tools: ["Claude", "Python", "Triage", "NLP"] },
-              { num: "No. 06", id: "project-5", numCls: "text-fuchsia-700", title: "Aura — Makeup Assistant", blurb: "Maps your features to a personalized beauty routine.", sub: "Lovable · React · Claude", tools: ["Lovable", "React", "TypeScript", "Claude"] },
+              { num: "No. 02", id: "project-gtm", numCls: "text-teal-700", title: "GTM Pricing Tool", blurb: "Models revenue, pricing, and scenarios for founders, consultants, operators, and investors.", sub: "Claude · Python · Railway", tools: ["Claude", "Python", "Railway"] },
+              { num: "No. 03", id: "project-restaurant", numCls: "text-rose-600", title: "Fork Yea! — Restaurant Reservation Agent", blurb: "Finds the right restaurant, ranks the options, and books the reservation.", sub: "LangGraph · Claude · Playwright", tools: ["Cursor", "LangGraph", "Claude", "Playwright", "Tavily", "FastAPI"] },
+              { num: "No. 04", id: "project-2", numCls: "text-amber-700", title: "Agentic Email Generator", blurb: "Always-on agent emails a ranked digest at 8am ET daily.", sub: "n8n · Claude · Supabase", tools: ["Claude", "n8n", "Railway", "Resend", "Supabase"] },
+              { num: "No. 05", id: "project-3", numCls: "text-emerald-700", title: "Compliance RAG Chatbot", blurb: "Grounded policy Q&A for regulated financial services teams.", sub: "Claude · Python · Streamlit", tools: ["Claude", "Python", "Streamlit", "RAG"] },
+              { num: "No. 06", id: "project-4", numCls: "text-indigo-700", title: "Customer Service Triage", blurb: "Classifies, prioritizes, and drafts replies in under a second.", sub: "Claude · Python · NLP", tools: ["Claude", "Python", "Triage", "NLP"] },
             ].map((p) => {
               const logos = p.tools.filter((t) => TOOL_LOGOS[t]);
               return (
@@ -450,12 +452,143 @@ function PortfolioPage() {
 
       <GradientDivider />
 
+      {/* Project GTM — GTM Pricing Tool */}
+      <section id="project-gtm" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
+        <div className="grid md:grid-cols-12 gap-10">
+          <div className="md:col-span-4">
+            <p className="text-xs uppercase tracking-[0.3em] text-teal-700 font-medium">
+              No. 02 · Built with Claude + Python
+            </p>
+            <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
+              GTM Pricing Tool
+            </h2>
+            <p className="mt-3 text-sm text-teal-700 font-medium uppercase tracking-wider">
+              <span className="inline-block whitespace-nowrap">Revenue modeling</span>
+              <span className="mx-2">·</span>
+              <span className="inline-block whitespace-nowrap">pricing architecture</span>
+              <span className="mx-2">·</span>
+              <span className="inline-block whitespace-nowrap">scenario forecasting</span>
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {["Claude", "Python", "Railway", "GTM", "Pricing", "ICP"].map((t) => (
+                <Tag key={t} label={t} />
+              ))}
+            </div>
+            <Collapsible className="mt-8">
+              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-teal-200 bg-teal-50/60 px-4 py-3 text-sm font-medium text-teal-800 hover:bg-teal-50 transition-colors">
+                <span className="uppercase tracking-wider text-xs">See technical details</span>
+                <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
+              </CollapsibleTrigger>
+              <CollapsibleContent className="space-y-6 pt-6">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="p-4 rounded-lg bg-teal-50/60 border border-teal-200">
+                    <div className="text-xs uppercase tracking-wider text-teal-700 font-semibold">Role-based workflows</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Four distinct paths — Founder, Consultant, GTM Operator, Investor — each surfaces the modules that matter for that lens.</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-teal-50/60 border border-teal-200">
+                    <div className="text-xs uppercase tracking-wider text-teal-700 font-semibold">Claude-powered ICP</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Describe your product in a sentence — Claude recommends industry, customer segment, and pricing model before you touch a slider.</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-teal-50/60 border border-teal-200">
+                    <div className="text-xs uppercase tracking-wider text-teal-700 font-semibold">Benchmark library</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">25+ benchmarks across 8 industries and 3 segments (SMB, Mid-Market, Enterprise) — ACV, CAC payback, NRR, gross margin grounded in real comps.</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-teal-50/60 border border-teal-200">
+                    <div className="text-xs uppercase tracking-wider text-teal-700 font-semibold">Connected workflow</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Market Explorer → Pricing Architect → Revenue Modeler. Outputs from one stage feed defaults into the next — no copying between spreadsheets.</p>
+                  </div>
+                </div>
+                <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
+                  <li className="flex gap-3"><span className="text-teal-500">▸</span>Three scenarios per model — base, upside, downside — for stress-testing assumptions</li>
+                  <li className="flex gap-3"><span className="text-teal-500">▸</span>Unit-economics view: LTV/CAC, payback, gross margin, burn multiple — all computed live</li>
+                  <li className="flex gap-3"><span className="text-teal-500">▸</span>Deployed on Railway behind a private-beta gate; zero infra babysitting</li>
+                </ul>
+              </CollapsibleContent>
+            </Collapsible>
+            <div className="mt-4 flex flex-wrap items-center gap-2">
+              <a
+                href="https://web-production-b4e0ad.up.railway.app"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-teal-600 text-white hover:bg-teal-700 transition-colors text-xs font-medium"
+              >
+                Live app ↗
+              </a>
+            </div>
+          </div>
+
+          <div className="md:col-span-8 space-y-6">
+            <div className="p-5 rounded-xl bg-teal-50/70 border-l-4 border-teal-400">
+              <p className="text-xs uppercase tracking-wider text-teal-700 font-semibold mb-2">
+                The GTM operating system
+              </p>
+              <p className="text-sm md:text-base text-stone-700 leading-relaxed">
+                Market benchmarks, pricing architecture, and scenario forecasting — in <strong className="text-stone-900">one connected workflow</strong>. Pick a role and the tool sequences the right modules behind the scenes.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-teal-200 bg-teal-50/40 p-5">
+              <div className="text-xs uppercase tracking-[0.22em] text-teal-700 font-bold mb-5">Build signals</div>
+              <div className="grid grid-cols-4 gap-4">
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-teal-900 leading-none">8</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Industries</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-teal-900 leading-none">3</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Segments</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-teal-900 leading-none">25+</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Benchmarks</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-teal-900 leading-none">3</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Scenarios</div>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-base md:text-lg leading-relaxed text-stone-700">
+              Four roles, one engine. <strong className="text-stone-900">Founders</strong> define ICP and model revenue from scratch. <strong className="text-stone-900">Consultants</strong> get market sizing and defensible financial models for clients. <strong className="text-stone-900">Operators</strong> benchmark current performance and optimize pricing. <strong className="text-stone-900">Investors</strong> validate unit economics and stress-test scenarios.
+            </p>
+
+            <div className="mt-2 space-y-4">
+              <figure>
+                <img
+                  src={gtmHome}
+                  alt="GTM Pricing Tool — role-selection home screen with Founder, Consultant, GTM Operator, and Investor paths."
+                  className="w-full rounded-lg shadow-lg ring-1 ring-stone-200"
+                  loading="lazy"
+                />
+                <figcaption className="mt-2 text-xs text-stone-500 italic">
+                  Role selection — Founder, Consultant, GTM Operator, Investor.
+                </figcaption>
+              </figure>
+              <figure>
+                <img
+                  src={gtmExplorer}
+                  alt="GTM Pricing Tool — Market Explorer with AI Market Advisor and industry / segment selection."
+                  className="w-full rounded-lg shadow-lg ring-1 ring-stone-200"
+                  loading="lazy"
+                />
+                <figcaption className="mt-2 text-xs text-stone-500 italic">
+                  Market Explorer — Claude-recommended ICP, industry, and segment.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <GradientDivider />
+
       {/* Project Restaurant — Restaurant Reservation Agent */}
       <section id="project-restaurant" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-rose-700 font-medium">
-              No. 02 · Built with LangGraph + Claude
+              No. 03 · Built with LangGraph + Claude
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
               <em className="italic">Fork Yea!</em> — Restaurant Reservation Agent
@@ -704,7 +837,7 @@ function PortfolioPage() {
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-amber-700 font-medium">
-              No. 03 · Built with n8n + Claude
+              No. 04 · Built with n8n + Claude
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
               Agentic AI Email Generator
@@ -823,7 +956,7 @@ function PortfolioPage() {
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-emerald-700 font-medium">
-              No. 04 · Built with Claude
+              No. 05 · Built with Claude
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
               Compliance RAG Chatbot
@@ -937,7 +1070,7 @@ function PortfolioPage() {
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-indigo-700 font-medium">
-              No. 05 · Built with Claude
+              No. 06 · Built with Claude
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
               AI Customer Service Triage
@@ -1079,142 +1212,6 @@ function PortfolioPage() {
               </figcaption>
             </figure>
 
-          </div>
-        </div>
-      </section>
-
-      <GradientDivider />
-
-      {/* Project 5 — Aura */}
-      <section id="project-5" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
-        <div className="grid md:grid-cols-12 gap-10">
-          <div className="md:col-span-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-fuchsia-700 font-medium">
-              No. 06 · Built with Lovable
-            </p>
-            <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
-              Aura — Makeup Assistant
-            </h2>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {["Lovable", "TypeScript", "React", "Claude API", "TanStack"].map(
-                (t) => (
-                  <Tag key={t} label={t} />
-                ),
-              )}
-            </div>
-            <Collapsible className="mt-8">
-              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-fuchsia-200 bg-fuchsia-50/40 px-4 py-3 text-sm font-medium text-fuchsia-800 hover:bg-fuchsia-50 transition-colors">
-                <span className="uppercase tracking-wider text-xs">See technical details</span>
-                <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
-              </CollapsibleTrigger>
-              <CollapsibleContent className="space-y-6 pt-6">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="p-4 rounded-lg bg-fuchsia-50/60 border border-fuchsia-200">
-                    <div className="text-xs uppercase tracking-wider text-fuchsia-700 font-semibold">Reactive personalization</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Each profile dimension updates the kit + routine in real time — no submit button, no full recompute.</p>
-                  </div>
-                  <div className="p-4 rounded-lg bg-fuchsia-50/60 border border-fuchsia-200">
-                    <div className="text-xs uppercase tracking-wider text-fuchsia-700 font-semibold">Operator-built stack</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Lovable + React + Claude API — design, logic, and deployment shipped by one person, no engineering team.</p>
-                  </div>
-                </div>
-                <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
-                  <li className="flex gap-3"><span className="text-fuchsia-500">▸</span>4-dimensional profile (skin tone, undertone, face shape, eye shape) drives kit + technique recs</li>
-                  <li className="flex gap-3"><span className="text-fuchsia-500">▸</span>Visual tutorials — technique maps with brush + product callouts, not just text</li>
-                  <li className="flex gap-3"><span className="text-fuchsia-500">▸</span>Proves range: same operator-rewires-workflows mindset, applied to a consumer-facing surface</li>
-                  <li className="flex gap-3"><span className="text-fuchsia-500">▸</span>End-to-end on Lovable — repo, preview, deploy in one loop</li>
-                </ul>
-              </CollapsibleContent>
-            </Collapsible>
-            <div className="mt-4 flex flex-wrap items-center gap-2">
-              <a
-                href="https://face-harmony-helper.lovable.app"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-fuchsia-600 text-white hover:bg-fuchsia-700 transition-colors text-xs font-medium"
-              >
-                Live app ↗
-              </a>
-              <a
-                href="https://github.com/aylineuyar-arch/your-makeup-muse"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="View repository on GitHub"
-                title="View repository on GitHub"
-                className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
-              >
-                <Github className="w-4 h-4" />
-                <span>Repository</span>
-              </a>
-            </div>
-          </div>
-
-          <div className="md:col-span-8 space-y-6">
-            <div className="rounded-xl border border-fuchsia-200 bg-fuchsia-50/60 p-5">
-              <div className="text-xs uppercase tracking-[0.22em] text-fuchsia-700 font-bold mb-5">Build signals</div>
-              <div className="grid grid-cols-3 gap-4">
-                <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-fuchsia-900 leading-none">4</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Dimensions profiled</div>
-                </div>
-                <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-fuchsia-900 leading-none">0</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Engineers shipped with</div>
-                </div>
-                <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-fuchsia-900 leading-none">Live</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">End-to-end on Lovable</div>
-                </div>
-              </div>
-            </div>
-
-            <p className="text-base md:text-lg leading-relaxed text-stone-700">
-              Aura maps your{" "}
-              <strong className="text-stone-900">
-                skin tone, undertone, face shape, and eye shape
-              </strong>{" "}
-              to compose a personalized beauty routine — with the products and
-              techniques to wear it well. Built end-to-end with Lovable: zero
-              engineering team, shipped and live.
-            </p>
-
-            <div className="mt-8 space-y-4">
-              <figure>
-                <img
-                  src={auraLanding}
-                  alt="Aura — editorial landing page"
-                  className="w-full rounded-lg shadow-lg ring-1 ring-stone-200"
-                  loading="eager"
-                />
-                <figcaption className="mt-2 text-xs text-stone-500 italic">
-                  Editorial landing page — face-harmony-helper.lovable.app
-                </figcaption>
-              </figure>
-              <div className="grid grid-cols-2 gap-4">
-                <figure>
-                  <img
-                    src={auraProfile}
-                    alt="Aura — The Profile, real-time personalization"
-                    className="w-full rounded-lg shadow-md ring-1 ring-stone-200"
-                    loading="eager"
-                  />
-                  <figcaption className="mt-2 text-xs text-stone-500 italic">
-                    The Profile — real-time personalization
-                  </figcaption>
-                </figure>
-                <figure>
-                  <img
-                    src={auraTutorials}
-                    alt="Aura — Universal Tutorials, visual technique guides"
-                    className="w-full rounded-lg shadow-md ring-1 ring-stone-200"
-                    loading="eager"
-                  />
-                  <figcaption className="mt-2 text-xs text-stone-500 italic">
-                    Universal Tutorials — visual technique guides
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
           </div>
         </div>
       </section>
