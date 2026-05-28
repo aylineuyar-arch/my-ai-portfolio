@@ -517,7 +517,7 @@ function PortfolioPage() {
                   ...steps.map((s) => ({ kind: "step" as const, ...s })),
                   { kind: "end" as const },
                 ];
-                const loop = [...cycle, ...cycle, ...cycle, ...cycle];
+                const loop = [...cycle, ...cycle];
                 return (
                   <>
                     <div className="relative overflow-hidden">
@@ -550,8 +550,8 @@ function PortfolioPage() {
                                   {num}
                                 </span>
                                 <Icon className="w-4 h-4" strokeWidth={1.75} aria-hidden />
-                                <div className="mt-1.5 text-[13px] font-semibold leading-none">{s.label}</div>
-                                <div className="mt-1 text-[10.5px] tracking-wide opacity-70 leading-none">{s.sub}</div>
+                                <div className="mt-1.5 w-full text-center text-[13px] font-semibold leading-none">{s.label}</div>
+                                <div className="mt-1 w-full text-center text-[10.5px] tracking-wide opacity-70 leading-none">{s.sub}</div>
                               </div>
                               {!isLastStep && (
                                 <div className="flex items-center text-stone-400 text-sm" aria-hidden>→</div>

@@ -58,11 +58,11 @@
 }
 
 @keyframes marquee-x {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
 }
 .animate-marquee {
-  animation: marquee-x 60s linear infinite;
+  animation: marquee-x 70s linear infinite;
 }
 .animate-marquee:hover {
   animation-play-state: paused;
