@@ -811,12 +811,12 @@ function PortfolioPage() {
 
             <div className="grid sm:grid-cols-2 gap-4">
               <figure className="overflow-hidden rounded-xl border border-rose-200 bg-stone-950 shadow-lg flex flex-col">
-                <div className="flex-1 flex items-center justify-center">
+                <div className="flex-1 flex items-center justify-center p-2">
                   <img
                     src={forkYeahLoading}
                     alt="Fork Yeah! agent working — sub-agents checking past searches, querying OpenTable, enriching with Maps & reviews."
                     loading="lazy"
-                    className="w-full h-auto block"
+                    className="w-full max-h-72 object-contain block"
                   />
                 </div>
                 <figcaption className="px-4 py-3 text-sm text-stone-800 bg-rose-50 border-t border-rose-200">
@@ -824,12 +824,12 @@ function PortfolioPage() {
                 </figcaption>
               </figure>
               <figure className="overflow-hidden rounded-xl border border-rose-200 bg-stone-950 shadow-lg flex flex-col">
-                <div className="flex-1 flex items-center justify-center">
+                <div className="flex-1 flex items-center justify-center p-2">
                   <img
                     src={forkYeahResults}
                     alt="Fork Yeah! agent results — ranked top pick with neighborhood, price tier and vibe tags."
                     loading="lazy"
-                    className="w-full h-auto block"
+                    className="w-full max-h-72 object-contain block"
                   />
                 </div>
                 <figcaption className="px-4 py-3 text-sm text-stone-800 bg-rose-50 border-t border-rose-200">
