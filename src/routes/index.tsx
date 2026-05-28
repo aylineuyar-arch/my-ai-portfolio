@@ -509,7 +509,7 @@ function PortfolioPage() {
                   violet: "bg-violet-50 text-violet-700 ring-violet-200",
                   emerald: "bg-emerald-50 text-emerald-700 ring-emerald-200",
                   sky: "bg-sky-50 text-sky-700 ring-sky-200",
-                  judge: "bg-stone-900 text-amber-200 ring-1 ring-stone-900",
+                  judge: "bg-stone-100 text-stone-800 ring-1 ring-stone-400 border border-dashed border-stone-500",
                 };
                 const cycle = [
                   { kind: "start" as const },
