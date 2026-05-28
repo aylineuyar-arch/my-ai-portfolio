@@ -709,8 +709,8 @@ function PortfolioPage() {
                   <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Graph nodes</div>
                 </div>
                 <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">2</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Claude models</div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">3</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Claude roles · parse, rank, judge</div>
                 </div>
                 <div>
                   <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">1-click</div>
