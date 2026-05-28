@@ -340,243 +340,6 @@ function PortfolioPage() {
 
       <GradientDivider />
 
-      {/* Project 1 */}
-      <section id="project-1" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <div className="grid md:grid-cols-12 gap-10">
-          <div className="md:col-span-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-orange-700 font-medium">
-              No. 02 · Built with Claude
-            </p>
-            <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
-              Live AI Job Search Dashboard
-            </h2>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {[
-                "Claude haiku-4-5",
-                "Greenhouse",
-                "Lever",
-                "Ashby",
-                "JSearch",
-                "Python",
-                "Railway",
-              ].map((t) => (
-                <Tag key={t} label={t} />
-              ))}
-            </div>
-            <Collapsible className="mt-8">
-              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-orange-200 bg-orange-50/40 px-4 py-3 text-sm font-medium text-orange-800 hover:bg-orange-50 transition-colors">
-                <span className="uppercase tracking-wider text-xs">See technical details</span>
-                <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
-              </CollapsibleTrigger>
-              <CollapsibleContent className="space-y-6 pt-6">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="p-4 rounded-lg bg-orange-50/60 border border-orange-200">
-                    <div className="text-xs uppercase tracking-wider text-orange-700 font-semibold">Fit Score (0–100)</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">How well the role matches background, industry, and stated goals.</p>
-                  </div>
-                  <div className="p-4 rounded-lg bg-orange-50/60 border border-orange-200">
-                    <div className="text-xs uppercase tracking-wider text-orange-700 font-semibold">Conversion Score (0–100)</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Realistic offer likelihood, calibrated by company type and competitiveness.</p>
-                  </div>
-                </div>
-
-                <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
-                  <li className="flex gap-3"><span className="text-orange-500">▸</span>~300 deduplicated roles per run across 130+ target companies</li>
-                  <li className="flex gap-3"><span className="text-orange-500">▸</span>Honest conversion scoring — Anthropic 10–25, early-stage startups 45–65</li>
-                  <li className="flex gap-3"><span className="text-orange-500">▸</span>Apply-now list: fit ≥ 65 AND conversion ≥ 45 — actionable, not a dump</li>
-                  <li className="flex gap-3"><span className="text-orange-500">▸</span>Eliminated manual checking of Anthropic, Ramp, Rippling, Databricks + 126 more</li>
-                  <li className="flex gap-3"><span className="text-orange-500">▸</span>Deployed on Railway — zero infrastructure overhead</li>
-                </ul>
-              </CollapsibleContent>
-            </Collapsible>
-            <a
-              href="https://github.com/aylineuyar-arch/ai-workflow-demo"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="View repository on GitHub"
-              title="View repository on GitHub"
-              className="mt-4 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
-            >
-              <Github className="w-4 h-4" />
-              <span>Repository</span>
-            </a>
-          </div>
-
-          <div className="md:col-span-8 space-y-6">
-
-            <div className="rounded-xl border border-orange-200 bg-orange-50/60 p-5">
-              <div className="text-xs uppercase tracking-[0.22em] text-orange-700 font-bold mb-5">Live signals</div>
-              <div className="grid grid-cols-3 gap-4">
-                <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-orange-900 leading-none">286</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Roles / run</div>
-                </div>
-                <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-orange-900 leading-none">130+</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Companies tracked</div>
-                </div>
-                <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-orange-900 leading-none">~3 min</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Pipeline end-to-end</div>
-                </div>
-              </div>
-            </div>
-
-            <p className="text-base md:text-lg leading-relaxed text-stone-700">
-              An AI-powered pipeline that aggregates live postings from{" "}
-              <strong className="text-stone-900">130+ company Applicant Tracking Systems (ATSs)</strong> and
-              major job boards, scores each role with Claude on fit and
-              realistic conversion likelihood, and renders results in a
-              filterable web dashboard.
-            </p>
-
-            <figure className="mt-8">
-              <img
-                src={dashboardImg}
-                alt="Job Search Dashboard — color-coded fit and conversion scores"
-                className="w-full rounded-lg shadow-lg ring-1 ring-stone-200"
-                loading="eager"
-              />
-              <figcaption className="mt-3 text-xs text-stone-500 italic">
-                Live dashboard — color-coded fit & conversion scores, one-click
-                apply links.
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      <GradientDivider />
-
-      {/* Project GTM — GTM Pricing Tool */}
-      <section id="project-gtm" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
-        <div className="grid md:grid-cols-12 gap-10">
-          <div className="md:col-span-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-teal-700 font-medium">
-              No. 03 · Built with Claude + Python
-            </p>
-            <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
-              GTM Pricing Tool
-            </h2>
-            <p className="mt-3 text-sm text-teal-700 font-medium uppercase tracking-wider">
-              <span className="inline-block whitespace-nowrap">Revenue modeling</span>
-              <span className="mx-2">·</span>
-              <span className="inline-block whitespace-nowrap">pricing architecture</span>
-              <span className="mx-2">·</span>
-              <span className="inline-block whitespace-nowrap">scenario forecasting</span>
-            </p>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {["Claude", "Python", "Railway", "GTM", "Pricing", "ICP"].map((t) => (
-                <Tag key={t} label={t} />
-              ))}
-            </div>
-            <Collapsible className="mt-8">
-              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-teal-200 bg-teal-50/60 px-4 py-3 text-sm font-medium text-teal-800 hover:bg-teal-50 transition-colors">
-                <span className="uppercase tracking-wider text-xs">See technical details</span>
-                <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
-              </CollapsibleTrigger>
-              <CollapsibleContent className="space-y-6 pt-6">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="p-4 rounded-lg bg-teal-50/60 border border-teal-200">
-                    <div className="text-xs uppercase tracking-wider text-teal-700 font-semibold">Role-based workflows</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Four distinct paths — Founder, Consultant, GTM Operator, Investor — each surfaces the modules that matter for that lens.</p>
-                  </div>
-                  <div className="p-4 rounded-lg bg-teal-50/60 border border-teal-200">
-                    <div className="text-xs uppercase tracking-wider text-teal-700 font-semibold">Claude-powered ICP</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Describe your product in a sentence — Claude recommends industry, customer segment, and pricing model before you touch a slider.</p>
-                  </div>
-                  <div className="p-4 rounded-lg bg-teal-50/60 border border-teal-200">
-                    <div className="text-xs uppercase tracking-wider text-teal-700 font-semibold">Benchmark library</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">25+ benchmarks across 8 industries and 3 segments (SMB, Mid-Market, Enterprise) — ACV, CAC payback, NRR, gross margin grounded in real comps.</p>
-                  </div>
-                  <div className="p-4 rounded-lg bg-teal-50/60 border border-teal-200">
-                    <div className="text-xs uppercase tracking-wider text-teal-700 font-semibold">Connected workflow</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Market Explorer → Pricing Architect → Revenue Modeler. Outputs from one stage feed defaults into the next — no copying between spreadsheets.</p>
-                  </div>
-                </div>
-                <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
-                  <li className="flex gap-3"><span className="text-teal-500">▸</span>Three scenarios per model — base, upside, downside — for stress-testing assumptions</li>
-                  <li className="flex gap-3"><span className="text-teal-500">▸</span>Unit-economics view: LTV/CAC, payback, gross margin, burn multiple — all computed live</li>
-                  <li className="flex gap-3"><span className="text-teal-500">▸</span>Deployed on Railway behind a private-beta gate; zero infra babysitting</li>
-                </ul>
-              </CollapsibleContent>
-            </Collapsible>
-            <div className="mt-4 flex flex-wrap items-center gap-2">
-              <a
-                href="https://web-production-b4e0ad.up.railway.app"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-teal-600 text-white hover:bg-teal-700 transition-colors text-xs font-medium"
-              >
-                Live app ↗
-              </a>
-              <a
-                href="https://github.com/aylineuyar-arch/gtm-pricing-tool"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="View repository on GitHub"
-                title="View repository on GitHub"
-                className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
-              >
-                <Github className="w-4 h-4" />
-                <span>Repository</span>
-              </a>
-            </div>
-          </div>
-
-          <div className="md:col-span-8 space-y-6">
-            <div className="p-5 rounded-xl bg-teal-50/70 border-l-4 border-teal-400">
-              <p className="text-xs uppercase tracking-wider text-teal-700 font-semibold mb-2">
-                The GTM operating system
-              </p>
-              <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                Market benchmarks, pricing architecture, and scenario forecasting — in <strong className="text-stone-900">one connected workflow</strong>. Pick a role and the tool sequences the right modules behind the scenes.
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-teal-200 bg-teal-50/40 p-5">
-              <div className="text-xs uppercase tracking-[0.22em] text-teal-700 font-bold mb-5">Build signals</div>
-              <div className="grid grid-cols-4 gap-4">
-                <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-teal-900 leading-none">8</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Industries</div>
-                </div>
-                <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-teal-900 leading-none">3</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Segments</div>
-                </div>
-                <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-teal-900 leading-none">25+</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Benchmarks</div>
-                </div>
-                <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-teal-900 leading-none">3</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Scenarios</div>
-                </div>
-              </div>
-            </div>
-
-            <p className="text-base md:text-lg leading-relaxed text-stone-700">
-              Four roles, one engine. <strong className="text-stone-900">Founders</strong> define ICP and model revenue from scratch. <strong className="text-stone-900">Consultants</strong> get market sizing and defensible financial models for clients. <strong className="text-stone-900">Operators</strong> benchmark current performance and optimize pricing. <strong className="text-stone-900">Investors</strong> validate unit economics and stress-test scenarios.
-            </p>
-
-            <figure>
-              <img
-                src={gtmHome}
-                alt="GTM Pricing Tool — role-selection home screen with Founder, Consultant, GTM Operator, and Investor paths."
-                className="w-full rounded-lg shadow-lg ring-1 ring-stone-200"
-                loading="lazy"
-              />
-              <figcaption className="mt-2 text-xs text-stone-500 italic">
-                Role selection — Founder, Consultant, GTM Operator, Investor.
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      <GradientDivider />
-
       {/* Project Restaurant — Restaurant Reservation Agent */}
       <section id="project-restaurant" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
         <div className="grid md:grid-cols-12 gap-10">
@@ -838,6 +601,243 @@ function PortfolioPage() {
               </figure>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      <GradientDivider />
+
+      {/* Project 1 */}
+      <section id="project-1" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+        <div className="grid md:grid-cols-12 gap-10">
+          <div className="md:col-span-4">
+            <p className="text-xs uppercase tracking-[0.3em] text-orange-700 font-medium">
+              No. 02 · Built with Claude
+            </p>
+            <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
+              Live AI Job Search Dashboard
+            </h2>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {[
+                "Claude haiku-4-5",
+                "Greenhouse",
+                "Lever",
+                "Ashby",
+                "JSearch",
+                "Python",
+                "Railway",
+              ].map((t) => (
+                <Tag key={t} label={t} />
+              ))}
+            </div>
+            <Collapsible className="mt-8">
+              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-orange-200 bg-orange-50/40 px-4 py-3 text-sm font-medium text-orange-800 hover:bg-orange-50 transition-colors">
+                <span className="uppercase tracking-wider text-xs">See technical details</span>
+                <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
+              </CollapsibleTrigger>
+              <CollapsibleContent className="space-y-6 pt-6">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="p-4 rounded-lg bg-orange-50/60 border border-orange-200">
+                    <div className="text-xs uppercase tracking-wider text-orange-700 font-semibold">Fit Score (0–100)</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">How well the role matches background, industry, and stated goals.</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-orange-50/60 border border-orange-200">
+                    <div className="text-xs uppercase tracking-wider text-orange-700 font-semibold">Conversion Score (0–100)</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Realistic offer likelihood, calibrated by company type and competitiveness.</p>
+                  </div>
+                </div>
+
+                <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
+                  <li className="flex gap-3"><span className="text-orange-500">▸</span>~300 deduplicated roles per run across 130+ target companies</li>
+                  <li className="flex gap-3"><span className="text-orange-500">▸</span>Honest conversion scoring — Anthropic 10–25, early-stage startups 45–65</li>
+                  <li className="flex gap-3"><span className="text-orange-500">▸</span>Apply-now list: fit ≥ 65 AND conversion ≥ 45 — actionable, not a dump</li>
+                  <li className="flex gap-3"><span className="text-orange-500">▸</span>Eliminated manual checking of Anthropic, Ramp, Rippling, Databricks + 126 more</li>
+                  <li className="flex gap-3"><span className="text-orange-500">▸</span>Deployed on Railway — zero infrastructure overhead</li>
+                </ul>
+              </CollapsibleContent>
+            </Collapsible>
+            <a
+              href="https://github.com/aylineuyar-arch/ai-workflow-demo"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="View repository on GitHub"
+              title="View repository on GitHub"
+              className="mt-4 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
+            >
+              <Github className="w-4 h-4" />
+              <span>Repository</span>
+            </a>
+          </div>
+
+          <div className="md:col-span-8 space-y-6">
+
+            <div className="rounded-xl border border-orange-200 bg-orange-50/60 p-5">
+              <div className="text-xs uppercase tracking-[0.22em] text-orange-700 font-bold mb-5">Live signals</div>
+              <div className="grid grid-cols-3 gap-4">
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-orange-900 leading-none">286</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Roles / run</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-orange-900 leading-none">130+</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Companies tracked</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-orange-900 leading-none">~3 min</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Pipeline end-to-end</div>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-base md:text-lg leading-relaxed text-stone-700">
+              An AI-powered pipeline that aggregates live postings from{" "}
+              <strong className="text-stone-900">130+ company Applicant Tracking Systems (ATSs)</strong> and
+              major job boards, scores each role with Claude on fit and
+              realistic conversion likelihood, and renders results in a
+              filterable web dashboard.
+            </p>
+
+            <figure className="mt-8">
+              <img
+                src={dashboardImg}
+                alt="Job Search Dashboard — color-coded fit and conversion scores"
+                className="w-full rounded-lg shadow-lg ring-1 ring-stone-200"
+                loading="eager"
+              />
+              <figcaption className="mt-3 text-xs text-stone-500 italic">
+                Live dashboard — color-coded fit & conversion scores, one-click
+                apply links.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <GradientDivider />
+
+      {/* Project GTM — GTM Pricing Tool */}
+      <section id="project-gtm" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
+        <div className="grid md:grid-cols-12 gap-10">
+          <div className="md:col-span-4">
+            <p className="text-xs uppercase tracking-[0.3em] text-teal-700 font-medium">
+              No. 03 · Built with Claude + Python
+            </p>
+            <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
+              GTM Pricing Tool
+            </h2>
+            <p className="mt-3 text-sm text-teal-700 font-medium uppercase tracking-wider">
+              <span className="inline-block whitespace-nowrap">Revenue modeling</span>
+              <span className="mx-2">·</span>
+              <span className="inline-block whitespace-nowrap">pricing architecture</span>
+              <span className="mx-2">·</span>
+              <span className="inline-block whitespace-nowrap">scenario forecasting</span>
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {["Claude", "Python", "Railway", "GTM", "Pricing", "ICP"].map((t) => (
+                <Tag key={t} label={t} />
+              ))}
+            </div>
+            <Collapsible className="mt-8">
+              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-teal-200 bg-teal-50/60 px-4 py-3 text-sm font-medium text-teal-800 hover:bg-teal-50 transition-colors">
+                <span className="uppercase tracking-wider text-xs">See technical details</span>
+                <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
+              </CollapsibleTrigger>
+              <CollapsibleContent className="space-y-6 pt-6">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="p-4 rounded-lg bg-teal-50/60 border border-teal-200">
+                    <div className="text-xs uppercase tracking-wider text-teal-700 font-semibold">Role-based workflows</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Four distinct paths — Founder, Consultant, GTM Operator, Investor — each surfaces the modules that matter for that lens.</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-teal-50/60 border border-teal-200">
+                    <div className="text-xs uppercase tracking-wider text-teal-700 font-semibold">Claude-powered ICP</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Describe your product in a sentence — Claude recommends industry, customer segment, and pricing model before you touch a slider.</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-teal-50/60 border border-teal-200">
+                    <div className="text-xs uppercase tracking-wider text-teal-700 font-semibold">Benchmark library</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">25+ benchmarks across 8 industries and 3 segments (SMB, Mid-Market, Enterprise) — ACV, CAC payback, NRR, gross margin grounded in real comps.</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-teal-50/60 border border-teal-200">
+                    <div className="text-xs uppercase tracking-wider text-teal-700 font-semibold">Connected workflow</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Market Explorer → Pricing Architect → Revenue Modeler. Outputs from one stage feed defaults into the next — no copying between spreadsheets.</p>
+                  </div>
+                </div>
+                <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
+                  <li className="flex gap-3"><span className="text-teal-500">▸</span>Three scenarios per model — base, upside, downside — for stress-testing assumptions</li>
+                  <li className="flex gap-3"><span className="text-teal-500">▸</span>Unit-economics view: LTV/CAC, payback, gross margin, burn multiple — all computed live</li>
+                  <li className="flex gap-3"><span className="text-teal-500">▸</span>Deployed on Railway behind a private-beta gate; zero infra babysitting</li>
+                </ul>
+              </CollapsibleContent>
+            </Collapsible>
+            <div className="mt-4 flex flex-wrap items-center gap-2">
+              <a
+                href="https://web-production-b4e0ad.up.railway.app"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-teal-600 text-white hover:bg-teal-700 transition-colors text-xs font-medium"
+              >
+                Live app ↗
+              </a>
+              <a
+                href="https://github.com/aylineuyar-arch/gtm-pricing-tool"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="View repository on GitHub"
+                title="View repository on GitHub"
+                className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
+              >
+                <Github className="w-4 h-4" />
+                <span>Repository</span>
+              </a>
+            </div>
+          </div>
+
+          <div className="md:col-span-8 space-y-6">
+            <div className="p-5 rounded-xl bg-teal-50/70 border-l-4 border-teal-400">
+              <p className="text-xs uppercase tracking-wider text-teal-700 font-semibold mb-2">
+                The GTM operating system
+              </p>
+              <p className="text-sm md:text-base text-stone-700 leading-relaxed">
+                Market benchmarks, pricing architecture, and scenario forecasting — in <strong className="text-stone-900">one connected workflow</strong>. Pick a role and the tool sequences the right modules behind the scenes.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-teal-200 bg-teal-50/40 p-5">
+              <div className="text-xs uppercase tracking-[0.22em] text-teal-700 font-bold mb-5">Build signals</div>
+              <div className="grid grid-cols-4 gap-4">
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-teal-900 leading-none">8</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Industries</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-teal-900 leading-none">3</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Segments</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-teal-900 leading-none">25+</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Benchmarks</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-teal-900 leading-none">3</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Scenarios</div>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-base md:text-lg leading-relaxed text-stone-700">
+              Four roles, one engine. <strong className="text-stone-900">Founders</strong> define ICP and model revenue from scratch. <strong className="text-stone-900">Consultants</strong> get market sizing and defensible financial models for clients. <strong className="text-stone-900">Operators</strong> benchmark current performance and optimize pricing. <strong className="text-stone-900">Investors</strong> validate unit economics and stress-test scenarios.
+            </p>
+
+            <figure>
+              <img
+                src={gtmHome}
+                alt="GTM Pricing Tool — role-selection home screen with Founder, Consultant, GTM Operator, and Investor paths."
+                className="w-full rounded-lg shadow-lg ring-1 ring-stone-200"
+                loading="lazy"
+              />
+              <figcaption className="mt-2 text-xs text-stone-500 italic">
+                Role selection — Founder, Consultant, GTM Operator, Investor.
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
