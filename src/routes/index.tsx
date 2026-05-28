@@ -229,7 +229,7 @@ function PortfolioPage() {
         <div className="mt-4">
           <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-3 items-stretch">
             {[
-              { num: "No. 01", id: "project-restaurant", numCls: "text-rose-600", title: "Fork Yea! — Restaurant Reservation Agent", blurb: "Finds the right restaurant, ranks the options, books the reservation, then a Haiku judge scores the pick and an observability dashboard tracks every run.", sub: "LangGraph · Claude · Playwright", tools: ["Cursor", "LangGraph", "Claude", "Playwright", "Tavily", "FastAPI"] },
+              { num: "No. 01", id: "project-restaurant", numCls: "text-rose-600", title: "Fork Yea! — Restaurant Reservation Agent", blurb: "Finds and books the right restaurant, with a Haiku judge scoring every pick.", sub: "LangGraph · Claude · Playwright", tools: ["Cursor", "LangGraph", "Claude", "Playwright", "Tavily", "FastAPI"] },
               { num: "No. 02", id: "project-1", numCls: "text-orange-700", title: "AI Job Search Dashboard", blurb: "Scores 130+ ATS feeds for fit and conversion likelihood.", sub: "Claude · Python · Railway", tools: ["Claude", "Python", "Railway", "ATS"] },
               { num: "No. 03", id: "project-gtm", numCls: "text-teal-700", title: "GTM Pricing Tool", blurb: "Models revenue, pricing, and scenarios for founders, consultants, operators, and investors.", sub: "Claude · Python · Railway", tools: ["Claude", "Python", "Railway"] },
               { num: "No. 04", id: "project-2", numCls: "text-amber-700", title: "Agentic Email Generator", blurb: "Always-on agent emails a ranked digest at 8am ET daily.", sub: "n8n · Claude · Supabase", tools: ["Claude", "n8n", "Railway", "Resend", "Supabase"] },
