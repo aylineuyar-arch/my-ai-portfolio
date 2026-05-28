@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Github, Linkedin, Briefcase, Database, MessageSquare, Workflow, ChevronDown, Languages, History, Search, Sparkles, ListOrdered, CalendarCheck, MailCheck, type LucideIcon } from "lucide-react";
+import { Github, Linkedin, Briefcase, Database, MessageSquare, Workflow, ChevronDown, Languages, History, Search, Sparkles, ListOrdered, Gavel, CalendarCheck, MailCheck, type LucideIcon } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import dashboardImg from "@/assets/portfolio-dashboard.jpg";
@@ -353,7 +353,7 @@ function PortfolioPage() {
             <p className="mt-3 text-sm text-rose-700 font-medium uppercase tracking-wider">
               <span className="inline-block whitespace-nowrap">Agentic orchestration</span>
               <span className="mx-2">·</span>
-              <span className="inline-block whitespace-nowrap">7-node graph</span>
+              <span className="inline-block whitespace-nowrap">8-node graph</span>
               <span className="mx-2">·</span>
               <span className="inline-block whitespace-nowrap">role-specific sub-agents</span>
             </p>
@@ -468,7 +468,7 @@ function PortfolioPage() {
               <div className="text-xs uppercase tracking-[0.22em] text-rose-700 font-bold mb-5">Agent signals</div>
               <div className="grid grid-cols-3 gap-4">
                 <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">7</div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">8</div>
                   <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Graph nodes</div>
                 </div>
                 <div>
@@ -485,7 +485,7 @@ function PortfolioPage() {
             <div className="rounded-xl border border-stone-200 bg-white/60 p-5 md:p-6">
               <div className="flex items-baseline justify-between mb-4">
                 <div className="text-xs uppercase tracking-[0.22em] text-stone-700 font-bold">Agent flow</div>
-                <div className="text-[10px] uppercase tracking-[0.18em] text-stone-500">7 specialized sub-agents</div>
+                <div className="text-[10px] uppercase tracking-[0.18em] text-stone-500">8 specialized sub-agents</div>
               </div>
 
               <p className="text-sm text-stone-600 mb-4 leading-relaxed">
@@ -496,9 +496,10 @@ function PortfolioPage() {
                 const steps: { label: string; sub: string; tone: "rose" | "amber" | "violet" | "emerald" | "sky"; Icon: LucideIcon }[] = [
                   { label: "Parse", sub: "understand request", tone: "amber", Icon: Languages },
                   { label: "Recall", sub: "past preferences", tone: "violet", Icon: History },
-                  { label: "Research", sub: "find options", tone: "sky", Icon: Search },
+                  { label: "Research", sub: "find options ↻", tone: "sky", Icon: Search },
                   { label: "Enrich", sub: "add context", tone: "sky", Icon: Sparkles },
                   { label: "Rank", sub: "score best fit", tone: "amber", Icon: ListOrdered },
+                  { label: "Judge", sub: "score top pick", tone: "amber", Icon: Gavel },
                   { label: "Book", sub: "reserve slot", tone: "emerald", Icon: CalendarCheck },
                   { label: "Confirm", sub: "email you", tone: "rose", Icon: MailCheck },
                 ];
