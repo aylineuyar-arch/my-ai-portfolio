@@ -493,13 +493,13 @@ function PortfolioPage() {
               </p>
 
               {(() => {
-                const steps: { label: string; sub: string; tone: "rose" | "amber" | "violet" | "emerald" | "sky"; Icon: LucideIcon }[] = [
+                const steps: { label: string; sub: string; tone: "rose" | "amber" | "violet" | "emerald" | "sky" | "judge"; Icon: LucideIcon }[] = [
                   { label: "Parse", sub: "understand request", tone: "amber", Icon: Languages },
                   { label: "Recall", sub: "past preferences", tone: "violet", Icon: History },
                   { label: "Research", sub: "find options ↻", tone: "sky", Icon: Search },
                   { label: "Enrich", sub: "add context", tone: "sky", Icon: Sparkles },
                   { label: "Rank", sub: "score best fit", tone: "amber", Icon: ListOrdered },
-                  { label: "Judge", sub: "score top pick", tone: "amber", Icon: Gavel },
+                  { label: "Judge", sub: "verify top pick", tone: "judge", Icon: Gavel },
                   { label: "Book", sub: "reserve slot", tone: "emerald", Icon: CalendarCheck },
                   { label: "Confirm", sub: "email you", tone: "rose", Icon: MailCheck },
                 ];
@@ -509,6 +509,7 @@ function PortfolioPage() {
                   violet: "bg-violet-50 text-violet-700 ring-violet-200",
                   emerald: "bg-emerald-50 text-emerald-700 ring-emerald-200",
                   sky: "bg-sky-50 text-sky-700 ring-sky-200",
+                  judge: "bg-stone-900 text-amber-200 ring-2 ring-amber-400 ring-offset-2 ring-offset-white shadow-lg shadow-stone-900/20 scale-[1.06]",
                 };
                 const cycle = [
                   { kind: "start" as const },
@@ -561,6 +562,7 @@ function PortfolioPage() {
                       <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-violet-200 ring-1 ring-violet-300" />Memory</span>
                       <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-sky-200 ring-1 ring-sky-300" />Search</span>
                       <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-emerald-200 ring-1 ring-emerald-300" />Action</span>
+                      <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-stone-900 ring-1 ring-amber-400" />Verifier (Haiku)</span>
                       <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-rose-200 ring-1 ring-rose-300" />Notify</span>
                     </div>
                   </>
