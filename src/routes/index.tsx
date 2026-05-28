@@ -503,6 +503,7 @@ function PortfolioPage() {
                   { label: "Book", sub: "reserve slot", tone: "emerald", Icon: CalendarCheck },
                   { label: "Confirm", sub: "email you", tone: "rose", Icon: MailCheck },
                 ];
+                const stepNum = Object.fromEntries(steps.map((s, i) => [s.label, i + 1]));
                 const tones: Record<string, string> = {
                   rose: "bg-rose-50 text-rose-700 ring-rose-200",
                   amber: "bg-amber-50 text-amber-800 ring-amber-200",
@@ -541,9 +542,13 @@ function PortfolioPage() {
                           const s = item;
                           const Icon = s.Icon;
                           const isLastStep = i > 0 && loop[i + 1]?.kind === "end";
+                          const num = stepNum[s.label];
                           return (
                             <div key={`${s.label}-${i}`} className="flex items-stretch gap-1 shrink-0">
-                              <div className={`rounded-lg px-2 py-3 ring-1 ${tones[s.tone]} flex flex-col items-center justify-center w-[112px]`}>
+                              <div className={`relative rounded-lg px-2 py-3 ring-1 ${tones[s.tone]} flex flex-col items-center justify-center w-[112px]`}>
+                                <span className="absolute top-1 left-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-stone-900 text-[9px] font-bold text-white leading-none">
+                                  {num}
+                                </span>
                                 <Icon className="w-4 h-4" strokeWidth={1.75} aria-hidden />
                                 <div className="mt-1.5 text-[13px] font-semibold leading-none">{s.label}</div>
                                 <div className="mt-1 text-[10.5px] tracking-wide opacity-70 leading-none">{s.sub}</div>
