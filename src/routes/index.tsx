@@ -554,7 +554,7 @@ function PortfolioPage() {
                           return (
                             <div key={`${s.label}-${i}`} className="flex items-stretch gap-1 shrink-0">
                               <div className={`relative rounded-lg px-2 py-3 ring-1 ${tones[s.tone]} flex flex-col items-center justify-center w-[112px]`}>
-                                <span className={`absolute top-1 left-1.5 flex h-4 w-4 items-center justify-center rounded-full text-[9px] font-bold leading-none ${bubbleTones[s.tone]}`}>
+                                <span className={`absolute top-1 left-1.5 flex h-[18px] w-[18px] items-center justify-center rounded-full text-[11px] font-bold leading-none tabular-nums ring-1 ring-white/70 shadow-sm ${bubbleTones[s.tone]}`}>
                                   {num}
                                 </span>
                                 <Icon className="w-4 h-4" strokeWidth={1.75} aria-hidden />
