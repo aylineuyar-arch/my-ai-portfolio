@@ -543,7 +543,7 @@ function PortfolioPage() {
                           const isLastStep = i > 0 && loop[i + 1]?.kind === "end";
                           return (
                             <div key={`${s.label}-${i}`} className="flex items-stretch gap-1 shrink-0">
-                              <div className={`rounded-lg px-3.5 py-3 ring-1 ${tones[s.tone]} flex flex-col items-center justify-center min-w-[100px]`}>
+                              <div className={`rounded-lg px-2 py-3 ring-1 ${tones[s.tone]} flex flex-col items-center justify-center w-[112px]`}>
                                 <Icon className="w-4 h-4" strokeWidth={1.75} aria-hidden />
                                 <div className="mt-1.5 text-[13px] font-semibold leading-none">{s.label}</div>
                                 <div className="mt-1 text-[10.5px] tracking-wide opacity-70 leading-none">{s.sub}</div>
