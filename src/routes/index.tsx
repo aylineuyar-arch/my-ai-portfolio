@@ -512,6 +512,14 @@ function PortfolioPage() {
                   sky: "bg-sky-50 text-sky-700 ring-sky-200",
                   judge: "bg-stone-100 text-stone-800 ring-1 ring-stone-400 border border-dashed border-stone-500",
                 };
+                const bubbleTones: Record<string, string> = {
+                  rose: "bg-rose-500 text-white",
+                  amber: "bg-amber-500 text-white",
+                  violet: "bg-violet-500 text-white",
+                  emerald: "bg-emerald-500 text-white",
+                  sky: "bg-sky-500 text-white",
+                  judge: "bg-stone-500 text-white",
+                };
                 const cycle = [
                   { kind: "start" as const },
                   ...steps.map((s) => ({ kind: "step" as const, ...s })),
@@ -546,7 +554,7 @@ function PortfolioPage() {
                           return (
                             <div key={`${s.label}-${i}`} className="flex items-stretch gap-1 shrink-0">
                               <div className={`relative rounded-lg px-2 py-3 ring-1 ${tones[s.tone]} flex flex-col items-center justify-center w-[112px]`}>
-                                <span className="absolute top-1 left-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-stone-900 text-[9px] font-bold text-white leading-none">
+                                <span className={`absolute top-1 left-1.5 flex h-4 w-4 items-center justify-center rounded-full text-[9px] font-bold leading-none ${bubbleTones[s.tone]}`}>
                                   {num}
                                 </span>
                                 <Icon className="w-4 h-4" strokeWidth={1.75} aria-hidden />
