@@ -616,7 +616,7 @@ function PortfolioPage() {
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />Live · simulated
                   </span>
                 </div>
-                <p className="mt-2 text-[12px] text-stone-400 leading-relaxed max-w-xl">
+                <p className="mt-2 text-[12px] text-stone-400 leading-relaxed max-w-xl mx-auto text-center">
                   Every agent run is tracked, scored, and surfaced — so you know what your AI is doing in production.
                 </p>
               </div>
