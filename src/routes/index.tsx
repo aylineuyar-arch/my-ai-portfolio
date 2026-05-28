@@ -231,7 +231,7 @@ function PortfolioPage() {
             {[
               { num: "No. 01", id: "project-1", numCls: "text-orange-700", title: "AI Job Search Dashboard", blurb: "Scores 130+ ATS feeds for fit and conversion likelihood.", sub: "Claude · Python · Railway", tools: ["Claude", "Python", "Railway", "ATS"] },
               { num: "No. 02", id: "project-gtm", numCls: "text-teal-700", title: "GTM Pricing Tool", blurb: "Models revenue, pricing, and scenarios for founders, consultants, operators, and investors.", sub: "Claude · Python · Railway", tools: ["Claude", "Python", "Railway"] },
-              { num: "No. 03", id: "project-restaurant", numCls: "text-rose-600", title: "Fork Yea! — Restaurant Reservation Agent", blurb: "Finds the right restaurant, ranks the options, and books the reservation.", sub: "LangGraph · Claude · Playwright", tools: ["Cursor", "LangGraph", "Claude", "Playwright", "Tavily", "FastAPI"] },
+              { num: "No. 03", id: "project-restaurant", numCls: "text-rose-600", title: "Fork Yea! — Restaurant Reservation Agent", blurb: "Books the reservation, then a Haiku judge scores the pick and an observability dashboard tracks every run.", sub: "LangGraph · Claude · Playwright", tools: ["Cursor", "LangGraph", "Claude", "Playwright", "Tavily", "FastAPI"] },
               { num: "No. 04", id: "project-2", numCls: "text-amber-700", title: "Agentic Email Generator", blurb: "Always-on agent emails a ranked digest at 8am ET daily.", sub: "n8n · Claude · Supabase", tools: ["Claude", "n8n", "Railway", "Resend", "Supabase"] },
               { num: "No. 05", id: "project-3", numCls: "text-emerald-700", title: "Compliance RAG Chatbot", blurb: "Grounded policy Q&A for regulated financial services teams.", sub: "Claude · Python · Streamlit", tools: ["Claude", "Python", "Streamlit", "RAG"] },
               { num: "No. 06", id: "project-4", numCls: "text-indigo-700", title: "Customer Service Triage", blurb: "Classifies, prioritizes, and drafts replies in under a second.", sub: "Claude · Python · NLP", tools: ["Claude", "Python", "Triage", "NLP"] },
@@ -294,21 +294,21 @@ function PortfolioPage() {
               labelCls: "text-amber-700",
               dot: "bg-amber-500",
               chip: "bg-amber-50 border-amber-200 text-amber-900",
-              items: ["Claude API", "OpenAI API", "RAG", "AI agents", "Function calling", "Prompt engineering"],
+              items: ["Claude API", "OpenAI API", "RAG", "AI agents", "LLM-as-judge evals", "Function calling", "Prompt engineering"],
             },
             {
               label: "Automation",
               labelCls: "text-violet-700",
               dot: "bg-violet-500",
               chip: "bg-violet-50 border-violet-200 text-violet-900",
-              items: ["n8n", "Cron pipelines", "Greenhouse / Lever / Ashby APIs", "Resend", "Webhooks"],
+              items: ["n8n", "Cron pipelines", "Greenhouse / Lever / Ashby APIs", "Resend", "Webhooks", "Workflow observability", "Human-in-the-loop feedback"],
             },
             {
               label: "Engineering",
               labelCls: "text-sky-700",
               dot: "bg-sky-500",
               chip: "bg-sky-50 border-sky-200 text-sky-900",
-              items: ["Python", "SQL", "Supabase / Postgres", "React + TypeScript", "Streamlit"],
+              items: ["Python", "SQL", "SQLite (WAL)", "Supabase / Postgres", "React + TypeScript", "Streamlit"],
             },
           ].map((g) => {
             const loop = [...g.items, ...g.items, ...g.items, ...g.items];
@@ -622,6 +622,18 @@ function PortfolioPage() {
                     <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Self-healing graph</div>
                     <p className="mt-1.5 text-sm text-stone-700 leading-snug">If research returns &lt; 3 candidates, LangGraph routes back through a broader retry node before enriching and ranking.</p>
                   </div>
+                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
+                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">LLM-as-judge eval layer</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">After Sonnet ranks results, Haiku independently scores the top pick and writes a one-sentence verdict — catches low-quality outputs with no human in the loop.</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
+                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Observability dashboard</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Per-run node latency, confidence scores, escalation flags, and eval scores persist to SQLite (WAL); a review queue surfaces low-confidence runs.</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
+                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Closed feedback loop</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Thumbs up/down on each recommendation persists to the monitor DB and appears in the run-detail trace alongside the node pipeline timeline.</p>
+                  </div>
                 </div>
 
                 <div className="rounded-lg border border-stone-200 bg-white/70 p-4">
@@ -630,6 +642,9 @@ function PortfolioPage() {
                     <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Agent graph</span><span className="text-stone-600">LangGraph — stateful, conditional</span></div>
                     <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Parsing LLM</span><span className="text-stone-600">Claude Haiku 4.5</span></div>
                     <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Ranking LLM</span><span className="text-stone-600">Claude Sonnet</span></div>
+                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Judge LLM</span><span className="text-stone-600">Claude Haiku — independent scorer</span></div>
+                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Observability</span><span className="text-stone-600">SQLite (WAL) + run dashboard</span></div>
+                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Feedback</span><span className="text-stone-600">Thumbs ratings → monitor DB</span></div>
                     <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Web search</span><span className="text-stone-600">Tavily API → OpenTable + Google Maps</span></div>
                     <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Vector memory</span><span className="text-stone-600">ChromaDB (local persistence)</span></div>
                     <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Browser</span><span className="text-stone-600">Playwright over Chrome CDP</span></div>
@@ -645,6 +660,9 @@ function PortfolioPage() {
                   <li className="flex gap-3"><span className="text-rose-500">▸</span>FastAPI exposes the agent to a React + Vite + Tailwind frontend</li>
                   <li className="flex gap-3"><span className="text-rose-500">▸</span>Emails a pre-filled one-click checkout link via Gmail SMTP — agent handles every step up to confirm</li>
                   <li className="flex gap-3"><span className="text-rose-500">▸</span>Isolated <code className="text-xs bg-rose-100 px-1.5 py-0.5 rounded">.chrome-dev-profile/</code> — never touches personal Chrome data</li>
+                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Haiku judge re-scores Sonnet's top pick with a one-sentence verdict — production pattern for catching bad outputs without human review</li>
+                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Observability dashboard logs node latency, confidence, escalation flags, and eval scores to SQLite (WAL); review queue surfaces low-confidence runs</li>
+                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Thumbs up/down ratings persist to the monitor DB and render inline in the run-detail trace next to the pipeline timeline</li>
                 </ul>
               </CollapsibleContent>
             </Collapsible>
@@ -691,8 +709,8 @@ function PortfolioPage() {
                   <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Graph nodes</div>
                 </div>
                 <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">2</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Claude models</div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">3</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Claude roles · parse, rank, judge</div>
                 </div>
                 <div>
                   <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">1-click</div>
