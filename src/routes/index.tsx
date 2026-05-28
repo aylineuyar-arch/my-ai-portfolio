@@ -294,21 +294,21 @@ function PortfolioPage() {
               labelCls: "text-amber-700",
               dot: "bg-amber-500",
               chip: "bg-amber-50 border-amber-200 text-amber-900",
-              items: ["Claude API", "OpenAI API", "RAG", "AI agents", "Function calling", "Prompt engineering"],
+              items: ["Claude API", "OpenAI API", "RAG", "AI agents", "LLM-as-judge evals", "Function calling", "Prompt engineering"],
             },
             {
               label: "Automation",
               labelCls: "text-violet-700",
               dot: "bg-violet-500",
               chip: "bg-violet-50 border-violet-200 text-violet-900",
-              items: ["n8n", "Cron pipelines", "Greenhouse / Lever / Ashby APIs", "Resend", "Webhooks"],
+              items: ["n8n", "Cron pipelines", "Greenhouse / Lever / Ashby APIs", "Resend", "Webhooks", "Workflow observability", "Human-in-the-loop feedback"],
             },
             {
               label: "Engineering",
               labelCls: "text-sky-700",
               dot: "bg-sky-500",
               chip: "bg-sky-50 border-sky-200 text-sky-900",
-              items: ["Python", "SQL", "Supabase / Postgres", "React + TypeScript", "Streamlit"],
+              items: ["Python", "SQL", "SQLite (WAL)", "Supabase / Postgres", "React + TypeScript", "Streamlit"],
             },
           ].map((g) => {
             const loop = [...g.items, ...g.items, ...g.items, ...g.items];
