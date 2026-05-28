@@ -499,7 +499,7 @@ function PortfolioPage() {
                   { label: "Research", sub: "find options ↻", tone: "sky", Icon: Search },
                   { label: "Enrich", sub: "add context", tone: "sky", Icon: Sparkles },
                   { label: "Rank", sub: "score best fit", tone: "amber", Icon: ListOrdered },
-                  { label: "Judge", sub: "score top pick", tone: "amber", Icon: Gavel },
+                  { label: "Judge", sub: "verify top pick", tone: "judge", Icon: Gavel },
                   { label: "Book", sub: "reserve slot", tone: "emerald", Icon: CalendarCheck },
                   { label: "Confirm", sub: "email you", tone: "rose", Icon: MailCheck },
                 ];
