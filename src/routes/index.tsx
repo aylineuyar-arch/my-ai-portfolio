@@ -509,7 +509,7 @@ function PortfolioPage() {
                   violet: "bg-violet-50 text-violet-700 ring-violet-200",
                   emerald: "bg-emerald-50 text-emerald-700 ring-emerald-200",
                   sky: "bg-sky-50 text-sky-700 ring-sky-200",
-                  judge: "bg-stone-900 text-amber-200 ring-1 ring-stone-900",
+                  judge: "bg-stone-100 text-stone-800 ring-1 ring-stone-400 border border-dashed border-stone-500",
                 };
                 const cycle = [
                   { kind: "start" as const },
@@ -543,7 +543,7 @@ function PortfolioPage() {
                           const isLastStep = i > 0 && loop[i + 1]?.kind === "end";
                           return (
                             <div key={`${s.label}-${i}`} className="flex items-stretch gap-1 shrink-0">
-                              <div className={`rounded-lg px-3.5 py-3 ring-1 ${tones[s.tone]} flex flex-col items-center justify-center min-w-[100px]`}>
+                              <div className={`rounded-lg px-2 py-3 ring-1 ${tones[s.tone]} flex flex-col items-center justify-center w-[112px]`}>
                                 <Icon className="w-4 h-4" strokeWidth={1.75} aria-hidden />
                                 <div className="mt-1.5 text-[13px] font-semibold leading-none">{s.label}</div>
                                 <div className="mt-1 text-[10.5px] tracking-wide opacity-70 leading-none">{s.sub}</div>
@@ -562,7 +562,7 @@ function PortfolioPage() {
                       <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-violet-200 ring-1 ring-violet-300" />Memory</span>
                       <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-sky-200 ring-1 ring-sky-300" />Search</span>
                       <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-emerald-200 ring-1 ring-emerald-300" />Action</span>
-                      <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-stone-900 ring-1 ring-amber-400" />Verifier (Haiku)</span>
+                      <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-stone-100 ring-1 ring-stone-500 border border-dashed border-stone-500" />Verifier (Haiku)</span>
                       <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-rose-200 ring-1 ring-rose-300" />Notify</span>
                     </div>
                   </>
