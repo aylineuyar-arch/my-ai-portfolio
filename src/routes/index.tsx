@@ -622,6 +622,18 @@ function PortfolioPage() {
                     <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Self-healing graph</div>
                     <p className="mt-1.5 text-sm text-stone-700 leading-snug">If research returns &lt; 3 candidates, LangGraph routes back through a broader retry node before enriching and ranking.</p>
                   </div>
+                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
+                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">LLM-as-judge eval layer</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">After Sonnet ranks results, Haiku independently scores the top pick and writes a one-sentence verdict — catches low-quality outputs with no human in the loop.</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
+                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Observability dashboard</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Per-run node latency, confidence scores, escalation flags, and eval scores persist to SQLite (WAL); a review queue surfaces low-confidence runs.</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
+                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Closed feedback loop</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Thumbs up/down on each recommendation persists to the monitor DB and appears in the run-detail trace alongside the node pipeline timeline.</p>
+                  </div>
                 </div>
 
                 <div className="rounded-lg border border-stone-200 bg-white/70 p-4">
