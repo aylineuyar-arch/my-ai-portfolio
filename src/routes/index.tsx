@@ -606,14 +606,19 @@ function PortfolioPage() {
 
             {/* Simulated Monitor Mode dashboard — what observability looks like in production */}
             <div className="overflow-hidden rounded-xl border border-amber-300/40 bg-stone-950 shadow-lg">
-              <div className="flex items-center justify-between px-4 py-3 border-b border-stone-800">
-                <div className="flex items-baseline gap-3">
-                  <span className="font-serif text-2xl text-amber-300 italic leading-none">fork yeah!</span>
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-stone-400">Monitor mode — workflow observability</span>
+              <div className="px-4 py-3 border-b border-stone-800">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-baseline gap-3">
+                    <span className="font-serif text-2xl text-amber-300 italic leading-none">fork yeah!</span>
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-stone-400">Monitor mode — workflow observability</span>
+                  </div>
+                  <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-emerald-500/15 text-emerald-300 px-2 py-1 rounded-full font-medium">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />Live · simulated
+                  </span>
                 </div>
-                <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-emerald-500/15 text-emerald-300 px-2 py-1 rounded-full font-medium">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />Live · simulated
-                </span>
+                <p className="mt-2 text-[12px] text-stone-400 leading-relaxed max-w-xl">
+                  Every agent run is tracked, scored, and surfaced — so you know what your AI is doing in production.
+                </p>
               </div>
 
               <div className="p-4 grid grid-cols-2 md:grid-cols-4 gap-3">
