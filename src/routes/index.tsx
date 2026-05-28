@@ -605,7 +605,7 @@ function PortfolioPage() {
             </div>
 
             {/* Simulated Monitor Mode dashboard — what observability looks like in production */}
-            <div className="overflow-hidden rounded-xl border border-amber-300/40 bg-stone-950 shadow-lg">
+            <figure className="overflow-hidden rounded-xl border border-amber-300/40 bg-stone-950 shadow-lg flex flex-col">
               <div className="px-4 py-3 border-b border-stone-800">
                 <div className="flex items-center justify-between">
                   <div className="flex items-baseline gap-3">
@@ -668,7 +668,11 @@ function PortfolioPage() {
                   est. total cost $1.842 · auto-refreshes every 30s
                 </div>
               </div>
-            </div>
+
+              <figcaption className="px-4 py-3 text-sm text-stone-800 bg-amber-50 border-t border-amber-300/40">
+                Monitor mode shows live run metrics, confidence scores, and flagged cases for human review.
+              </figcaption>
+            </figure>
 
           </div>
         </div>
