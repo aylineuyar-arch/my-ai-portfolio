@@ -618,38 +618,39 @@ function PortfolioPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-3 max-w-2xl mx-auto">
-              <figure className="overflow-hidden rounded-xl border border-rose-200 bg-stone-950 shadow-lg flex flex-col">
+            <div className="grid grid-cols-3 gap-2 max-w-lg mx-auto">
+              <figure className="overflow-hidden rounded-lg border border-rose-200 bg-stone-950 shadow-md flex flex-col">
                 <div className="aspect-video w-full bg-stone-950 flex items-center justify-center">
                   <img
                     src={forkYeahLoading}
                     alt="Fork Yeah! agent working — sub-agents checking past searches, querying OpenTable, enriching with Maps & reviews."
                     loading="lazy"
-                    className="w-full h-full object-contain block"
+                    className="w-full h-full object-cover object-top block"
                   />
                 </div>
-                <figcaption className="px-3 py-2 text-sm text-stone-800 bg-rose-50 border-t border-rose-200">
-                  Agents at work — Haiku, ChromaDB, Tavily and Sonnet running in sequence.
+                <figcaption className="px-2 py-1 text-[11px] text-stone-800 bg-rose-50 border-t border-rose-200 truncate">
+                  Agents at work
                 </figcaption>
               </figure>
-              <figure className="overflow-hidden rounded-xl border border-rose-200 bg-stone-950 shadow-lg flex flex-col">
+              <figure className="overflow-hidden rounded-lg border border-rose-200 bg-stone-950 shadow-md flex flex-col">
                 <div className="aspect-video w-full bg-stone-950 flex items-center justify-center">
                   <img
                     src={forkYeahResults}
                     alt="Fork Yeah! agent results — ranked top pick with neighborhood, price tier and vibe tags."
                     loading="lazy"
-                    className="w-full h-full object-contain block"
+                    className="w-full h-full object-cover object-top block"
                   />
                 </div>
-                <figcaption className="px-3 py-2 text-sm text-stone-800 bg-rose-50 border-t border-rose-200">
-                  Ranked result — top pick with price tier, vibe tags and a one-click booking link.
+                <figcaption className="px-2 py-1 text-[11px] text-stone-800 bg-rose-50 border-t border-rose-200 truncate">
+                  Ranked result
                 </figcaption>
               </figure>
 
               {/* Simulated Monitor Mode dashboard — what observability looks like in production */}
-              <figure className="overflow-hidden rounded-xl border border-amber-300/40 bg-stone-950 shadow-lg flex flex-col">
-                <div className="aspect-video w-full overflow-y-auto">
-                  <div className="px-4 py-3 border-b border-stone-800">
+              <figure className="overflow-hidden rounded-lg border border-amber-300/40 bg-stone-950 shadow-md flex flex-col">
+                <div className="aspect-video w-full overflow-hidden">
+                  <div className="origin-top-left scale-[0.46] w-[217%]">
+                    <div className="px-4 py-3 border-b border-stone-800">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                       <div className="flex items-baseline gap-3">
                         <span className="font-serif text-2xl text-amber-300 italic leading-none">fork yeah!</span>
@@ -662,7 +663,7 @@ function PortfolioPage() {
                     <p className="mt-2 text-[12px] text-stone-400 leading-relaxed max-w-xl">
                       Every agent run is tracked, scored, and surfaced — so you know what your AI is doing in production.
                     </p>
-                  </div>
+                    </div>
 
                   <div className="p-4 grid grid-cols-2 md:grid-cols-4 gap-3">
                     {[
@@ -711,10 +712,11 @@ function PortfolioPage() {
                       est. total cost $1.842 · auto-refreshes every 30s
                     </div>
                   </div>
+                  </div>
                 </div>
 
-                <figcaption className="px-3 py-2 text-sm text-stone-800 bg-amber-50 border-t border-amber-300/40">
-                  Monitor mode shows live run metrics, confidence scores, and flagged cases for human review.
+                <figcaption className="px-2 py-1 text-[11px] text-stone-800 bg-amber-50 border-t border-amber-300/40 truncate">
+                  Monitor mode
                 </figcaption>
               </figure>
             </div>
