@@ -206,11 +206,11 @@ function AgentFlowMarquee({ steps }: { steps: AgentStep[] }) {
     sky: "bg-sky-500 text-white",
     judge: "bg-stone-500 text-white",
   };
-  // Reversed content + reversed animation = rightward motion with steps flowing in 1→8 order from the left edge.
+  // Normal content + normal animation = leftward motion (right→left), steps appear in 1→8 order from left to right.
   const cycle: Array<{ kind: "start" } | { kind: "end" } | ({ kind: "step" } & AgentStep)> = [
-    { kind: "end" },
-    ...[...steps].reverse().map((s) => ({ kind: "step" as const, ...s })),
     { kind: "start" },
+    ...steps.map((s) => ({ kind: "step" as const, ...s })),
+    { kind: "end" },
   ];
   const loop = [...cycle, ...cycle];
 
