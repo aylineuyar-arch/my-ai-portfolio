@@ -531,7 +531,7 @@ function PortfolioPage() {
                     <div className="relative overflow-hidden">
                       <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-white/95 to-transparent z-10" />
                       <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-white/95 to-transparent z-10" />
-                      <div className="flex w-max animate-marquee gap-1.5 py-1">
+                      <div className="flex w-max animate-marquee [animation-direction:normal] gap-1.5 py-1">
                         {loop.map((item, i) => {
                           if (item.kind === "start") {
                             return (
