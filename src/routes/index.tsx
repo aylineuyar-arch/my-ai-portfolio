@@ -628,8 +628,8 @@ function PortfolioPage() {
                     className="w-full h-full object-cover object-top block"
                   />
                 </div>
-                <figcaption className="px-2 py-1 text-[11px] text-stone-800 bg-rose-50 border-t border-rose-200 truncate">
-                  Agents at work
+                <figcaption className="px-2 py-1.5 text-[11px] leading-snug text-stone-800 bg-rose-50 border-t border-rose-200">
+                  Agents at work — Haiku, ChromaDB, Tavily and Sonnet running in sequence.
                 </figcaption>
               </figure>
               <figure className="overflow-hidden rounded-lg border border-rose-200 bg-stone-950 shadow-md flex flex-col">
@@ -641,8 +641,8 @@ function PortfolioPage() {
                     className="w-full h-full object-cover object-top block"
                   />
                 </div>
-                <figcaption className="px-2 py-1 text-[11px] text-stone-800 bg-rose-50 border-t border-rose-200 truncate">
-                  Ranked result
+                <figcaption className="px-2 py-1.5 text-[11px] leading-snug text-stone-800 bg-rose-50 border-t border-rose-200">
+                  Ranked result — top pick with price tier, vibe tags and a one-click booking link.
                 </figcaption>
               </figure>
 
@@ -715,8 +715,8 @@ function PortfolioPage() {
                   </div>
                 </div>
 
-                <figcaption className="px-2 py-1 text-[11px] text-stone-800 bg-amber-50 border-t border-amber-300/40 truncate">
-                  Monitor mode
+                <figcaption className="px-2 py-1.5 text-[11px] leading-snug text-stone-800 bg-amber-50 border-t border-amber-300/40">
+                  Monitor mode shows live run metrics, confidence scores, and flagged cases for human review.
                 </figcaption>
               </figure>
             </div>
