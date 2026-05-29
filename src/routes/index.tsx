@@ -618,7 +618,7 @@ function PortfolioPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-4">
               <figure className="overflow-hidden rounded-xl border border-rose-200 bg-stone-950 shadow-lg flex flex-col">
                 <div className="aspect-video w-full bg-stone-950 flex items-center justify-center">
                   <img
@@ -647,7 +647,7 @@ function PortfolioPage() {
               </figure>
 
               {/* Simulated Monitor Mode dashboard — what observability looks like in production */}
-              <figure className="md:col-span-2 overflow-hidden rounded-xl border border-amber-300/40 bg-stone-950 shadow-lg flex flex-col">
+              <figure className="overflow-hidden rounded-xl border border-amber-300/40 bg-stone-950 shadow-lg flex flex-col">
                 <div className="aspect-video w-full overflow-y-auto">
                   <div className="px-4 py-3 border-b border-stone-800">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
