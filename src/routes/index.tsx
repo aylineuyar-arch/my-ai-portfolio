@@ -715,8 +715,8 @@ function PortfolioPage() {
                   </div>
                 </div>
 
-                <figcaption className="px-2 py-1 text-[11px] text-stone-800 bg-amber-50 border-t border-amber-300/40 truncate">
-                  Monitor mode
+                <figcaption className="px-2 py-1.5 text-[11px] leading-snug text-stone-800 bg-amber-50 border-t border-amber-300/40">
+                  Monitor mode shows live run metrics, confidence scores, and flagged cases for human review.
                 </figcaption>
               </figure>
             </div>
