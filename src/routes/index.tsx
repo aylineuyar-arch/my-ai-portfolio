@@ -263,6 +263,7 @@ function AgentFlowMarquee({ steps }: { steps: AgentStep[] }) {
 }
 
 
+function PortfolioPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#fdf8f3] via-[#faf3ec] to-[#f5ede2] text-stone-900">
       {/* Built & shipped badge — fixed top right */}
