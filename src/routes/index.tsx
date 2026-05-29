@@ -618,7 +618,7 @@ function PortfolioPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-2 max-w-lg mx-auto">
+            <div className="grid grid-cols-3 gap-3">
               <figure className="overflow-hidden rounded-lg border border-rose-200 bg-stone-950 shadow-md flex flex-col">
                 <div className="aspect-video w-full bg-stone-950 flex items-center justify-center">
                   <img
