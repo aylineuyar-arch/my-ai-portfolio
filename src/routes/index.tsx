@@ -206,11 +206,11 @@ function AgentFlowMarquee({ steps }: { steps: AgentStep[] }) {
     sky: "bg-sky-500 text-white",
     judge: "bg-stone-500 text-white",
   };
-  // Reversed content + reversed animation = rightward motion with steps flowing in 1→8 order from the left edge.
+  // Normal content + normal animation = leftward motion (right→left), steps appear in 1→8 order from left to right.
   const cycle: Array<{ kind: "start" } | { kind: "end" } | ({ kind: "step" } & AgentStep)> = [
-    { kind: "end" },
-    ...[...steps].reverse().map((s) => ({ kind: "step" as const, ...s })),
     { kind: "start" },
+    ...steps.map((s) => ({ kind: "step" as const, ...s })),
+    { kind: "end" },
   ];
   const loop = [...cycle, ...cycle];
 
@@ -219,7 +219,7 @@ function AgentFlowMarquee({ steps }: { steps: AgentStep[] }) {
       <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-white/95 to-transparent z-10" />
       <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-white/95 to-transparent z-10" />
       <div
-        className="flex w-max animate-marquee [animation-direction:reverse] gap-1.5 py-1"
+        className="flex w-max animate-marquee [animation-direction:normal] gap-1.5 py-1"
         style={{ animationPlayState: inView ? "running" : "paused" }}
       >
         {loop.map((item, i) => {
@@ -239,7 +239,7 @@ function AgentFlowMarquee({ steps }: { steps: AgentStep[] }) {
           }
           const s = item;
           const Icon = s.Icon;
-          const isLastStep = i > 0 && loop[i + 1]?.kind === "start";
+          const isLastStep = i > 0 && loop[i + 1]?.kind === "end";
           const num = stepNum[s.label];
           return (
             <div key={`${s.label}-${i}`} className="flex items-stretch gap-1 shrink-0">
