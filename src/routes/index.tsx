@@ -164,7 +164,105 @@ function GradientDivider() {
   );
 }
 
-function PortfolioPage() {
+type AgentStep = { label: string; sub: string; tone: "rose" | "amber" | "violet" | "emerald" | "sky" | "judge"; Icon: LucideIcon };
+
+function AgentFlowMarquee({ steps }: { steps: AgentStep[] }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            setInView(true);
+            obs.disconnect();
+            break;
+          }
+        }
+      },
+      { threshold: 0.25 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  const stepNum = Object.fromEntries(steps.map((s, i) => [s.label, i + 1]));
+  const tones: Record<string, string> = {
+    rose: "bg-rose-50 text-rose-700 ring-rose-200",
+    amber: "bg-amber-50 text-amber-800 ring-amber-200",
+    violet: "bg-violet-50 text-violet-700 ring-violet-200",
+    emerald: "bg-emerald-50 text-emerald-700 ring-emerald-200",
+    sky: "bg-sky-50 text-sky-700 ring-sky-200",
+    judge: "bg-stone-100 text-stone-800 ring-1 ring-stone-400 border border-dashed border-stone-500",
+  };
+  const bubbleTones: Record<string, string> = {
+    rose: "bg-rose-500 text-white",
+    amber: "bg-amber-500 text-white",
+    violet: "bg-violet-500 text-white",
+    emerald: "bg-emerald-500 text-white",
+    sky: "bg-sky-500 text-white",
+    judge: "bg-stone-500 text-white",
+  };
+  // Reversed content + reversed animation = rightward motion with steps flowing in 1→8 order from the left edge.
+  const cycle: Array<{ kind: "start" } | { kind: "end" } | ({ kind: "step" } & AgentStep)> = [
+    { kind: "end" },
+    ...[...steps].reverse().map((s) => ({ kind: "step" as const, ...s })),
+    { kind: "start" },
+  ];
+  const loop = [...cycle, ...cycle];
+
+  return (
+    <div ref={ref} className="relative overflow-hidden">
+      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-white/95 to-transparent z-10" />
+      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-white/95 to-transparent z-10" />
+      <div
+        className="flex w-max animate-marquee [animation-direction:reverse] gap-1.5 py-1"
+        style={{ animationPlayState: inView ? "running" : "paused" }}
+      >
+        {loop.map((item, i) => {
+          if (item.kind === "start") {
+            return (
+              <div key={`s-${i}`} className="flex items-center shrink-0 px-2 text-emerald-600" aria-label="start">
+                <span className="text-base leading-none">▶</span>
+              </div>
+            );
+          }
+          if (item.kind === "end") {
+            return (
+              <div key={`e-${i}`} className="flex items-center shrink-0 px-2 text-amber-500" aria-label="end">
+                <span className="text-base leading-none">★</span>
+              </div>
+            );
+          }
+          const s = item;
+          const Icon = s.Icon;
+          const isLastStep = i > 0 && loop[i + 1]?.kind === "start";
+          const num = stepNum[s.label];
+          return (
+            <div key={`${s.label}-${i}`} className="flex items-stretch gap-1 shrink-0">
+              <div className={`relative rounded-lg px-2 py-3 ring-1 ${tones[s.tone]} flex flex-col items-center justify-center w-[112px]`}>
+                <span className={`absolute top-1 left-1.5 flex h-[18px] w-[18px] items-center justify-center rounded-full text-[11px] font-bold leading-none tabular-nums ring-1 ring-white/70 shadow-sm ${bubbleTones[s.tone]}`}>
+                  {num}
+                </span>
+                <Icon className="w-4 h-4" strokeWidth={1.75} aria-hidden />
+                <div className="mt-1.5 w-full text-center text-[13px] font-semibold leading-none">{s.label}</div>
+                <div className="mt-1 w-full text-center text-[10.5px] tracking-wide opacity-70 leading-none">{s.sub}</div>
+              </div>
+              {!isLastStep && (
+                <div className="flex items-center text-stone-400 text-sm" aria-hidden>→</div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#fdf8f3] via-[#faf3ec] to-[#f5ede2] text-stone-900">
       {/* Built & shipped badge — fixed top right */}
