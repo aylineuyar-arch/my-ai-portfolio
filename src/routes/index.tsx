@@ -618,7 +618,7 @@ function PortfolioPage() {
               </div>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               <figure className="overflow-hidden rounded-xl border border-rose-200 bg-stone-950 shadow-lg flex flex-col">
                 <div className="flex-1 flex items-center justify-center p-2">
                   <img
@@ -645,77 +645,79 @@ function PortfolioPage() {
                   Ranked result — top pick with price tier, vibe tags and a one-click booking link.
                 </figcaption>
               </figure>
-            </div>
 
-            {/* Simulated Monitor Mode dashboard — what observability looks like in production */}
-            <figure className="overflow-hidden rounded-xl border border-amber-300/40 bg-stone-950 shadow-lg flex flex-col">
-              <div className="px-4 py-3 border-b border-stone-800">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-baseline gap-3">
-                    <span className="font-serif text-2xl text-amber-300 italic leading-none">fork yeah!</span>
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-stone-400">Monitor mode — workflow observability</span>
-                  </div>
-                  <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-emerald-500/15 text-emerald-300 px-2 py-1 rounded-full font-medium">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />Live · simulated
-                  </span>
-                </div>
-                <p className="mt-2 text-[12px] text-stone-400 leading-relaxed max-w-xl mx-auto text-center">
-                  Every agent run is tracked, scored, and surfaced — so you know what your AI is doing in production.
-                </p>
-              </div>
-
-              <div className="p-4 grid grid-cols-2 md:grid-cols-4 gap-3">
-                {[
-                  { label: "Total runs", value: "1,284", sub: "47 today" },
-                  { label: "Success rate", value: "94.2%", sub: "judge-verified" },
-                  { label: "Avg latency", value: "3.8s", sub: "p95 6.1s" },
-                  { label: "Escalations", value: "12", sub: "avg conf 0.71" },
-                ].map((m) => (
-                  <div key={m.label} className="rounded-lg bg-stone-900/80 border border-stone-800 p-3">
-                    <div className="text-[10px] uppercase tracking-wider text-stone-400">{m.label}</div>
-                    <div className="mt-1.5 font-serif text-2xl text-stone-50 leading-none">{m.value}</div>
-                    <div className="mt-1.5 text-[11px] text-stone-500">{m.sub}</div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mx-4 mb-4 rounded-lg bg-stone-900/60 border border-stone-800">
-                <div className="flex items-center justify-between px-3 py-2 border-b border-stone-800">
-                  <span className="text-[10px] uppercase tracking-[0.18em] text-stone-400">Recent runs</span>
-                  <span className="text-[10px] uppercase tracking-wider bg-amber-300/90 text-stone-900 px-2 py-0.5 rounded-full font-semibold">all runs</span>
-                </div>
-                <div className="divide-y divide-stone-800/80 text-[12px]">
-                  {[
-                    { q: "vegetarian, Greenwich Village, $$", pick: "Superiority Burger", conf: 0.93, lat: "3.2s", ok: true },
-                    { q: "date night, West Village, $$$", pick: "I Sodi", conf: 0.88, lat: "4.1s", ok: true },
-                    { q: "late night ramen near Bryant Park", pick: "Ippudo Midtown", conf: 0.81, lat: "3.7s", ok: true },
-                    { q: "private room, 12 ppl, Flatiron", pick: "—", conf: 0.42, lat: "5.9s", ok: false },
-                    { q: "outdoor seating, dog-friendly, Brooklyn", pick: "Bar Bayeux", conf: 0.86, lat: "3.4s", ok: true },
-                  ].map((r, i) => (
-                    <div key={i} className="grid grid-cols-12 items-center gap-2 px-3 py-2">
-                      <span className="col-span-5 text-stone-300 truncate">{r.q}</span>
-                      <span className="col-span-3 text-stone-400 truncate">→ <span className="text-stone-200">{r.pick}</span></span>
-                      <span className="col-span-2 text-stone-500">{r.lat}</span>
-                      <span className={`col-span-1 font-mono text-[11px] ${r.conf >= 0.7 ? "text-emerald-300" : "text-rose-300"}`}>{r.conf.toFixed(2)}</span>
-                      <span className="col-span-1 text-right">
-                        {r.ok ? (
-                          <span className="text-[10px] uppercase text-emerald-300/90">ok</span>
-                        ) : (
-                          <span className="text-[10px] uppercase text-rose-300/90">review</span>
-                        )}
+              {/* Simulated Monitor Mode dashboard — what observability looks like in production */}
+              <figure className="overflow-hidden rounded-xl border border-amber-300/40 bg-stone-950 shadow-lg flex flex-col">
+                <div className="overflow-y-auto max-h-[320px]">
+                  <div className="px-4 py-3 border-b border-stone-800">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                      <div className="flex items-baseline gap-3">
+                        <span className="font-serif text-2xl text-amber-300 italic leading-none">fork yeah!</span>
+                        <span className="text-[10px] uppercase tracking-[0.2em] text-stone-400">Monitor mode — workflow observability</span>
+                      </div>
+                      <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-emerald-500/15 text-emerald-300 px-2 py-1 rounded-full font-medium">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />Live · simulated
                       </span>
                     </div>
-                  ))}
-                </div>
-                <div className="px-3 py-2 border-t border-stone-800 text-[10px] text-stone-500 text-center">
-                  est. total cost $1.842 · auto-refreshes every 30s
-                </div>
-              </div>
+                    <p className="mt-2 text-[12px] text-stone-400 leading-relaxed max-w-xl">
+                      Every agent run is tracked, scored, and surfaced — so you know what your AI is doing in production.
+                    </p>
+                  </div>
 
-              <figcaption className="px-4 py-3 text-sm text-stone-800 bg-amber-50 border-t border-amber-300/40">
-                Monitor mode shows live run metrics, confidence scores, and flagged cases for human review.
-              </figcaption>
-            </figure>
+                  <div className="p-4 grid grid-cols-2 gap-3">
+                    {[
+                      { label: "Total runs", value: "1,284", sub: "47 today" },
+                      { label: "Success rate", value: "94.2%", sub: "judge-verified" },
+                      { label: "Avg latency", value: "3.8s", sub: "p95 6.1s" },
+                      { label: "Escalations", value: "12", sub: "avg conf 0.71" },
+                    ].map((m) => (
+                      <div key={m.label} className="rounded-lg bg-stone-900/80 border border-stone-800 p-3">
+                        <div className="text-[10px] uppercase tracking-wider text-stone-400">{m.label}</div>
+                        <div className="mt-1.5 font-serif text-2xl text-stone-50 leading-none">{m.value}</div>
+                        <div className="mt-1.5 text-[11px] text-stone-500">{m.sub}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mx-4 mb-4 rounded-lg bg-stone-900/60 border border-stone-800">
+                    <div className="flex items-center justify-between px-3 py-2 border-b border-stone-800">
+                      <span className="text-[10px] uppercase tracking-[0.18em] text-stone-400">Recent runs</span>
+                      <span className="text-[10px] uppercase tracking-wider bg-amber-300/90 text-stone-900 px-2 py-0.5 rounded-full font-semibold">all runs</span>
+                    </div>
+                    <div className="divide-y divide-stone-800/80 text-[12px]">
+                      {[
+                        { q: "vegetarian, Greenwich Village, $$", pick: "Superiority Burger", conf: 0.93, lat: "3.2s", ok: true },
+                        { q: "date night, West Village, $$$", pick: "I Sodi", conf: 0.88, lat: "4.1s", ok: true },
+                        { q: "late night ramen near Bryant Park", pick: "Ippudo Midtown", conf: 0.81, lat: "3.7s", ok: true },
+                        { q: "private room, 12 ppl, Flatiron", pick: "—", conf: 0.42, lat: "5.9s", ok: false },
+                        { q: "outdoor seating, dog-friendly, Brooklyn", pick: "Bar Bayeux", conf: 0.86, lat: "3.4s", ok: true },
+                      ].map((r, i) => (
+                        <div key={i} className="grid grid-cols-12 items-center gap-2 px-3 py-2">
+                          <span className="col-span-5 text-stone-300 truncate">{r.q}</span>
+                          <span className="col-span-3 text-stone-400 truncate">→ <span className="text-stone-200">{r.pick}</span></span>
+                          <span className="col-span-2 text-stone-500">{r.lat}</span>
+                          <span className={`col-span-1 font-mono text-[11px] ${r.conf >= 0.7 ? "text-emerald-300" : "text-rose-300"}`}>{r.conf.toFixed(2)}</span>
+                          <span className="col-span-1 text-right">
+                            {r.ok ? (
+                              <span className="text-[10px] uppercase text-emerald-300/90">ok</span>
+                            ) : (
+                              <span className="text-[10px] uppercase text-rose-300/90">review</span>
+                            )}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="px-3 py-2 border-t border-stone-800 text-[10px] text-stone-500 text-center">
+                      est. total cost $1.842 · auto-refreshes every 30s
+                    </div>
+                  </div>
+                </div>
+
+                <figcaption className="px-4 py-3 text-sm text-stone-800 bg-amber-50 border-t border-amber-300/40">
+                  Monitor mode shows live run metrics, confidence scores, and flagged cases for human review.
+                </figcaption>
+              </figure>
+            </div>
 
           </div>
         </div>
