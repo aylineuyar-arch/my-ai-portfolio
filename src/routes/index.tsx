@@ -472,8 +472,8 @@ function PortfolioPage() {
               <CollapsibleContent className="space-y-6 pt-6">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
-                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Role-based model routing</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Each sub-agent gets its own model: Haiku for fast parsing, Sonnet for deep ranking — no single model does everything.</p>
+                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Cost-aware role-based model routing</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Eight specialized sub-agents in a LangGraph pipeline, each routed to the cheapest model that can do the job: Haiku for fast parsing, Sonnet for deep ranking, Haiku again as judge — no single model does everything.</p>
                   </div>
                   <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
                     <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Persistent vector memory</div>
@@ -482,10 +482,6 @@ function PortfolioPage() {
                   <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
                     <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Real browser automation</div>
                     <p className="mt-1.5 text-sm text-stone-700 leading-snug">Playwright over Chrome DevTools Protocol drives an isolated profile — navigates OpenTable, selects a slot, sandboxed from personal Chrome.</p>
-                  </div>
-                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
-                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Self-healing graph</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">If research returns &lt; 3 candidates, LangGraph routes back through a broader retry node before enriching and ranking.</p>
                   </div>
                   <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
                     <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">LLM-as-judge eval layer</div>
