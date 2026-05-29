@@ -625,7 +625,7 @@ function PortfolioPage() {
                     src={forkYeahLoading}
                     alt="Fork Yeah! agent working — sub-agents checking past searches, querying OpenTable, enriching with Maps & reviews."
                     loading="lazy"
-                    className="w-full h-full object-cover block"
+                    className="w-full h-full object-contain block"
                   />
                 </div>
                 <figcaption className="px-4 py-3 text-sm text-stone-800 bg-rose-50 border-t border-rose-200">
@@ -638,7 +638,7 @@ function PortfolioPage() {
                     src={forkYeahResults}
                     alt="Fork Yeah! agent results — ranked top pick with neighborhood, price tier and vibe tags."
                     loading="lazy"
-                    className="w-full h-full object-cover block"
+                    className="w-full h-full object-contain block"
                   />
                 </div>
                 <figcaption className="px-4 py-3 text-sm text-stone-800 bg-rose-50 border-t border-rose-200">
