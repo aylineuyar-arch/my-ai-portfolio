@@ -618,9 +618,9 @@ function PortfolioPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-2 max-w-xl mx-auto">
+            <div className="grid grid-cols-3 gap-2 max-w-lg mx-auto">
               <figure className="overflow-hidden rounded-lg border border-rose-200 bg-stone-950 shadow-md flex flex-col">
-                <div className="aspect-[4/3] w-full bg-stone-950 flex items-center justify-center">
+                <div className="aspect-video w-full bg-stone-950 flex items-center justify-center">
                   <img
                     src={forkYeahLoading}
                     alt="Fork Yeah! agent working — sub-agents checking past searches, querying OpenTable, enriching with Maps & reviews."
@@ -633,7 +633,7 @@ function PortfolioPage() {
                 </figcaption>
               </figure>
               <figure className="overflow-hidden rounded-lg border border-rose-200 bg-stone-950 shadow-md flex flex-col">
-                <div className="aspect-[4/3] w-full bg-stone-950 flex items-center justify-center">
+                <div className="aspect-video w-full bg-stone-950 flex items-center justify-center">
                   <img
                     src={forkYeahResults}
                     alt="Fork Yeah! agent results — ranked top pick with neighborhood, price tier and vibe tags."
@@ -648,9 +648,9 @@ function PortfolioPage() {
 
               {/* Simulated Monitor Mode dashboard — what observability looks like in production */}
               <figure className="overflow-hidden rounded-lg border border-amber-300/40 bg-stone-950 shadow-md flex flex-col">
-                <div className="aspect-[4/3] w-full overflow-hidden">
+                <div className="aspect-video w-full overflow-hidden">
                   <div className="origin-top-left scale-[0.46] w-[217%]">
-                  <div className="px-4 py-3 border-b border-stone-800">
+                    <div className="px-4 py-3 border-b border-stone-800">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                       <div className="flex items-baseline gap-3">
                         <span className="font-serif text-2xl text-amber-300 italic leading-none">fork yeah!</span>
@@ -663,7 +663,7 @@ function PortfolioPage() {
                     <p className="mt-2 text-[12px] text-stone-400 leading-relaxed max-w-xl">
                       Every agent run is tracked, scored, and surfaced — so you know what your AI is doing in production.
                     </p>
-                  </div>
+                    </div>
 
                   <div className="p-4 grid grid-cols-2 md:grid-cols-4 gap-3">
                     {[
