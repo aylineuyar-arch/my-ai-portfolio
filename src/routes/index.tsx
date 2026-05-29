@@ -618,14 +618,14 @@ function PortfolioPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <figure className="overflow-hidden rounded-xl border border-rose-200 bg-stone-950 shadow-lg flex flex-col">
-                <div className="flex-1 flex items-center justify-center p-2">
+                <div className="aspect-video w-full bg-stone-950 flex items-center justify-center">
                   <img
                     src={forkYeahLoading}
                     alt="Fork Yeah! agent working — sub-agents checking past searches, querying OpenTable, enriching with Maps & reviews."
                     loading="lazy"
-                    className="w-full max-h-72 object-contain block"
+                    className="w-full h-full object-cover block"
                   />
                 </div>
                 <figcaption className="px-4 py-3 text-sm text-stone-800 bg-rose-50 border-t border-rose-200">
@@ -633,12 +633,12 @@ function PortfolioPage() {
                 </figcaption>
               </figure>
               <figure className="overflow-hidden rounded-xl border border-rose-200 bg-stone-950 shadow-lg flex flex-col">
-                <div className="flex-1 flex items-center justify-center p-2">
+                <div className="aspect-video w-full bg-stone-950 flex items-center justify-center">
                   <img
                     src={forkYeahResults}
                     alt="Fork Yeah! agent results — ranked top pick with neighborhood, price tier and vibe tags."
                     loading="lazy"
-                    className="w-full max-h-72 object-contain block"
+                    className="w-full h-full object-cover block"
                   />
                 </div>
                 <figcaption className="px-4 py-3 text-sm text-stone-800 bg-rose-50 border-t border-rose-200">
@@ -647,8 +647,8 @@ function PortfolioPage() {
               </figure>
 
               {/* Simulated Monitor Mode dashboard — what observability looks like in production */}
-              <figure className="overflow-hidden rounded-xl border border-amber-300/40 bg-stone-950 shadow-lg flex flex-col">
-                <div className="overflow-y-auto max-h-[320px]">
+              <figure className="md:col-span-2 overflow-hidden rounded-xl border border-amber-300/40 bg-stone-950 shadow-lg flex flex-col">
+                <div className="aspect-video w-full overflow-y-auto">
                   <div className="px-4 py-3 border-b border-stone-800">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                       <div className="flex items-baseline gap-3">
@@ -664,7 +664,7 @@ function PortfolioPage() {
                     </p>
                   </div>
 
-                  <div className="p-4 grid grid-cols-2 gap-3">
+                  <div className="p-4 grid grid-cols-2 md:grid-cols-4 gap-3">
                     {[
                       { label: "Total runs", value: "1,284", sub: "47 today" },
                       { label: "Success rate", value: "94.2%", sub: "judge-verified" },
@@ -718,6 +718,7 @@ function PortfolioPage() {
                 </figcaption>
               </figure>
             </div>
+
 
           </div>
         </div>
