@@ -453,19 +453,11 @@ function PortfolioPage() {
             <p className="mt-3 text-sm text-rose-700 font-medium uppercase tracking-wider">
               <span className="inline-block whitespace-nowrap">Agentic orchestration</span>
               <span className="mx-2">·</span>
-              <span className="inline-block whitespace-nowrap">8-node graph</span>
-              <span className="mx-2">·</span>
-              <span className="inline-block whitespace-nowrap">role-specific sub-agents</span>
-              <span className="mx-2">·</span>
               <span className="inline-block whitespace-nowrap">LLM-as-judge evals</span>
               <span className="mx-2">·</span>
-              <span className="inline-block whitespace-nowrap">self-healing graph</span>
+              <span className="inline-block whitespace-nowrap">Vector memory</span>
               <span className="mx-2">·</span>
-              <span className="inline-block whitespace-nowrap">persistent vector memory</span>
-              <span className="mx-2">·</span>
-              <span className="inline-block whitespace-nowrap">cost-aware model routing</span>
-              <span className="mx-2">·</span>
-              <span className="inline-block whitespace-nowrap">human-in-the-loop feedback</span>
+              <span className="inline-block whitespace-nowrap">Human-in-the-loop</span>
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {["Cursor", "LangGraph", "Claude", "Playwright", "Tavily", "FastAPI", "ChromaDB"].map((t) => (
