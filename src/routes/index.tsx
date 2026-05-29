@@ -239,7 +239,7 @@ function AgentFlowMarquee({ steps }: { steps: AgentStep[] }) {
           }
           const s = item;
           const Icon = s.Icon;
-          const isLastStep = i > 0 && loop[i + 1]?.kind === "start";
+          const isLastStep = i > 0 && loop[i + 1]?.kind === "end";
           const num = stepNum[s.label];
           return (
             <div key={`${s.label}-${i}`} className="flex items-stretch gap-1 shrink-0">
