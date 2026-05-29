@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useRef, useState } from "react";
 import { Github, Linkedin, Briefcase, Database, MessageSquare, Workflow, ChevronDown, Languages, History, Search, Sparkles, ListOrdered, Gavel, CalendarCheck, MailCheck, type LucideIcon } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
@@ -162,6 +163,105 @@ function GradientDivider() {
     </div>
   );
 }
+
+type AgentStep = { label: string; sub: string; tone: "rose" | "amber" | "violet" | "emerald" | "sky" | "judge"; Icon: LucideIcon };
+
+function AgentFlowMarquee({ steps }: { steps: AgentStep[] }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            setInView(true);
+            obs.disconnect();
+            break;
+          }
+        }
+      },
+      { threshold: 0.25 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  const stepNum = Object.fromEntries(steps.map((s, i) => [s.label, i + 1]));
+  const tones: Record<string, string> = {
+    rose: "bg-rose-50 text-rose-700 ring-rose-200",
+    amber: "bg-amber-50 text-amber-800 ring-amber-200",
+    violet: "bg-violet-50 text-violet-700 ring-violet-200",
+    emerald: "bg-emerald-50 text-emerald-700 ring-emerald-200",
+    sky: "bg-sky-50 text-sky-700 ring-sky-200",
+    judge: "bg-stone-100 text-stone-800 ring-1 ring-stone-400 border border-dashed border-stone-500",
+  };
+  const bubbleTones: Record<string, string> = {
+    rose: "bg-rose-500 text-white",
+    amber: "bg-amber-500 text-white",
+    violet: "bg-violet-500 text-white",
+    emerald: "bg-emerald-500 text-white",
+    sky: "bg-sky-500 text-white",
+    judge: "bg-stone-500 text-white",
+  };
+  // Reversed content + reversed animation = rightward motion with steps flowing in 1→8 order from the left edge.
+  const cycle: Array<{ kind: "start" } | { kind: "end" } | ({ kind: "step" } & AgentStep)> = [
+    { kind: "end" },
+    ...[...steps].reverse().map((s) => ({ kind: "step" as const, ...s })),
+    { kind: "start" },
+  ];
+  const loop = [...cycle, ...cycle];
+
+  return (
+    <div ref={ref} className="relative overflow-hidden">
+      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-white/95 to-transparent z-10" />
+      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-white/95 to-transparent z-10" />
+      <div
+        className="flex w-max animate-marquee [animation-direction:reverse] gap-1.5 py-1"
+        style={{ animationPlayState: inView ? "running" : "paused" }}
+      >
+        {loop.map((item, i) => {
+          if (item.kind === "start") {
+            return (
+              <div key={`s-${i}`} className="flex items-center shrink-0 px-2 text-emerald-600" aria-label="start">
+                <span className="text-base leading-none">▶</span>
+              </div>
+            );
+          }
+          if (item.kind === "end") {
+            return (
+              <div key={`e-${i}`} className="flex items-center shrink-0 px-2 text-amber-500" aria-label="end">
+                <span className="text-base leading-none">★</span>
+              </div>
+            );
+          }
+          const s = item;
+          const Icon = s.Icon;
+          const isLastStep = i > 0 && loop[i + 1]?.kind === "start";
+          const num = stepNum[s.label];
+          return (
+            <div key={`${s.label}-${i}`} className="flex items-stretch gap-1 shrink-0">
+              <div className={`relative rounded-lg px-2 py-3 ring-1 ${tones[s.tone]} flex flex-col items-center justify-center w-[112px]`}>
+                <span className={`absolute top-1 left-1.5 flex h-[18px] w-[18px] items-center justify-center rounded-full text-[11px] font-bold leading-none tabular-nums ring-1 ring-white/70 shadow-sm ${bubbleTones[s.tone]}`}>
+                  {num}
+                </span>
+                <Icon className="w-4 h-4" strokeWidth={1.75} aria-hidden />
+                <div className="mt-1.5 w-full text-center text-[13px] font-semibold leading-none">{s.label}</div>
+                <div className="mt-1 w-full text-center text-[10.5px] tracking-wide opacity-70 leading-none">{s.sub}</div>
+              </div>
+              {!isLastStep && (
+                <div className="flex items-center text-stone-400 text-sm" aria-hidden>→</div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 
 function PortfolioPage() {
   return (
@@ -356,6 +456,16 @@ function PortfolioPage() {
               <span className="inline-block whitespace-nowrap">8-node graph</span>
               <span className="mx-2">·</span>
               <span className="inline-block whitespace-nowrap">role-specific sub-agents</span>
+              <span className="mx-2">·</span>
+              <span className="inline-block whitespace-nowrap">LLM-as-judge evals</span>
+              <span className="mx-2">·</span>
+              <span className="inline-block whitespace-nowrap">self-healing graph</span>
+              <span className="mx-2">·</span>
+              <span className="inline-block whitespace-nowrap">persistent vector memory</span>
+              <span className="mx-2">·</span>
+              <span className="inline-block whitespace-nowrap">cost-aware model routing</span>
+              <span className="mx-2">·</span>
+              <span className="inline-block whitespace-nowrap">human-in-the-loop feedback</span>
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {["Cursor", "LangGraph", "Claude", "Playwright", "Tavily", "FastAPI", "ChromaDB"].map((t) => (
@@ -492,8 +602,8 @@ function PortfolioPage() {
                 You type something like <span className="font-medium text-stone-800">"Find me a quiet Italian spot for four this Saturday, outdoor seating, something with handmade pasta"</span> — and the system figures out the rest.
               </p>
 
-              {(() => {
-                const steps: { label: string; sub: string; tone: "rose" | "amber" | "violet" | "emerald" | "sky" | "judge"; Icon: LucideIcon }[] = [
+              <AgentFlowMarquee
+                steps={[
                   { label: "Parse", sub: "understand request", tone: "amber", Icon: Languages },
                   { label: "Recall", sub: "past preferences", tone: "violet", Icon: History },
                   { label: "Research", sub: "find options ↻", tone: "sky", Icon: Search },
@@ -502,85 +612,17 @@ function PortfolioPage() {
                   { label: "Judge", sub: "verify top pick", tone: "judge", Icon: Gavel },
                   { label: "Book", sub: "reserve slot", tone: "emerald", Icon: CalendarCheck },
                   { label: "Confirm", sub: "email you", tone: "rose", Icon: MailCheck },
-                ];
-                const stepNum = Object.fromEntries(steps.map((s, i) => [s.label, i + 1]));
-                const tones: Record<string, string> = {
-                  rose: "bg-rose-50 text-rose-700 ring-rose-200",
-                  amber: "bg-amber-50 text-amber-800 ring-amber-200",
-                  violet: "bg-violet-50 text-violet-700 ring-violet-200",
-                  emerald: "bg-emerald-50 text-emerald-700 ring-emerald-200",
-                  sky: "bg-sky-50 text-sky-700 ring-sky-200",
-                  judge: "bg-stone-100 text-stone-800 ring-1 ring-stone-400 border border-dashed border-stone-500",
-                };
-                const bubbleTones: Record<string, string> = {
-                  rose: "bg-rose-500 text-white",
-                  amber: "bg-amber-500 text-white",
-                  violet: "bg-violet-500 text-white",
-                  emerald: "bg-emerald-500 text-white",
-                  sky: "bg-sky-500 text-white",
-                  judge: "bg-stone-500 text-white",
-                };
-                const cycle = [
-                  { kind: "start" as const },
-                  ...steps.map((s) => ({ kind: "step" as const, ...s })),
-                  { kind: "end" as const },
-                ];
-                const loop = [...cycle, ...cycle];
-                return (
-                  <>
-                    <div className="relative overflow-hidden">
-                      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-white/95 to-transparent z-10" />
-                      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-white/95 to-transparent z-10" />
-                      <div className="flex w-max animate-marquee [animation-direction:normal] gap-1.5 py-1">
-                        {loop.map((item, i) => {
-                          if (item.kind === "start") {
-                            return (
-                              <div key={`s-${i}`} className="flex items-center shrink-0 px-2 text-emerald-600" aria-label="start">
-                                <span className="text-base leading-none">▶</span>
-                              </div>
-                            );
-                          }
-                          if (item.kind === "end") {
-                            return (
-                              <div key={`e-${i}`} className="flex items-center shrink-0 px-2 text-amber-500" aria-label="end">
-                                <span className="text-base leading-none">★</span>
-                              </div>
-                            );
-                          }
-                          const s = item;
-                          const Icon = s.Icon;
-                          const isLastStep = i > 0 && loop[i + 1]?.kind === "end";
-                          const num = stepNum[s.label];
-                          return (
-                            <div key={`${s.label}-${i}`} className="flex items-stretch gap-1 shrink-0">
-                              <div className={`relative rounded-lg px-2 py-3 ring-1 ${tones[s.tone]} flex flex-col items-center justify-center w-[112px]`}>
-                                <span className={`absolute top-1 left-1.5 flex h-[18px] w-[18px] items-center justify-center rounded-full text-[11px] font-bold leading-none tabular-nums ring-1 ring-white/70 shadow-sm ${bubbleTones[s.tone]}`}>
-                                  {num}
-                                </span>
-                                <Icon className="w-4 h-4" strokeWidth={1.75} aria-hidden />
-                                <div className="mt-1.5 w-full text-center text-[13px] font-semibold leading-none">{s.label}</div>
-                                <div className="mt-1 w-full text-center text-[10.5px] tracking-wide opacity-70 leading-none">{s.sub}</div>
-                              </div>
-                              {!isLastStep && (
-                                <div className="flex items-center text-stone-400 text-sm" aria-hidden>→</div>
-                              )}
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                    <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[10.5px] uppercase tracking-[0.14em] text-stone-600">
-                      <span className="font-semibold text-stone-700">Color key:</span>
-                      <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-amber-200 ring-1 ring-amber-300" />Reasoning</span>
-                      <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-violet-200 ring-1 ring-violet-300" />Memory</span>
-                      <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-sky-200 ring-1 ring-sky-300" />Search</span>
-                      <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-emerald-200 ring-1 ring-emerald-300" />Action</span>
-                      <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-stone-100 ring-1 ring-stone-500 border border-dashed border-stone-500" />Verifier (Haiku)</span>
-                      <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-rose-200 ring-1 ring-rose-300" />Notify</span>
-                    </div>
-                  </>
-                );
-              })()}
+                ]}
+              />
+              <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[10.5px] uppercase tracking-[0.14em] text-stone-600">
+                <span className="font-semibold text-stone-700">Color key:</span>
+                <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-amber-200 ring-1 ring-amber-300" />Reasoning</span>
+                <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-violet-200 ring-1 ring-violet-300" />Memory</span>
+                <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-sky-200 ring-1 ring-sky-300" />Search</span>
+                <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-emerald-200 ring-1 ring-emerald-300" />Action</span>
+                <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-stone-100 ring-1 ring-stone-500 border border-dashed border-stone-500" />Verifier (Haiku)</span>
+                <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-rose-200 ring-1 ring-rose-300" />Notify</span>
+              </div>
 
               <div className="mt-3 flex items-center gap-2 text-[11px] text-stone-600">
                 <span className="text-amber-600">↻</span>
