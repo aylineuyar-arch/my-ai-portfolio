@@ -314,6 +314,129 @@ function PortfolioPage() {
           Tuck MBA <span className="text-stone-400">|</span> Ex Deloitte and Skild AI <span className="text-stone-400">|</span> AI Deployment, Strategy, Ops
         </p>
 
+        {/* === AylinOS meta-project demo === */}
+        <section className="mt-12">
+          <div className="rounded-2xl bg-white/80 backdrop-blur border border-stone-200 overflow-hidden shadow-sm">
+            <div className="grid md:grid-cols-[1.15fr_1fr] gap-0">
+              {/* Video */}
+              <div className="relative bg-stone-100 border-b md:border-b-0 md:border-r border-stone-200">
+                <div className="absolute top-3 left-3 z-10 flex flex-col gap-1.5">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-rose-600/95 text-white text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 shadow-sm backdrop-blur">
+                    Demo — more to come
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-indigo-600/95 text-white text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 shadow-sm backdrop-blur">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                    Use case: Job Search
+                  </span>
+                </div>
+                <video
+                  src="https://aylinos.lovable.app/__l5e/assets-v1/c194284d-54a5-4c54-97ad-46b3b8389ca1/aylinos-demo-v3.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover block"
+                />
+              </div>
+
+              {/* Copy */}
+              <div className="p-8 md:p-10 flex flex-col justify-center">
+                <div className="flex items-center gap-3">
+                  <span className="text-[11px] uppercase tracking-wider font-semibold text-rose-600">
+                    Meta-project · No. 00
+                  </span>
+                  <span className="inline-flex items-center gap-1 text-[9px] uppercase tracking-wider bg-green-100 text-green-800 px-1.5 py-0.5 rounded-full font-medium">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                    Live
+                  </span>
+                </div>
+
+                <h2 className="mt-3 text-4xl md:text-5xl font-light leading-[1.05] tracking-tight">
+                  <em className="italic">AylinOS</em>
+                </h2>
+
+                <p className="mt-2 text-[13px] text-stone-500 leading-snug">
+                  A personal AI operating system for work <em>and</em> life — the meta-layer that reaches into the 6 projects below.
+                </p>
+
+                <div className="mt-5 space-y-3.5">
+                  <div>
+                    <div className="text-[10px] uppercase tracking-[0.14em] font-semibold text-rose-600 mb-1">
+                      What it is
+                    </div>
+                    <p className="text-[14px] text-stone-800 leading-snug">
+                      One chat, <span className="font-semibold">6 specialized agents</span>. A <span className="font-semibold">router</span> picks the right one, an <span className="font-semibold">LLM-as-judge</span> scores the answer, and each agent's output is <span className="font-semibold">color-coded</span> in the response so you can see who did what.
+                    </p>
+                  </div>
+
+                  <div>
+                    <div className="text-[10px] uppercase tracking-[0.14em] font-semibold text-rose-600 mb-1">
+                      The 6 agents &amp; what they touch
+                    </div>
+                    <ul className="text-[13px] text-stone-800 leading-snug space-y-1.5">
+                      <li><span className="font-semibold text-indigo-700">Job Search</span> — pulls roles from 130+ ATSs, Claude-scores fit, ships an 8am ranked digest <span className="text-stone-500">· Job Dashboard + Email Generator</span></li>
+                      <li><span className="font-semibold text-blue-700">Outreach</span> — drafts intros &amp; follow-ups across a 130-target contact graph, human-gated send <span className="text-stone-500">· Outreach engine</span></li>
+                      <li><span className="font-semibold text-emerald-700">Pricing &amp; GTM</span> — builds tiers, ICP, comp sets, packaging memos <span className="text-stone-500">· GTM Pricing Tool</span></li>
+                      <li><span className="font-semibold text-amber-700">Policy Desk</span> — grounded Q&amp;A across 4 policy domains, returns citations <span className="text-stone-500">· Compliance RAG</span></li>
+                      <li><span className="font-semibold text-green-700">Inbox &amp; Reservations</span> — sub-1s ticket triage and 8-node reservation graph <span className="text-stone-500">· CS Triage + Fork Yea!</span></li>
+                      <li><span className="font-semibold text-pink-700">Research</span> — fan-in briefs, comp pulls, shadow-eval scoring delivered to Drive <span className="text-stone-500">· Research agent → Drive</span></li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <div className="text-[10px] uppercase tracking-[0.14em] font-semibold text-rose-600 mb-1">
+                      What it proves
+                    </div>
+                    <p className="text-[14px] text-stone-800 leading-snug">
+                      End-to-end <span className="font-semibold">AI deployment</span>: orchestration, evals, memory, and observability — designed, shipped, and run in production.
+                    </p>
+                  </div>
+
+                  <div>
+                    <div className="text-[10px] uppercase tracking-[0.14em] font-semibold text-rose-600 mb-1">
+                      Skills on display
+                    </div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {[
+                        "Agent orchestration",
+                        "LLM-as-judge evals",
+                        "Vector memory",
+                        "Prompt architecture",
+                        "Claude",
+                        "Tavily",
+                        "SQLite",
+                        "TanStack Start",
+                      ].map((s) => (
+                        <span
+                          key={s}
+                          className="text-[11px] font-medium text-stone-700 bg-stone-100 border border-stone-200 rounded-full px-2.5 py-1"
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-6 flex items-center gap-4">
+                  <a
+                    href="https://aylinos.lovable.app/aylinos-app"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-lg bg-rose-600 hover:bg-rose-700 transition-colors px-4 py-2 text-white text-sm font-medium"
+                  >
+                    Launch AylinOS →
+                  </a>
+                  <span className="text-[11px] text-stone-500 font-mono">
+                    aylinos.lovable.app/aylinos-app
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* === end AylinOS section === */}
+
         <div className="mt-10 h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent" />
 
         {/* Combined section header — credibility number + section title */}
