@@ -361,9 +361,16 @@ function PortfolioPage() {
           Rewiring the workflows you already run.
         </p>
 
-        <p className="mt-6 max-w-4xl text-lg md:text-2xl text-stone-700 leading-snug font-light">
-          Tuck MBA <span className="text-stone-400">|</span> Ex Deloitte and Skild AI <span className="text-stone-400">|</span> AI Deployment, Strategy, Ops
+        {/* Proof line — concrete outcome for 4-second scanners */}
+        <p className="mt-3 text-base md:text-lg text-stone-800 font-medium">
+          7 deployed AI agents in 2 months.
         </p>
+
+        <p className="mt-6 max-w-4xl text-sm md:text-base text-stone-600 leading-snug">
+          <span className="uppercase tracking-[0.14em] text-[11px] md:text-xs text-stone-500 font-semibold mr-2">Previously</span>
+          Deloitte <span className="text-stone-400">·</span> Skild AI <span className="text-stone-400">·</span> Tuck MBA <span className="text-stone-400">·</span> AI Deployment, Strategy, Ops
+        </p>
+
 
         {/* === AylinOS meta-project demo === */}
         <section className="mt-12 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen px-6 md:px-16 lg:px-24">
