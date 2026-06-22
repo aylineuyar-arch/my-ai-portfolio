@@ -427,7 +427,7 @@ function PortfolioPage() {
                   >
                     Launch AylinOS →
                   </a>
-                  <span className="text-[11px] text-stone-500 font-mono">
+                  <span className="text-xs text-stone-500 font-mono">
                     aylinos.lovable.app/aylinos-app
                   </span>
                 </div>
