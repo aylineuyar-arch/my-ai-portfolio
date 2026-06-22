@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Github, Linkedin, Briefcase, Database, MessageSquare, Workflow, ChevronDown, Languages, History, Search, Sparkles, ListOrdered, Gavel, CalendarCheck, MailCheck, type LucideIcon } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
@@ -262,6 +262,57 @@ function AgentFlowMarquee({ steps }: { steps: AgentStep[] }) {
   );
 }
 
+function ProjectCollapse({
+  id,
+  num,
+  numCls,
+  title,
+  sub,
+  children,
+}: {
+  id: string;
+  num: string;
+  numCls: string;
+  title: ReactNode;
+  sub?: string;
+  children: ReactNode;
+}) {
+  const [open, setOpen] = useState(false);
+  useEffect(() => {
+    const sync = () => {
+      if (typeof window !== "undefined" && window.location.hash === `#${id}`) {
+        setOpen(true);
+      }
+    };
+    sync();
+    if (typeof window !== "undefined") {
+      window.addEventListener("hashchange", sync);
+      return () => window.removeEventListener("hashchange", sync);
+    }
+  }, [id]);
+  return (
+    <Collapsible open={open} onOpenChange={setOpen}>
+      <CollapsibleTrigger className="group w-full flex items-center justify-between gap-4 rounded-2xl border border-stone-200 bg-white/70 hover:bg-white/90 hover:border-rose-300 px-5 py-4 text-left transition-colors">
+        <div className="flex flex-col min-w-0">
+          <span className={`text-[11px] uppercase tracking-[0.22em] font-semibold ${numCls}`}>{num}</span>
+          <span className="mt-1 text-xl md:text-2xl font-light tracking-tight text-stone-900 truncate">{title}</span>
+          {sub && <span className="mt-1 text-xs text-stone-500">{sub}</span>}
+        </div>
+        <span className="flex items-center gap-2 shrink-0 text-stone-500">
+          <span className="hidden sm:inline text-[11px] uppercase tracking-wider group-data-[state=open]:hidden">Expand</span>
+          <span className="hidden sm:inline text-[11px] uppercase tracking-wider group-data-[state=closed]:hidden">Collapse</span>
+          <ChevronDown className="h-5 w-5 transition-transform group-data-[state=open]:rotate-180" />
+        </span>
+      </CollapsibleTrigger>
+      <CollapsibleContent className="pt-8">
+        {children}
+      </CollapsibleContent>
+    </Collapsible>
+  );
+}
+
+
+
 
 function PortfolioPage() {
   return (
@@ -370,54 +421,63 @@ function PortfolioPage() {
                     </p>
                   </div>
 
-                  <div>
-                    <div className="text-[11px] uppercase tracking-[0.14em] font-semibold text-rose-600 mb-1">
-                      The 6 agents &amp; what they touch
-                    </div>
-                    <ul className="text-[14px] text-stone-800 leading-snug space-y-1.5">
-                      <li><span className="font-semibold text-indigo-700">Job Search</span> — pulls roles from 130+ ATSs, Claude-scores fit, ships an 8am ranked digest <span className="text-stone-500">· Job Dashboard + Email Generator</span></li>
-                      <li><span className="font-semibold text-blue-700">Outreach</span> — drafts intros &amp; follow-ups across a 130-target contact graph, human-gated send <span className="text-stone-500">· Outreach engine</span></li>
-                      <li><span className="font-semibold text-emerald-700">Pricing &amp; GTM</span> — builds tiers, ICP, comp sets, packaging memos <span className="text-stone-500">· GTM Pricing Tool</span></li>
-                      <li><span className="font-semibold text-amber-700">Policy Desk</span> — grounded Q&amp;A across 4 policy domains, returns citations <span className="text-stone-500">· Compliance RAG</span></li>
-                      <li><span className="font-semibold text-green-700">Inbox &amp; Reservations</span> — sub-1s ticket triage and 8-node reservation graph <span className="text-stone-500">· CS Triage + Fork Yea!</span></li>
-                      <li><span className="font-semibold text-pink-700">Research</span> — fan-in briefs, comp pulls, shadow-eval scoring delivered to Drive <span className="text-stone-500">· Research agent → Drive</span></li>
-                    </ul>
-                  </div>
+                  <Collapsible>
+                    <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-rose-200 bg-rose-50/50 hover:bg-rose-50 px-3 py-2 text-[11px] uppercase tracking-[0.14em] font-semibold text-rose-700 transition-colors">
+                      <span>See the 6 agents, what it proves, &amp; skills</span>
+                      <ChevronDown className="h-3.5 w-3.5 transition-transform group-data-[state=open]:rotate-180" />
+                    </CollapsibleTrigger>
+                    <CollapsibleContent className="space-y-3.5 pt-3.5">
+                      <div>
+                        <div className="text-[11px] uppercase tracking-[0.14em] font-semibold text-rose-600 mb-1">
+                          The 6 agents &amp; what they touch
+                        </div>
+                        <ul className="text-[14px] text-stone-800 leading-snug space-y-1.5">
+                          <li><span className="font-semibold text-indigo-700">Job Search</span> — pulls roles from 130+ ATSs, Claude-scores fit, ships an 8am ranked digest <span className="text-stone-500">· Job Dashboard + Email Generator</span></li>
+                          <li><span className="font-semibold text-blue-700">Outreach</span> — drafts intros &amp; follow-ups across a 130-target contact graph, human-gated send <span className="text-stone-500">· Outreach engine</span></li>
+                          <li><span className="font-semibold text-emerald-700">Pricing &amp; GTM</span> — builds tiers, ICP, comp sets, packaging memos <span className="text-stone-500">· GTM Pricing Tool</span></li>
+                          <li><span className="font-semibold text-amber-700">Policy Desk</span> — grounded Q&amp;A across 4 policy domains, returns citations <span className="text-stone-500">· Compliance RAG</span></li>
+                          <li><span className="font-semibold text-green-700">Inbox &amp; Reservations</span> — sub-1s ticket triage and 8-node reservation graph <span className="text-stone-500">· CS Triage + Fork Yea!</span></li>
+                          <li><span className="font-semibold text-pink-700">Research</span> — fan-in briefs, comp pulls, shadow-eval scoring delivered to Drive <span className="text-stone-500">· Research agent → Drive</span></li>
+                        </ul>
+                      </div>
 
-                  <div>
-                    <div className="text-[11px] uppercase tracking-[0.14em] font-semibold text-rose-600 mb-1">
-                      What it proves
-                    </div>
-                    <p className="text-[15px] text-stone-800 leading-snug">
-                      End-to-end <span className="font-semibold">AI deployment</span>: orchestration, evals, memory, and observability — designed, shipped, and run in production.
-                    </p>
-                  </div>
+                      <div>
+                        <div className="text-[11px] uppercase tracking-[0.14em] font-semibold text-rose-600 mb-1">
+                          What it proves
+                        </div>
+                        <p className="text-[15px] text-stone-800 leading-snug">
+                          End-to-end <span className="font-semibold">AI deployment</span>: orchestration, evals, memory, and observability — designed, shipped, and run in production.
+                        </p>
+                      </div>
 
-                  <div>
-                    <div className="text-[11px] uppercase tracking-[0.14em] font-semibold text-rose-600 mb-1">
-                      Skills on display
-                    </div>
-                    <div className="flex flex-wrap gap-1.5">
-                      {[
-                        "Agent orchestration",
-                        "LLM-as-judge evals",
-                        "Vector memory",
-                        "Prompt architecture",
-                        "Claude",
-                        "Tavily",
-                        "SQLite",
-                        "TanStack Start",
-                      ].map((s) => (
-                        <span
-                          key={s}
-                          className="text-xs font-medium text-stone-700 bg-stone-100 border border-stone-200 rounded-full px-2.5 py-1"
-                        >
-                          {s}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+                      <div>
+                        <div className="text-[11px] uppercase tracking-[0.14em] font-semibold text-rose-600 mb-1">
+                          Skills on display
+                        </div>
+                        <div className="flex flex-wrap gap-1.5">
+                          {[
+                            "Agent orchestration",
+                            "LLM-as-judge evals",
+                            "Vector memory",
+                            "Prompt architecture",
+                            "Claude",
+                            "Tavily",
+                            "SQLite",
+                            "TanStack Start",
+                          ].map((s) => (
+                            <span
+                              key={s}
+                              className="text-xs font-medium text-stone-700 bg-stone-100 border border-stone-200 rounded-full px-2.5 py-1"
+                            >
+                              {s}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </CollapsibleContent>
+                  </Collapsible>
                 </div>
+
 
                 <div className="mt-6 flex items-center gap-4">
                   <a
@@ -565,8 +625,10 @@ function PortfolioPage() {
       <GradientDivider />
 
       {/* Project Restaurant — Restaurant Reservation Agent */}
-      <section id="project-restaurant" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
+      <section id="project-restaurant" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
+        <ProjectCollapse id="project-restaurant" num="No. 01 · Restaurant Reservation Agent" numCls="text-rose-700" title={<><em className="italic">Fork Yea!</em> — Restaurant Reservation Agent</>} sub="LangGraph · Claude · Playwright">
         <div className="grid md:grid-cols-12 gap-10">
+
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-rose-700 font-medium">
               No. 01 · Built with LangGraph + Claude
@@ -848,13 +910,17 @@ function PortfolioPage() {
 
           </div>
         </div>
+        </ProjectCollapse>
       </section>
+
 
       <GradientDivider />
 
       {/* Project 1 */}
-      <section id="project-1" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <section id="project-1" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
+        <ProjectCollapse id="project-1" num="No. 02 · AI Job Search" numCls="text-orange-700" title="Live AI Job Search Dashboard" sub="Claude · Python · Railway">
         <div className="grid md:grid-cols-12 gap-10">
+
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-orange-700 font-medium">
               No. 02 · Built with Claude
@@ -956,13 +1022,17 @@ function PortfolioPage() {
             </figure>
           </div>
         </div>
+        </ProjectCollapse>
       </section>
+
 
       <GradientDivider />
 
       {/* Project GTM — GTM Pricing Tool */}
-      <section id="project-gtm" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
+      <section id="project-gtm" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
+        <ProjectCollapse id="project-gtm" num="No. 03 · GTM Pricing Tool" numCls="text-teal-700" title="GTM Pricing Tool" sub="Claude · Python · Railway">
         <div className="grid md:grid-cols-12 gap-10">
+
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-teal-700 font-medium">
               No. 03 · Built with Claude + Python
@@ -1085,13 +1155,17 @@ function PortfolioPage() {
             </figure>
           </div>
         </div>
+        </ProjectCollapse>
       </section>
+
 
       <GradientDivider />
 
       {/* Project 2 — Agentic AI Email Generator */}
-      <section id="project-2" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
+      <section id="project-2" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
+        <ProjectCollapse id="project-2" num="No. 04 · Agentic Email Generator" numCls="text-amber-700" title="Agentic Email Generator" sub="n8n · Claude · Supabase">
         <div className="grid md:grid-cols-12 gap-10">
+
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-amber-700 font-medium">
               No. 04 · Built with n8n + Claude
@@ -1204,13 +1278,17 @@ function PortfolioPage() {
 
           </div>
         </div>
+        </ProjectCollapse>
       </section>
+
 
       <GradientDivider />
 
       {/* Project 3 — Compliance RAG */}
-      <section id="project-3" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
+      <section id="project-3" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
+        <ProjectCollapse id="project-3" num="No. 05 · Compliance RAG Chatbot" numCls="text-emerald-700" title="Compliance RAG Chatbot" sub="Claude · Python · Streamlit">
         <div className="grid md:grid-cols-12 gap-10">
+
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-emerald-700 font-medium">
               No. 05 · Built with Claude
@@ -1318,13 +1396,17 @@ function PortfolioPage() {
 
           </div>
         </div>
+        </ProjectCollapse>
       </section>
+
 
       <GradientDivider />
 
       {/* Project 4 — Customer Service Triage */}
-      <section id="project-4" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
+      <section id="project-4" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
+        <ProjectCollapse id="project-4" num="No. 06 · Customer Service Triage" numCls="text-indigo-700" title="Customer Service Triage" sub="Claude · Python · NLP">
         <div className="grid md:grid-cols-12 gap-10">
+
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-indigo-700 font-medium">
               No. 06 · Built with Claude
@@ -1471,7 +1553,9 @@ function PortfolioPage() {
 
           </div>
         </div>
+        </ProjectCollapse>
       </section>
+
 
       <GradientDivider />
 
