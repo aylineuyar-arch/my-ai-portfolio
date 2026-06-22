@@ -387,7 +387,15 @@ function PortfolioPage() {
                   loop
                   playsInline
                   ref={(el) => {
-                    if (el) el.playbackRate = 2;
+                    if (!el) return;
+                    const updateRate = () => {
+                      const t = el.currentTime;
+                      // 0–10s: search entry (2x); 10–19s: streaming/composing (3x); 19s+: output (2x)
+                      const rate = t >= 10 && t < 19 ? 3 : 2;
+                      if (el.playbackRate !== rate) el.playbackRate = rate;
+                    };
+                    el.playbackRate = 2;
+                    el.addEventListener("timeupdate", updateRate);
                   }}
                   className="absolute inset-0 w-full h-full object-cover object-top block opacity-70"
                 />
