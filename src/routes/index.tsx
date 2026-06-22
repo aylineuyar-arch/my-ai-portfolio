@@ -1387,7 +1387,9 @@ function PortfolioPage() {
 
           </div>
         </div>
+        </ProjectCollapse>
       </section>
+
 
       <GradientDivider />
 
