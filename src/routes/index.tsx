@@ -421,54 +421,63 @@ function PortfolioPage() {
                     </p>
                   </div>
 
-                  <div>
-                    <div className="text-[11px] uppercase tracking-[0.14em] font-semibold text-rose-600 mb-1">
-                      The 6 agents &amp; what they touch
-                    </div>
-                    <ul className="text-[14px] text-stone-800 leading-snug space-y-1.5">
-                      <li><span className="font-semibold text-indigo-700">Job Search</span> — pulls roles from 130+ ATSs, Claude-scores fit, ships an 8am ranked digest <span className="text-stone-500">· Job Dashboard + Email Generator</span></li>
-                      <li><span className="font-semibold text-blue-700">Outreach</span> — drafts intros &amp; follow-ups across a 130-target contact graph, human-gated send <span className="text-stone-500">· Outreach engine</span></li>
-                      <li><span className="font-semibold text-emerald-700">Pricing &amp; GTM</span> — builds tiers, ICP, comp sets, packaging memos <span className="text-stone-500">· GTM Pricing Tool</span></li>
-                      <li><span className="font-semibold text-amber-700">Policy Desk</span> — grounded Q&amp;A across 4 policy domains, returns citations <span className="text-stone-500">· Compliance RAG</span></li>
-                      <li><span className="font-semibold text-green-700">Inbox &amp; Reservations</span> — sub-1s ticket triage and 8-node reservation graph <span className="text-stone-500">· CS Triage + Fork Yea!</span></li>
-                      <li><span className="font-semibold text-pink-700">Research</span> — fan-in briefs, comp pulls, shadow-eval scoring delivered to Drive <span className="text-stone-500">· Research agent → Drive</span></li>
-                    </ul>
-                  </div>
+                  <Collapsible>
+                    <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-rose-200 bg-rose-50/50 hover:bg-rose-50 px-3 py-2 text-[11px] uppercase tracking-[0.14em] font-semibold text-rose-700 transition-colors">
+                      <span>See the 6 agents, what it proves, &amp; skills</span>
+                      <ChevronDown className="h-3.5 w-3.5 transition-transform group-data-[state=open]:rotate-180" />
+                    </CollapsibleTrigger>
+                    <CollapsibleContent className="space-y-3.5 pt-3.5">
+                      <div>
+                        <div className="text-[11px] uppercase tracking-[0.14em] font-semibold text-rose-600 mb-1">
+                          The 6 agents &amp; what they touch
+                        </div>
+                        <ul className="text-[14px] text-stone-800 leading-snug space-y-1.5">
+                          <li><span className="font-semibold text-indigo-700">Job Search</span> — pulls roles from 130+ ATSs, Claude-scores fit, ships an 8am ranked digest <span className="text-stone-500">· Job Dashboard + Email Generator</span></li>
+                          <li><span className="font-semibold text-blue-700">Outreach</span> — drafts intros &amp; follow-ups across a 130-target contact graph, human-gated send <span className="text-stone-500">· Outreach engine</span></li>
+                          <li><span className="font-semibold text-emerald-700">Pricing &amp; GTM</span> — builds tiers, ICP, comp sets, packaging memos <span className="text-stone-500">· GTM Pricing Tool</span></li>
+                          <li><span className="font-semibold text-amber-700">Policy Desk</span> — grounded Q&amp;A across 4 policy domains, returns citations <span className="text-stone-500">· Compliance RAG</span></li>
+                          <li><span className="font-semibold text-green-700">Inbox &amp; Reservations</span> — sub-1s ticket triage and 8-node reservation graph <span className="text-stone-500">· CS Triage + Fork Yea!</span></li>
+                          <li><span className="font-semibold text-pink-700">Research</span> — fan-in briefs, comp pulls, shadow-eval scoring delivered to Drive <span className="text-stone-500">· Research agent → Drive</span></li>
+                        </ul>
+                      </div>
 
-                  <div>
-                    <div className="text-[11px] uppercase tracking-[0.14em] font-semibold text-rose-600 mb-1">
-                      What it proves
-                    </div>
-                    <p className="text-[15px] text-stone-800 leading-snug">
-                      End-to-end <span className="font-semibold">AI deployment</span>: orchestration, evals, memory, and observability — designed, shipped, and run in production.
-                    </p>
-                  </div>
+                      <div>
+                        <div className="text-[11px] uppercase tracking-[0.14em] font-semibold text-rose-600 mb-1">
+                          What it proves
+                        </div>
+                        <p className="text-[15px] text-stone-800 leading-snug">
+                          End-to-end <span className="font-semibold">AI deployment</span>: orchestration, evals, memory, and observability — designed, shipped, and run in production.
+                        </p>
+                      </div>
 
-                  <div>
-                    <div className="text-[11px] uppercase tracking-[0.14em] font-semibold text-rose-600 mb-1">
-                      Skills on display
-                    </div>
-                    <div className="flex flex-wrap gap-1.5">
-                      {[
-                        "Agent orchestration",
-                        "LLM-as-judge evals",
-                        "Vector memory",
-                        "Prompt architecture",
-                        "Claude",
-                        "Tavily",
-                        "SQLite",
-                        "TanStack Start",
-                      ].map((s) => (
-                        <span
-                          key={s}
-                          className="text-xs font-medium text-stone-700 bg-stone-100 border border-stone-200 rounded-full px-2.5 py-1"
-                        >
-                          {s}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+                      <div>
+                        <div className="text-[11px] uppercase tracking-[0.14em] font-semibold text-rose-600 mb-1">
+                          Skills on display
+                        </div>
+                        <div className="flex flex-wrap gap-1.5">
+                          {[
+                            "Agent orchestration",
+                            "LLM-as-judge evals",
+                            "Vector memory",
+                            "Prompt architecture",
+                            "Claude",
+                            "Tavily",
+                            "SQLite",
+                            "TanStack Start",
+                          ].map((s) => (
+                            <span
+                              key={s}
+                              className="text-xs font-medium text-stone-700 bg-stone-100 border border-stone-200 rounded-full px-2.5 py-1"
+                            >
+                              {s}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </CollapsibleContent>
+                  </Collapsible>
                 </div>
+
 
                 <div className="mt-6 flex items-center gap-4">
                   <a
