@@ -1153,8 +1153,10 @@ function PortfolioPage() {
       <GradientDivider />
 
       {/* Project 2 — Agentic AI Email Generator */}
-      <section id="project-2" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
+      <section id="project-2" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
+        <ProjectCollapse id="project-2" num="No. 04 · Agentic Email Generator" numCls="text-amber-700" title="Agentic Email Generator" sub="n8n · Claude · Supabase">
         <div className="grid md:grid-cols-12 gap-10">
+
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-amber-700 font-medium">
               No. 04 · Built with n8n + Claude
