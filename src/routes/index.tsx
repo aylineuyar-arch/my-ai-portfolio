@@ -656,7 +656,22 @@ function PortfolioPage() {
             );
           })}
         </div>
+
+        {/* Scroll cue — signal there's more below */}
+        <div className="mt-10 flex justify-center">
+          <a
+            href="#project-restaurant"
+            className="group inline-flex flex-col items-center gap-1 text-stone-500 hover:text-rose-600 transition-colors"
+            aria-label="See the 6 projects below"
+          >
+            <span className="text-[11px] uppercase tracking-[0.18em] font-semibold">
+              + 6 more projects below
+            </span>
+            <ChevronDown className="h-5 w-5 animate-bounce group-hover:text-rose-600" />
+          </a>
+        </div>
       </header>
+
 
       <GradientDivider />
 
