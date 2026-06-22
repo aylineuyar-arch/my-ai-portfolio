@@ -437,11 +437,11 @@ function PortfolioPage() {
                     </div>
                     <p className="text-[15px] text-stone-800 leading-relaxed">
                       One chat, <span className="font-semibold">6 specialized agents</span> —{" "}
-                      <span className="font-semibold text-indigo-700">Job Search</span>,{" "}
+                      <span className="font-semibold text-violet-700">Job Search</span>,{" "}
                       <span className="font-semibold text-blue-700">Outreach</span>,{" "}
                       <span className="font-semibold text-emerald-700">Pricing &amp; GTM</span>,{" "}
                       <span className="font-semibold text-amber-700">Policy Desk</span>,{" "}
-                      <span className="font-semibold text-green-700">Inbox &amp; Reservations</span>, and{" "}
+                      <span className="font-semibold text-cyan-700">Inbox &amp; Reservations</span>, and{" "}
                       <span className="font-semibold text-pink-700">Research</span>.
                     </p>
                     <p className="mt-3 text-[15px] text-stone-800 leading-relaxed">
