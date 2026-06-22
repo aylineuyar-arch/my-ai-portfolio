@@ -330,7 +330,7 @@ function PortfolioPage() {
                   </span>
                 </div>
                 <video
-                  src="https://aylinos.lovable.app/__l5e/assets-v1/c194284d-54a5-4c54-97ad-46b3b8389ca1/aylinos-demo-v3.mp4"
+                  src="/__l5e/assets-v1/7617be75-5049-45ba-b653-97f26b957c4c/screen-recording.mp4"
                   autoPlay
                   muted
                   loop
