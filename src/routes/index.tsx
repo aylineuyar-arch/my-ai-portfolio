@@ -262,6 +262,57 @@ function AgentFlowMarquee({ steps }: { steps: AgentStep[] }) {
   );
 }
 
+function ProjectCollapse({
+  id,
+  num,
+  numCls,
+  title,
+  sub,
+  children,
+}: {
+  id: string;
+  num: string;
+  numCls: string;
+  title: React.ReactNode;
+  sub?: string;
+  children: React.ReactNode;
+}) {
+  const [open, setOpen] = useState(false);
+  useEffect(() => {
+    const sync = () => {
+      if (typeof window !== "undefined" && window.location.hash === `#${id}`) {
+        setOpen(true);
+      }
+    };
+    sync();
+    if (typeof window !== "undefined") {
+      window.addEventListener("hashchange", sync);
+      return () => window.removeEventListener("hashchange", sync);
+    }
+  }, [id]);
+  return (
+    <Collapsible open={open} onOpenChange={setOpen}>
+      <CollapsibleTrigger className="group w-full flex items-center justify-between gap-4 rounded-2xl border border-stone-200 bg-white/70 hover:bg-white/90 hover:border-rose-300 px-5 py-4 text-left transition-colors">
+        <div className="flex flex-col min-w-0">
+          <span className={`text-[11px] uppercase tracking-[0.22em] font-semibold ${numCls}`}>{num}</span>
+          <span className="mt-1 text-xl md:text-2xl font-light tracking-tight text-stone-900 truncate">{title}</span>
+          {sub && <span className="mt-1 text-xs text-stone-500">{sub}</span>}
+        </div>
+        <span className="flex items-center gap-2 shrink-0 text-stone-500">
+          <span className="hidden sm:inline text-[11px] uppercase tracking-wider group-data-[state=open]:hidden">Expand</span>
+          <span className="hidden sm:inline text-[11px] uppercase tracking-wider group-data-[state=closed]:hidden">Collapse</span>
+          <ChevronDown className="h-5 w-5 transition-transform group-data-[state=open]:rotate-180" />
+        </span>
+      </CollapsibleTrigger>
+      <CollapsibleContent className="pt-8">
+        {children}
+      </CollapsibleContent>
+    </Collapsible>
+  );
+}
+
+
+
 
 function PortfolioPage() {
   return (
