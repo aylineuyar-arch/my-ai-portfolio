@@ -273,9 +273,9 @@ function ProjectCollapse({
   id: string;
   num: string;
   numCls: string;
-  title: React.ReactNode;
+  title: ReactNode;
   sub?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   const [open, setOpen] = useState(false);
   useEffect(() => {
