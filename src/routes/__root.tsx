@@ -98,11 +98,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   errorComponent: ErrorComponent,
 });
 
+// Owner opt-out: visit ?noanalytics=1 once to permanently exclude your views
+// (uses the Plausible-standard localStorage flag honored by Lovable analytics).
+// Visit ?noanalytics=0 to re-enable.
+const ANALYTICS_OPTOUT_SCRIPT = `
+(function(){try{
+  var p=new URLSearchParams(location.search);
+  if(p.has('noanalytics')){
+    var v=p.get('noanalytics');
+    if(v==='0'||v==='false'){localStorage.removeItem('plausible_ignore');}
+    else{localStorage.setItem('plausible_ignore','true');}
+  }
+}catch(e){}})();
+`;
+
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
         <HeadContent />
+        <script dangerouslySetInnerHTML={{ __html: ANALYTICS_OPTOUT_SCRIPT }} />
       </head>
       <body>
         {children}
