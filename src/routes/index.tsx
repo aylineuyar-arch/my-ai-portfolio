@@ -417,8 +417,15 @@ function PortfolioPage() {
                       What it is
                     </div>
                     <p className="text-[15px] text-stone-800 leading-snug">
-                      One chat, <span className="font-semibold">6 specialized agents</span>. A <span className="font-semibold">router</span> picks the right one, an <span className="font-semibold">LLM-as-judge</span> scores the answer, and each agent's output is <span className="font-semibold">color-coded</span> in the response so you can see who did what.
+                      One chat, <span className="font-semibold">6 specialized agents</span> —{" "}
+                      <span className="font-semibold text-indigo-700">Job Search</span>,{" "}
+                      <span className="font-semibold text-blue-700">Outreach</span>,{" "}
+                      <span className="font-semibold text-emerald-700">Pricing &amp; GTM</span>,{" "}
+                      <span className="font-semibold text-amber-700">Policy Desk</span>,{" "}
+                      <span className="font-semibold text-green-700">Inbox &amp; Reservations</span>, and{" "}
+                      <span className="font-semibold text-pink-700">Research</span>. A <span className="font-semibold">router</span> picks the right one, an <span className="font-semibold">LLM-as-judge</span> scores the answer, and each agent's output is <span className="font-semibold">color-coded</span> so you can see who did what.
                     </p>
+
                   </div>
 
                   <Collapsible>
