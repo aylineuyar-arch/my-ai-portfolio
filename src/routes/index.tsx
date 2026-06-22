@@ -395,8 +395,9 @@ function PortfolioPage() {
               <div className="p-8 md:p-10 flex flex-col justify-center md:col-span-2">
                 <div className="flex items-center gap-3">
                   <span className="text-xs uppercase tracking-wider font-semibold text-rose-600">
-                    Meta-project · No. 00
+                    Featured · The layer above all 6
                   </span>
+
                   <span className="inline-flex items-center gap-1 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-1.5 py-0.5 rounded-full font-medium">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
                     Live
