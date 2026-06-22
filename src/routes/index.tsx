@@ -437,11 +437,11 @@ function PortfolioPage() {
                     </div>
                     <p className="text-[15px] text-stone-800 leading-relaxed">
                       One chat, <span className="font-semibold">6 specialized agents</span> —{" "}
-                      <span className="font-semibold text-indigo-700">Job Search</span>,{" "}
+                      <span className="font-semibold text-violet-700">Job Search</span>,{" "}
                       <span className="font-semibold text-blue-700">Outreach</span>,{" "}
                       <span className="font-semibold text-emerald-700">Pricing &amp; GTM</span>,{" "}
                       <span className="font-semibold text-amber-700">Policy Desk</span>,{" "}
-                      <span className="font-semibold text-green-700">Inbox &amp; Reservations</span>, and{" "}
+                      <span className="font-semibold text-cyan-700">Inbox &amp; Reservations</span>, and{" "}
                       <span className="font-semibold text-pink-700">Research</span>.
                     </p>
                     <p className="mt-3 text-[15px] text-stone-800 leading-relaxed">
@@ -461,11 +461,11 @@ function PortfolioPage() {
                           The 6 agents &amp; what they touch
                         </div>
                         <ul className="text-[14px] text-stone-800 leading-snug space-y-1.5">
-                          <li><span className="font-semibold text-indigo-700">Job Search</span> — pulls roles from 130+ ATSs, Claude-scores fit, ships an 8am ranked digest <span className="text-stone-500">· Job Dashboard + Email Generator</span></li>
+                          <li><span className="font-semibold text-violet-700">Job Search</span> — pulls roles from 130+ ATSs, Claude-scores fit, ships an 8am ranked digest <span className="text-stone-500">· Job Dashboard + Email Generator</span></li>
                           <li><span className="font-semibold text-blue-700">Outreach</span> — drafts intros &amp; follow-ups across a 130-target contact graph, human-gated send <span className="text-stone-500">· Outreach engine</span></li>
                           <li><span className="font-semibold text-emerald-700">Pricing &amp; GTM</span> — builds tiers, ICP, comp sets, packaging memos <span className="text-stone-500">· GTM Pricing Tool</span></li>
                           <li><span className="font-semibold text-amber-700">Policy Desk</span> — grounded Q&amp;A across 4 policy domains, returns citations <span className="text-stone-500">· Compliance RAG</span></li>
-                          <li><span className="font-semibold text-green-700">Inbox &amp; Reservations</span> — sub-1s ticket triage and 8-node reservation graph <span className="text-stone-500">· CS Triage + Fork Yea!</span></li>
+                          <li><span className="font-semibold text-cyan-700">Inbox &amp; Reservations</span> — sub-1s ticket triage and 8-node reservation graph <span className="text-stone-500">· CS Triage + Fork Yea!</span></li>
                           <li><span className="font-semibold text-pink-700">Research</span> — fan-in briefs, comp pulls, shadow-eval scoring delivered to Drive <span className="text-stone-500">· Research agent → Drive</span></li>
                         </ul>
                       </div>
