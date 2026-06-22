@@ -386,6 +386,9 @@ function PortfolioPage() {
                   muted
                   loop
                   playsInline
+                  ref={(el) => {
+                    if (el) el.playbackRate = 2;
+                  }}
                   className="absolute inset-0 w-full h-full object-cover object-top block opacity-70"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/40" />
