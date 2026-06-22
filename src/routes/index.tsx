@@ -1013,7 +1013,9 @@ function PortfolioPage() {
             </figure>
           </div>
         </div>
+        </ProjectCollapse>
       </section>
+
 
       <GradientDivider />
 
