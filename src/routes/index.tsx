@@ -384,7 +384,6 @@ function PortfolioPage() {
                   src="/__l5e/assets-v1/7617be75-5049-45ba-b653-97f26b957c4c/screen-recording.mp4"
                   autoPlay
                   muted
-                  loop
                   playsInline
                   ref={(el) => {
                     if (!el) return;
@@ -394,8 +393,16 @@ function PortfolioPage() {
                       const rate = t >= 10 && t < 19 ? 3 : 2;
                       if (el.playbackRate !== rate) el.playbackRate = rate;
                     };
+                    const onEnded = () => {
+                      // Hold last frame for 1s before looping
+                      window.setTimeout(() => {
+                        el.currentTime = 0;
+                        el.play().catch(() => {});
+                      }, 1000);
+                    };
                     el.playbackRate = 2;
                     el.addEventListener("timeupdate", updateRate);
+                    el.addEventListener("ended", onEnded);
                   }}
                   className="absolute inset-0 w-full h-full object-cover object-top block opacity-70"
                 />
