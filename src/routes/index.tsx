@@ -315,12 +315,12 @@ function PortfolioPage() {
         </p>
 
         {/* === AylinOS meta-project demo === */}
-        <section className="mt-12 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen px-4 md:px-8">
-          <div className="mx-auto max-w-[1400px] rounded-2xl bg-white/80 backdrop-blur border border-stone-200 overflow-hidden shadow-sm">
+        <section className="mt-12 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen px-6 md:px-16 lg:px-24">
+          <div className="mx-auto max-w-[1280px] rounded-2xl bg-white/80 backdrop-blur border border-stone-200 overflow-hidden shadow-sm">
             <div className="grid md:grid-cols-5 gap-0">
               {/* Video */}
               <div className="relative bg-stone-100 border-b md:border-b-0 md:border-r border-stone-200 md:col-span-3 md:min-h-[520px]">
-                <div className="absolute top-3 left-3 z-10 flex flex-col gap-1.5">
+                <div className="absolute top-3 left-3 z-20 flex flex-col gap-1.5">
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-rose-600/95 text-white text-[11px] uppercase tracking-wider font-semibold px-2.5 py-1 shadow-sm backdrop-blur">
                     Demo — more to come
                   </span>
@@ -335,8 +335,9 @@ function PortfolioPage() {
                   muted
                   loop
                   playsInline
-                  className="absolute inset-0 w-full h-full object-cover object-top block"
+                  className="absolute inset-0 w-full h-full object-cover object-top block opacity-70"
                 />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/40" />
               </div>
 
               {/* Copy */}
