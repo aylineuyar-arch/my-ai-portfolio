@@ -315,7 +315,7 @@ function PortfolioPage() {
         </p>
 
         {/* === AylinOS meta-project demo === */}
-        <section className="mt-12">
+        <section className="mt-12 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen px-4 md:px-8">
           <div className="rounded-2xl bg-white/80 backdrop-blur border border-stone-200 overflow-hidden shadow-sm">
             <div className="grid md:grid-cols-5 gap-0">
               {/* Video */}
