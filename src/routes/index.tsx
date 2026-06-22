@@ -1276,8 +1276,10 @@ function PortfolioPage() {
       <GradientDivider />
 
       {/* Project 3 — Compliance RAG */}
-      <section id="project-3" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
+      <section id="project-3" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
+        <ProjectCollapse id="project-3" num="No. 05 · Compliance RAG Chatbot" numCls="text-emerald-700" title="Compliance RAG Chatbot" sub="Claude · Python · Streamlit">
         <div className="grid md:grid-cols-12 gap-10">
+
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-emerald-700 font-medium">
               No. 05 · Built with Claude
