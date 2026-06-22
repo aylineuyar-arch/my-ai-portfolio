@@ -389,8 +389,8 @@ function PortfolioPage() {
                     if (!el) return;
                     const updateRate = () => {
                       const t = el.currentTime;
-                      // 0–10s: search entry (2x); 10–19s: streaming/composing (3x); 19s+: output (2x)
-                      const rate = t >= 10 && t < 19 ? 3 : 2;
+                      // 0–10s: search entry (2x); 10–19s: streaming/composing (4x); 19s+: output (2x)
+                      const rate = t >= 10 && t < 19 ? 4 : 2;
                       if (el.playbackRate !== rate) el.playbackRate = rate;
                     };
                     const onEnded = () => {
