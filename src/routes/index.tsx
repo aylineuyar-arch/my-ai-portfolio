@@ -616,8 +616,10 @@ function PortfolioPage() {
       <GradientDivider />
 
       {/* Project Restaurant — Restaurant Reservation Agent */}
-      <section id="project-restaurant" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
+      <section id="project-restaurant" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
+        <ProjectCollapse id="project-restaurant" num="No. 01 · Restaurant Reservation Agent" numCls="text-rose-700" title={<><em className="italic">Fork Yea!</em> — Restaurant Reservation Agent</>} sub="LangGraph · Claude · Playwright">
         <div className="grid md:grid-cols-12 gap-10">
+
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-rose-700 font-medium">
               No. 01 · Built with LangGraph + Claude
