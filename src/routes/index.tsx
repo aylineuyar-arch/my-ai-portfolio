@@ -317,9 +317,9 @@ function PortfolioPage() {
         {/* === AylinOS meta-project demo === */}
         <section className="mt-12">
           <div className="rounded-2xl bg-white/80 backdrop-blur border border-stone-200 overflow-hidden shadow-sm">
-            <div className="grid md:grid-cols-[1fr_1.3fr] gap-0">
+            <div className="grid md:grid-cols-5 gap-0">
               {/* Video */}
-              <div className="relative bg-stone-100 border-b md:border-b-0 md:border-r border-stone-200">
+              <div className="relative bg-stone-100 border-b md:border-b-0 md:border-r border-stone-200 md:col-span-3 md:min-h-[520px]">
                 <div className="absolute top-3 left-3 z-10 flex flex-col gap-1.5">
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-rose-600/95 text-white text-[11px] uppercase tracking-wider font-semibold px-2.5 py-1 shadow-sm backdrop-blur">
                     Demo — more to come
@@ -335,12 +335,12 @@ function PortfolioPage() {
                   muted
                   loop
                   playsInline
-                  className="w-full h-full object-contain block"
+                  className="absolute inset-0 w-full h-full object-cover object-top block"
                 />
               </div>
 
               {/* Copy */}
-              <div className="p-8 md:p-10 flex flex-col justify-center">
+              <div className="p-8 md:p-10 flex flex-col justify-center md:col-span-2">
                 <div className="flex items-center gap-3">
                   <span className="text-xs uppercase tracking-wider font-semibold text-rose-600">
                     Meta-project · No. 00
