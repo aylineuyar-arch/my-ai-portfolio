@@ -1394,8 +1394,10 @@ function PortfolioPage() {
       <GradientDivider />
 
       {/* Project 4 — Customer Service Triage */}
-      <section id="project-4" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
+      <section id="project-4" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
+        <ProjectCollapse id="project-4" num="No. 06 · Customer Service Triage" numCls="text-indigo-700" title="Customer Service Triage" sub="Claude · Python · NLP">
         <div className="grid md:grid-cols-12 gap-10">
+
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-indigo-700 font-medium">
               No. 06 · Built with Claude
