@@ -407,26 +407,29 @@ function PortfolioPage() {
                   <em className="italic">AylinOS</em>
                 </h2>
 
-                <p className="mt-2 text-[15px] text-stone-500 leading-snug">
+                <p className="mt-4 text-[15px] text-stone-500 leading-relaxed">
                   A personal AI operating system for work <em>and</em> life — the meta-layer that reaches into the 6 projects below.
                 </p>
 
-                <div className="mt-5 space-y-3.5">
+                <div className="mt-7 space-y-6">
                   <div>
-                    <div className="text-[11px] uppercase tracking-[0.14em] font-semibold text-rose-600 mb-1">
+                    <div className="text-[11px] uppercase tracking-[0.14em] font-semibold text-rose-600 mb-2.5">
                       What it is
                     </div>
-                    <p className="text-[15px] text-stone-800 leading-snug">
+                    <p className="text-[15px] text-stone-800 leading-relaxed">
                       One chat, <span className="font-semibold">6 specialized agents</span> —{" "}
                       <span className="font-semibold text-indigo-700">Job Search</span>,{" "}
                       <span className="font-semibold text-blue-700">Outreach</span>,{" "}
                       <span className="font-semibold text-emerald-700">Pricing &amp; GTM</span>,{" "}
                       <span className="font-semibold text-amber-700">Policy Desk</span>,{" "}
                       <span className="font-semibold text-green-700">Inbox &amp; Reservations</span>, and{" "}
-                      <span className="font-semibold text-pink-700">Research</span>. A <span className="font-semibold">router</span> picks the right one, an <span className="font-semibold">LLM-as-judge</span> scores the answer, and each agent's output is <span className="font-semibold">color-coded</span> so you can see who did what.
+                      <span className="font-semibold text-pink-700">Research</span>.
                     </p>
-
+                    <p className="mt-3 text-[15px] text-stone-800 leading-relaxed">
+                      A <span className="font-semibold">router</span> picks the right one, an <span className="font-semibold">LLM-as-judge</span> scores the answer, and each agent's output is <span className="font-semibold">color-coded</span> so you can see who did what.
+                    </p>
                   </div>
+
 
                   <Collapsible>
                     <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-rose-200 bg-rose-50/50 hover:bg-rose-50 px-3 py-2 text-[11px] uppercase tracking-[0.14em] font-semibold text-rose-700 transition-colors">
