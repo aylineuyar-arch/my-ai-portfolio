@@ -409,7 +409,7 @@ function PortfolioPage() {
                       ].map((s) => (
                         <span
                           key={s}
-                          className="text-[11px] font-medium text-stone-700 bg-stone-100 border border-stone-200 rounded-full px-2.5 py-1"
+                          className="text-xs font-medium text-stone-700 bg-stone-100 border border-stone-200 rounded-full px-2.5 py-1"
                         >
                           {s}
                         </span>
