@@ -517,7 +517,7 @@ function PortfolioPage() {
 
                 <div className="mt-6 flex items-center gap-4">
                   <a
-                    href="https://aylinos.lovable.app/aylinos-app"
+                    href="https://aylinos.lovable.app"
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center gap-2 rounded-lg bg-rose-600 hover:bg-rose-700 transition-colors px-4 py-2 text-white text-sm font-medium"
@@ -525,7 +525,7 @@ function PortfolioPage() {
                     Launch AylinOS →
                   </a>
                   <span className="text-xs text-stone-500 font-mono">
-                    aylinos.lovable.app/aylinos-app
+                    aylinos.lovable.app
                   </span>
                 </div>
               </div>
