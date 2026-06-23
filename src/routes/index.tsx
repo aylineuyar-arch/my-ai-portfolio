@@ -357,11 +357,11 @@ function PortfolioPage() {
         </h1>
 
         {/* Tagline — the through-line of the work */}
-        <p className="mt-4 text-xl md:text-2xl font-light italic text-rose-700">
+        <p className="mt-6 text-2xl md:text-4xl font-light italic text-rose-700 leading-tight">
           Rewiring the workflows you already run.
         </p>
 
-        <p className="mt-6 max-w-4xl text-sm md:text-base text-stone-600 leading-snug">
+        <p className="mt-5 max-w-4xl text-xs md:text-sm text-stone-600 leading-snug">
           Tuck MBA <span className="text-stone-400">|</span> Ex Deloitte and Skild AI <span className="text-stone-400">|</span> AI Deployment, Strategy, Ops
         </p>
 
