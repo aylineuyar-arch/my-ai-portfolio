@@ -357,7 +357,7 @@ function PortfolioPage() {
         </h1>
 
         {/* Tagline — the through-line of the work */}
-        <p className="mt-6 text-xl md:text-2xl font-light italic text-rose-700 leading-tight">
+        <p className="mt-6 text-xl md:text-2xl font-medium italic text-rose-700 leading-tight">
           Rewiring the workflows you already run.
         </p>
 
