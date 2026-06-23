@@ -76,14 +76,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Aylin Uyar — AI Portfolio" },
       { name: "twitter:card", content: "summary_large_image" },
-      { title: "Lovable App" },
-      { property: "og:title", content: "Lovable App" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "description", content: "AI-powered makeup recommender for personalized product and application guidance." },
-      { property: "og:description", content: "AI-powered makeup recommender for personalized product and application guidance." },
-      { name: "twitter:description", content: "AI-powered makeup recommender for personalized product and application guidance." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6b9c5cf7-2eee-4cd8-a611-adbe19e13349/id-preview-a177155a--b6f89626-9c2b-48b7-9862-25c8b1db3169.lovable.app-1779392994073.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6b9c5cf7-2eee-4cd8-a611-adbe19e13349/id-preview-a177155a--b6f89626-9c2b-48b7-9862-25c8b1db3169.lovable.app-1779392994073.png" },
     ],
     links: [
       {
