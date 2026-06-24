@@ -246,7 +246,7 @@ export function AylinosLiveDemo() {
           </div>
 
           {/* Where to go next */}
-          {next.items && next.items.length > 0 && (
+          {nextItems.length > 0 && (
           <div
             className="rounded-2xl border bg-white/90 backdrop-blur p-5 shadow-sm"
             style={{ borderColor: `${accent}55` }}
@@ -258,7 +258,7 @@ export function AylinosLiveDemo() {
               Where to go next
             </div>
             <div className="grid grid-cols-1 gap-2.5">
-              {next.items.map((item) => (
+              {nextItems.map((item) => (
                 <a
                   key={item.url}
                   href={item.url}
