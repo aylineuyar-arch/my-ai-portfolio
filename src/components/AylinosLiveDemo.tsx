@@ -22,14 +22,6 @@ const SUGGESTIONS = [
   "Build a pricing tier for a usage-based API",
 ];
 
-const AGENT_LINKS: { label: string; url: string; desc: string; accent: string }[] = [
-  { label: "Job Search",          url: "https://aylinos.lovable.app/jobs",      desc: "130+ ATSs · Claude-scored · 8am digest",     accent: "#7c3aed" },
-  { label: "Outreach",            url: "https://aylinos.lovable.app/outreach",  desc: "Intros & follow-ups across 130 targets",      accent: "#0284c7" },
-  { label: "Pricing & GTM",       url: "https://aylinos.lovable.app/gtm",       desc: "Tiers, ICP, comp sets, packaging memos",      accent: "#059669" },
-  { label: "Policy Desk",         url: "https://aylinos.lovable.app/policy",    desc: "Grounded Q&A with citations",                 accent: "#b45309" },
-  { label: "Inbox & Reservations",url: "https://aylinos.lovable.app/inbox",     desc: "Sub-1s triage · 8-node reservation graph",    accent: "#0e7490" },
-  { label: "Research",            url: "https://aylinos.lovable.app/research",  desc: "Fan-in briefs, comp pulls, shadow-evals",     accent: "#be185d" },
-];
 
 
 export function AylinosLiveDemo() {
