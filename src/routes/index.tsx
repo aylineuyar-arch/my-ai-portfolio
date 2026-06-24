@@ -370,11 +370,8 @@ function PortfolioPage() {
 
         {/* === AylinOS meta-project demo === */}
         <section data-track-section="aylinos-demo" className="mt-12 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen px-6 md:px-16 lg:px-24">
-          <div className="mx-auto max-w-[1280px]">
-            <p className="mb-3 text-sm text-stone-500 max-w-3xl">
-              Job search is six research tasks across a dozen tools. Manually, ~10 hrs/week.
-            </p>
-          </div>
+
+
 
           <div className="mx-auto max-w-[1280px] rounded-2xl bg-white/80 backdrop-blur border border-stone-200 overflow-hidden shadow-sm">
             <div className="grid md:grid-cols-5 gap-0">
@@ -534,9 +531,8 @@ function PortfolioPage() {
               </div>
             </div>
           </div>
-          <p className="mx-auto max-w-[1280px] mt-3 text-sm text-stone-500">
-            130+ ATSs nightly · 8am ranked digest · ~10 hrs/week saved · in production.
-          </p>
+
+
 
         </section>
         {/* === end AylinOS section === */}
