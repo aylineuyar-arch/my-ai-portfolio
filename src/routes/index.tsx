@@ -531,9 +531,8 @@ function PortfolioPage() {
               </div>
             </div>
           </div>
-          <p className="mx-auto max-w-[1280px] mt-3 text-sm text-stone-500">
-            130+ ATSs nightly · 8am ranked digest · ~10 hrs/week saved · in production.
-          </p>
+
+
 
         </section>
         {/* === end AylinOS section === */}
