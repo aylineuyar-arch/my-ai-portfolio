@@ -210,7 +210,7 @@ export function AylinosLiveDemo() {
               What happens next
             </div>
             <ul className="space-y-3">
-              {next.pipeline_steps.map((step, i) => {
+              {pipelineSteps.map((step, i) => {
                 const checked = i < checkedCount;
                 const label = typeof step === "string" ? step : step.label;
                 const sub = typeof step === "string" ? undefined : step.sub;
