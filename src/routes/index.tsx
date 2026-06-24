@@ -534,13 +534,10 @@ function PortfolioPage() {
               </div>
             </div>
           </div>
-          <div className="mx-auto max-w-[1280px] mt-4 flex items-start gap-3">
-            <span className="mt-[6px] inline-block h-2 w-2 rounded-full bg-emerald-600 shrink-0" />
-            <p className="text-[15px] md:text-base text-stone-800 leading-snug">
-              <span className="text-[11px] uppercase tracking-[0.18em] font-semibold text-emerald-700 mr-2">The result</span>
-              130+ ATSs pulled nightly · 8am ranked digest · ~10 hrs/week saved · running in production.
-            </p>
-          </div>
+          <p className="mx-auto max-w-[1280px] mt-3 text-sm text-stone-500">
+            130+ ATSs nightly · 8am ranked digest · ~10 hrs/week saved · in production.
+          </p>
+
         </section>
         {/* === end AylinOS section === */}
 
