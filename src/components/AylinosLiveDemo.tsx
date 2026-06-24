@@ -99,8 +99,11 @@ export function AylinosLiveDemo() {
           if (evt.type === "route") setAgent(evt as RouteEvent);
           else if (evt.type === "token") setOutput((o) => o + (evt as TokenEvent).text);
           else if (evt.type === "next_steps") {
-            setNext(evt as NextSteps);
-            console.log('[next_steps items]', (evt as NextSteps).items);
+            const ns = evt as NextSteps;
+            setNext(ns);
+            setPipelineSteps(ns.pipeline_steps || []);
+            setNextItems(ns.items || []);
+            console.log('[next_steps items]', ns.items);
           }
         }
       }
