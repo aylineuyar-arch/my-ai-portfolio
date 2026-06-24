@@ -30,6 +30,8 @@ export function AylinosLiveDemo() {
   const [output, setOutput] = useState("");
   const [agent, setAgent] = useState<RouteEvent | null>(null);
   const [next, setNext] = useState<NextSteps | null>(null);
+  const [pipelineSteps, setPipelineSteps] = useState<PipelineStep[]>([]);
+  const [nextItems, setNextItems] = useState<NextItem[]>([]);
   const [checkedCount, setCheckedCount] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const abortRef = useRef<AbortController | null>(null);
@@ -52,6 +54,8 @@ export function AylinosLiveDemo() {
     setOutput("");
     setAgent(null);
     setNext(null);
+    setPipelineSteps([]);
+    setNextItems([]);
     setCheckedCount(0);
     setError(null);
   };
@@ -95,8 +99,11 @@ export function AylinosLiveDemo() {
           if (evt.type === "route") setAgent(evt as RouteEvent);
           else if (evt.type === "token") setOutput((o) => o + (evt as TokenEvent).text);
           else if (evt.type === "next_steps") {
-            setNext(evt as NextSteps);
-            console.log('[next_steps items]', (evt as NextSteps).items);
+            const ns = evt as NextSteps;
+            setNext(ns);
+            setPipelineSteps(ns.pipeline_steps || []);
+            setNextItems(ns.items || []);
+            console.log('[next_steps items]', ns.items);
           }
         }
       }
@@ -203,7 +210,7 @@ export function AylinosLiveDemo() {
               What happens next
             </div>
             <ul className="space-y-3">
-              {next.pipeline_steps.map((step, i) => {
+              {pipelineSteps.map((step, i) => {
                 const checked = i < checkedCount;
                 const label = typeof step === "string" ? step : step.label;
                 const sub = typeof step === "string" ? undefined : step.sub;
@@ -239,7 +246,7 @@ export function AylinosLiveDemo() {
           </div>
 
           {/* Where to go next */}
-          {next.items && next.items.length > 0 && (
+          {nextItems.length > 0 && (
           <div
             className="rounded-2xl border bg-white/90 backdrop-blur p-5 shadow-sm"
             style={{ borderColor: `${accent}55` }}
@@ -251,7 +258,7 @@ export function AylinosLiveDemo() {
               Where to go next
             </div>
             <div className="grid grid-cols-1 gap-2.5">
-              {next.items.map((item) => (
+              {nextItems.map((item) => (
                 <a
                   key={item.url}
                   href={item.url}
