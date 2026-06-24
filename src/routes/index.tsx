@@ -370,6 +370,15 @@ function PortfolioPage() {
 
         {/* === AylinOS meta-project demo === */}
         <section data-track-section="aylinos-demo" className="mt-12 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen px-6 md:px-16 lg:px-24">
+          <div className="mx-auto max-w-[1280px]">
+            <div className="mb-4 flex items-start gap-3">
+              <span className="mt-[6px] inline-block h-2 w-2 rounded-full bg-rose-600 shrink-0" />
+              <p className="text-[15px] md:text-base text-stone-800 leading-snug">
+                <span className="text-[11px] uppercase tracking-[0.18em] font-semibold text-rose-600 mr-2">The problem</span>
+                Job search is six different research tasks across a dozen tools — postings, fit scoring, comp research, outreach, follow-up, tracking. Done manually, it eats 10+ hrs/week.
+              </p>
+            </div>
+          </div>
           <div className="mx-auto max-w-[1280px] rounded-2xl bg-white/80 backdrop-blur border border-stone-200 overflow-hidden shadow-sm">
             <div className="grid md:grid-cols-5 gap-0">
               {/* Video */}
@@ -527,6 +536,13 @@ function PortfolioPage() {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="mx-auto max-w-[1280px] mt-4 flex items-start gap-3">
+            <span className="mt-[6px] inline-block h-2 w-2 rounded-full bg-emerald-600 shrink-0" />
+            <p className="text-[15px] md:text-base text-stone-800 leading-snug">
+              <span className="text-[11px] uppercase tracking-[0.18em] font-semibold text-emerald-700 mr-2">The result</span>
+              130+ ATSs pulled nightly · 8am ranked digest · ~10 hrs/week saved · running in production.
+            </p>
           </div>
         </section>
         {/* === end AylinOS section === */}
