@@ -279,6 +279,41 @@ export function AylinosLiveDemo() {
           )}
         </div>
       )}
+
+      {/* Default agent grid — shown until a query streams cluster-scoped items */}
+      {!next && (
+        <div className="mt-6">
+          <div className="text-[11px] uppercase tracking-[0.14em] font-semibold text-stone-500 mb-3">
+            Meet the 6 agents
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+            {AGENT_LINKS.map((a) => (
+              <a
+                key={a.url}
+                href={a.url}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-start justify-between gap-3 rounded-lg border border-stone-200 bg-white hover:bg-stone-50 px-3.5 py-3 transition-colors"
+                style={{ borderLeftWidth: 3, borderLeftColor: a.accent }}
+              >
+                <div className="min-w-0">
+                  <div className="text-[14px] font-medium text-stone-800 group-hover:text-stone-900">
+                    {a.label}
+                  </div>
+                  <div className="text-[12px] text-stone-500 mt-0.5 leading-snug">{a.desc}</div>
+                </div>
+                <span
+                  className="text-sm font-medium transition-transform group-hover:translate-x-0.5 mt-0.5"
+                  style={{ color: a.accent }}
+                >
+                  →
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }
