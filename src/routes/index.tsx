@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Github, Linkedin, Briefcase, Database, MessageSquare, Workflow, ChevronDown, Languages, History, Search, Sparkles, ListOrdered, Gavel, CalendarCheck, MailCheck, type LucideIcon } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { useEngagementTracking } from "@/hooks/use-engagement-tracking";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import dashboardImg from "@/assets/portfolio-dashboard.jpg";
 import emailGenImg from "@/assets/email-generator-screenshot.png";
@@ -315,6 +316,7 @@ function ProjectCollapse({
 
 
 function PortfolioPage() {
+  useEngagementTracking();
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#fdf8f3] via-[#faf3ec] to-[#f5ede2] text-stone-900">
       {/* Built & shipped badge — fixed top right */}
@@ -367,7 +369,7 @@ function PortfolioPage() {
 
 
         {/* === AylinOS meta-project demo === */}
-        <section className="mt-12 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen px-6 md:px-16 lg:px-24">
+        <section data-track-section="aylinos-demo" className="mt-12 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen px-6 md:px-16 lg:px-24">
           <div className="mx-auto max-w-[1280px] rounded-2xl bg-white/80 backdrop-blur border border-stone-200 overflow-hidden shadow-sm">
             <div className="grid md:grid-cols-5 gap-0">
               {/* Video */}
@@ -452,7 +454,7 @@ function PortfolioPage() {
 
 
                   <Collapsible>
-                    <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-rose-200 bg-rose-50/50 hover:bg-rose-50 px-3 py-2 text-[11px] uppercase tracking-[0.14em] font-semibold text-rose-700 transition-colors">
+                    <CollapsibleTrigger data-track-click="aylinos-expand-agents" className="group flex w-full items-center justify-between rounded-lg border border-rose-200 bg-rose-50/50 hover:bg-rose-50 px-3 py-2 text-[11px] uppercase tracking-[0.14em] font-semibold text-rose-700 transition-colors">
                       <span>See the 6 agents, what it proves, &amp; skills</span>
                       <ChevronDown className="h-3.5 w-3.5 transition-transform group-data-[state=open]:rotate-180" />
                     </CollapsibleTrigger>
@@ -514,6 +516,7 @@ function PortfolioPage() {
                     href="https://aylinos.lovable.app"
                     target="_blank"
                     rel="noreferrer"
+                    data-track-click="launch-aylinos"
                     className="inline-flex items-center gap-2 rounded-lg bg-rose-600 hover:bg-rose-700 transition-colors px-4 py-2 text-white text-sm font-medium"
                   >
                     Launch AylinOS →
