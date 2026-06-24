@@ -54,6 +54,8 @@ export function AylinosLiveDemo() {
     setOutput("");
     setAgent(null);
     setNext(null);
+    setPipelineSteps([]);
+    setNextItems([]);
     setCheckedCount(0);
     setError(null);
   };
