@@ -30,6 +30,8 @@ export function AylinosLiveDemo() {
   const [output, setOutput] = useState("");
   const [agent, setAgent] = useState<RouteEvent | null>(null);
   const [next, setNext] = useState<NextSteps | null>(null);
+  const [pipelineSteps, setPipelineSteps] = useState<PipelineStep[]>([]);
+  const [nextItems, setNextItems] = useState<NextItem[]>([]);
   const [checkedCount, setCheckedCount] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const abortRef = useRef<AbortController | null>(null);
