@@ -232,6 +232,7 @@ export function AylinosLiveDemo() {
           </div>
 
           {/* Where to go next */}
+          {next.items && next.items.length > 0 && (
           <div
             className="rounded-2xl border bg-white/90 backdrop-blur p-5 shadow-sm"
             style={{ borderColor: `${accent}55` }}
@@ -265,6 +266,7 @@ export function AylinosLiveDemo() {
               ))}
             </div>
           </div>
+          )}
         </div>
       )}
     </div>
