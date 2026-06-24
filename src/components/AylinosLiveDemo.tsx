@@ -100,10 +100,12 @@ export function AylinosLiveDemo() {
           else if (evt.type === "token") setOutput((o) => o + (evt as TokenEvent).text);
           else if (evt.type === "next_steps") {
             const ns = evt as NextSteps;
+            console.log('[next_steps FULL]', JSON.stringify(evt));
+            console.log('[pipeline_steps]', ns.pipeline_steps);
+            console.log('[items]', ns.items);
             setNext(ns);
             setPipelineSteps(ns.pipeline_steps || []);
             setNextItems(ns.items || []);
-            console.log('[next_steps items]', ns.items);
           }
         }
       }
