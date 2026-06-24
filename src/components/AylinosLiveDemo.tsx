@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-type PipelineStep = { label: string; sub?: string };
+type PipelineStep = string | { label: string; sub?: string };
 type NextItem = { label: string; url: string };
 
 type NextSteps = {
@@ -202,9 +202,11 @@ export function AylinosLiveDemo() {
             <ul className="space-y-3">
               {next.pipeline_steps.map((step, i) => {
                 const checked = i < checkedCount;
+                const label = typeof step === "string" ? step : step.label;
+                const sub = typeof step === "string" ? undefined : step.sub;
                 return (
                   <li
-                    key={`${step.label}-${i}`}
+                    key={`${label}-${i}`}
                     className="flex items-start gap-3 transition-opacity"
                     style={{ opacity: checked ? 1 : 0.45 }}
                   >
@@ -222,9 +224,9 @@ export function AylinosLiveDemo() {
                       )}
                     </span>
                     <div className="min-w-0">
-                      <div className="text-[14px] font-medium text-stone-800">{step.label}</div>
-                      {step.sub && (
-                        <div className="text-[12px] text-stone-500 mt-0.5">{step.sub}</div>
+                      <div className="text-[14px] font-medium text-stone-800">{label}</div>
+                      {sub && (
+                        <div className="text-[12px] text-stone-500 mt-0.5">{sub}</div>
                       )}
                     </div>
                   </li>
