@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-type PipelineStep = { label: string; sub?: string };
+type PipelineStep = string | { label: string; sub?: string };
 type NextItem = { label: string; url: string };
 
 type NextSteps = {
