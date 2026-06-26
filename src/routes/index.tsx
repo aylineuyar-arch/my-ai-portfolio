@@ -1532,25 +1532,31 @@ function PortfolioPage() {
           </div>
 
           <div className="md:col-span-8 space-y-6">
-            <div className="p-5 rounded-xl bg-stone-50 border-l-4 border-indigo-400">
-              <p className="text-xs uppercase tracking-wider text-indigo-700 font-semibold mb-2">
-                Why this matters
-              </p>
-              <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                Support inboxes are the biggest pile of unstructured text most companies own — and agents burn hours sorting and reply-starting before they ever help a customer. One grounded LLM call sorts the ticket, pulls the right help-doc, and drafts a reply: <strong className="text-stone-900">sub-second triage</strong> and a working draft instead of a blank reply box.
-              </p>
+            <div className="grid sm:grid-cols-3 gap-3">
+              <div className="p-4 rounded-xl bg-stone-50 border-l-4 border-rose-400">
+                <div className="text-[11px] uppercase tracking-[0.18em] text-rose-700 font-bold">Problem</div>
+                <p className="mt-2 text-sm text-stone-700 leading-snug">Support teams hand-sort incoming tickets across platforms before anyone can respond, adding delay and cost to every contact.</p>
+              </div>
+              <div className="p-4 rounded-xl bg-stone-50 border-l-4 border-indigo-400">
+                <div className="text-[11px] uppercase tracking-[0.18em] text-indigo-700 font-bold">What I built</div>
+                <p className="mt-2 text-sm text-stone-700 leading-snug">An agent that classifies each message by intent and priority, drafts a grounded reply, and completes the action end to end — orchestrated as an 8-node LangGraph flow with Claude.</p>
+              </div>
+              <div className="p-4 rounded-xl bg-stone-50 border-l-4 border-emerald-400">
+                <div className="text-[11px] uppercase tracking-[0.18em] text-emerald-700 font-bold">Outcome</div>
+                <p className="mt-2 text-sm text-stone-700 leading-snug">Resolves end to end in under 640ms, turning manual first-touch triage into an automated one.</p>
+              </div>
             </div>
 
             <div className="rounded-xl border border-indigo-200 bg-indigo-50/60 p-5">
               <div className="text-xs uppercase tracking-[0.22em] text-indigo-700 font-bold mb-5">Inference signals</div>
               <div className="grid grid-cols-3 gap-4">
                 <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-indigo-900 leading-none">~640ms</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">End-to-end triage</div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-indigo-900 leading-none">&lt;640ms</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">End-to-end</div>
                 </div>
                 <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-indigo-900 leading-none">1</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Claude call / ticket</div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-indigo-900 leading-none">8</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">LangGraph nodes</div>
                 </div>
                 <div>
                   <div className="text-3xl md:text-4xl font-semibold tracking-tight text-indigo-900 leading-none">JSON</div>
@@ -1559,12 +1565,6 @@ function PortfolioPage() {
               </div>
             </div>
 
-            <p className="text-base md:text-lg leading-relaxed text-stone-700">
-              An AI triage layer for customer support inboxes — classifies
-              incoming tickets by intent, urgency, and team, then drafts a
-              first-response so human agents start from a working reply
-              instead of a blank box.
-            </p>
 
             {/* Mock Streamlit UI render */}
             <figure>
