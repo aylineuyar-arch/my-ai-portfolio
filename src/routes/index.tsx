@@ -1475,18 +1475,22 @@ function PortfolioPage() {
 
       {/* Project 4 — Customer Service Triage */}
       <section id="project-4" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
-        <ProjectCollapse id="project-4" num="No. 06 · Customer Service Triage" numCls="text-indigo-700" title="Customer Service Triage" sub="Claude · Python · NLP">
+        <ProjectCollapse id="project-4" num="No. 06 · Customer Service Triage Agent" numCls="text-indigo-700" title="Customer Service Triage Agent" sub="Claude · LangGraph · Python · FastAPI">
         <div className="grid md:grid-cols-12 gap-10">
 
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-indigo-700 font-medium">
-              No. 06 · Built with Claude
+              No. 06 · Built with Claude + LangGraph
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
-              AI Customer Service Triage
+              Customer Service Triage Agent
             </h2>
+            <p className="mt-3 text-sm text-stone-600 leading-snug">
+              Classifies, prioritizes, and drafts a grounded reply, then completes the action end to end, in under 640ms.
+            </p>
             <div className="mt-6 flex flex-wrap gap-2">
-              {["Claude", "Python", "NLP", "Routing"].map((t) => (
+              {["Claude", "LangGraph", "Python", "FastAPI"].map((t) => (
+
                 <Tag key={t} label={t} />
               ))}
             </div>
