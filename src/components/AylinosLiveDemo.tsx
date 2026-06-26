@@ -22,6 +22,33 @@ const SUGGESTIONS = [
   "Build a pricing tier for a usage-based API",
 ];
 
+function ThinkingStatus({ hasAgent }: { hasAgent: boolean }) {
+  const [elapsed, setElapsed] = useState(0);
+  useEffect(() => {
+    const id = window.setInterval(() => setElapsed((s) => s + 1), 1000);
+    return () => window.clearInterval(id);
+  }, []);
+
+  const phases = hasAgent
+    ? ["Agent is thinking…", "Composing the response…", "Almost there…"]
+    : elapsed < 8
+    ? ["Connecting to AylinOS…", "Waking the agent (cold start can take ~30s)…"]
+    : elapsed < 20
+    ? ["Routing your query to the right agent…", "Picking the best specialist…"]
+    : ["Still working — backend warming up…", "Hang tight, first request is the slowest…"];
+  const status = phases[elapsed % phases.length];
+
+  return (
+    <div className="flex items-center gap-3 text-sm text-stone-600">
+      <span className="relative flex h-2.5 w-2.5">
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-rose-400 opacity-75" />
+        <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-rose-500" />
+      </span>
+      <span className="font-medium">{status}</span>
+      <span className="text-xs text-stone-400 tabular-nums ml-auto">{elapsed}s</span>
+    </div>
+  );
+}
 
 
 export function AylinosLiveDemo() {
