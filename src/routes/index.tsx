@@ -642,7 +642,6 @@ function PortfolioPage() {
               items: ["Python", "SQL", "SQLite (WAL)", "Supabase / Postgres", "React + TypeScript", "Streamlit"],
             },
           ].map((g) => {
-            const loop = [...g.items, ...g.items, ...g.items, ...g.items];
             return (
               <div key={g.label} className="flex flex-col sm:flex-row sm:items-center gap-x-3 gap-y-1">
                 <span className={`shrink-0 sm:w-24 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] font-semibold ${g.labelCls}`}>
@@ -653,9 +652,18 @@ function PortfolioPage() {
                   <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-white/90 to-transparent z-10" />
                   <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-white/90 to-transparent z-10" />
                   <div className="flex w-max animate-marquee gap-1.5">
-                    {loop.map((name, i) => (
+                    {g.items.map((name, i) => (
                       <span
-                        key={i}
+                        key={`a-${i}`}
+                        className={`shrink-0 inline-flex items-center rounded-full border px-3 py-1 text-[12px] font-medium ${g.chip}`}
+                      >
+                        {name}
+                      </span>
+                    ))}
+                    {g.items.map((name, i) => (
+                      <span
+                        key={`b-${i}`}
+                        aria-hidden="true"
                         className={`shrink-0 inline-flex items-center rounded-full border px-3 py-1 text-[12px] font-medium ${g.chip}`}
                       >
                         {name}
@@ -666,6 +674,7 @@ function PortfolioPage() {
               </div>
             );
           })}
+
         </div>
 
         {/* Scroll cue — signal there's more below */}
