@@ -533,7 +533,7 @@ function PortfolioPage() {
             </div>
           </div>
 
-          <AylinosLiveDemo />
+
 
         </section>
         {/* === end AylinOS section === */}
