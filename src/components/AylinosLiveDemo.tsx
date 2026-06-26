@@ -189,13 +189,19 @@ export function AylinosLiveDemo() {
           {error ? (
             <p className="text-sm text-rose-600">Couldn't reach the live demo: {error}</p>
           ) : (
-            <pre className="whitespace-pre-wrap font-sans text-[14px] text-stone-800 leading-relaxed">
-              {output}
-              {streaming && <span className="inline-block w-1.5 h-4 ml-0.5 bg-stone-400 animate-pulse align-middle" />}
-            </pre>
+            <>
+              {streaming && !output && <ThinkingStatus hasAgent={!!agent} />}
+              {output && (
+                <pre className="whitespace-pre-wrap font-sans text-[14px] text-stone-800 leading-relaxed">
+                  {output}
+                  {streaming && <span className="inline-block w-1.5 h-4 ml-0.5 bg-stone-400 animate-pulse align-middle" />}
+                </pre>
+              )}
+            </>
           )}
         </div>
       )}
+
 
       {/* What happens next + Where to go next */}
       {next && (
