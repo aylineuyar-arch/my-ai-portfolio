@@ -18,7 +18,7 @@ const ENDPOINT = "https://aylinos.onrender.com/api/stream";
 
 const SUGGESTIONS = [
   "Find me PM roles at AI startups",
-  "Draft an intro to a Series A founder",
+  "Triage this customer complaint and draft a reply",
   "Build a pricing tier for a usage-based API",
 ];
 
