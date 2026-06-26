@@ -19,20 +19,20 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Aylin Uyar — Tuck MBA 2026, ex-Deloitte Tech Strategy, PM Intern at Skild AI. Six live, shipped AI projects across deployment, strategy, and ops — Claude pipelines, agentic email automation, RAG compliance, and a consumer makeup app.",
+          "Aylin Uyar, Tuck MBA 2026, ex-Deloitte Tech Strategy, PM Intern at Skild AI. Six live, shipped AI projects across deployment, strategy, and ops: Claude agent pipelines, agentic email automation, RAG compliance, and customer-service triage.",
       },
       { property: "og:title", content: "Aylin Uyar — AI Deployment, Strategy & Ops Portfolio" },
       {
         property: "og:description",
         content:
-          "Six live AI projects shipped end-to-end. Operator-level AI thinking from a Tuck MBA + ex-Deloitte strategist.",
+          "Aylin Uyar, Tuck MBA 2026, ex-Deloitte Tech Strategy, PM Intern at Skild AI. Six live, shipped AI projects across deployment, strategy, and ops: Claude agent pipelines, agentic email automation, RAG compliance, and customer-service triage.",
       },
       { property: "og:url", content: "https://aylin-uyar-portfolio.lovable.app/" },
       { name: "twitter:title", content: "Aylin Uyar — AI Deployment, Strategy & Ops Portfolio" },
       {
         name: "twitter:description",
         content:
-          "Six live AI projects shipped end-to-end. Operator-level AI thinking from a Tuck MBA + ex-Deloitte strategist.",
+          "Aylin Uyar, Tuck MBA 2026, ex-Deloitte Tech Strategy, PM Intern at Skild AI. Six live, shipped AI projects across deployment, strategy, and ops: Claude agent pipelines, agentic email automation, RAG compliance, and customer-service triage.",
       },
     ],
     links: [
