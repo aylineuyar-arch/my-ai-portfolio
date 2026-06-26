@@ -553,12 +553,12 @@ function PortfolioPage() {
         <div className="mt-4">
           <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-3 items-stretch">
             {[
-              { num: "No. 01", id: "project-restaurant", numCls: "text-rose-600", title: "Fork Yea! — Restaurant Reservation Agent", blurb: "Finds and books the right restaurant, with a Haiku judge scoring every pick.", sub: "LangGraph · Claude · Playwright", tools: ["Cursor", "LangGraph", "Claude", "Playwright", "Tavily", "FastAPI"] },
-              { num: "No. 02", id: "project-1", numCls: "text-orange-700", title: "AI Job Search Dashboard", blurb: "Scores 130+ ATS feeds for fit and conversion likelihood.", sub: "Claude · Python · Railway", tools: ["Claude", "Python", "Railway", "ATS"] },
-              { num: "No. 03", id: "project-gtm", numCls: "text-teal-700", title: "GTM Pricing Tool", blurb: "Models revenue, pricing, and scenarios for founders, consultants, operators, and investors.", sub: "Claude · Python · Railway", tools: ["Claude", "Python", "Railway"] },
-              { num: "No. 04", id: "project-2", numCls: "text-amber-700", title: "Agentic Email Generator", blurb: "Always-on agent emails a ranked digest at 8am ET daily.", sub: "n8n · Claude · Supabase", tools: ["Claude", "n8n", "Railway", "Resend", "Supabase"] },
-              { num: "No. 05", id: "project-3", numCls: "text-emerald-700", title: "Compliance RAG Chatbot", blurb: "Grounded policy Q&A for regulated financial services teams.", sub: "Claude · Python · Streamlit", tools: ["Claude", "Python", "Streamlit", "RAG"] },
-              { num: "No. 06", id: "project-4", numCls: "text-indigo-700", title: "Customer Service Triage", blurb: "Classifies, prioritizes, and drafts replies in under a second.", sub: "Claude · Python · NLP", tools: ["Claude", "Python", "Triage", "NLP"] },
+              { num: "No. 01", id: "project-restaurant", numCls: "text-rose-600", title: "Fork Yea! — Restaurant Reservation Agent", blurb: "Finds and books the right restaurant, with a Haiku judge scoring every pick.", sub: "LangGraph · Claude · Playwright", metric: "LLM-as-judge scored", tools: ["Cursor", "LangGraph", "Claude", "Playwright", "Tavily", "FastAPI"] },
+              { num: "No. 02", id: "project-1", numCls: "text-orange-700", title: "AI Job Search Dashboard", blurb: "Scores 130+ ATS feeds for fit and conversion likelihood.", sub: "Claude · Python · Railway", metric: "286 roles per run", tools: ["Claude", "Python", "Railway", "ATS"] },
+              { num: "No. 03", id: "project-gtm", numCls: "text-teal-700", title: "GTM Pricing Tool", blurb: "Models revenue, pricing, and scenarios for founders, consultants, operators, and investors.", sub: "Claude · Python · Railway", metric: "4 personas modeled", tools: ["Claude", "Python", "Railway"] },
+              { num: "No. 04", id: "project-2", numCls: "text-amber-700", title: "Agentic Email Generator", blurb: "Always-on agent emails a ranked digest at 8am ET daily.", sub: "n8n · Claude · Supabase", metric: "8am ET daily digest", tools: ["Claude", "n8n", "Railway", "Resend", "Supabase"] },
+              { num: "No. 05", id: "project-3", numCls: "text-emerald-700", title: "Compliance RAG Chatbot", blurb: "Grounded policy Q&A for regulated financial services teams.", sub: "Claude · Python · Streamlit", metric: "Zero embedding cost", tools: ["Claude", "Python", "Streamlit", "RAG"] },
+              { num: "No. 06", id: "project-4", numCls: "text-indigo-700", title: "Customer Service Triage Agent", blurb: "Classifies, prioritizes, drafts a grounded reply, and completes the action end to end.", sub: "Claude · LangGraph · Python · FastAPI", metric: "Under 640ms end to end", tools: ["Claude", "LangGraph", "Python", "FastAPI"] },
             ].map((p) => {
               const logos = p.tools.filter((t) => TOOL_LOGOS[t]);
               return (
@@ -578,6 +578,12 @@ function PortfolioPage() {
                     )}
                   </div>
                   <p className="mt-2 text-[13px] text-stone-600 leading-snug">{p.blurb}</p>
+                  <div className="mt-2.5">
+                    <span className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[10.5px] font-semibold uppercase tracking-wider ${p.numCls} border-current/20 bg-white`}>
+                      <span className="w-1 h-1 rounded-full bg-current opacity-70" />
+                      {p.metric}
+                    </span>
+                  </div>
                   <div className="mt-auto pt-3 flex flex-nowrap -space-x-1.5">
                     <TooltipProvider delayDuration={100}>
                       {logos.slice(0, 6).map((t) => {
@@ -600,6 +606,7 @@ function PortfolioPage() {
               );
             })}
           </div>
+
         </div>
 
         <div className="mt-6 h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent" />
@@ -635,7 +642,6 @@ function PortfolioPage() {
               items: ["Python", "SQL", "SQLite (WAL)", "Supabase / Postgres", "React + TypeScript", "Streamlit"],
             },
           ].map((g) => {
-            const loop = [...g.items, ...g.items, ...g.items, ...g.items];
             return (
               <div key={g.label} className="flex flex-col sm:flex-row sm:items-center gap-x-3 gap-y-1">
                 <span className={`shrink-0 sm:w-24 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] font-semibold ${g.labelCls}`}>
@@ -646,9 +652,18 @@ function PortfolioPage() {
                   <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-white/90 to-transparent z-10" />
                   <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-white/90 to-transparent z-10" />
                   <div className="flex w-max animate-marquee gap-1.5">
-                    {loop.map((name, i) => (
+                    {g.items.map((name, i) => (
                       <span
-                        key={i}
+                        key={`a-${i}`}
+                        className={`shrink-0 inline-flex items-center rounded-full border px-3 py-1 text-[12px] font-medium ${g.chip}`}
+                      >
+                        {name}
+                      </span>
+                    ))}
+                    {g.items.map((name, i) => (
+                      <span
+                        key={`b-${i}`}
+                        aria-hidden="true"
                         className={`shrink-0 inline-flex items-center rounded-full border px-3 py-1 text-[12px] font-medium ${g.chip}`}
                       >
                         {name}
@@ -659,6 +674,7 @@ function PortfolioPage() {
               </div>
             );
           })}
+
         </div>
 
         {/* Scroll cue — signal there's more below */}
@@ -1459,18 +1475,22 @@ function PortfolioPage() {
 
       {/* Project 4 — Customer Service Triage */}
       <section id="project-4" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
-        <ProjectCollapse id="project-4" num="No. 06 · Customer Service Triage" numCls="text-indigo-700" title="Customer Service Triage" sub="Claude · Python · NLP">
+        <ProjectCollapse id="project-4" num="No. 06 · Customer Service Triage Agent" numCls="text-indigo-700" title="Customer Service Triage Agent" sub="Claude · LangGraph · Python · FastAPI">
         <div className="grid md:grid-cols-12 gap-10">
 
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-indigo-700 font-medium">
-              No. 06 · Built with Claude
+              No. 06 · Built with Claude + LangGraph
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
-              AI Customer Service Triage
+              Customer Service Triage Agent
             </h2>
+            <p className="mt-3 text-sm text-stone-600 leading-snug">
+              Classifies, prioritizes, and drafts a grounded reply, then completes the action end to end, in under 640ms.
+            </p>
             <div className="mt-6 flex flex-wrap gap-2">
-              {["Claude", "Python", "NLP", "Routing"].map((t) => (
+              {["Claude", "LangGraph", "Python", "FastAPI"].map((t) => (
+
                 <Tag key={t} label={t} />
               ))}
             </div>
@@ -1512,25 +1532,31 @@ function PortfolioPage() {
           </div>
 
           <div className="md:col-span-8 space-y-6">
-            <div className="p-5 rounded-xl bg-stone-50 border-l-4 border-indigo-400">
-              <p className="text-xs uppercase tracking-wider text-indigo-700 font-semibold mb-2">
-                Why this matters
-              </p>
-              <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                Support inboxes are the biggest pile of unstructured text most companies own — and agents burn hours sorting and reply-starting before they ever help a customer. One grounded LLM call sorts the ticket, pulls the right help-doc, and drafts a reply: <strong className="text-stone-900">sub-second triage</strong> and a working draft instead of a blank reply box.
-              </p>
+            <div className="grid sm:grid-cols-3 gap-3">
+              <div className="p-4 rounded-xl bg-stone-50 border-l-4 border-rose-400">
+                <div className="text-[11px] uppercase tracking-[0.18em] text-rose-700 font-bold">Problem</div>
+                <p className="mt-2 text-sm text-stone-700 leading-snug">Support teams hand-sort incoming tickets across platforms before anyone can respond, adding delay and cost to every contact.</p>
+              </div>
+              <div className="p-4 rounded-xl bg-stone-50 border-l-4 border-indigo-400">
+                <div className="text-[11px] uppercase tracking-[0.18em] text-indigo-700 font-bold">What I built</div>
+                <p className="mt-2 text-sm text-stone-700 leading-snug">An agent that classifies each message by intent and priority, drafts a grounded reply, and completes the action end to end — orchestrated as an 8-node LangGraph flow with Claude.</p>
+              </div>
+              <div className="p-4 rounded-xl bg-stone-50 border-l-4 border-emerald-400">
+                <div className="text-[11px] uppercase tracking-[0.18em] text-emerald-700 font-bold">Outcome</div>
+                <p className="mt-2 text-sm text-stone-700 leading-snug">Resolves end to end in under 640ms, turning manual first-touch triage into an automated one.</p>
+              </div>
             </div>
 
             <div className="rounded-xl border border-indigo-200 bg-indigo-50/60 p-5">
               <div className="text-xs uppercase tracking-[0.22em] text-indigo-700 font-bold mb-5">Inference signals</div>
               <div className="grid grid-cols-3 gap-4">
                 <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-indigo-900 leading-none">~640ms</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">End-to-end triage</div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-indigo-900 leading-none">&lt;640ms</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">End-to-end</div>
                 </div>
                 <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-indigo-900 leading-none">1</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Claude call / ticket</div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-indigo-900 leading-none">8</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">LangGraph nodes</div>
                 </div>
                 <div>
                   <div className="text-3xl md:text-4xl font-semibold tracking-tight text-indigo-900 leading-none">JSON</div>
@@ -1539,12 +1565,6 @@ function PortfolioPage() {
               </div>
             </div>
 
-            <p className="text-base md:text-lg leading-relaxed text-stone-700">
-              An AI triage layer for customer support inboxes — classifies
-              incoming tickets by intent, urgency, and team, then drafts a
-              first-response so human agents start from a working reply
-              instead of a blank box.
-            </p>
 
             {/* Mock Streamlit UI render */}
             <figure>
