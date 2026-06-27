@@ -553,7 +553,7 @@ function PortfolioPage() {
         <div className="mt-4">
           <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-3 items-stretch">
             {[
-              { num: "No. 01", id: "project-restaurant", numCls: "text-rose-600", title: "Fork Yea! — Restaurant Reservation Agent", blurb: "Finds and books the right restaurant, with a Haiku judge scoring every pick.", sub: "LangGraph · Claude · Playwright", metric: "LLM-as-judge scored", tools: ["Cursor", "LangGraph", "Claude", "Playwright", "Tavily", "FastAPI"] },
+              { num: "No. 01", id: "project-restaurant", numCls: "text-rose-600", title: "Fork Yea! — Restaurant Reservation Agent", blurb: "Finds and books the right restaurant, with a Haiku judge scoring every pick.", sub: "Cursor · LangGraph · Claude · Playwright", metric: "LLM-as-judge scored", tools: ["Cursor", "LangGraph", "Claude", "Playwright", "Tavily", "FastAPI"] },
               { num: "No. 02", id: "project-4", numCls: "text-indigo-700", title: "Customer Service Triage Agent", blurb: "Classifies, prioritizes, drafts a grounded reply, and completes the action end to end.", sub: "Claude · LangGraph · Python · FastAPI", metric: "Under 640ms end to end", tools: ["Claude", "LangGraph", "Python", "FastAPI"] },
               { num: "No. 03", id: "project-gtm", numCls: "text-teal-700", title: "GTM Pricing Tool", blurb: "Models revenue, pricing, and scenarios for founders, consultants, operators, and investors.", sub: "Claude · Python · Railway", metric: "4 personas modeled", tools: ["Claude", "Python", "Railway"] },
               { num: "No. 04", id: "project-1", numCls: "text-orange-700", title: "AI Job Search Dashboard", blurb: "Scores 130+ ATS feeds for fit and conversion likelihood.", sub: "Claude · Python · Railway", metric: "286 roles per run", tools: ["Claude", "Python", "Railway", "ATS"] },
@@ -684,7 +684,7 @@ function PortfolioPage() {
 
       {/* Project Restaurant — Restaurant Reservation Agent */}
       <section id="project-restaurant" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
-        <ProjectCollapse id="project-restaurant" num="No. 01 · Restaurant Reservation Agent" numCls="text-rose-700" title={<><em className="italic">Fork Yea!</em> — Restaurant Reservation Agent</>} sub="LangGraph · Claude · Playwright">
+        <ProjectCollapse id="project-restaurant" num="No. 01 · Restaurant Reservation Agent" numCls="text-rose-700" title={<><em className="italic">Fork Yea!</em> — Restaurant Reservation Agent</>} sub="Cursor · LangGraph · Claude · Playwright">
         <div className="grid md:grid-cols-12 gap-10">
 
           <div className="md:col-span-4">
