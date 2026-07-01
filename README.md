@@ -34,9 +34,9 @@ A single-page portfolio web app built on **TanStack Start** (React 19 + Vite 7),
 
 The site presents:
 - A **hero** with positioning, credentials, and CTAs
-- A **5-card project grid** (each card scrolls to a detailed case-study section)
+- A **6-card project grid** (each card scrolls to a detailed case-study section)
 - A **demonstrated-skills marquee** grouped by AI / Automation / Engineering
-- **Five long-form project sections** (Job Search Dashboard, Agentic Email Generator, Compliance RAG Chatbot, Customer Service Triage, Aura Makeup Assistant)
+- **Six long-form project sections** (Fork Yea!, Customer Service Triage, GTM Pricing Tool, AI Job Search Dashboard, Compliance RAG Chatbot, Agentic Email Generator)
 - A **footer** with GitHub and LinkedIn links
 
 Design goals: editorial layout, dense-but-scannable case studies, fast first paint, zero client-side state beyond UI primitives.
