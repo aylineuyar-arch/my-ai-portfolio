@@ -581,6 +581,12 @@ function PortfolioPage() {
                     )}
                   </div>
                   <p className="mt-2 text-[13px] text-stone-600 leading-snug">{p.blurb}</p>
+                  {p.outcome && (
+                    <p className="mt-1.5 text-[12px] text-emerald-800 leading-snug">
+                      <span className="font-semibold uppercase tracking-wider text-[10px] text-emerald-700 mr-1">Impact:</span>
+                      {p.outcome}
+                    </p>
+                  )}
                   <div className="mt-2.5">
                     <span className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[10.5px] font-semibold uppercase tracking-wider ${p.numCls} border-current/20 bg-white`}>
                       <span className="w-1 h-1 rounded-full bg-current opacity-70" />
