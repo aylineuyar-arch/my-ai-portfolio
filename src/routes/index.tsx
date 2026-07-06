@@ -361,11 +361,16 @@ function PortfolioPage() {
 
         {/* Tagline — the through-line of the work */}
         <p className="mt-6 text-xl md:text-2xl font-medium italic text-rose-700 leading-tight">
-          Rewiring the workflows you already run.
+          Designing AI systems people actually adopt.
         </p>
 
         <p className="mt-6 max-w-4xl text-xl md:text-2xl font-light text-stone-800 leading-tight">
           Tuck MBA <span className="text-stone-400">|</span> Ex Deloitte and Skild AI <span className="text-stone-400">|</span> AI Deployment, Strategy, Ops
+        </p>
+
+        {/* One-sentence positioning */}
+        <p className="mt-5 max-w-3xl text-base md:text-lg text-stone-700 leading-relaxed">
+          Engineer turned AI deployment and strategy leader — helping organizations operationalize AI through workflow redesign, adoption, and measurable business outcomes.
         </p>
 
 
