@@ -1144,7 +1144,7 @@ function PortfolioPage() {
       <GradientDivider />
       {/* Project GTM — GTM Pricing Tool */}
       <section id="project-gtm" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
-        <ProjectCollapse id="project-gtm" num="No. 03 · GTM Pricing Tool" numCls="text-teal-700" title="GTM Pricing Tool" sub="Claude · Python · Railway">
+        <ProjectCollapse id="project-gtm" num="No. 04 · GTM Pricing Tool" numCls="text-teal-700" title="GTM Pricing Tool" sub="Claude · Python · Railway">
         <div className="grid md:grid-cols-12 gap-10">
 
           <div className="md:col-span-4">
