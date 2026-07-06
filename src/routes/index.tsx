@@ -690,6 +690,72 @@ function PortfolioPage() {
 
       <GradientDivider />
 
+      {/* Enterprise AI Principles — how I think about deployment */}
+      <section id="principles" className="mx-auto max-w-6xl px-6 py-12 md:py-16 scroll-mt-8">
+        <div className="flex items-baseline gap-3 flex-wrap">
+          <span className="text-xs uppercase tracking-[0.24em] font-semibold text-rose-600">Point of view</span>
+          <h2 className="text-3xl md:text-4xl font-light tracking-tight text-stone-900">
+            Enterprise AI Principles
+          </h2>
+        </div>
+        <p className="mt-3 max-w-3xl text-base md:text-lg text-stone-700 leading-relaxed">
+          How I think about deploying AI inside organizations — the through-line behind the six projects below.
+        </p>
+
+        <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {[
+            {
+              n: "01",
+              title: "Start at the workflow bottleneck",
+              body: "Find where people are already stuck — reviewing, drafting, hunting for context. That is where AI creates value; net-new features rarely do.",
+              tone: "text-rose-700",
+            },
+            {
+              n: "02",
+              title: "Prototype rapidly with real users",
+              body: "Ship a working thing in days, not months. Users react to what they can touch — decks and roadmaps don't surface the real objections.",
+              tone: "text-amber-700",
+            },
+            {
+              n: "03",
+              title: "Measure adoption, not just accuracy",
+              body: "A model that's 95% accurate but 5% adopted delivers nothing. Track usage, repeat use, and workflow substitution as first-class metrics.",
+              tone: "text-emerald-700",
+            },
+            {
+              n: "04",
+              title: "Build governance into the workflow",
+              body: "Citations, audit trails, human-in-the-loop review, and permissioning belong inside the product — not in a policy document nobody reads.",
+              tone: "text-indigo-700",
+            },
+            {
+              n: "05",
+              title: "Iterate from user feedback",
+              body: "Every prompt refusal, every override, every drop-off is a signal. Close the loop weekly so the system compounds toward the way people actually work.",
+              tone: "text-violet-700",
+            },
+            {
+              n: "06",
+              title: "Scale the patterns that stick",
+              body: "Once a workflow proves out, extract the pattern — templates, evals, guardrails — and replicate it across teams instead of rebuilding from scratch.",
+              tone: "text-sky-700",
+            },
+          ].map((p) => (
+            <div key={p.n} className="rounded-2xl border border-stone-200 bg-white/80 backdrop-blur p-5 hover:border-rose-300 transition-colors">
+              <div className="flex items-baseline gap-2">
+                <span className={`text-[11px] uppercase tracking-[0.22em] font-semibold ${p.tone}`}>No. {p.n}</span>
+              </div>
+              <h3 className="mt-2 text-lg font-semibold tracking-tight text-stone-900 leading-snug">{p.title}</h3>
+              <p className="mt-2 text-[14px] text-stone-700 leading-relaxed">{p.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <GradientDivider />
+
+
+
       {/* Project Restaurant — Multi-Agentic Reservation Agent */}
       <section id="project-restaurant" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
         <ProjectCollapse id="project-restaurant" num="No. 01 · Multi-Agentic Reservation Agent" numCls="text-rose-700" title={<><em className="italic">Fork Yea!</em> — Multi-Agentic Reservation Agent</>} sub="Cursor · LangGraph · Claude · Playwright">
