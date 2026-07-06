@@ -361,11 +361,16 @@ function PortfolioPage() {
 
         {/* Tagline — the through-line of the work */}
         <p className="mt-6 text-xl md:text-2xl font-medium italic text-rose-700 leading-tight">
-          Rewiring the workflows you already run.
+          Designing AI systems people actually adopt.
         </p>
 
         <p className="mt-6 max-w-4xl text-xl md:text-2xl font-light text-stone-800 leading-tight">
           Tuck MBA <span className="text-stone-400">|</span> Ex Deloitte and Skild AI <span className="text-stone-400">|</span> AI Deployment, Strategy, Ops
+        </p>
+
+        {/* One-sentence positioning */}
+        <p className="mt-5 max-w-3xl text-base md:text-lg text-stone-700 leading-relaxed">
+          Engineer turned AI deployment and strategy leader — helping organizations operationalize AI through workflow redesign, adoption, and measurable business outcomes.
         </p>
 
 
@@ -550,12 +555,12 @@ function PortfolioPage() {
         <div className="mt-4">
           <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-3 items-stretch">
             {[
-              { num: "No. 01", id: "project-restaurant", numCls: "text-rose-600", title: "Fork Yea! — Multi-Agentic Reservation Agent", blurb: "Finds and books the right restaurant, with a Haiku judge scoring every pick.", sub: "Cursor · LangGraph · Claude · Playwright", metric: "LLM-as-judge scored", tools: ["Cursor", "LangGraph", "Claude", "Playwright", "Tavily", "FastAPI"] },
-              { num: "No. 02", id: "project-4", numCls: "text-indigo-700", title: "Customer Service Triage Agent", blurb: "Classifies, prioritizes, drafts a grounded reply, and completes the action end to end.", sub: "Claude · LangGraph · Python · FastAPI", metric: "Under 640ms end to end", tools: ["Claude", "LangGraph", "Python", "FastAPI"] },
-              { num: "No. 03", id: "project-gtm", numCls: "text-teal-700", title: "GTM Pricing Tool", blurb: "Models revenue, pricing, and scenarios for founders, consultants, operators, and investors.", sub: "Claude · Python · Railway", metric: "4 personas modeled", tools: ["Claude", "Python", "Railway"] },
-              { num: "No. 04", id: "project-1", numCls: "text-orange-700", title: "AI Job Search Dashboard", blurb: "Scores 130+ ATS feeds for fit and conversion likelihood.", sub: "Claude · Python · Railway", metric: "286 roles per run", tools: ["Claude", "Python", "Railway", "ATS"] },
-              { num: "No. 05", id: "project-3", numCls: "text-emerald-700", title: "Compliance RAG Chatbot", blurb: "Grounded policy Q&A for regulated financial services teams.", sub: "Claude · Python · Streamlit", metric: "Zero embedding cost", tools: ["Claude", "Python", "Streamlit", "RAG"] },
-              { num: "No. 06", id: "project-2", numCls: "text-amber-700", title: "Agentic Email Generator", blurb: "Always-on agent emails a ranked digest at 8am ET daily.", sub: "n8n · Claude · Supabase", metric: "8am ET daily digest", tools: ["Claude", "n8n", "Railway", "Resend", "Supabase"] },
+              { num: "No. 01", id: "project-restaurant", numCls: "text-rose-600", title: "Fork Yea! — Multi-Agentic Reservation Agent", blurb: "Finds and books the right restaurant, with a Haiku judge scoring every pick.", outcome: "Collapses hours of research and 20+ tab-switches into one confident booking.", sub: "Cursor · LangGraph · Claude · Playwright", metric: "LLM-as-judge scored", tools: ["Cursor", "LangGraph", "Claude", "Playwright", "Tavily", "FastAPI"] },
+              { num: "No. 02", id: "project-3", numCls: "text-emerald-700", title: "Compliance RAG Chatbot", blurb: "Grounded policy Q&A for regulated financial services teams, with citations on every answer.", outcome: "Frees compliance teams from hunting through policy PDFs — cuts research time and keeps every answer auditable.", sub: "Claude · Python · Streamlit", metric: "Zero embedding cost", tools: ["Claude", "Python", "Streamlit", "RAG"] },
+              { num: "No. 03", id: "project-4", numCls: "text-indigo-700", title: "Customer Service Triage Agent", blurb: "Classifies, prioritizes, drafts a grounded reply, and completes the action end to end.", outcome: "Turns a support queue that used to sit for hours into replies that ship inside a single shift.", sub: "Claude · LangGraph · Python · FastAPI", metric: "Under 640ms end to end", tools: ["Claude", "LangGraph", "Python", "FastAPI"] },
+              { num: "No. 04", id: "project-gtm", numCls: "text-teal-700", title: "GTM Pricing Tool", blurb: "Models revenue, pricing, and scenarios for founders, consultants, operators, and investors.", outcome: "Compresses a multi-week pricing exercise into a 20-minute recommendation grounded in real benchmarks.", sub: "Claude · Python · Railway", metric: "4 personas modeled", tools: ["Claude", "Python", "Railway"] },
+              { num: "No. 05", id: "project-1", numCls: "text-orange-700", title: "AI Job Search Dashboard", blurb: "Scores 130+ ATS feeds for fit and conversion likelihood.", outcome: "Turns hours of daily job-board scrolling into a ranked 5-minute morning triage.", sub: "Claude · Python · Railway", metric: "286 roles per run", tools: ["Claude", "Python", "Railway", "ATS"] },
+              { num: "No. 06", id: "project-2", numCls: "text-amber-700", title: "Agentic Email Generator", blurb: "Always-on agent emails a ranked digest at 8am ET daily.", outcome: "Removes manual research — every morning, the right opportunities are surfaced, ranked, and ready to act on.", sub: "n8n · Claude · Supabase", metric: "8am ET daily digest", tools: ["Claude", "n8n", "Railway", "Resend", "Supabase"] },
 
             ].map((p) => {
               const logos = p.tools.filter((t) => TOOL_LOGOS[t]);
@@ -576,6 +581,12 @@ function PortfolioPage() {
                     )}
                   </div>
                   <p className="mt-2 text-[13px] text-stone-600 leading-snug">{p.blurb}</p>
+                  {p.outcome && (
+                    <p className="mt-1.5 text-[12px] text-emerald-800 leading-snug">
+                      <span className="font-semibold uppercase tracking-wider text-[10px] text-emerald-700 mr-1">Impact:</span>
+                      {p.outcome}
+                    </p>
+                  )}
                   <div className="mt-2.5">
                     <span className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[10.5px] font-semibold uppercase tracking-wider ${p.numCls} border-current/20 bg-white`}>
                       <span className="w-1 h-1 rounded-full bg-current opacity-70" />
@@ -678,6 +689,72 @@ function PortfolioPage() {
 
 
       <GradientDivider />
+
+      {/* Enterprise AI Principles — how I think about deployment */}
+      <section id="principles" className="mx-auto max-w-6xl px-6 py-12 md:py-16 scroll-mt-8">
+        <div className="flex items-baseline gap-3 flex-wrap">
+          <span className="text-xs uppercase tracking-[0.24em] font-semibold text-rose-600">Point of view</span>
+          <h2 className="text-3xl md:text-4xl font-light tracking-tight text-stone-900">
+            Enterprise AI Principles
+          </h2>
+        </div>
+        <p className="mt-3 max-w-3xl text-base md:text-lg text-stone-700 leading-relaxed">
+          How I think about deploying AI inside organizations — the through-line behind the six projects below.
+        </p>
+
+        <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {[
+            {
+              n: "01",
+              title: "Start at the workflow bottleneck",
+              body: "Find where people are already stuck — reviewing, drafting, hunting for context. That is where AI creates value; net-new features rarely do.",
+              tone: "text-rose-700",
+            },
+            {
+              n: "02",
+              title: "Prototype rapidly with real users",
+              body: "Ship a working thing in days, not months. Users react to what they can touch — decks and roadmaps don't surface the real objections.",
+              tone: "text-amber-700",
+            },
+            {
+              n: "03",
+              title: "Measure adoption, not just accuracy",
+              body: "A model that's 95% accurate but 5% adopted delivers nothing. Track usage, repeat use, and workflow substitution as first-class metrics.",
+              tone: "text-emerald-700",
+            },
+            {
+              n: "04",
+              title: "Build governance into the workflow",
+              body: "Citations, audit trails, human-in-the-loop review, and permissioning belong inside the product — not in a policy document nobody reads.",
+              tone: "text-indigo-700",
+            },
+            {
+              n: "05",
+              title: "Iterate from user feedback",
+              body: "Every prompt refusal, every override, every drop-off is a signal. Close the loop weekly so the system compounds toward the way people actually work.",
+              tone: "text-violet-700",
+            },
+            {
+              n: "06",
+              title: "Scale the patterns that stick",
+              body: "Once a workflow proves out, extract the pattern — templates, evals, guardrails — and replicate it across teams instead of rebuilding from scratch.",
+              tone: "text-sky-700",
+            },
+          ].map((p) => (
+            <div key={p.n} className="rounded-2xl border border-stone-200 bg-white/80 backdrop-blur p-5 hover:border-rose-300 transition-colors">
+              <div className="flex items-baseline gap-2">
+                <span className={`text-[11px] uppercase tracking-[0.22em] font-semibold ${p.tone}`}>No. {p.n}</span>
+              </div>
+              <h3 className="mt-2 text-lg font-semibold tracking-tight text-stone-900 leading-snug">{p.title}</h3>
+              <p className="mt-2 text-[14px] text-stone-700 leading-relaxed">{p.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <GradientDivider />
+
+
 
       {/* Project Restaurant — Multi-Agentic Reservation Agent */}
       <section id="project-restaurant" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
@@ -973,7 +1050,7 @@ function PortfolioPage() {
 
       {/* Project 4 — Customer Service Triage */}
       <section id="project-4" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
-        <ProjectCollapse id="project-4" num="No. 02 · Customer Service Triage Agent" numCls="text-indigo-700" title="Customer Service Triage Agent" sub="Claude · LangGraph · Python · FastAPI">
+        <ProjectCollapse id="project-4" num="No. 03 · Customer Service Triage Agent" numCls="text-indigo-700" title="Customer Service Triage Agent" sub="Claude · LangGraph · Python · FastAPI">
         <div className="grid md:grid-cols-12 gap-10">
 
           <div className="md:col-span-4">
@@ -1133,7 +1210,7 @@ function PortfolioPage() {
       <GradientDivider />
       {/* Project GTM — GTM Pricing Tool */}
       <section id="project-gtm" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
-        <ProjectCollapse id="project-gtm" num="No. 03 · GTM Pricing Tool" numCls="text-teal-700" title="GTM Pricing Tool" sub="Claude · Python · Railway">
+        <ProjectCollapse id="project-gtm" num="No. 04 · GTM Pricing Tool" numCls="text-teal-700" title="GTM Pricing Tool" sub="Claude · Python · Railway">
         <div className="grid md:grid-cols-12 gap-10">
 
           <div className="md:col-span-4">
@@ -1266,7 +1343,7 @@ function PortfolioPage() {
 
       {/* Project 1 */}
       <section id="project-1" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
-        <ProjectCollapse id="project-1" num="No. 04 · AI Job Search" numCls="text-orange-700" title="Live AI Job Search Dashboard" sub="Claude · Python · Railway">
+        <ProjectCollapse id="project-1" num="No. 05 · AI Job Search" numCls="text-orange-700" title="Live AI Job Search Dashboard" sub="Claude · Python · Railway">
         <div className="grid md:grid-cols-12 gap-10">
 
           <div className="md:col-span-4">
@@ -1378,7 +1455,7 @@ function PortfolioPage() {
 
       {/* Project 3 — Compliance RAG */}
       <section id="project-3" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
-        <ProjectCollapse id="project-3" num="No. 05 · Compliance RAG Chatbot" numCls="text-emerald-700" title="Compliance RAG Chatbot" sub="Claude · Python · Streamlit">
+        <ProjectCollapse id="project-3" num="No. 02 · Compliance RAG Chatbot" numCls="text-emerald-700" title="Compliance RAG Chatbot" sub="Claude · Python · Streamlit">
         <div className="grid md:grid-cols-12 gap-10">
 
           <div className="md:col-span-4">
