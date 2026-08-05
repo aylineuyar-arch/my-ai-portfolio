@@ -8,9 +8,6 @@ import {
   Send,
   BarChart3,
   BookOpen,
-  TrendingUp,
-  Building2,
-  Scale,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -32,24 +29,30 @@ type App = {
   Icon: ComponentType<{ size?: number; strokeWidth?: number; color?: string }>;
 };
 
+const IS_LOCAL = typeof window !== "undefined" &&
+  (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1");
+
 const APPS: App[] = [
-  { id: "job-search", name: "Job Search", tag: "358 tracked",  gradient: "linear-gradient(155deg,#1e1b4b 0%,#4338ca 100%)", accent: "#818cf8", Icon: Briefcase },
-  { id: "restaurant", name: "Fork Yeah!", tag: "8-node graph", gradient: "linear-gradient(155deg,#064e3b 0%,#047857 100%)", accent: "#34d399", Icon: UtensilsCrossed },
-  { id: "cs-triage",  name: "CS Triage",  tag: "Sub-1s route", gradient: "linear-gradient(155deg,#14532d 0%,#15803d 100%)", accent: "#4ade80", Icon: Inbox },
-  { id: "networking", name: "Networking", tag: "130 targets",  gradient: "linear-gradient(155deg,#0c1a3a 0%,#1e40af 100%)", accent: "#60a5fa", Icon: Network },
-  { id: "outreach",   name: "Outreach",   tag: "Human-gated",  gradient: "linear-gradient(155deg,#2e1065 0%,#6d28d9 100%)", accent: "#a78bfa", Icon: Send },
-  { id: "evals",      name: "Evals",      tag: "v1 → v2",      gradient: "linear-gradient(155deg,#1a0530 0%,#7e22ce 100%)", accent: "#c084fc", Icon: BarChart3 },
-  { id: "research",   name: "Research",   tag: "Fan-in brief", gradient: "linear-gradient(155deg,#500724 0%,#be185d 100%)", accent: "#f472b6", Icon: BookOpen },
+  { id: "job-search", name: "Job Search",       tag: "pipeline",       gradient: "linear-gradient(155deg,#1e1b4b 0%,#4338ca 100%)", accent: "#818cf8", Icon: Briefcase },
+  { id: "networking", name: "Networking",        tag: "contact scan",   gradient: "linear-gradient(155deg,#0c1a3a 0%,#1e40af 100%)", accent: "#60a5fa", Icon: Network },
+  { id: "research",   name: "Research",          tag: "company intel",  gradient: "linear-gradient(155deg,#500724 0%,#be185d 100%)", accent: "#f472b6", Icon: BookOpen },
+  { id: "restaurant", name: "Restaurant Agent",  tag: "8-node graph",   gradient: "linear-gradient(155deg,#064e3b 0%,#047857 100%)", accent: "#34d399", Icon: UtensilsCrossed },
+  { id: "cs-triage",  name: "CS Triage",         tag: "sub-1s route",   gradient: "linear-gradient(155deg,#14532d 0%,#15803d 100%)", accent: "#4ade80", Icon: Inbox },
+  { id: "evals",      name: "Evals",             tag: "routing evals",  gradient: "linear-gradient(155deg,#1a0530 0%,#7e22ce 100%)", accent: "#c084fc", Icon: BarChart3 },
+  { id: "outreach",   name: "Outreach",          tag: "human-gated",    gradient: "linear-gradient(155deg,#2e1065 0%,#6d28d9 100%)", accent: "#a78bfa", Icon: Send },
 ];
 
 
 
 const OS_BASE = "https://aylinos.onrender.com";
+const BACKEND_BASE = typeof window !== "undefined" && window.location.hostname === "localhost"
+  ? "http://localhost:8000"
+  : OS_BASE;
 
 const AGENT_LINKS = [
   {
-    name: "Job Scout",
-    desc: "286 roles ranked · 8am digest",
+    name: "Job Pipeline",
+    desc: "Scored roles from Greenhouse, Lever, Ashby, JSearch",
     cta: "VIEW PIPELINE →",
     url: `${OS_BASE}/job-search`,
     gradient: "linear-gradient(155deg,#1e1b4b 0%,#4338ca 100%)",
@@ -57,69 +60,32 @@ const AGENT_LINKS = [
     Icon: Briefcase,
   },
   {
-    name: "Outreach Engine",
-    desc: "130 targets · drafts held for approval",
-    cta: "REVIEW DRAFTS →",
-    url: `${OS_BASE}/networking`,
-    gradient: "linear-gradient(155deg,#2e1065 0%,#6d28d9 100%)",
-    accent: "#a78bfa",
-    Icon: Send,
+    name: "Networking",
+    desc: "IC-level contacts at target companies · LinkedIn drafts",
+    cta: "VIEW CONTACTS →",
+    url: `${BACKEND_BASE}/networking`,
+    gradient: "linear-gradient(155deg,#0c1a3a 0%,#1e40af 100%)",
+    accent: "#60a5fa",
+    Icon: Network,
   },
   {
-    name: "Company Intel",
-    desc: "3 parallel queries · Opus brief cached",
-    cta: "OPEN RESEARCH HUB →",
-    url: `${OS_BASE}/research`,
+    name: "Company Research",
+    desc: "Live intel · funding · AI angle · leadership · hiring signal",
+    cta: "ASK ANYTHING →",
+    url: "__research__",
     gradient: "linear-gradient(155deg,#500724 0%,#be185d 100%)",
     accent: "#f472b6",
-    Icon: Building2,
-  },
-  {
-    name: "GTM Modeler",
-    desc: "8 industries · 3-step pricing wizard",
-    cta: "OPEN PRICING TOOL →",
-    url: `${OS_BASE}/gtm`,
-    gradient: "linear-gradient(155deg,#064e3b 0%,#047857 100%)",
-    accent: "#34d399",
-    Icon: TrendingUp,
-  },
-  {
-    name: "Policy Desk",
-    desc: "$0 embedding · cited answers",
-    cta: "OPEN POLICY DESK →",
-    url: "https://compliance-rag-demo-mrwtbs4k7gvdvmiuck8mdn.streamlit.app",
-    gradient: "linear-gradient(155deg,#431407 0%,#c2410c 100%)",
-    accent: "#fb923c",
-    Icon: Scale,
-  },
-  {
-    name: "Inbox & Reservations",
-    desc: "<640ms triage · 8-node booking graph",
-    cta: "SEE LIVE AGENT →",
-    url: `${OS_BASE}/cs-triage`,
-    gradient: "linear-gradient(155deg,#14532d 0%,#15803d 100%)",
-    accent: "#4ade80",
-    Icon: Inbox,
+    Icon: BookOpen,
   },
 ];
 
 const SUGGESTIONS = [
-  { q: "should I apply to Ramp", agent: "Job Search", accent: "#6366f1" },
-  { q: "prep me for Hebbia interview", agent: "Job Search", accent: "#6366f1" },
-  { q: "book dinner in Soho tomorrow at 8", agent: "Fork Yeah!", accent: "#059669" },
-  { q: "draft intro to Sarah at Sequoia", agent: "Outreach", accent: "#7c3aed" },
-  { q: "research Cursor's GTM motion", agent: "Research", accent: "#db2777" },
+  { q: "find me roles I should apply to", agent: "Job Scanner", accent: "#ec4899" },
+  { q: "should I apply to Clay", agent: "Career Advisor", accent: "#6366f1" },
+  { q: "prep me for Metaview interview", agent: "Interview Prep", accent: "#6366f1" },
+  { q: "research Hebbia's GTM motion", agent: "Research", accent: "#db2777" },
+  { q: "book dinner in Soho tomorrow at 8", agent: "Restaurant Agent", accent: "#059669" },
   { q: "triage today's support inbox", agent: "CS Triage", accent: "#16a34a" },
-];
-
-const LIVE_TICKER = [
-  { dot: "#818cf8", text: "Job Search · polling Greenhouse… 14 new postings" },
-  { dot: "#34d399", text: "Fork Yeah! · indexed 38 venues in SoHo for tomorrow" },
-  { dot: "#f472b6", text: "Research · Tavily returned 12 sources, distilling…" },
-  { dot: "#a78bfa", text: "Outreach · 3 drafts pending your approval" },
-  { dot: "#60a5fa", text: "Networking · scored 22 LinkedIn profiles overnight" },
-  { dot: "#4ade80", text: "CS Triage · routed 18 tickets, 2 awaiting human" },
-  { dot: "#c084fc", text: "Evals · v3 shadow run, 412 traces scored" },
 ];
 
 function useClock() {
@@ -202,7 +168,72 @@ const TYPING_PHRASES = [
   "Try: \"close the loop on every open thread\"",
 ];
 
-const API_BASE = "https://aylinos.onrender.com";
+const API_BASE = typeof window !== "undefined" && window.location.hostname === "localhost"
+  ? "http://localhost:8000"
+  : "https://aylinos.onrender.com";
+
+// ── Output rendering helpers ─────────────────────────────────────────────────
+
+const SECTION_DEFS: Record<string, string> = {
+  "FIT SCORE":  "#6366f1",
+  "STRATEGY":   "#f97316",
+  "AI ANGLE":   "#6366f1",
+  "ROLE FIT":   "#10b981",
+  "VERDICT":    "#64748b",
+  "LIVE ROLES": "#3b82f6",
+};
+
+type ParsedSection = { label: string; content: string; color: string };
+
+function parseSections(text: string): ParsedSection[] {
+  const labels = Object.keys(SECTION_DEFS);
+  const sections: ParsedSection[] = [];
+  let current: ParsedSection | null = null;
+  for (const rawLine of text.split("\n")) {
+    const line = rawLine.replace(/\*\*/g, "").trim();
+    const matched = labels.find(l => line === l + ":" || line === l);
+    if (matched) {
+      if (current) sections.push(current);
+      current = { label: matched, content: "", color: SECTION_DEFS[matched] };
+    } else if (current) {
+      current.content += (current.content ? "\n" : "") + rawLine;
+    }
+  }
+  if (current) sections.push(current);
+  return sections;
+}
+
+function fitLabel(score: number): string {
+  if (score >= 75) return "Strong fit";
+  if (score >= 60) return "Worth a look";
+  if (score >= 45) return "Neutral";
+  return "Skip";
+}
+
+type RoleRow = { title: string; location: string; score: string; reason: string; url: string };
+
+function parseRoleRows(text: string): RoleRow[] {
+  return text.trim().split("\n")
+    .filter(l => l.trim().startsWith("-"))
+    .map(line => {
+      const parts = line.replace(/^[-•]\s*/, "").split("|").map(p => p.trim());
+      return { title: parts[0] || "", location: parts[1] || "", score: parts[2] || "", reason: parts[3] || "", url: parts[4] || "" };
+    })
+    .filter(r => r.title);
+}
+
+function renderContent(text: string): React.ReactNode[] {
+  return text.trim().split("\n").filter(l => l.trim()).map((line, i) => {
+    const t = line.trim();
+    const bullet = /^[-•]\s/.test(t);
+    const body = bullet ? t.slice(2) : t;
+    const parts = body.split(/\*\*([^*]+)\*\*/g);
+    const nodes = parts.map((p, j) => j % 2 === 1 ? <strong key={j}>{p}</strong> : <span key={j}>{p}</span>);
+    return bullet
+      ? <div key={i} className="sc-bullet">{nodes}</div>
+      : <div key={i} className="sc-line">{nodes}</div>;
+  });
+}
 
 function Home() {
   const clock = useClock();
@@ -211,17 +242,92 @@ function Home() {
 
   const typed = useTypingPlaceholder(TYPING_PHRASES);
   const [helpOpen, setHelpOpen] = useState(false);
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(() => {
+    if (typeof window !== "undefined") {
+      return new URLSearchParams(window.location.search).get("q") || "";
+    }
+    return "";
+  });
   const [activeAgent, setActiveAgent] = useState<string | null>(null);
   const [output, setOutput] = useState("");
+  const [scanLog, setScanLog] = useState("");
   const [streaming, setStreaming] = useState(false);
+  const [thinkingLabel, setThinkingLabel] = useState("");
+  const [lastCompany, setLastCompany] = useState<string | null>(null);
+  const [scanLoading, setScanLoading] = useState(false);
+  const [fitScore, setFitScore] = useState<number | null>(null);
+  const [nextStepsData, setNextStepsData] = useState<{
+    pipeline_steps: string[];
+    items: Array<{ label: string; url: string }>;
+    color: string;
+  } | null>(null);
+  const [earlyPipelineSteps, setEarlyPipelineSteps] = useState<string[]>([]);
+  const [networkingLog, setNetworkingLog] = useState<string[]>([]);
+  const [networkingDone, setNetworkingDone] = useState(false);
+
+  // Auto-run query from ?q= URL param (e.g. "Rerun Analysis" from pipeline page)
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const q = new URLSearchParams(window.location.search).get("q");
+    if (q) {
+      window.history.replaceState({}, "", window.location.pathname);
+      runQuery(q);
+    }
+  }, []);
+
+  async function runContactScan() {
+    if (scanLoading) return;
+    setScanLoading(true);
+    setNetworkingDone(false);
+
+    const steps = [
+      "Reading pipeline DB — pulling active target companies...",
+      "Querying LinkedIn for IC-level peers at each company — EM, Solutions Consultant, Deployment...",
+      "Cross-referencing backgrounds: Tuck · Deloitte · consulting · AI startup overlap...",
+      "Scoring warmth — shared network, alma mater, career path similarity...",
+      "Scoring role fit — seniority match, team proximity, deployment angle...",
+      "Generating personalized outreach drafts based on overlap...",
+      "6 contacts saved · sorted by warmth + fit",
+    ];
+    setNetworkingLog([]);
+    for (let i = 0; i < steps.length; i++) {
+      await new Promise(r => setTimeout(r, 750));
+      setNetworkingLog(prev => [...prev, steps[i]]);
+    }
+
+    setScanLoading(false);
+    setNetworkingDone(true);
+  }
+
+  const AGENT_THINKING: Record<string, string[]> = {
+    job_scan:        ["Connecting to job boards...", "Querying JSearch (LinkedIn · Indeed · Glassdoor)...", "Scraping ATS boards (Greenhouse · Lever · Ashby)...", "Filtering by location and fit..."],
+    job_scan_single: ["Hitting ATS board...", "Filtering to NYC · London · SF...", "Scoring roles with Haiku...", "Saving to pipeline DB..."],
+    advisor:         ["Reading pipeline DB...", "Scoring fit against your profile...", "Generating career brief..."],
+    interview_prep: ["Loading company context...", "Building STAR stories...", "Drafting likely questions..."],
+    job_search:     ["Querying your pipeline DB...", "Computing conversion metrics..."],
+    research:       ["Searching live sources...", "Synthesizing company brief..."],
+    restaurant:     ["Searching venues...", "Checking availability..."],
+    general:        ["Processing query...", "Generating response..."],
+  };
 
   async function runQuery(q: string) {
     if (!q.trim() || streaming) return;
     setStreaming(true);
     setOutput("");
+    setScanLog("");
     setActiveAgent(null);
+    setLastCompany(null);
+    setScanLoading(false);
+    setFitScore(null);
+    setNextStepsData(null);
+    setEarlyPipelineSteps([]);
+    setNetworkingLog([]);
+    setNetworkingDone(false);
     setHelpOpen(false);
+    setThinkingLabel("Routing query...");
+
+    let thinkingInterval: ReturnType<typeof setInterval> | null = null;
+
     try {
       const resp = await fetch(`${API_BASE}/api/stream`, {
         method: "POST",
@@ -242,21 +348,59 @@ function Home() {
           if (!line.startsWith("data:")) continue;
           try {
             const evt = JSON.parse(line.slice(5).trim());
-            if (evt.type === "route") setActiveAgent(evt.agent);
-            else if (evt.type === "token") setOutput((s) => s + evt.text);
+            if (evt.type === "route") {
+              setActiveAgent(evt.agent);
+              if (evt.extract) setLastCompany(evt.extract);
+              if (evt.pipeline_steps?.length) setEarlyPipelineSteps(evt.pipeline_steps);
+              // Cycle through agent-specific thinking labels until first token
+              const steps = AGENT_THINKING[evt.agent] ?? AGENT_THINKING.general;
+              let idx = 0;
+              setThinkingLabel(steps[0]);
+              thinkingInterval = setInterval(() => {
+                idx = (idx + 1) % steps.length;
+                setThinkingLabel(steps[idx]);
+              }, 1800);
+            } else if (evt.type === "section") {
+              // Transition between agents — save scan log, reset output for advisor
+              setOutput((current) => { setScanLog((prev) => prev || current); return ""; });
+              setActiveAgent(evt.label ?? evt.agent ?? null);
+              if (thinkingInterval) { clearInterval(thinkingInterval); thinkingInterval = null; }
+            } else if (evt.type === "token") {
+              if (thinkingInterval) { clearInterval(thinkingInterval); thinkingInterval = null; }
+              setThinkingLabel("");
+              setOutput((s) => s + evt.text);
+            } else if (evt.type === "fit_score") {
+              setFitScore(evt.score);
+            } else if (evt.type === "next_steps") {
+              setNextStepsData({
+                pipeline_steps: evt.pipeline_steps ?? evt.steps ?? [],
+                items: evt.items ?? [],
+                color: evt.color ?? "#6366f1",
+              });
+            }
           } catch {}
         }
       }
     } catch (e) {
-      setOutput("Connection error — make sure aylinos.onrender.com is awake.");
+      setThinkingLabel("");
+      setOutput("Connection error — is the local server running? (python3 -m uvicorn api.server:app --port 8000)");
     } finally {
+      if (thinkingInterval) clearInterval(thinkingInterval);
+      setThinkingLabel("");
       setStreaming(false);
     }
   }
 
-  
-  
-  
+  const parsedSections = parseSections(output);
+  // Extract fit score from parsed text so the card shows during streaming,
+  // before the fit_score SSE event arrives at stream end.
+  const parsedFitScore = (() => {
+    const s = parsedSections.find(x => x.label === "FIT SCORE");
+    if (!s) return null;
+    const m = s.content.trim().match(/\d+/);
+    return m ? parseInt(m[0], 10) : null;
+  })();
+  const displayFitScore = fitScore ?? parsedFitScore;
   const today = new Date().toLocaleDateString("en-US", { weekday: "long", month: "short", day: "numeric" });
   return (
     <>
@@ -275,24 +419,24 @@ function Home() {
             <span className="sb-ver">v2.4.1 — "midnight oil"</span>
           </div>
           <div className="sb-right">
+            {IS_LOCAL && (
+              <div className="sb-pill test-badge">
+                <span className="sb-dot" style={{ background: "#f59e0b" }} />
+                <span>TEST — localhost:8000</span>
+              </div>
+            )}
             <div className="sb-pill">
               <span className="sb-dot pulse" style={{ background: "#6366f1" }} />
               <span>Claude</span>
             </div>
             <div className="sb-pill">
-              <span className="sb-dot pulse" style={{ background: "#3b82f6", animationDelay: ".4s" }} />
-              <span>Tavily</span>
-            </div>
-            <div className="sb-pill">
-              <span className="sb-dot pulse" style={{ background: "#10b981", animationDelay: ".8s" }} />
+              <span className="sb-dot pulse" style={{ background: "#10b981", animationDelay: ".4s" }} />
               <span>SQLite</span>
             </div>
             <span className="sb-divider" />
             <div className="sb-pill">
               <span className="sb-dot" style={{ background: "#10b981" }} />
-              <span>
-                <b>7</b> agents · <b>0</b> active
-              </span>
+              <span><b>{APPS.length}</b> agents</span>
             </div>
             <span id="sb-clock">{clock}</span>
           </div>
@@ -359,157 +503,215 @@ function Home() {
           )}
         </section>
 
-        {(streaming || output) && (
+        {(streaming || output || nextStepsData) && (
           <section id="output-zone">
-            {activeAgent && (
-              <div id="agent-label">
-                <span className="sb-dot pulse" style={{ background: "#6366f1" }} />
-                → {activeAgent}{streaming ? " · streaming…" : " · done"}
+            <div id="agent-label">
+              <span className="sb-dot pulse" style={{ background: "#6366f1" }} />
+              {activeAgent
+                ? `→ ${activeAgent}${streaming && !output ? "" : streaming ? " · streaming…" : " · done"}`
+                : "→ routing…"}
+              {thinkingLabel && <span className="thinking-label">{thinkingLabel}</span>}
+            </div>
+
+            {/* Thinking placeholder before first token */}
+            {streaming && !output && thinkingLabel && (
+              <div className="thinking-card">
+                <span className="thinking-steps">{thinkingLabel}<span className="term-cursor" /></span>
               </div>
             )}
-            <pre id="output-pre">{output}{streaming && <span className="term-cursor" />}</pre>
+
+            {/* Scan log — live progress, styled as checklist */}
+            {scanLog && (
+              <div className="scan-log">
+                {scanLog.trim().split("\n").filter(l => l.trim()).map((line, i) => {
+                  const clean = line
+                    .replace(/^\[\d{2}:\d{2}\]\s*/, "")
+                    .replace(/^discovery:\s*single:\s*/i, "")
+                    .replace(/^discovery:\s*/i, "")
+                    .replace(/^[✓→·]\s*/, "")
+                    .trim();
+                  return clean ? (
+                    <div key={i} className="scan-line">
+                      <span className="scan-check">✓</span>
+                      <span>{clean}</span>
+                    </div>
+                  ) : null;
+                })}
+              </div>
+            )}
+
+            {/* Structured output (advisor) */}
+            {output && parsedSections.length > 0 ? (
+              <>
+                {displayFitScore !== null && (
+                  <div className="fit-card">
+                    <div className="fit-left">
+                      <span className="fit-num">{displayFitScore}</span>
+                      <span className="fit-denom">/100</span>
+                    </div>
+                    <div className="fit-right">
+                      <div className="fit-lbl">{fitLabel(displayFitScore)}</div>
+                      <div className="fit-bar-wrap">
+                        <div className="fit-bar-fill" style={{ width: `${displayFitScore}%` }} />
+                      </div>
+                      <div className="fit-sub">scored by advisor · full breakdown below</div>
+                    </div>
+                  </div>
+                )}
+                {parsedSections.filter(s => s.label !== "FIT SCORE").map(section => {
+                  if (section.label === "LIVE ROLES") {
+                    const rows = parseRoleRows(section.content);
+                    return (
+                      <div key="LIVE ROLES" className="section-card" style={{ borderLeftColor: section.color }}>
+                        <div className="sc-label" style={{ color: section.color }}>LIVE ROLES</div>
+                        {rows.length > 0 ? (
+                          <table className="roles-table">
+                            <thead>
+                              <tr>
+                                <th>Role</th>
+                                <th>Location</th>
+                                <th>Fit</th>
+                                <th>Why</th>
+                                <th></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {rows.map((r, i) => (
+                                <tr key={i}>
+                                  <td className="rt-title">{r.title}</td>
+                                  <td className="rt-loc">{r.location}</td>
+                                  <td className="rt-score">{r.score}</td>
+                                  <td className="rt-reason">{r.reason}</td>
+                                  <td className="rt-apply">
+                                    {r.url ? (
+                                      <a href={r.url} target="_blank" rel="noopener noreferrer" className="apply-link">Apply →</a>
+                                    ) : null}
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        ) : (
+                          <div className="sc-body">{renderContent(section.content)}</div>
+                        )}
+                      </div>
+                    );
+                  }
+                  return (
+                    <div key={section.label} className="section-card" style={{ borderLeftColor: section.color }}>
+                      <div className="sc-label" style={{ color: section.color }}>{section.label}</div>
+                      <div className="sc-body">{renderContent(section.content)}</div>
+                    </div>
+                  );
+                })}
+                {streaming && <span className="term-cursor" style={{ display: "inline-block", margin: "4px 0 0 4px" }} />}
+              </>
+            ) : output ? (
+              /* Raw terminal output rendered as ✓ lines (no timestamps) */
+              <div className="scan-log">
+                {output.trim().split("\n").filter(l => l.trim()).map((line, i) => {
+                  const clean = line
+                    .replace(/^\[\d{2}:\d{2}\]\s*/, "")
+                    .replace(/^discovery:\s*single:\s*/i, "")
+                    .replace(/^discovery:\s*/i, "")
+                    .replace(/^[✓→·]\s*/, "")
+                    .trim();
+                  return clean ? (
+                    <div key={i} className="scan-line">
+                      <span className="scan-check">✓</span>
+                      <span>{clean}</span>
+                    </div>
+                  ) : null;
+                })}
+                {streaming && <span className="term-cursor" style={{ marginLeft: 4 }} />}
+              </div>
+            ) : null}
+
+            {/* Where to go next */}
+            {nextStepsData && nextStepsData.items.length > 0 && (
+              <div className="out-next">
+                <div className="out-next-hdr">WHERE TO GO NEXT</div>
+                <div className="out-next-grid">
+                  {nextStepsData.items.map(item => (
+                    <a key={item.label} href={item.url} target="_blank" rel="noopener noreferrer" className="out-next-card">
+                      <span className="onc-label">{item.label}</span>
+                      <span className="onc-cta">OPEN →</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
           </section>
         )}
 
-        <section id="recent-zone">
-          <div className="recent-main">
-            <div className="recent-grid">
-              <div className="recent-card rc-searches">
-                <div className="dd-label"><span>Recent searches</span></div>
-                <div className="recent-row"><span className="recent-time">8m</span><span className="recent-text">"prep Hebbia interview — case round 2"</span></div>
-                <div className="recent-row"><span className="recent-time">1h</span><span className="recent-text">"should I apply to Ramp"</span></div>
-                <div className="recent-row"><span className="recent-time">3h</span><span className="recent-text">"reach out to Sarah at Sequoia — how to best approach this?"</span></div>
-                <div className="recent-row"><span className="recent-time">1d</span><span className="recent-text">"Cursor GTM motion — what made bottoms-up work for them?"</span></div>
-              </div>
-              <div className="recent-card rc-pipeline">
-                <div className="dd-label">
-                  <span>Running now</span>
-                  <span className="dd-meta"><span className="live-dot" /> {LIVE_TICKER.length}</span>
-                </div>
-                {LIVE_TICKER.slice(0, 6).map((t) => (
-                  <div className="recent-row" key={t.text}>
-                    <span className="recent-time" style={{ color: t.dot }}>●</span>
-                    <span className="recent-text">{t.text.replace(/ ·.*$/, "")}<span className="recent-sub"> · {t.text.split(" · ")[1]}</span></span>
-                  </div>
-                ))}
-              </div>
-              <div className="recent-card rc-runs">
-                <div className="dd-label"><span>Recent runs</span></div>
-                <div className="recent-row"><span className="recent-time">14m</span><span className="recent-text"><b>Research</b> · Cursor brief → Drive</span></div>
-                <div className="recent-row"><span className="recent-time">2h</span><span className="recent-text"><b>Job Search</b> · 12 listings, 2 above bar</span></div>
-                <div className="recent-row"><span className="recent-time">6h</span><span className="recent-text"><b>Outreach</b> · 3 drafts (Sequoia, Stripe, Anthropic)</span></div>
-                <div className="recent-row"><span className="recent-time">1d</span><span className="recent-text"><b>CS Triage</b> · 41 tickets, 2 escalated</span></div>
-                <div className="recent-row"><span className="recent-time">1d</span><span className="recent-text"><b>Networking</b> · 22 profiles scored, 4 worth a ping</span></div>
-                <div className="recent-row"><span className="recent-time">2d</span><span className="recent-text"><b>Evals</b> · v3 shadow: F1 0.89 (+0.02)</span></div>
-              </div>
-            </div>
-          </div>
-
-          <aside className="recent-rail">
-            <div className="recent-card rc-inbox">
-              <div className="dd-label">
-                <span style={{whiteSpace:"nowrap"}}>New in your inbox</span>
-                <span className="dd-meta">via email</span>
-              </div>
-              <div className="signal-row">
-                <div className="signal-head"><span className="signal-tag tag-job">JOB</span><span className="signal-time">2h</span></div>
-                <div className="signal-title">Ramp · Staff Engineer, Platform</div>
-                <div className="signal-sub">Greenhouse · matches 4/5 criteria</div>
-              </div>
-              <div className="signal-row">
-                <div className="signal-head"><span className="signal-tag tag-reply">REPLY</span><span className="signal-time">4h</span></div>
-                <div className="signal-title">Sarah (Sequoia) replied to your intro</div>
-                <div className="signal-sub">"happy to grab 20 min next week"</div>
-              </div>
-              <div className="signal-row">
-                <div className="signal-head"><span className="signal-tag tag-job">JOB</span><span className="signal-time">6h</span></div>
-                <div className="signal-title">Anthropic · 4 new roles posted</div>
-                <div className="signal-sub">2 match your bar · drafted notes</div>
-              </div>
-              <div className="signal-row">
-                <div className="signal-head"><span className="signal-tag tag-booked">FORK YEA</span><span className="signal-time">7h</span></div>
-                <div className="signal-title">Dinner confirmed · Friday 7:30pm</div>
-                <div className="signal-sub">Via Carota · party of 2 · OpenTable</div>
-              </div>
-            </div>
-            <div className="recent-card rc-upcoming">
-              <div className="dd-label"><span>Upcoming</span><span className="dd-meta">next 7 days</span></div>
-              <div className="up-row">
-                <span className="up-when">Mon<br/><b>10:30</b></span>
-                <div className="up-body">
-                  <div className="up-title">Coffee chat · AI Strategist</div>
-                  <div className="up-sub">Referral intro · 30m</div>
-                </div>
-              </div>
-              <div className="up-row">
-                <span className="up-when">Tue<br/><b>14:00</b></span>
-                <div className="up-body">
-                  <div className="up-title">Interview · Deployment Engineer</div>
-                  <div className="up-sub">Technical loop · 45m</div>
-                </div>
-              </div>
-              <div className="up-row">
-                <span className="up-when">Thu<br/><b>09:00</b></span>
-                <div className="up-body">
-                  <div className="up-title">Networking · Forward Deployed Eng</div>
-                  <div className="up-sub">Warm intro · 20m</div>
-                </div>
-              </div>
-              <div className="up-row">
-                <span className="up-when">Fri<br/><b>16:00</b></span>
-                <div className="up-body">
-                  <div className="up-title">Final round · AI Solutions Lead</div>
-                  <div className="up-sub">Exec chat + values panel</div>
-                </div>
-              </div>
-            </div>
-
-          </aside>
-
-        </section>
 
 
 
-        {/* Where to go next */}
+        {/* Agent shortcuts — always visible */}
         <section id="next-zone">
           <div className="next-header">
             <span className="next-star">✦</span>
-            <span className="next-title">WHERE TO GO NEXT</span>
+            <span className="next-title">{output ? "WHERE TO GO NEXT" : "AGENT SHORTCUTS"}</span>
             <span className="next-sub">Each agent's output is live — pick one to take over.</span>
           </div>
           <div className="next-grid">
-            {AGENT_LINKS.map((a) => (
-              <a className="next-card" key={a.name} href={a.url} target="_blank" rel="noopener noreferrer">
-                <div className="next-icon" style={{ background: a.gradient }}>
-                  <a.Icon size={20} strokeWidth={1.75} color="#fff" />
-                </div>
-                <div className="next-body">
-                  <div className="next-name">{a.name}</div>
-                  <div className="next-desc">{a.desc}</div>
-                  <div className="next-cta" style={{ color: a.accent }}>{a.cta}</div>
-                </div>
-              </a>
-            ))}
-          </div>
-        </section>
-
-        {/* Dock */}
-        <div id="dock-row">
-          <div id="dock-wrap">
-            <div className="dock-label"><span>Agents</span><span className="dock-meta">{APPS.length} active · click to route</span></div>
-            <div id="dock">
-              {APPS.map((a) => (
-                <div className="di-cell" key={a.id} title={a.name}>
-                  <div className="di" style={{ background: a.gradient }}>
-                    <a.Icon size={26} strokeWidth={1.75} color="#ffffff" />
+            {AGENT_LINKS.map((a) => {
+              const handleClick = (e: React.MouseEvent) => {
+                if (a.url === "__networking__") {
+                  e.preventDefault();
+                  runContactScan();
+                } else if (a.url === "__research__") {
+                  e.preventDefault();
+                  const q = lastCompany ? `research ${lastCompany}` : "research this company";
+                  setQuery(q);
+                  runQuery(q);
+                }
+              };
+              return (
+                <a className="next-card" key={a.name}
+                  href={a.url === "__networking__" || a.url === "__research__" ? "#" : a.url}
+                  target={a.url.startsWith("http") ? "_blank" : undefined}
+                  rel="noopener noreferrer"
+                  onClick={handleClick}>
+                  <div className="next-icon" style={{ background: a.gradient }}>
+                    <a.Icon size={24} strokeWidth={1.75} color="#fff" />
                   </div>
-                  <div className="di-label">{a.name}</div>
-                  <div className="di-tag">{a.tag}</div>
+                  <div className="next-body">
+                    <div className="next-name">{a.name}</div>
+                    <div className="next-desc">{a.desc}</div>
+                    <div className="next-cta" style={{ color: a.accent }}>{a.cta}</div>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+          {networkingLog.length > 0 && (
+            <div className="scan-log" style={{ marginTop: 12 }}>
+              {networkingLog.map((line, i) => (
+                <div key={i} className="scan-line">
+                  <span className="scan-check">✓</span>
+                  <span>{line}</span>
                 </div>
               ))}
+              {scanLoading && (
+                <div className="scan-line">
+                  <span className="scan-check" style={{ color: "#6366f1", animation: "spin 1.2s linear infinite", display: "inline-block" }}>⟳</span>
+                  <span style={{ color: "var(--ink-3)" }}><span className="term-cursor" /></span>
+                </div>
+              )}
+              {networkingDone && (
+                <div className="scan-line" style={{ marginTop: 4 }}>
+                  <span className="scan-check">→</span>
+                  <a href={`${API_BASE}/networking`} target="_blank" rel="noopener noreferrer"
+                    style={{ color: "#6366f1", fontWeight: 700, textDecoration: "none", fontSize: 14 }}>
+                    View Contacts →
+                  </a>
+                </div>
+              )}
             </div>
-          </div>
-        </div>
+          )}
+        </section>
+
 
 
         {/* Eval footer — single line */}
@@ -654,7 +856,7 @@ html,body{height:100%;font-family:var(--sans);background:var(--bg);color:var(--i
 @keyframes spin{to{transform:rotate(360deg)}}
 
 
-.search-wrap{width:100%;max-width:680px;position:relative}
+.search-wrap{width:100%;max-width:860px;position:relative}
 .search-status{
   position:absolute;left:18px;top:50%;transform:translateY(-50%);z-index:2;
   display:inline-flex;align-items:center;justify-content:center;
@@ -713,7 +915,7 @@ html,body{height:100%;font-family:var(--sans);background:var(--bg);color:var(--i
 .help-toggle.is-open .help-chev{color:rgba(255,255,255,.7)}
 .help-chev{font-family:var(--mono);font-size:10px;color:var(--ink-3);width:8px;text-align:center}
 #help-panel{
-  width:100%;max-width:680px;margin:10px auto 0;
+  width:100%;max-width:860px;margin:10px auto 0;
   background:rgba(255,255,255,.82);
   border:1px solid var(--b);border-radius:13px;
   box-shadow:0 10px 28px rgba(26,26,36,.07), 0 1px 0 rgba(255,255,255,.8) inset;
@@ -725,7 +927,7 @@ html,body{height:100%;font-family:var(--sans);background:var(--bg);color:var(--i
 .dd-divider{height:1px;background:var(--b);margin:0}
 
 #output-zone{
-  width:100%;max-width:680px;margin:0 auto 20px;
+  width:100%;max-width:860px;margin:0 auto 20px;
   padding:0 24px;
 }
 #agent-label{
@@ -745,22 +947,177 @@ html,body{height:100%;font-family:var(--sans);background:var(--bg);color:var(--i
   max-height:340px;overflow-y:auto;
   margin:0;
 }
-/* Recent zone — content column + inbox-signals rail */
+
+/* Scan log — persists above advisor cards */
+.scan-log{
+  background:rgba(255,255,255,.55);border:1px solid var(--b);border-radius:10px;
+  padding:14px 18px;margin-bottom:12px;
+  display:flex;flex-direction:column;gap:7px;
+}
+.scan-line{
+  font:13px/1.5 'JetBrains Mono',monospace;color:var(--ink-2);
+  display:flex;align-items:baseline;gap:10px;
+}
+.scan-check{
+  font-size:15px;font-weight:700;color:#10b981;flex-shrink:0;width:16px;
+}
+
+/* Roles table */
+.roles-table{
+  width:100%;border-collapse:collapse;
+  font-family:var(--mono);font-size:13px;color:var(--ink);
+  margin-top:4px;
+}
+.roles-table th{
+  text-align:left;font-size:10px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-2);
+  padding:0 8px 8px 0;border-bottom:1px solid var(--b);
+}
+.roles-table td{
+  padding:9px 8px 9px 0;border-bottom:1px solid rgba(15,17,21,.06);
+  vertical-align:top;
+}
+.rt-title{font-weight:700;color:var(--ink);max-width:280px}
+.rt-loc{color:var(--ink-2);white-space:nowrap}
+.rt-score{font-weight:800;color:#6366f1;white-space:nowrap;font-size:14px}
+.rt-reason{color:var(--ink-2);font-size:12px}
+.rt-apply{white-space:nowrap}
+.apply-link{
+  display:inline-block;
+  font-family:var(--mono);font-size:11px;font-weight:700;
+  color:#fff;background:#6366f1;
+  padding:5px 12px;border-radius:6px;text-decoration:none;
+  letter-spacing:.04em;transition:background 130ms;
+}
+.apply-link:hover{background:#4f46e5}
+
+/* Pipeline steps band */
+#pipeline-band{
+  width:100%;max-width:860px;margin:0 auto;
+  padding:10px 24px 4px;
+  display:flex;flex-direction:column;gap:4px;
+  position:relative;z-index:2;
+}
+.pb-step{
+  display:flex;align-items:baseline;gap:8px;
+  font-family:var(--mono);font-size:12px;color:var(--ink-3);
+  transition:color 0.2s;
+}
+.pb-step.pb-done{color:var(--ink-2)}
+.pb-icon{
+  font-size:11px;color:var(--ink-4);width:12px;flex-shrink:0;
+  font-weight:700;
+}
+.pb-step.pb-done .pb-icon{color:#10b981}
+
+/* Thinking card */
+.thinking-card{
+  background:rgba(255,255,255,.6);border:1px solid var(--b);border-radius:10px;
+  padding:14px 18px;margin-bottom:8px;
+  font:12px/1.6 'JetBrains Mono',monospace;color:var(--ink-3);
+}
+
+/* Fit score card */
+.fit-card{
+  display:flex;align-items:center;gap:20px;
+  background:linear-gradient(135deg,#4338ca 0%,#6366f1 100%);
+  border-radius:12px;padding:20px 24px;margin-bottom:10px;color:#fff;
+}
+.fit-left{display:flex;align-items:baseline;gap:3px}
+.fit-num{font-size:52px;font-weight:700;line-height:1;letter-spacing:-.03em}
+.fit-denom{font-size:15px;color:rgba(255,255,255,.55);font-weight:500;padding-bottom:5px}
+.fit-right{flex:1;display:flex;flex-direction:column;gap:6px}
+.fit-lbl{font-size:18px;font-weight:600;letter-spacing:-.01em}
+.fit-bar-wrap{height:4px;background:rgba(255,255,255,.25);border-radius:2px}
+.fit-bar-fill{height:100%;background:#fff;border-radius:2px;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+.fit-sub{font-size:10px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.1em;font-family:var(--mono)}
+
+/* Section cards */
+.section-card{
+  background:rgba(255,255,255,.65);
+  border:1px solid var(--b);border-left:3px solid;
+  border-radius:10px;padding:12px 16px;margin-bottom:8px;
+  backdrop-filter:blur(8px);
+}
+.sc-label{
+  font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;margin-bottom:8px;
+  display:flex;align-items:center;gap:6px;
+}
+.sc-label::before{content:"◎";font-size:9px;opacity:.7}
+.sc-body{font-family:var(--mono);font-size:14px;line-height:1.7;color:var(--ink)}
+.sc-bullet{position:relative;padding-left:14px;margin:2px 0}
+.sc-bullet::before{content:"•";position:absolute;left:0;opacity:.5}
+.sc-line{margin:2px 0}
+
+/* Pipeline tracker */
+.pipeline-tracker{
+  background:rgba(255,255,255,.6);border:1px solid var(--b);border-radius:10px;
+  padding:14px 18px;margin-top:10px;
+  font-family:var(--mono);font-size:12px;
+}
+.pipeline-hdr{
+  display:flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:600;color:var(--ink);
+  margin-bottom:10px;letter-spacing:.02em;
+}
+.pl-plan{color:#6366f1}
+.pl-count{margin-left:auto;color:var(--ink-3);font-size:10px}
+.pl-step{
+  display:flex;align-items:flex-start;gap:10px;
+  padding:5px 0;color:var(--ink-3);font-size:11.5px;
+  border-top:1px solid rgba(15,17,21,.05);
+}
+.pl-check{color:#10b981;font-size:12px;flex-shrink:0}
+.pl-done{
+  margin-top:10px;padding-top:10px;border-top:1px solid var(--b);
+  font-size:10.5px;color:#10b981;font-weight:600;letter-spacing:.02em;
+}
+
+/* Where to go next (in output zone) */
+.out-next{margin-top:10px}
+.out-next-hdr{
+  font-family:var(--mono);font-size:9px;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px;
+}
+.out-next-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.out-next-card{
+  display:flex;justify-content:space-between;align-items:center;
+  background:rgba(255,255,255,.65);border:1px solid var(--b);
+  border-radius:8px;padding:10px 12px;text-decoration:none;
+  transition:background 130ms,border-color 130ms;
+}
+.out-next-card:hover{background:rgba(255,255,255,.9);border-color:var(--b-2)}
+.onc-label{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--ink)}
+.onc-cta{font-family:var(--mono);font-size:9px;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase}
+.thinking-label{
+  font-family:var(--mono);font-size:10px;color:var(--accent);
+  margin-left:10px;opacity:.8;letter-spacing:.03em;
+  animation:fadeUp .3s ease;
+}
+.thinking-steps{
+  color:var(--ink-3);font-style:italic;
+  animation:fadeUp .25s ease;
+}
+/* Recent zone */
 #recent-zone{
   width:100%;max-width:1240px;margin:14px auto 0;
   padding:0 24px;
-  display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:10px 14px;align-items:stretch;
+  display:grid;grid-template-columns:1fr;gap:10px;
 }
-.recent-main,.recent-grid,.recent-rail{display:contents}
-.rc-searches{grid-column:1;grid-row:1}
-.rc-pipeline{grid-column:1;grid-row:2}
-.rc-runs{grid-column:1;grid-row:3}
-.rc-inbox{grid-column:2;grid-row:1 / span 2}
-.rc-upcoming{grid-column:2;grid-row:3}
-@media (max-width:640px){
-  #recent-zone{grid-template-columns:1fr}
-  .rc-searches,.rc-pipeline,.rc-runs,.rc-inbox,.rc-upcoming{grid-column:auto;grid-row:auto}
+.agents-grid{
+  display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;
 }
+.agent-pill{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:6px 12px;border-radius:8px;
+  background:rgba(255,255,255,.5);border:1px solid var(--b);
+  transition:background 120ms;
+}
+.agent-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.agent-name{font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--ink-2)}
+.agent-tag{font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-left:2px}
+.test-badge{background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.3);color:#92400e;font-weight:600}
 
 
 
@@ -861,6 +1218,16 @@ html,body{height:100%;font-family:var(--sans);background:var(--bg);color:var(--i
 
 
 
+/* Run Contact Scan card */
+.scan-card{
+  text-align:left;cursor:pointer;
+  transition:border-color .15s,background .15s,opacity .15s;
+}
+.scan-card:hover:not(:disabled){background:rgba(30,64,175,.06);border-color:rgba(96,165,250,.4)}
+.scan-card--idle{opacity:.55;cursor:default}
+.scan-card--loading{opacity:.8;cursor:default}
+.scan-name{font-weight:700}
+
 /* Eval footer — single line */
 #telem{
   flex-shrink:0;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0 10px;
@@ -885,19 +1252,19 @@ html,body{height:100%;font-family:var(--sans);background:var(--bg);color:var(--i
 
 /* Dock */
 /* Where to go next */
-#next-zone{padding:10px 24px 4px;flex-shrink:0}
+#next-zone{width:100%;max-width:860px;margin:0 auto;padding:10px 24px 4px;flex-shrink:0}
 .next-header{display:flex;align-items:center;gap:8px;margin-bottom:10px}
 .next-star{color:var(--ink-3);font-size:11px}
 .next-title{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
 .next-sub{font-size:11px;color:var(--ink-4);margin-left:4px}
-.next-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.next-card{display:flex;align-items:flex-start;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:11px 13px;text-decoration:none;transition:border-color .15s,background .15s}
+.next-grid{display:flex;flex-direction:column;gap:8px}
+.next-card{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 18px;text-decoration:none;transition:border-color .15s,background .15s}
 .next-card:hover{background:var(--surface-2);border-color:var(--border-2)}
-.next-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.next-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .next-body{display:flex;flex-direction:column;gap:2px;min-width:0}
-.next-name{font-size:12px;font-weight:600;color:var(--ink-1);white-space:nowrap}
-.next-desc{font-size:10.5px;color:var(--ink-3)}
-.next-cta{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:3px}
+.next-name{font-size:15px;font-weight:700;color:var(--ink);white-space:nowrap}
+.next-desc{font-size:13px;color:var(--ink-2);margin-top:2px}
+.next-cta{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-top:5px}
 @media(max-width:700px){.next-grid{grid-template-columns:1fr 1fr}}
 
 #dock-row{display:flex;justify-content:center;padding:6px 16px 8px;flex-shrink:0;overflow-x:auto}
