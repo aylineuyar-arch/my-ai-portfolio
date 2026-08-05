@@ -108,8 +108,7 @@ function useGreeting() {
   if (h < 5) return "Burning the midnight oil";
   if (h < 12) return "Good morning";
   if (h < 17) return "Good afternoon";
-  if (h < 22) return "Good evening";
-  return "Working late";
+  return "Good evening";
 }
 
 function useTicker() {
