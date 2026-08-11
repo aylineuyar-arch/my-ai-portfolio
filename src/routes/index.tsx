@@ -758,7 +758,7 @@ function PortfolioPage() {
 
       {/* Project Restaurant — Multi-Agentic Reservation Agent */}
       <section id="project-restaurant" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
-        <ProjectCollapse id="project-restaurant" num="No. 01 · Multi-Agentic Reservation Agent" numCls="text-rose-700" title={<><em className="italic">Fork Yea!</em> — Multi-Agentic Reservation Agent</>} sub="Cursor · LangGraph · Claude · Playwright">
+        <ProjectCollapse id="project-restaurant" num="No. 05 · Multi-Agentic Reservation Agent" numCls="text-rose-700" title={<><em className="italic">Fork Yea!</em> — Multi-Agentic Reservation Agent</>} sub="Cursor · LangGraph · Claude · Playwright">
         <div className="grid md:grid-cols-12 gap-10">
 
           <div className="md:col-span-4">
@@ -1343,7 +1343,7 @@ function PortfolioPage() {
 
       {/* Project 1 */}
       <section id="project-1" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
-        <ProjectCollapse id="project-1" num="No. 05 · AI Job Search" numCls="text-orange-700" title="Live AI Job Search Dashboard" sub="Claude · Python · Railway">
+        <ProjectCollapse id="project-1" num="No. 01 · AI Job Search" numCls="text-orange-700" title="Live AI Job Search Dashboard" sub="Claude · Python · Railway">
         <div className="grid md:grid-cols-12 gap-10">
 
           <div className="md:col-span-4">
