@@ -748,15 +748,15 @@ function PortfolioPage() {
               </CollapsibleContent>
             </Collapsible>
             <a
-              href="https://github.com/aylineuyar-arch/ai-workflow-demo"
+              href="https://aylinos.onrender.com"
               target="_blank"
               rel="noreferrer"
-              aria-label="View repository on GitHub"
-              title="View repository on GitHub"
+              aria-label="Try this agent in AylinOS"
+              title="Try this agent in AylinOS"
               className="mt-4 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
             >
-              <Github className="w-4 h-4" />
-              <span>Repository</span>
+              <MessageSquare className="w-4 h-4" />
+              <span>Try in AylinOS</span>
             </a>
           </div>
 
@@ -851,15 +851,15 @@ function PortfolioPage() {
             </Collapsible>
             <div className="mt-4 flex flex-wrap gap-2">
               <a
-                href="https://github.com/aylineuyar-arch/compliance-rag-chatbot"
+                href="https://aylinos.onrender.com"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="View repository on GitHub"
-                title="View repository on GitHub"
+                aria-label="Try this agent in AylinOS"
+                title="Try this agent in AylinOS"
                 className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
               >
-                <Github className="w-4 h-4" />
-                <span>Repository</span>
+                <MessageSquare className="w-4 h-4" />
+                <span>Try in AylinOS</span>
               </a>
             </div>
           </div>
@@ -962,15 +962,15 @@ function PortfolioPage() {
               </CollapsibleContent>
             </Collapsible>
             <a
-              href="https://github.com/aylineuyar-arch/ai-cs-triage"
+              href="https://aylinos.onrender.com"
               target="_blank"
               rel="noreferrer"
-              aria-label="View repository on GitHub"
-              title="View repository on GitHub"
+              aria-label="Try this agent in AylinOS"
+              title="Try this agent in AylinOS"
               className="mt-4 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
             >
-              <Github className="w-4 h-4" />
-              <span>Repository</span>
+              <MessageSquare className="w-4 h-4" />
+              <span>Try in AylinOS</span>
             </a>
           </div>
 
@@ -1133,15 +1133,15 @@ function PortfolioPage() {
             </Collapsible>
             <div className="mt-4 flex flex-wrap items-center gap-2">
               <a
-                href="https://github.com/aylineuyar-arch/gtm-pricing-tool"
+                href="https://aylinos.onrender.com"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="View repository on GitHub"
-                title="View repository on GitHub"
+                aria-label="Try this agent in AylinOS"
+                title="Try this agent in AylinOS"
                 className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
               >
-                <Github className="w-4 h-4" />
-                <span>Repository</span>
+                <MessageSquare className="w-4 h-4" />
+                <span>Try in AylinOS</span>
               </a>
             </div>
           </div>
@@ -1530,15 +1530,15 @@ function PortfolioPage() {
             </Collapsible>
             <div className="mt-4 flex flex-wrap gap-2">
               <a
-                href="https://github.com/aylineuyar-arch/agentic-ai-email-generator"
+                href="https://aylinos.onrender.com"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="View repository on GitHub"
-                title="View repository on GitHub"
+                aria-label="Try this agent in AylinOS"
+                title="Try this agent in AylinOS"
                 className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
               >
-                <Github className="w-4 h-4" />
-                <span>Repository</span>
+                <MessageSquare className="w-4 h-4" />
+                <span>Try in AylinOS</span>
               </a>
             </div>
           </div>
