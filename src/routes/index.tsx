@@ -847,16 +847,6 @@ function PortfolioPage() {
             </Collapsible>
             <div className="mt-4 flex flex-wrap gap-2">
               <a
-                href="http://localhost:5173/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Open live demo"
-                title="Open live demo"
-                className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-rose-600 text-white hover:bg-rose-700 transition-colors text-xs font-medium"
-              >
-                <span>Live Demo</span>
-              </a>
-              <a
                 href="https://github.com/aylineuyar-arch/restaurant-agent"
                 target="_blank"
                 rel="noreferrer"
@@ -1265,14 +1255,6 @@ function PortfolioPage() {
             </Collapsible>
             <div className="mt-4 flex flex-wrap items-center gap-2">
               <a
-                href="https://web-production-b4e0ad.up.railway.app"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-teal-600 text-white hover:bg-teal-700 transition-colors text-xs font-medium"
-              >
-                Live app ↗
-              </a>
-              <a
                 href="https://github.com/aylineuyar-arch/gtm-pricing-tool"
                 target="_blank"
                 rel="noreferrer"
@@ -1496,16 +1478,6 @@ function PortfolioPage() {
             </Collapsible>
             <div className="mt-4 flex flex-wrap gap-2">
               <a
-                href="https://compliance-rag-demo-mrwtbs4k7gvdvmiuck8mdn.streamlit.app"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Open live demo"
-                title="Open live demo"
-                className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-emerald-700 text-white hover:bg-emerald-800 transition-colors text-xs font-medium"
-              >
-                <span>Live Demo</span>
-              </a>
-              <a
                 href="https://github.com/aylineuyar-arch/compliance-rag-demo"
                 target="_blank"
                 rel="noreferrer"
@@ -1618,16 +1590,6 @@ function PortfolioPage() {
               </CollapsibleContent>
             </Collapsible>
             <div className="mt-4 flex flex-wrap gap-2">
-              <a
-                href="https://muse-agent-transfer.lovable.app"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Open live app"
-                title="Open live app"
-                className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-amber-700 text-white hover:bg-amber-800 transition-colors text-xs font-medium"
-              >
-                <span>Live App</span>
-              </a>
               <a
                 href="https://github.com/aylineuyar-arch/agentic-ai-email-generator"
                 target="_blank"
