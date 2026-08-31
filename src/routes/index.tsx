@@ -690,164 +690,162 @@ function PortfolioPage() {
 
       <GradientDivider />
 
-      {/* Enterprise AI Principles — how I think about deployment */}
-      <section id="principles" className="mx-auto max-w-6xl px-6 py-12 md:py-16 scroll-mt-8">
-        <div className="flex items-baseline gap-3 flex-wrap">
-          <span className="text-xs uppercase tracking-[0.24em] font-semibold text-rose-600">Point of view</span>
-          <h2 className="text-3xl md:text-4xl font-light tracking-tight text-stone-900">
-            Enterprise AI Principles
-          </h2>
-        </div>
-        <p className="mt-3 max-w-3xl text-base md:text-lg text-stone-700 leading-relaxed">
-          How I think about deploying AI inside organizations — the through-line behind the six projects below.
-        </p>
-
-        <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {[
-            {
-              n: "01",
-              title: "Start at the workflow bottleneck",
-              body: "Find where people are already stuck — reviewing, drafting, hunting for context. That is where AI creates value; net-new features rarely do.",
-              tone: "text-rose-700",
-            },
-            {
-              n: "02",
-              title: "Prototype rapidly with real users",
-              body: "Ship a working thing in days, not months. Users react to what they can touch — decks and roadmaps don't surface the real objections.",
-              tone: "text-amber-700",
-            },
-            {
-              n: "03",
-              title: "Measure adoption, not just accuracy",
-              body: "A model that's 95% accurate but 5% adopted delivers nothing. Track usage, repeat use, and workflow substitution as first-class metrics.",
-              tone: "text-emerald-700",
-            },
-            {
-              n: "04",
-              title: "Build governance into the workflow",
-              body: "Citations, audit trails, human-in-the-loop review, and permissioning belong inside the product — not in a policy document nobody reads.",
-              tone: "text-indigo-700",
-            },
-            {
-              n: "05",
-              title: "Iterate from user feedback",
-              body: "Every prompt refusal, every override, every drop-off is a signal. Close the loop weekly so the system compounds toward the way people actually work.",
-              tone: "text-violet-700",
-            },
-            {
-              n: "06",
-              title: "Scale the patterns that stick",
-              body: "Once a workflow proves out, extract the pattern — templates, evals, guardrails — and replicate it across teams instead of rebuilding from scratch.",
-              tone: "text-sky-700",
-            },
-          ].map((p) => (
-            <div key={p.n} className="rounded-2xl border border-stone-200 bg-white/80 backdrop-blur p-5 hover:border-rose-300 transition-colors">
-              <div className="flex items-baseline gap-2">
-                <span className={`text-[11px] uppercase tracking-[0.22em] font-semibold ${p.tone}`}>No. {p.n}</span>
-              </div>
-              <h3 className="mt-2 text-lg font-semibold tracking-tight text-stone-900 leading-snug">{p.title}</h3>
-              <p className="mt-2 text-[14px] text-stone-700 leading-relaxed">{p.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <GradientDivider />
-
-
-
-      {/* Project Restaurant — Multi-Agentic Reservation Agent */}
-      <section id="project-restaurant" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
-        <ProjectCollapse id="project-restaurant" num="No. 05 · Multi-Agentic Reservation Agent" numCls="text-rose-700" title={<><em className="italic">Fork Yea!</em> — Multi-Agentic Reservation Agent</>} sub="Cursor · LangGraph · Claude · Playwright">
+      {/* Project 1 */}
+      <section id="project-1" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
+        <ProjectCollapse id="project-1" num="No. 01 · AI Job Search" numCls="text-orange-700" title="Live AI Job Search Dashboard" sub="Claude · Python · Railway">
         <div className="grid md:grid-cols-12 gap-10">
 
           <div className="md:col-span-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-rose-700 font-medium">
-              No. 01 · Built with LangGraph + Claude
+            <p className="text-xs uppercase tracking-[0.3em] text-orange-700 font-medium">
+              No. 04 · Built with Claude
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
-              <em className="italic">Fork Yea!</em> — Multi-Agentic Reservation Agent
+              Live AI Job Search Dashboard
             </h2>
-            <p className="mt-3 text-sm text-rose-700 font-medium uppercase tracking-wider">
-              <span className="inline-block whitespace-nowrap">Agentic orchestration</span>
-              <span className="mx-2">·</span>
-              <span className="inline-block whitespace-nowrap">LLM-as-judge evals</span>
-              <span className="mx-2">·</span>
-              <span className="inline-block whitespace-nowrap">Vector memory</span>
-              <span className="mx-2">·</span>
-              <span className="inline-block whitespace-nowrap">Human-in-the-loop</span>
-            </p>
             <div className="mt-6 flex flex-wrap gap-2">
-              {["Cursor", "LangGraph", "Claude", "Playwright", "Tavily", "FastAPI", "ChromaDB"].map((t) => (
+              {[
+                "Claude haiku-4-5",
+                "Greenhouse",
+                "Lever",
+                "Ashby",
+                "JSearch",
+                "Python",
+                "Railway",
+              ].map((t) => (
                 <Tag key={t} label={t} />
               ))}
             </div>
             <Collapsible className="mt-8">
-              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-rose-200 bg-rose-50/60 px-4 py-3 text-sm font-medium text-rose-800 hover:bg-rose-50 transition-colors">
+              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-orange-200 bg-orange-50/40 px-4 py-3 text-sm font-medium text-orange-800 hover:bg-orange-50 transition-colors">
                 <span className="uppercase tracking-wider text-xs">See technical details</span>
                 <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
               </CollapsibleTrigger>
               <CollapsibleContent className="space-y-6 pt-6">
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
-                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Cost-aware role-based model routing</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Eight specialized sub-agents in a LangGraph pipeline, each routed to the cheapest model that can do the job: Haiku for fast parsing, Sonnet for deep ranking, Haiku again as judge — no single model does everything.</p>
+                  <div className="p-4 rounded-lg bg-orange-50/60 border border-orange-200">
+                    <div className="text-xs uppercase tracking-wider text-orange-700 font-semibold">Fit Score (0–100)</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">How well the role matches background, industry, and stated goals.</p>
                   </div>
-                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
-                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Persistent vector memory</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">ChromaDB stores past searches so recommendations personalize over time, not just per session.</p>
-                  </div>
-                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
-                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Real browser automation</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Playwright over Chrome DevTools Protocol drives an isolated profile — navigates OpenTable, selects a slot, sandboxed from personal Chrome.</p>
-                  </div>
-                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
-                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">LLM-as-judge eval layer</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">After Sonnet ranks results, Haiku independently scores the top pick and writes a one-sentence verdict — catches low-quality outputs with no human in the loop.</p>
-                  </div>
-                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
-                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Observability dashboard</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Per-run node latency, confidence scores, escalation flags, and eval scores persist to SQLite (WAL); a review queue surfaces low-confidence runs.</p>
-                  </div>
-                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
-                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Closed feedback loop</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Thumbs up/down on each recommendation persists to the monitor DB and appears in the run-detail trace alongside the node pipeline timeline.</p>
-                  </div>
-                </div>
-
-                <div className="rounded-lg border border-stone-200 bg-white/70 p-4">
-                  <div className="text-xs uppercase tracking-[0.22em] text-stone-700 font-bold mb-3">The tool stack</div>
-                  <div className="grid sm:grid-cols-2 gap-2.5 text-sm">
-                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Agent graph</span><span className="text-stone-600">LangGraph — stateful, conditional</span></div>
-                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Parsing LLM</span><span className="text-stone-600">Claude Haiku 4.5</span></div>
-                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Ranking LLM</span><span className="text-stone-600">Claude Sonnet</span></div>
-                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Judge LLM</span><span className="text-stone-600">Claude Haiku — independent scorer</span></div>
-                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Observability</span><span className="text-stone-600">SQLite (WAL) + run dashboard</span></div>
-                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Feedback</span><span className="text-stone-600">Thumbs ratings → monitor DB</span></div>
-                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Web search</span><span className="text-stone-600">Tavily API → OpenTable + Google Maps</span></div>
-                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Vector memory</span><span className="text-stone-600">ChromaDB (local persistence)</span></div>
-                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Browser</span><span className="text-stone-600">Playwright over Chrome CDP</span></div>
-                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">API</span><span className="text-stone-600">FastAPI (Python 3.10+)</span></div>
-                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Frontend</span><span className="text-stone-600">React + Vite + Tailwind</span></div>
-                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Notify</span><span className="text-stone-600">Gmail SMTP (App Password)</span></div>
+                  <div className="p-4 rounded-lg bg-orange-50/60 border border-orange-200">
+                    <div className="text-xs uppercase tracking-wider text-orange-700 font-semibold">Conversion Score (0–100)</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Realistic offer likelihood, calibrated by company type and competitiveness.</p>
                   </div>
                 </div>
 
                 <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
-                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Single natural-language input — "Italian in NYC for 2 on June 1" — drives the full pipeline</li>
-                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Tavily searches OpenTable, then enriches each candidate with ratings, neighborhood, price tier</li>
-                  <li className="flex gap-3"><span className="text-rose-500">▸</span>FastAPI exposes the agent to a React + Vite + Tailwind frontend</li>
-                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Emails a pre-filled one-click checkout link via Gmail SMTP — agent handles every step up to confirm</li>
-                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Isolated <code className="text-xs bg-rose-100 px-1.5 py-0.5 rounded">.chrome-dev-profile/</code> — never touches personal Chrome data</li>
-                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Haiku judge re-scores Sonnet's top pick with a one-sentence verdict — production pattern for catching bad outputs without human review</li>
-                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Observability dashboard logs node latency, confidence, escalation flags, and eval scores to SQLite (WAL); review queue surfaces low-confidence runs</li>
-                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Thumbs up/down ratings persist to the monitor DB and render inline in the run-detail trace next to the pipeline timeline</li>
+                  <li className="flex gap-3"><span className="text-orange-500">▸</span>~300 deduplicated roles per run across 130+ target companies</li>
+                  <li className="flex gap-3"><span className="text-orange-500">▸</span>Honest conversion scoring — Anthropic 10–25, early-stage startups 45–65</li>
+                  <li className="flex gap-3"><span className="text-orange-500">▸</span>Apply-now list: fit ≥ 65 AND conversion ≥ 45 — actionable, not a dump</li>
+                  <li className="flex gap-3"><span className="text-orange-500">▸</span>Eliminated manual checking of Anthropic, Ramp, Rippling, Databricks + 126 more</li>
+                  <li className="flex gap-3"><span className="text-orange-500">▸</span>Deployed on Railway — zero infrastructure overhead</li>
+                </ul>
+              </CollapsibleContent>
+            </Collapsible>
+            <a
+              href="https://github.com/aylineuyar-arch/ai-workflow-demo"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="View repository on GitHub"
+              title="View repository on GitHub"
+              className="mt-4 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
+            >
+              <Github className="w-4 h-4" />
+              <span>Repository</span>
+            </a>
+          </div>
+
+          <div className="md:col-span-8 space-y-6">
+
+            <div className="rounded-xl border border-orange-200 bg-orange-50/60 p-5">
+              <div className="text-xs uppercase tracking-[0.22em] text-orange-700 font-bold mb-5">Live signals</div>
+              <div className="grid grid-cols-3 gap-4">
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-orange-900 leading-none">286</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Roles / run</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-orange-900 leading-none">130+</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Companies tracked</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-orange-900 leading-none">~3 min</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Pipeline end-to-end</div>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-base md:text-lg leading-relaxed text-stone-700">
+              An AI-powered pipeline that aggregates live postings from{" "}
+              <strong className="text-stone-900">130+ company Applicant Tracking Systems (ATSs)</strong> and
+              major job boards, scores each role with Claude on fit and
+              realistic conversion likelihood, and renders results in a
+              filterable web dashboard.
+            </p>
+
+            <figure className="mt-8">
+              <img
+                src={dashboardImg}
+                alt="Job Search Dashboard — color-coded fit and conversion scores"
+                className="w-full rounded-lg shadow-lg ring-1 ring-stone-200"
+                loading="eager"
+              />
+              <figcaption className="mt-3 text-xs text-stone-500 italic">
+                Live dashboard — color-coded fit & conversion scores, one-click
+                apply links.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        </ProjectCollapse>
+      </section>
+
+
+      <GradientDivider />
+
+      {/* Project 2 — Compliance RAG Chatbot */}
+      <section id="project-3" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
+        <ProjectCollapse id="project-3" num="No. 02 · Compliance RAG Chatbot" numCls="text-emerald-700" title="Compliance RAG Chatbot" sub="Claude · Python · Streamlit">
+        <div className="grid md:grid-cols-12 gap-10">
+
+          <div className="md:col-span-4">
+            <p className="text-xs uppercase tracking-[0.3em] text-emerald-700 font-medium">
+              No. 05 · Built with Claude
+            </p>
+            <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
+              Compliance RAG Chatbot
+            </h2>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {["Claude", "Python", "Streamlit", "RAG", "Financial Services"].map((t) => (
+                <Tag key={t} label={t} />
+              ))}
+            </div>
+            <Collapsible className="mt-8">
+              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-emerald-200 bg-emerald-50/40 px-4 py-3 text-sm font-medium text-emerald-800 hover:bg-emerald-50 transition-colors">
+                <span className="uppercase tracking-wider text-xs">See technical details</span>
+                <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
+              </CollapsibleTrigger>
+              <CollapsibleContent className="space-y-6 pt-6">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="p-4 rounded-lg bg-emerald-50/60 border border-emerald-200">
+                    <div className="text-xs uppercase tracking-wider text-emerald-700 font-semibold">Retrieval pipeline</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Sentence-transformers embeddings → cosine search → top-k chunks injected into Claude prompt with citations.</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-emerald-50/60 border border-emerald-200">
+                    <div className="text-xs uppercase tracking-wider text-emerald-700 font-semibold">Grounded by default</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Confidence threshold + cross-document synthesis callout — falls back honestly when policies don't cover the question.</p>
+                  </div>
+                </div>
+                <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
+                  <li className="flex gap-3"><span className="text-emerald-500">▸</span>Streaming token-by-token answers with conversation memory — follow-ups like "what about exceptions?" stay in context</li>
+                  <li className="flex gap-3"><span className="text-emerald-500">▸</span>Suggested follow-up questions + CSV session export — built for analyst workflows and audit trails</li>
+                  <li className="flex gap-3"><span className="text-emerald-500">▸</span>Local embeddings = $0 per query on retrieval; only generation hits the Claude API</li>
+                  <li className="flex gap-3"><span className="text-emerald-500">▸</span>Deployed on Streamlit Cloud with claude-haiku-4-5 — production-grade UX, demo-grade cost</li>
                 </ul>
               </CollapsibleContent>
             </Collapsible>
             <div className="mt-4 flex flex-wrap gap-2">
               <a
-                href="https://github.com/aylineuyar-arch/fork-yea"
+                href="https://github.com/aylineuyar-arch/compliance-rag-chatbot"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="View repository on GitHub"
@@ -861,174 +859,48 @@ function PortfolioPage() {
           </div>
 
           <div className="md:col-span-8 space-y-6">
-            <div className="p-5 rounded-xl bg-rose-50/70 border-l-4 border-rose-400">
-              <p className="text-xs uppercase tracking-wider text-rose-700 font-semibold mb-2">
-                Why this one is the most complex
+            <div className="p-5 rounded-xl bg-stone-50 border-l-4 border-emerald-400">
+              <p className="text-xs uppercase tracking-wider text-emerald-700 font-semibold mb-2">
+                Why this matters
               </p>
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                Finding the <strong className="text-stone-900">perfect reservation</strong> takes a team of AI agents — they understand the ask, search, rank the best fit, <strong className="text-stone-900">books the reservation</strong>, and emails you to confirm.
+                Compliance teams spend hours hunting through dense policy PDFs for a single answer — and one wrong call can mean a fine. This grounds every answer in the actual policy doc, with citations, turning that hunt into <strong className="text-stone-900">seconds of trustworthy answers</strong> — exactly what regulated fintechs need.
               </p>
             </div>
 
-            <div className="rounded-xl border border-rose-200 bg-rose-50/40 p-5">
-              <div className="text-xs uppercase tracking-[0.22em] text-rose-700 font-bold mb-5">Agent signals</div>
+            <div className="rounded-xl border border-emerald-200 bg-emerald-50/60 p-5">
+              <div className="text-xs uppercase tracking-[0.22em] text-emerald-700 font-bold mb-5">Retrieval signals</div>
               <div className="grid grid-cols-3 gap-4">
                 <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">8</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Graph nodes</div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-emerald-900 leading-none">4</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Policy domains indexed</div>
                 </div>
                 <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">3</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Claude roles · parse, rank, judge</div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-emerald-900 leading-none">21</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Doc chunks retrieved</div>
                 </div>
                 <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">1-click</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Inbox to booked</div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-emerald-900 leading-none">0 $</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Embedding API cost</div>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-xl border border-stone-200 bg-white/60 p-5 md:p-6">
-              <div className="flex items-baseline justify-between mb-4">
-                <div className="text-xs uppercase tracking-[0.22em] text-stone-700 font-bold">Agent flow</div>
-                <div className="text-[10px] uppercase tracking-[0.18em] text-stone-500">8 specialized sub-agents</div>
-              </div>
+            <p className="text-base md:text-lg leading-relaxed text-stone-700">
+              A live chatbot that answers <strong className="text-stone-900">financial services compliance questions</strong> — streams Claude's responses token by token, grounds every answer in retrieved policy passages, and falls back honestly when the docs don't cover the question. Built to mirror the internal tooling a regulated fintech (Revolut, Ramp, Stripe) actually needs.
+            </p>
 
-              <p className="text-sm text-stone-600 mb-4 leading-relaxed">
-                You type something like <span className="font-medium text-stone-800">"Find me a quiet Italian spot for four this Saturday, outdoor seating, something with handmade pasta"</span> — and the system figures out the rest.
-              </p>
-
-              <AgentFlowMarquee
-                steps={[
-                  { label: "Parse", sub: "understand request", tone: "amber", Icon: Languages },
-                  { label: "Recall", sub: "past preferences", tone: "violet", Icon: History },
-                  { label: "Research", sub: "find options ↻", tone: "sky", Icon: Search },
-                  { label: "Enrich", sub: "add context", tone: "sky", Icon: Sparkles },
-                  { label: "Rank", sub: "score best fit", tone: "amber", Icon: ListOrdered },
-                  { label: "Judge", sub: "verify top pick", tone: "judge", Icon: Gavel },
-                  { label: "Book", sub: "reserve slot", tone: "emerald", Icon: CalendarCheck },
-                  { label: "Confirm", sub: "email you", tone: "rose", Icon: MailCheck },
-                ]}
+            <figure>
+              <img
+                src={complianceRagImg}
+                alt="Compliance Policy Q&A chatbot — indexed AML, KYC, Trade Surveillance, and Data Governance documents with example questions"
+                className="w-full rounded-lg shadow-lg ring-1 ring-emerald-200"
+                loading="eager"
               />
-              <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[10.5px] uppercase tracking-[0.14em] text-stone-600">
-                <span className="font-semibold text-stone-700">Color key:</span>
-                <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-amber-200 ring-1 ring-amber-300" />Reasoning</span>
-                <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-violet-200 ring-1 ring-violet-300" />Memory</span>
-                <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-sky-200 ring-1 ring-sky-300" />Search</span>
-                <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-emerald-200 ring-1 ring-emerald-300" />Action</span>
-                <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-stone-100 ring-1 ring-stone-500 border border-dashed border-stone-500" />Verifier (Haiku)</span>
-                <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-rose-200 ring-1 ring-rose-300" />Notify</span>
-              </div>
-
-              <div className="mt-3 flex items-center gap-2 text-[11px] text-stone-600">
-                <span className="text-amber-600">↻</span>
-                <span>If <span className="font-medium text-stone-800">Research</span> finds fewer than 3 options, the agent automatically broadens the search and tries again.</span>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-3 gap-3">
-              <figure className="overflow-hidden rounded-lg border border-rose-200 bg-stone-950 shadow-md flex flex-col">
-                <div className="aspect-video w-full bg-stone-950 flex items-center justify-center">
-                  <img
-                    src={forkYeahLoading}
-                    alt="Fork Yeah! agent working — sub-agents checking past searches, querying OpenTable, enriching with Maps & reviews."
-                    loading="lazy"
-                    className="w-full h-full object-cover object-top block"
-                  />
-                </div>
-                <figcaption className="px-2 py-1.5 text-[11px] leading-snug text-stone-800 bg-rose-50 border-t border-rose-200">
-                  Agents at work — Haiku, ChromaDB, Tavily and Sonnet running in sequence.
-                </figcaption>
-              </figure>
-              <figure className="overflow-hidden rounded-lg border border-rose-200 bg-stone-950 shadow-md flex flex-col">
-                <div className="aspect-video w-full bg-stone-950 flex items-center justify-center">
-                  <img
-                    src={forkYeahResults}
-                    alt="Fork Yeah! agent results — ranked top pick with neighborhood, price tier and vibe tags."
-                    loading="lazy"
-                    className="w-full h-full object-cover object-top block"
-                  />
-                </div>
-                <figcaption className="px-2 py-1.5 text-[11px] leading-snug text-stone-800 bg-rose-50 border-t border-rose-200">
-                  Ranked result — top pick with price tier, vibe tags and a one-click booking link.
-                </figcaption>
-              </figure>
-
-              {/* Simulated Monitor Mode dashboard — what observability looks like in production */}
-              <figure className="overflow-hidden rounded-lg border border-amber-300/40 bg-stone-950 shadow-md flex flex-col">
-                <div className="aspect-video w-full overflow-hidden">
-                  <div className="origin-top-left scale-[0.46] w-[217%]">
-                    <div className="px-4 py-3 border-b border-stone-800">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                      <div className="flex items-baseline gap-3">
-                        <span className="font-serif text-2xl text-amber-300 italic leading-none">fork yeah!</span>
-                        <span className="text-[10px] uppercase tracking-[0.2em] text-stone-400">Monitor mode — workflow observability</span>
-                      </div>
-                      <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-emerald-500/15 text-emerald-300 px-2 py-1 rounded-full font-medium">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />Live · simulated
-                      </span>
-                    </div>
-                    <p className="mt-2 text-[12px] text-stone-400 leading-relaxed max-w-xl">
-                      Every agent run is tracked, scored, and surfaced — so you know what your AI is doing in production.
-                    </p>
-                    </div>
-
-                  <div className="p-4 grid grid-cols-2 md:grid-cols-4 gap-3">
-                    {[
-                      { label: "Total runs", value: "1,284", sub: "47 today" },
-                      { label: "Success rate", value: "94.2%", sub: "judge-verified" },
-                      { label: "Avg latency", value: "3.8s", sub: "p95 6.1s" },
-                      { label: "Escalations", value: "12", sub: "avg conf 0.71" },
-                    ].map((m) => (
-                      <div key={m.label} className="rounded-lg bg-stone-900/80 border border-stone-800 p-3">
-                        <div className="text-[10px] uppercase tracking-wider text-stone-400">{m.label}</div>
-                        <div className="mt-1.5 font-serif text-2xl text-stone-50 leading-none">{m.value}</div>
-                        <div className="mt-1.5 text-[11px] text-stone-500">{m.sub}</div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="mx-4 mb-4 rounded-lg bg-stone-900/60 border border-stone-800">
-                    <div className="flex items-center justify-between px-3 py-2 border-b border-stone-800">
-                      <span className="text-[10px] uppercase tracking-[0.18em] text-stone-400">Recent runs</span>
-                      <span className="text-[10px] uppercase tracking-wider bg-amber-300/90 text-stone-900 px-2 py-0.5 rounded-full font-semibold">all runs</span>
-                    </div>
-                    <div className="divide-y divide-stone-800/80 text-[12px]">
-                      {[
-                        { q: "vegetarian, Greenwich Village, $$", pick: "Superiority Burger", conf: 0.93, lat: "3.2s", ok: true },
-                        { q: "date night, West Village, $$$", pick: "I Sodi", conf: 0.88, lat: "4.1s", ok: true },
-                        { q: "late night ramen near Bryant Park", pick: "Ippudo Midtown", conf: 0.81, lat: "3.7s", ok: true },
-                        { q: "private room, 12 ppl, Flatiron", pick: "—", conf: 0.42, lat: "5.9s", ok: false },
-                        { q: "outdoor seating, dog-friendly, Brooklyn", pick: "Bar Bayeux", conf: 0.86, lat: "3.4s", ok: true },
-                      ].map((r, i) => (
-                        <div key={i} className="grid grid-cols-12 items-center gap-2 px-3 py-2">
-                          <span className="col-span-5 text-stone-300 truncate">{r.q}</span>
-                          <span className="col-span-3 text-stone-400 truncate">→ <span className="text-stone-200">{r.pick}</span></span>
-                          <span className="col-span-2 text-stone-500">{r.lat}</span>
-                          <span className={`col-span-1 font-mono text-[11px] ${r.conf >= 0.7 ? "text-emerald-300" : "text-rose-300"}`}>{r.conf.toFixed(2)}</span>
-                          <span className="col-span-1 text-right">
-                            {r.ok ? (
-                              <span className="text-[10px] uppercase text-emerald-300/90">ok</span>
-                            ) : (
-                              <span className="text-[10px] uppercase text-rose-300/90">review</span>
-                            )}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="px-3 py-2 border-t border-stone-800 text-[10px] text-stone-500 text-center">
-                      est. total cost $1.842 · auto-refreshes every 30s
-                    </div>
-                  </div>
-                  </div>
-                </div>
-
-                <figcaption className="px-2 py-1.5 text-[11px] leading-snug text-stone-800 bg-amber-50 border-t border-amber-300/40">
-                  Monitor mode shows live run metrics, confidence scores, and flagged cases for human review.
-                </figcaption>
-              </figure>
-            </div>
-
+              <figcaption className="mt-3 text-xs text-stone-500 italic">
+                Live app — 4 indexed policy domains, 21 chunks, Claude Haiku 4.5 with grounded retrieval.
+              </figcaption>
+            </figure>
 
           </div>
         </div>
@@ -1038,7 +910,7 @@ function PortfolioPage() {
 
       <GradientDivider />
 
-      {/* Project 4 — Customer Service Triage */}
+      {/* Project 3 — Customer Service Triage */}
       <section id="project-4" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
         <ProjectCollapse id="project-4" num="No. 03 · Customer Service Triage Agent" numCls="text-indigo-700" title="Customer Service Triage Agent" sub="Claude · LangGraph · Python · FastAPI">
         <div className="grid md:grid-cols-12 gap-10">
@@ -1323,162 +1195,98 @@ function PortfolioPage() {
 
       <GradientDivider />
 
-      {/* Project 1 */}
-      <section id="project-1" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
-        <ProjectCollapse id="project-1" num="No. 01 · AI Job Search" numCls="text-orange-700" title="Live AI Job Search Dashboard" sub="Claude · Python · Railway">
+      {/* Project Restaurant — Multi-Agentic Reservation Agent */}
+      <section id="project-restaurant" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
+        <ProjectCollapse id="project-restaurant" num="No. 05 · Multi-Agentic Reservation Agent" numCls="text-rose-700" title={<><em className="italic">Fork Yea!</em> — Multi-Agentic Reservation Agent</>} sub="Cursor · LangGraph · Claude · Playwright">
         <div className="grid md:grid-cols-12 gap-10">
 
           <div className="md:col-span-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-orange-700 font-medium">
-              No. 04 · Built with Claude
+            <p className="text-xs uppercase tracking-[0.3em] text-rose-700 font-medium">
+              No. 01 · Built with LangGraph + Claude
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
-              Live AI Job Search Dashboard
+              <em className="italic">Fork Yea!</em> — Multi-Agentic Reservation Agent
             </h2>
+            <p className="mt-3 text-sm text-rose-700 font-medium uppercase tracking-wider">
+              <span className="inline-block whitespace-nowrap">Agentic orchestration</span>
+              <span className="mx-2">·</span>
+              <span className="inline-block whitespace-nowrap">LLM-as-judge evals</span>
+              <span className="mx-2">·</span>
+              <span className="inline-block whitespace-nowrap">Vector memory</span>
+              <span className="mx-2">·</span>
+              <span className="inline-block whitespace-nowrap">Human-in-the-loop</span>
+            </p>
             <div className="mt-6 flex flex-wrap gap-2">
-              {[
-                "Claude haiku-4-5",
-                "Greenhouse",
-                "Lever",
-                "Ashby",
-                "JSearch",
-                "Python",
-                "Railway",
-              ].map((t) => (
+              {["Cursor", "LangGraph", "Claude", "Playwright", "Tavily", "FastAPI", "ChromaDB"].map((t) => (
                 <Tag key={t} label={t} />
               ))}
             </div>
             <Collapsible className="mt-8">
-              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-orange-200 bg-orange-50/40 px-4 py-3 text-sm font-medium text-orange-800 hover:bg-orange-50 transition-colors">
+              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-rose-200 bg-rose-50/60 px-4 py-3 text-sm font-medium text-rose-800 hover:bg-rose-50 transition-colors">
                 <span className="uppercase tracking-wider text-xs">See technical details</span>
                 <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
               </CollapsibleTrigger>
               <CollapsibleContent className="space-y-6 pt-6">
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="p-4 rounded-lg bg-orange-50/60 border border-orange-200">
-                    <div className="text-xs uppercase tracking-wider text-orange-700 font-semibold">Fit Score (0–100)</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">How well the role matches background, industry, and stated goals.</p>
+                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
+                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Cost-aware role-based model routing</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Eight specialized sub-agents in a LangGraph pipeline, each routed to the cheapest model that can do the job: Haiku for fast parsing, Sonnet for deep ranking, Haiku again as judge — no single model does everything.</p>
                   </div>
-                  <div className="p-4 rounded-lg bg-orange-50/60 border border-orange-200">
-                    <div className="text-xs uppercase tracking-wider text-orange-700 font-semibold">Conversion Score (0–100)</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Realistic offer likelihood, calibrated by company type and competitiveness.</p>
+                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
+                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Persistent vector memory</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">ChromaDB stores past searches so recommendations personalize over time, not just per session.</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
+                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Real browser automation</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Playwright over Chrome DevTools Protocol drives an isolated profile — navigates OpenTable, selects a slot, sandboxed from personal Chrome.</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
+                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">LLM-as-judge eval layer</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">After Sonnet ranks results, Haiku independently scores the top pick and writes a one-sentence verdict — catches low-quality outputs with no human in the loop.</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
+                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Observability dashboard</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Per-run node latency, confidence scores, escalation flags, and eval scores persist to SQLite (WAL); a review queue surfaces low-confidence runs.</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
+                    <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Closed feedback loop</div>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Thumbs up/down on each recommendation persists to the monitor DB and appears in the run-detail trace alongside the node pipeline timeline.</p>
+                  </div>
+                </div>
+
+                <div className="rounded-lg border border-stone-200 bg-white/70 p-4">
+                  <div className="text-xs uppercase tracking-[0.22em] text-stone-700 font-bold mb-3">The tool stack</div>
+                  <div className="grid sm:grid-cols-2 gap-2.5 text-sm">
+                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Agent graph</span><span className="text-stone-600">LangGraph — stateful, conditional</span></div>
+                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Parsing LLM</span><span className="text-stone-600">Claude Haiku 4.5</span></div>
+                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Ranking LLM</span><span className="text-stone-600">Claude Sonnet</span></div>
+                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Judge LLM</span><span className="text-stone-600">Claude Haiku — independent scorer</span></div>
+                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Observability</span><span className="text-stone-600">SQLite (WAL) + run dashboard</span></div>
+                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Feedback</span><span className="text-stone-600">Thumbs ratings → monitor DB</span></div>
+                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Web search</span><span className="text-stone-600">Tavily API → OpenTable + Google Maps</span></div>
+                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Vector memory</span><span className="text-stone-600">ChromaDB (local persistence)</span></div>
+                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Browser</span><span className="text-stone-600">Playwright over Chrome CDP</span></div>
+                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">API</span><span className="text-stone-600">FastAPI (Python 3.10+)</span></div>
+                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Frontend</span><span className="text-stone-600">React + Vite + Tailwind</span></div>
+                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Notify</span><span className="text-stone-600">Gmail SMTP (App Password)</span></div>
                   </div>
                 </div>
 
                 <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
-                  <li className="flex gap-3"><span className="text-orange-500">▸</span>~300 deduplicated roles per run across 130+ target companies</li>
-                  <li className="flex gap-3"><span className="text-orange-500">▸</span>Honest conversion scoring — Anthropic 10–25, early-stage startups 45–65</li>
-                  <li className="flex gap-3"><span className="text-orange-500">▸</span>Apply-now list: fit ≥ 65 AND conversion ≥ 45 — actionable, not a dump</li>
-                  <li className="flex gap-3"><span className="text-orange-500">▸</span>Eliminated manual checking of Anthropic, Ramp, Rippling, Databricks + 126 more</li>
-                  <li className="flex gap-3"><span className="text-orange-500">▸</span>Deployed on Railway — zero infrastructure overhead</li>
-                </ul>
-              </CollapsibleContent>
-            </Collapsible>
-            <a
-              href="https://github.com/aylineuyar-arch/ai-workflow-demo"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="View repository on GitHub"
-              title="View repository on GitHub"
-              className="mt-4 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
-            >
-              <Github className="w-4 h-4" />
-              <span>Repository</span>
-            </a>
-          </div>
-
-          <div className="md:col-span-8 space-y-6">
-
-            <div className="rounded-xl border border-orange-200 bg-orange-50/60 p-5">
-              <div className="text-xs uppercase tracking-[0.22em] text-orange-700 font-bold mb-5">Live signals</div>
-              <div className="grid grid-cols-3 gap-4">
-                <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-orange-900 leading-none">286</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Roles / run</div>
-                </div>
-                <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-orange-900 leading-none">130+</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Companies tracked</div>
-                </div>
-                <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-orange-900 leading-none">~3 min</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Pipeline end-to-end</div>
-                </div>
-              </div>
-            </div>
-
-            <p className="text-base md:text-lg leading-relaxed text-stone-700">
-              An AI-powered pipeline that aggregates live postings from{" "}
-              <strong className="text-stone-900">130+ company Applicant Tracking Systems (ATSs)</strong> and
-              major job boards, scores each role with Claude on fit and
-              realistic conversion likelihood, and renders results in a
-              filterable web dashboard.
-            </p>
-
-            <figure className="mt-8">
-              <img
-                src={dashboardImg}
-                alt="Job Search Dashboard — color-coded fit and conversion scores"
-                className="w-full rounded-lg shadow-lg ring-1 ring-stone-200"
-                loading="eager"
-              />
-              <figcaption className="mt-3 text-xs text-stone-500 italic">
-                Live dashboard — color-coded fit & conversion scores, one-click
-                apply links.
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-        </ProjectCollapse>
-      </section>
-
-
-      <GradientDivider />
-
-      {/* Project 3 — Compliance RAG */}
-      <section id="project-3" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
-        <ProjectCollapse id="project-3" num="No. 02 · Compliance RAG Chatbot" numCls="text-emerald-700" title="Compliance RAG Chatbot" sub="Claude · Python · Streamlit">
-        <div className="grid md:grid-cols-12 gap-10">
-
-          <div className="md:col-span-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-emerald-700 font-medium">
-              No. 05 · Built with Claude
-            </p>
-            <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
-              Compliance RAG Chatbot
-            </h2>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {["Claude", "Python", "Streamlit", "RAG", "Financial Services"].map((t) => (
-                <Tag key={t} label={t} />
-              ))}
-            </div>
-            <Collapsible className="mt-8">
-              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-emerald-200 bg-emerald-50/40 px-4 py-3 text-sm font-medium text-emerald-800 hover:bg-emerald-50 transition-colors">
-                <span className="uppercase tracking-wider text-xs">See technical details</span>
-                <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
-              </CollapsibleTrigger>
-              <CollapsibleContent className="space-y-6 pt-6">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="p-4 rounded-lg bg-emerald-50/60 border border-emerald-200">
-                    <div className="text-xs uppercase tracking-wider text-emerald-700 font-semibold">Retrieval pipeline</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Sentence-transformers embeddings → cosine search → top-k chunks injected into Claude prompt with citations.</p>
-                  </div>
-                  <div className="p-4 rounded-lg bg-emerald-50/60 border border-emerald-200">
-                    <div className="text-xs uppercase tracking-wider text-emerald-700 font-semibold">Grounded by default</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Confidence threshold + cross-document synthesis callout — falls back honestly when policies don't cover the question.</p>
-                  </div>
-                </div>
-                <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
-                  <li className="flex gap-3"><span className="text-emerald-500">▸</span>Streaming token-by-token answers with conversation memory — follow-ups like "what about exceptions?" stay in context</li>
-                  <li className="flex gap-3"><span className="text-emerald-500">▸</span>Suggested follow-up questions + CSV session export — built for analyst workflows and audit trails</li>
-                  <li className="flex gap-3"><span className="text-emerald-500">▸</span>Local embeddings = $0 per query on retrieval; only generation hits the Claude API</li>
-                  <li className="flex gap-3"><span className="text-emerald-500">▸</span>Deployed on Streamlit Cloud with claude-haiku-4-5 — production-grade UX, demo-grade cost</li>
+                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Single natural-language input — "Italian in NYC for 2 on June 1" — drives the full pipeline</li>
+                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Tavily searches OpenTable, then enriches each candidate with ratings, neighborhood, price tier</li>
+                  <li className="flex gap-3"><span className="text-rose-500">▸</span>FastAPI exposes the agent to a React + Vite + Tailwind frontend</li>
+                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Emails a pre-filled one-click checkout link via Gmail SMTP — agent handles every step up to confirm</li>
+                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Isolated <code className="text-xs bg-rose-100 px-1.5 py-0.5 rounded">.chrome-dev-profile/</code> — never touches personal Chrome data</li>
+                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Haiku judge re-scores Sonnet's top pick with a one-sentence verdict — production pattern for catching bad outputs without human review</li>
+                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Observability dashboard logs node latency, confidence, escalation flags, and eval scores to SQLite (WAL); review queue surfaces low-confidence runs</li>
+                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Thumbs up/down ratings persist to the monitor DB and render inline in the run-detail trace next to the pipeline timeline</li>
                 </ul>
               </CollapsibleContent>
             </Collapsible>
             <div className="mt-4 flex flex-wrap gap-2">
               <a
-                href="https://github.com/aylineuyar-arch/compliance-rag-chatbot"
+                href="https://github.com/aylineuyar-arch/fork-yea"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="View repository on GitHub"
@@ -1492,48 +1300,174 @@ function PortfolioPage() {
           </div>
 
           <div className="md:col-span-8 space-y-6">
-            <div className="p-5 rounded-xl bg-stone-50 border-l-4 border-emerald-400">
-              <p className="text-xs uppercase tracking-wider text-emerald-700 font-semibold mb-2">
-                Why this matters
+            <div className="p-5 rounded-xl bg-rose-50/70 border-l-4 border-rose-400">
+              <p className="text-xs uppercase tracking-wider text-rose-700 font-semibold mb-2">
+                Why this one is the most complex
               </p>
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                Compliance teams spend hours hunting through dense policy PDFs for a single answer — and one wrong call can mean a fine. This grounds every answer in the actual policy doc, with citations, turning that hunt into <strong className="text-stone-900">seconds of trustworthy answers</strong> — exactly what regulated fintechs need.
+                Finding the <strong className="text-stone-900">perfect reservation</strong> takes a team of AI agents — they understand the ask, search, rank the best fit, <strong className="text-stone-900">books the reservation</strong>, and emails you to confirm.
               </p>
             </div>
 
-            <div className="rounded-xl border border-emerald-200 bg-emerald-50/60 p-5">
-              <div className="text-xs uppercase tracking-[0.22em] text-emerald-700 font-bold mb-5">Retrieval signals</div>
+            <div className="rounded-xl border border-rose-200 bg-rose-50/40 p-5">
+              <div className="text-xs uppercase tracking-[0.22em] text-rose-700 font-bold mb-5">Agent signals</div>
               <div className="grid grid-cols-3 gap-4">
                 <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-emerald-900 leading-none">4</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Policy domains indexed</div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">8</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Graph nodes</div>
                 </div>
                 <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-emerald-900 leading-none">21</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Doc chunks retrieved</div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">3</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Claude roles · parse, rank, judge</div>
                 </div>
                 <div>
-                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-emerald-900 leading-none">0 $</div>
-                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Embedding API cost</div>
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-rose-900 leading-none">1-click</div>
+                  <div className="mt-1.5 text-[11px] md:text-xs uppercase tracking-[0.16em] text-stone-600 font-medium">Inbox to booked</div>
                 </div>
               </div>
             </div>
 
-            <p className="text-base md:text-lg leading-relaxed text-stone-700">
-              A live chatbot that answers <strong className="text-stone-900">financial services compliance questions</strong> — streams Claude's responses token by token, grounds every answer in retrieved policy passages, and falls back honestly when the docs don't cover the question. Built to mirror the internal tooling a regulated fintech (Revolut, Ramp, Stripe) actually needs.
-            </p>
+            <div className="rounded-xl border border-stone-200 bg-white/60 p-5 md:p-6">
+              <div className="flex items-baseline justify-between mb-4">
+                <div className="text-xs uppercase tracking-[0.22em] text-stone-700 font-bold">Agent flow</div>
+                <div className="text-[10px] uppercase tracking-[0.18em] text-stone-500">8 specialized sub-agents</div>
+              </div>
 
-            <figure>
-              <img
-                src={complianceRagImg}
-                alt="Compliance Policy Q&A chatbot — indexed AML, KYC, Trade Surveillance, and Data Governance documents with example questions"
-                className="w-full rounded-lg shadow-lg ring-1 ring-emerald-200"
-                loading="eager"
+              <p className="text-sm text-stone-600 mb-4 leading-relaxed">
+                You type something like <span className="font-medium text-stone-800">"Find me a quiet Italian spot for four this Saturday, outdoor seating, something with handmade pasta"</span> — and the system figures out the rest.
+              </p>
+
+              <AgentFlowMarquee
+                steps={[
+                  { label: "Parse", sub: "understand request", tone: "amber", Icon: Languages },
+                  { label: "Recall", sub: "past preferences", tone: "violet", Icon: History },
+                  { label: "Research", sub: "find options ↻", tone: "sky", Icon: Search },
+                  { label: "Enrich", sub: "add context", tone: "sky", Icon: Sparkles },
+                  { label: "Rank", sub: "score best fit", tone: "amber", Icon: ListOrdered },
+                  { label: "Judge", sub: "verify top pick", tone: "judge", Icon: Gavel },
+                  { label: "Book", sub: "reserve slot", tone: "emerald", Icon: CalendarCheck },
+                  { label: "Confirm", sub: "email you", tone: "rose", Icon: MailCheck },
+                ]}
               />
-              <figcaption className="mt-3 text-xs text-stone-500 italic">
-                Live app — 4 indexed policy domains, 21 chunks, Claude Haiku 4.5 with grounded retrieval.
-              </figcaption>
-            </figure>
+              <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[10.5px] uppercase tracking-[0.14em] text-stone-600">
+                <span className="font-semibold text-stone-700">Color key:</span>
+                <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-amber-200 ring-1 ring-amber-300" />Reasoning</span>
+                <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-violet-200 ring-1 ring-violet-300" />Memory</span>
+                <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-sky-200 ring-1 ring-sky-300" />Search</span>
+                <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-emerald-200 ring-1 ring-emerald-300" />Action</span>
+                <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-stone-100 ring-1 ring-stone-500 border border-dashed border-stone-500" />Verifier (Haiku)</span>
+                <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-rose-200 ring-1 ring-rose-300" />Notify</span>
+              </div>
+
+              <div className="mt-3 flex items-center gap-2 text-[11px] text-stone-600">
+                <span className="text-amber-600">↻</span>
+                <span>If <span className="font-medium text-stone-800">Research</span> finds fewer than 3 options, the agent automatically broadens the search and tries again.</span>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-3 gap-3">
+              <figure className="overflow-hidden rounded-lg border border-rose-200 bg-stone-950 shadow-md flex flex-col">
+                <div className="aspect-video w-full bg-stone-950 flex items-center justify-center">
+                  <img
+                    src={forkYeahLoading}
+                    alt="Fork Yeah! agent working — sub-agents checking past searches, querying OpenTable, enriching with Maps & reviews."
+                    loading="lazy"
+                    className="w-full h-full object-cover object-top block"
+                  />
+                </div>
+                <figcaption className="px-2 py-1.5 text-[11px] leading-snug text-stone-800 bg-rose-50 border-t border-rose-200">
+                  Agents at work — Haiku, ChromaDB, Tavily and Sonnet running in sequence.
+                </figcaption>
+              </figure>
+              <figure className="overflow-hidden rounded-lg border border-rose-200 bg-stone-950 shadow-md flex flex-col">
+                <div className="aspect-video w-full bg-stone-950 flex items-center justify-center">
+                  <img
+                    src={forkYeahResults}
+                    alt="Fork Yeah! agent results — ranked top pick with neighborhood, price tier and vibe tags."
+                    loading="lazy"
+                    className="w-full h-full object-cover object-top block"
+                  />
+                </div>
+                <figcaption className="px-2 py-1.5 text-[11px] leading-snug text-stone-800 bg-rose-50 border-t border-rose-200">
+                  Ranked result — top pick with price tier, vibe tags and a one-click booking link.
+                </figcaption>
+              </figure>
+
+              {/* Simulated Monitor Mode dashboard — what observability looks like in production */}
+              <figure className="overflow-hidden rounded-lg border border-amber-300/40 bg-stone-950 shadow-md flex flex-col">
+                <div className="aspect-video w-full overflow-hidden">
+                  <div className="origin-top-left scale-[0.46] w-[217%]">
+                    <div className="px-4 py-3 border-b border-stone-800">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                      <div className="flex items-baseline gap-3">
+                        <span className="font-serif text-2xl text-amber-300 italic leading-none">fork yeah!</span>
+                        <span className="text-[10px] uppercase tracking-[0.2em] text-stone-400">Monitor mode — workflow observability</span>
+                      </div>
+                      <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-emerald-500/15 text-emerald-300 px-2 py-1 rounded-full font-medium">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />Live · simulated
+                      </span>
+                    </div>
+                    <p className="mt-2 text-[12px] text-stone-400 leading-relaxed max-w-xl">
+                      Every agent run is tracked, scored, and surfaced — so you know what your AI is doing in production.
+                    </p>
+                    </div>
+
+                  <div className="p-4 grid grid-cols-2 md:grid-cols-4 gap-3">
+                    {[
+                      { label: "Total runs", value: "1,284", sub: "47 today" },
+                      { label: "Success rate", value: "94.2%", sub: "judge-verified" },
+                      { label: "Avg latency", value: "3.8s", sub: "p95 6.1s" },
+                      { label: "Escalations", value: "12", sub: "avg conf 0.71" },
+                    ].map((m) => (
+                      <div key={m.label} className="rounded-lg bg-stone-900/80 border border-stone-800 p-3">
+                        <div className="text-[10px] uppercase tracking-wider text-stone-400">{m.label}</div>
+                        <div className="mt-1.5 font-serif text-2xl text-stone-50 leading-none">{m.value}</div>
+                        <div className="mt-1.5 text-[11px] text-stone-500">{m.sub}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mx-4 mb-4 rounded-lg bg-stone-900/60 border border-stone-800">
+                    <div className="flex items-center justify-between px-3 py-2 border-b border-stone-800">
+                      <span className="text-[10px] uppercase tracking-[0.18em] text-stone-400">Recent runs</span>
+                      <span className="text-[10px] uppercase tracking-wider bg-amber-300/90 text-stone-900 px-2 py-0.5 rounded-full font-semibold">all runs</span>
+                    </div>
+                    <div className="divide-y divide-stone-800/80 text-[12px]">
+                      {[
+                        { q: "vegetarian, Greenwich Village, $$", pick: "Superiority Burger", conf: 0.93, lat: "3.2s", ok: true },
+                        { q: "date night, West Village, $$$", pick: "I Sodi", conf: 0.88, lat: "4.1s", ok: true },
+                        { q: "late night ramen near Bryant Park", pick: "Ippudo Midtown", conf: 0.81, lat: "3.7s", ok: true },
+                        { q: "private room, 12 ppl, Flatiron", pick: "—", conf: 0.42, lat: "5.9s", ok: false },
+                        { q: "outdoor seating, dog-friendly, Brooklyn", pick: "Bar Bayeux", conf: 0.86, lat: "3.4s", ok: true },
+                      ].map((r, i) => (
+                        <div key={i} className="grid grid-cols-12 items-center gap-2 px-3 py-2">
+                          <span className="col-span-5 text-stone-300 truncate">{r.q}</span>
+                          <span className="col-span-3 text-stone-400 truncate">→ <span className="text-stone-200">{r.pick}</span></span>
+                          <span className="col-span-2 text-stone-500">{r.lat}</span>
+                          <span className={`col-span-1 font-mono text-[11px] ${r.conf >= 0.7 ? "text-emerald-300" : "text-rose-300"}`}>{r.conf.toFixed(2)}</span>
+                          <span className="col-span-1 text-right">
+                            {r.ok ? (
+                              <span className="text-[10px] uppercase text-emerald-300/90">ok</span>
+                            ) : (
+                              <span className="text-[10px] uppercase text-rose-300/90">review</span>
+                            )}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="px-3 py-2 border-t border-stone-800 text-[10px] text-stone-500 text-center">
+                      est. total cost $1.842 · auto-refreshes every 30s
+                    </div>
+                  </div>
+                  </div>
+                </div>
+
+                <figcaption className="px-2 py-1.5 text-[11px] leading-snug text-stone-800 bg-amber-50 border-t border-amber-300/40">
+                  Monitor mode shows live run metrics, confidence scores, and flagged cases for human review.
+                </figcaption>
+              </figure>
+            </div>
+
 
           </div>
         </div>
@@ -1543,7 +1477,6 @@ function PortfolioPage() {
 
       <GradientDivider />
 
-      {/* Project 2 — Agentic AI Email Generator */}
       <section id="project-2" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
         <ProjectCollapse id="project-2" num="No. 06 · Agentic Email Generator" numCls="text-amber-700" title="Agentic Email Generator" sub="n8n · Claude · Supabase">
         <div className="grid md:grid-cols-12 gap-10">
@@ -1653,6 +1586,70 @@ function PortfolioPage() {
         </ProjectCollapse>
       </section>
 
+
+      <GradientDivider />
+
+      {/* Enterprise AI Principles — how I think about deployment */}
+      <section id="principles" className="mx-auto max-w-6xl px-6 py-12 md:py-16 scroll-mt-8">
+        <div className="flex items-baseline gap-3 flex-wrap">
+          <span className="text-xs uppercase tracking-[0.24em] font-semibold text-rose-600">Point of view</span>
+          <h2 className="text-3xl md:text-4xl font-light tracking-tight text-stone-900">
+            Enterprise AI Principles
+          </h2>
+        </div>
+        <p className="mt-3 max-w-3xl text-base md:text-lg text-stone-700 leading-relaxed">
+          How I think about deploying AI inside organizations — the through-line behind the six projects above.
+        </p>
+
+        <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {[
+            {
+              n: "01",
+              title: "Start at the workflow bottleneck",
+              body: "Find where people are already stuck — reviewing, drafting, hunting for context. That is where AI creates value; net-new features rarely do.",
+              tone: "text-rose-700",
+            },
+            {
+              n: "02",
+              title: "Prototype rapidly with real users",
+              body: "Ship a working thing in days, not months. Users react to what they can touch — decks and roadmaps don't surface the real objections.",
+              tone: "text-amber-700",
+            },
+            {
+              n: "03",
+              title: "Measure adoption, not just accuracy",
+              body: "A model that's 95% accurate but 5% adopted delivers nothing. Track usage, repeat use, and workflow substitution as first-class metrics.",
+              tone: "text-emerald-700",
+            },
+            {
+              n: "04",
+              title: "Build governance into the workflow",
+              body: "Citations, audit trails, human-in-the-loop review, and permissioning belong inside the product — not in a policy document nobody reads.",
+              tone: "text-indigo-700",
+            },
+            {
+              n: "05",
+              title: "Iterate from user feedback",
+              body: "Every prompt refusal, every override, every drop-off is a signal. Close the loop weekly so the system compounds toward the way people actually work.",
+              tone: "text-violet-700",
+            },
+            {
+              n: "06",
+              title: "Scale the patterns that stick",
+              body: "Once a workflow proves out, extract the pattern — templates, evals, guardrails — and replicate it across teams instead of rebuilding from scratch.",
+              tone: "text-sky-700",
+            },
+          ].map((p) => (
+            <div key={p.n} className="rounded-2xl border border-stone-200 bg-white/80 backdrop-blur p-5 hover:border-rose-300 transition-colors">
+              <div className="flex items-baseline gap-2">
+                <span className={`text-[11px] uppercase tracking-[0.22em] font-semibold ${p.tone}`}>No. {p.n}</span>
+              </div>
+              <h3 className="mt-2 text-lg font-semibold tracking-tight text-stone-900 leading-snug">{p.title}</h3>
+              <p className="mt-2 text-[14px] text-stone-700 leading-relaxed">{p.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <GradientDivider />
 
