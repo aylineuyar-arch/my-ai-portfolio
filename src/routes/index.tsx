@@ -847,7 +847,7 @@ function PortfolioPage() {
             </Collapsible>
             <div className="mt-4 flex flex-wrap gap-2">
               <a
-                href="https://github.com/aylineuyar-arch/restaurant-agent"
+                href="https://github.com/aylineuyar-arch/fork-yea"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="View repository on GitHub"
@@ -1478,7 +1478,7 @@ function PortfolioPage() {
             </Collapsible>
             <div className="mt-4 flex flex-wrap gap-2">
               <a
-                href="https://github.com/aylineuyar-arch/compliance-rag-demo"
+                href="https://github.com/aylineuyar-arch/compliance-rag-chatbot"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="View repository on GitHub"
