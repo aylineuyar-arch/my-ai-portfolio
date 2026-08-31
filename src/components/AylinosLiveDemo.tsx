@@ -14,7 +14,20 @@ type RouteEvent = { type: "route"; agent: string; reason?: string };
 type TokenEvent = { type: "token"; text: string };
 type StreamEvent = RouteEvent | TokenEvent | NextSteps | { type: string; [k: string]: unknown };
 
-const ENDPOINT = "https://aylinos.onrender.com/api/stream";
+const BASE_URL = "https://aylinos.onrender.com";
+const ENDPOINT = `${BASE_URL}/api/stream`;
+
+// Fire-and-forget wake-up ping — call on click intent (e.g. expanding the
+// agent section) so the Render free-tier backend has a head start before
+// the user actually submits a query. Safe to call more than once.
+let warmed = false;
+export function warmAylinosBackend() {
+  if (warmed) return;
+  warmed = true;
+  fetch(`${BASE_URL}/health`).catch(() => {
+    // ignore — the real request will still trigger a cold start if this fails
+  });
+}
 
 const SUGGESTIONS = [
   "Find me PM roles at AI startups",

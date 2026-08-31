@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Github, Linkedin, Briefcase, Database, MessageSquare, Workflow, ChevronDown, Languages, History, Search, Sparkles, ListOrdered, Gavel, CalendarCheck, MailCheck, type LucideIcon } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { warmAylinosBackend } from "@/components/AylinosLiveDemo";
 import { useEngagementTracking } from "@/hooks/use-engagement-tracking";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import dashboardImg from "@/assets/portfolio-dashboard.jpg";
@@ -468,7 +469,7 @@ function PortfolioPage() {
 
 
                   <Collapsible>
-                    <CollapsibleTrigger data-track-click="aylinos-expand-agents" className="group flex w-full items-center justify-between rounded-lg border border-rose-200 bg-rose-50/50 hover:bg-rose-50 px-3 py-2 text-[11px] uppercase tracking-[0.14em] font-semibold text-rose-700 transition-colors">
+                    <CollapsibleTrigger data-track-click="aylinos-expand-agents" onClick={() => warmAylinosBackend()} className="group flex w-full items-center justify-between rounded-lg border border-rose-200 bg-rose-50/50 hover:bg-rose-50 px-3 py-2 text-[11px] uppercase tracking-[0.14em] font-semibold text-rose-700 transition-colors">
                       <span>See the 6 agents, what it proves, &amp; skills</span>
                       <ChevronDown className="h-3.5 w-3.5 transition-transform group-data-[state=open]:rotate-180" />
                     </CollapsibleTrigger>
