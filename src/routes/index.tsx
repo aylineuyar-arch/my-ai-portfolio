@@ -373,6 +373,11 @@ function PortfolioPage() {
           Engineer turned AI deployment and strategy leader — helping organizations operationalize AI through workflow redesign, adoption, and measurable business outcomes.
         </p>
 
+        {/* Principles as header subtext */}
+        <p className="mt-3 max-w-3xl text-sm md:text-base text-stone-500 leading-relaxed">
+          Bottlenecks first. Ship fast. Measure adoption.
+        </p>
+
 
         {/* === AylinOS meta-project demo === */}
         <section data-track-section="aylinos-demo" className="mt-12 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen px-6 md:px-16 lg:px-24">
