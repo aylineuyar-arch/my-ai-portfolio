@@ -207,7 +207,7 @@ function PortfolioPage() {
                 </h2>
 
                 <p className="mt-4 text-[15px] text-stone-500 leading-relaxed">
-                  A personal AI operating system for work <em>and</em> life: the meta-layer that reaches into the 6 projects below.
+                  A personal AI operations system for work <em>and</em> life: the meta-layer that reaches into the 6 projects below.
                 </p>
 
                 <div className="mt-7 space-y-6">
