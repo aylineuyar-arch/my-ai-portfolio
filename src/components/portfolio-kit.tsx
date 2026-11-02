@@ -224,6 +224,7 @@ export function ProjectCollapse({
     const sync = () => {
       if (typeof window !== "undefined" && window.location.hash === `#${id}`) {
         setOpen(true);
+        setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
       }
     };
     sync();
