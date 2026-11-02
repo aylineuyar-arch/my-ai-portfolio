@@ -317,7 +317,7 @@ function PortfolioPage() {
           <p className="text-xs uppercase tracking-wider font-semibold text-stone-500 mb-3">Experience</p>
           <div className="relative overflow-x-auto pb-2">
             <div className="absolute left-0 right-0 top-[176px] h-px bg-stone-300" />
-            <ol className="relative grid grid-cols-9 gap-2 min-w-[1000px]">
+            <ol className="relative grid grid-cols-9 gap-2 min-w-[1000px] px-8">
               {[
                 { y: "2026–now", org: "Rownd AI (YC)", t: "AI Implementation Strategist", s: "Leading agentic AI implementation and proposal automation for defense-tech workflows." },
                 { y: "2026", org: "LinguaLinq.ai", t: "Product Strategy & Operations", s: "Led product strategy, adoption, and GTM for an AI translation platform in 70+ languages." },
