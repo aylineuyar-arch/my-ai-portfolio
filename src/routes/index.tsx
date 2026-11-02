@@ -80,7 +80,7 @@ function PortfolioPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#fdf8f3] via-[#faf3ec] to-[#f5ede2] text-stone-900">
       {/* Built & shipped badge — fixed top right */}
-      <div className="fixed top-4 right-4 z-50 w-[244px] rounded-xl border border-rose-200 bg-white/95 backdrop-blur px-4 py-3 shadow-lg shadow-rose-900/10">
+      <div className="relative mx-6 mt-4 md:mx-0 md:mt-0 md:fixed md:top-4 md:right-4 z-50 md:w-[244px] rounded-xl border border-rose-200 bg-white/95 backdrop-blur px-4 py-3 shadow-lg shadow-rose-900/10">
         <p className="text-[13.5px] leading-snug font-medium text-stone-900">
           Built &amp; shipped by{" "}
           <span className="text-rose-600 font-semibold">Aylin Uyar</span>.
@@ -110,18 +110,18 @@ function PortfolioPage() {
       </div>
 
       {/* Quick-nav bubbles under the badge */}
-      <div className="fixed top-[118px] right-4 z-50 flex w-[244px] flex-col gap-2">
-        <a href="#bio" className="rounded-full border border-stone-500 bg-stone-200 px-5 py-3 text-center text-[13px] font-semibold uppercase tracking-[0.15em] text-stone-800 shadow-md shadow-stone-900/10 hover:bg-stone-300 transition-transform hover:scale-[1.04]">
+      <div className="relative mx-6 mt-2 grid grid-cols-2 gap-2 md:mx-0 md:mt-0 md:fixed md:top-[118px] md:right-4 z-50 md:flex md:w-[244px] md:flex-col">
+        <a href="#bio" className="rounded-full border border-stone-500 bg-stone-200 px-3 py-2 md:px-5 md:py-3 text-center text-[11px] md:text-[13px] font-semibold uppercase tracking-[0.12em] md:tracking-[0.15em] text-stone-800 shadow-md shadow-stone-900/10 hover:bg-stone-300 transition-transform hover:scale-[1.04]">
           Bio
         </a>
-        <a href="/agent-deep-dive" className="rounded-full border border-stone-500 bg-stone-200 px-5 py-3 text-center text-[13px] font-semibold uppercase tracking-[0.15em] text-stone-800 shadow-md shadow-stone-900/10 hover:bg-stone-300 transition-transform hover:scale-[1.04]">
+        <a href="/agent-deep-dive" className="rounded-full border border-stone-500 bg-stone-200 px-3 py-2 md:px-5 md:py-3 text-center text-[11px] md:text-[13px] font-semibold uppercase tracking-[0.12em] md:tracking-[0.15em] text-stone-800 shadow-md shadow-stone-900/10 hover:bg-stone-300 transition-transform hover:scale-[1.04]">
           Agent Deep Dive
         </a>
       </div>
 
       {/* Hero */}
       <header className="relative mx-auto max-w-6xl px-6 pt-6 pb-8 md:pt-8 md:pb-10 scroll-mt-8">
-        <h1 className="text-5xl md:text-7xl font-light leading-[1.05] tracking-tight flex flex-wrap items-center gap-x-5 gap-y-2 pr-[240px]">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-light leading-[1.05] tracking-tight flex flex-wrap items-center gap-x-4 md:gap-x-5 gap-y-2 md:pr-[240px]">
           <img src={headshot.url} alt="Aylin Uyar headshot" className="h-16 w-16 md:h-20 md:w-20 shrink-0 rounded-full object-cover object-[50%_25%] ring-2 ring-rose-200 shadow-sm" />
           <span>Aylin Uyar</span>
           <span className="text-base md:text-lg uppercase tracking-[0.3em] text-rose-600 font-medium pb-2 md:pb-3">
@@ -157,7 +157,7 @@ function PortfolioPage() {
           <div className="mx-auto max-w-[980px] rounded-2xl bg-white/80 backdrop-blur border border-stone-200 overflow-hidden shadow-sm">
             <div className="grid md:grid-cols-5 gap-0">
               {/* Video */}
-              <div className="relative bg-stone-100 border-b md:border-b-0 md:border-r border-stone-200 md:col-span-3 md:min-h-[400px]">
+              <div className="relative bg-stone-100 border-b md:border-b-0 md:border-r border-stone-200 md:col-span-3 aspect-[16/10] md:aspect-auto md:min-h-[400px]">
                 <div className="absolute top-3 left-3 z-20 flex flex-col gap-1.5">
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-rose-600/95 text-white text-[11px] uppercase tracking-wider font-semibold px-2.5 py-1 shadow-sm backdrop-blur">
                     Demo — more to come
@@ -319,6 +319,7 @@ function PortfolioPage() {
           <div className="mb-4 flex items-baseline gap-3">
             <span className="text-3xl md:text-4xl font-medium tracking-tight text-rose-600 leading-none">6+</span>
             <h3 className="text-base md:text-lg uppercase tracking-[0.18em] text-stone-700 font-semibold">Years of experience</h3>
+            <span className="ml-auto text-xs italic text-stone-500 md:hidden">swipe →</span>
           </div>
           <div className="relative overflow-x-auto pb-2">
             <ol className="relative grid grid-cols-8 gap-3 min-w-[1000px] pt-9">
