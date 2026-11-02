@@ -311,6 +311,11 @@ function PortfolioPage() {
 
         </section>
 
+        <div className="mt-12 mb-2 flex items-center gap-4">
+          <span className="shrink-0 text-[12px] uppercase tracking-[0.3em] font-semibold text-rose-600">Bio</span>
+          <div className="flex-1 border-t-2 border-rose-300" />
+        </div>
+
         {/* === Experience timeline === */}
         <section id="bio" data-track-section="experience-timeline" className="mt-8 scroll-mt-8">
           <div className="mb-4 flex items-baseline gap-3">
