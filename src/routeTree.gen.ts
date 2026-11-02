@@ -10,33 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AgentDeepDiveRouteImport } from './routes/agent-deep-dive'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AgentDeepDiveRoute = AgentDeepDiveRouteImport.update({
+  id: '/agent-deep-dive',
+  path: '/agent-deep-dive',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/agent-deep-dive': typeof AgentDeepDiveRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/agent-deep-dive': typeof AgentDeepDiveRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/agent-deep-dive': typeof AgentDeepDiveRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/agent-deep-dive'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/agent-deep-dive'
+  id: '__root__' | '/' | '/agent-deep-dive'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AgentDeepDiveRoute: typeof AgentDeepDiveRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/agent-deep-dive': {
+      id: '/agent-deep-dive'
+      path: '/agent-deep-dive'
+      fullPath: '/agent-deep-dive'
+      preLoaderRoute: typeof AgentDeepDiveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AgentDeepDiveRoute: AgentDeepDiveRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

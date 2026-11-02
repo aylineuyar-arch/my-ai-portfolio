@@ -350,7 +350,7 @@ function PortfolioPage() {
               AI portfolio projects live in production
             </h3>
           </div>
-          <span className="text-sm text-rose-700 font-medium">click any card for details ↓</span>
+          <span className="text-sm text-rose-700 font-medium">click any card for the deep dive →</span>
         </div>
         <div className="mt-4">
           <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-3 items-stretch">
