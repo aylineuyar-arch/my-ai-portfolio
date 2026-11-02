@@ -137,7 +137,7 @@ function PortfolioPage() {
 
         {/* One-sentence positioning */}
         <p className="mt-3 max-w-3xl text-base md:text-lg text-stone-700 leading-relaxed">
-          Engineer turned AI deployment and strategy leader — helping organizations operationalize AI through workflow redesign, adoption, and measurable business outcomes.
+          Engineer turned AI deployment and strategy leader, helping organizations operationalize AI through workflow redesign, adoption, and measurable business outcomes.
         </p>
 
         {/* Principles as header subtext */}
@@ -157,7 +157,7 @@ function PortfolioPage() {
               <div className="relative bg-stone-100 border-b md:border-b-0 md:border-r border-stone-200 md:col-span-3 aspect-[16/10] md:aspect-auto md:min-h-[400px]">
                 <div className="absolute top-3 left-3 z-20 flex flex-col gap-1.5">
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-rose-600/95 text-white text-[11px] uppercase tracking-wider font-semibold px-2.5 py-1 shadow-sm backdrop-blur">
-                    Demo — more to come
+                    Demo: more to come
                   </span>
                 </div>
                 <video
@@ -207,7 +207,7 @@ function PortfolioPage() {
                 </h2>
 
                 <p className="mt-4 text-[15px] text-stone-500 leading-relaxed">
-                  A personal AI operating system for work <em>and</em> life — the meta-layer that reaches into the 6 projects below.
+                  A personal AI operating system for work <em>and</em> life: the meta-layer that reaches into the 6 projects below.
                 </p>
 
                 <div className="mt-7 space-y-6">
@@ -241,12 +241,12 @@ function PortfolioPage() {
                           The 6 agents &amp; what they touch
                         </div>
                         <ul className="text-[14px] text-stone-800 leading-snug space-y-1.5">
-                          <li><span className="font-semibold text-violet-700">Job Search</span> — pulls roles from 130+ ATSs, Claude-scores fit, ships an 8am ranked digest <span className="text-stone-500">· Job Dashboard + Email Generator</span></li>
-                          <li><span className="font-semibold text-sky-600">Outreach</span> — drafts intros &amp; follow-ups across a 130-target contact graph, human-gated send <span className="text-stone-500">· Outreach engine</span></li>
-                          <li><span className="font-semibold text-emerald-700">Pricing &amp; GTM</span> — builds tiers, ICP, comp sets, packaging memos <span className="text-stone-500">· GTM Pricing Tool</span></li>
-                          <li><span className="font-semibold text-amber-700">Policy Desk</span> — grounded Q&amp;A across 4 policy domains, returns citations <span className="text-stone-500">· Compliance RAG</span></li>
-                          <li><span className="font-semibold text-cyan-700">Inbox &amp; Reservations</span> — sub-1s ticket triage and 8-node reservation graph <span className="text-stone-500">· CS Triage + Fork Yea!</span></li>
-                          <li><span className="font-semibold text-pink-700">Research</span> — fan-in briefs, comp pulls, shadow-eval scoring delivered to Drive <span className="text-stone-500">· Research agent → Drive</span></li>
+                          <li><span className="font-semibold text-violet-700">Job Search</span>, pulls roles from 130+ ATSs, Claude-scores fit, ships an 8am ranked digest <span className="text-stone-500">· Job Dashboard + Email Generator</span></li>
+                          <li><span className="font-semibold text-sky-600">Outreach</span>, drafts intros &amp; follow-ups across a 130-target contact graph, human-gated send <span className="text-stone-500">· Outreach engine</span></li>
+                          <li><span className="font-semibold text-emerald-700">Pricing &amp; GTM</span>, builds tiers, ICP, comp sets, packaging memos <span className="text-stone-500">· GTM Pricing Tool</span></li>
+                          <li><span className="font-semibold text-amber-700">Policy Desk</span>, grounded Q&amp;A across 4 policy domains, returns citations <span className="text-stone-500">· Compliance RAG</span></li>
+                          <li><span className="font-semibold text-cyan-700">Inbox &amp; Reservations</span>, sub-1s ticket triage and 8-node reservation graph <span className="text-stone-500">· CS Triage + Fork Yea!</span></li>
+                          <li><span className="font-semibold text-pink-700">Research</span>, fan-in briefs, comp pulls, shadow-eval scoring delivered to Drive <span className="text-stone-500">· Research agent → Drive</span></li>
                         </ul>
                       </div>
 
@@ -255,7 +255,7 @@ function PortfolioPage() {
                           What it proves
                         </div>
                         <p className="text-[15px] text-stone-800 leading-snug">
-                          End-to-end <span className="font-semibold">AI deployment</span>: orchestration, evals, memory, and observability — designed, shipped, and run in production.
+                          End-to-end <span className="font-semibold">AI deployment</span>: orchestration, evals, memory, and observability, designed, shipped, and run in production.
                         </p>
                       </div>
 
@@ -368,11 +368,11 @@ function PortfolioPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-3 items-stretch">
             {[
               { num: "No. 01", id: "project-1", numCls: "text-orange-700", title: "AI Job Search Dashboard", blurb: "Scores 130+ ATS feeds for fit and conversion likelihood.", outcome: "Turns hours of daily job-board scrolling into a ranked 5-minute morning triage.", sub: "Claude · Python · Railway", metric: "286 roles per run", tools: ["Claude", "Python", "Railway", "ATS"] },
-              { num: "No. 02", id: "project-3", numCls: "text-emerald-700", title: "Compliance RAG Chatbot", blurb: "Grounded policy Q&A for regulated financial services teams, with citations on every answer.", outcome: "Frees compliance teams from hunting through policy PDFs — cuts research time and keeps every answer auditable.", sub: "Claude · Python · Streamlit", metric: "Zero embedding cost", tools: ["Claude", "Python", "Streamlit", "RAG"] },
+              { num: "No. 02", id: "project-3", numCls: "text-emerald-700", title: "Compliance RAG Chatbot", blurb: "Grounded policy Q&A for regulated financial services teams, with citations on every answer.", outcome: "Frees compliance teams from hunting through policy PDFs, cuts research time and keeps every answer auditable.", sub: "Claude · Python · Streamlit", metric: "Zero embedding cost", tools: ["Claude", "Python", "Streamlit", "RAG"] },
               { num: "No. 03", id: "project-4", numCls: "text-indigo-700", title: "Customer Service Triage Agent", blurb: "Classifies, prioritizes, drafts a grounded reply, and completes the action end to end.", outcome: "Turns a support queue that used to sit for hours into replies that ship inside a single shift.", sub: "Claude · LangGraph · Python · FastAPI", metric: "Under 640ms end to end", tools: ["Claude", "LangGraph", "Python", "FastAPI"] },
               { num: "No. 04", id: "project-gtm", numCls: "text-teal-700", title: "GTM Pricing Tool", blurb: "Models revenue, pricing, and scenarios for founders, consultants, operators, and investors.", outcome: "Compresses a multi-week pricing exercise into a 20-minute recommendation grounded in real benchmarks.", sub: "Claude · Python · Railway", metric: "4 personas modeled", tools: ["Claude", "Python", "Railway"] },
-              { num: "No. 05", id: "project-restaurant", numCls: "text-rose-600", title: "Fork Yea! — Multi-Agentic Reservation Agent", blurb: "Finds and books the right restaurant, with a Haiku judge scoring every pick.", outcome: "Collapses hours of research and 20+ tab-switches into one confident booking.", sub: "Cursor · LangGraph · Claude · Playwright", metric: "LLM-as-judge scored", tools: ["Cursor", "LangGraph", "Claude", "Playwright", "Tavily", "FastAPI"] },
-              { num: "No. 06", id: "project-2", numCls: "text-amber-700", title: "Agentic Email Generator", blurb: "Always-on agent emails a ranked digest at 8am ET daily.", outcome: "Removes manual research — every morning, the right opportunities are surfaced, ranked, and ready to act on.", sub: "n8n · Claude · Supabase", metric: "8am ET daily digest", tools: ["Claude", "n8n", "Railway", "Resend", "Supabase"] },
+              { num: "No. 05", id: "project-restaurant", numCls: "text-rose-600", title: "Fork Yea!: Multi-Agentic Reservation Agent", blurb: "Finds and books the right restaurant, with a Haiku judge scoring every pick.", outcome: "Collapses hours of research and 20+ tab-switches into one confident booking.", sub: "Cursor · LangGraph · Claude · Playwright", metric: "LLM-as-judge scored", tools: ["Cursor", "LangGraph", "Claude", "Playwright", "Tavily", "FastAPI"] },
+              { num: "No. 06", id: "project-2", numCls: "text-amber-700", title: "Agentic Email Generator", blurb: "Always-on agent emails a ranked digest at 8am ET daily.", outcome: "Removes manual research: every morning, the right opportunities are surfaced, ranked, and ready to act on.", sub: "n8n · Claude · Supabase", metric: "8am ET daily digest", tools: ["Claude", "n8n", "Railway", "Resend", "Supabase"] },
 
             ].map((p) => {
               const logos = p.tools.filter((t) => TOOL_LOGOS[t]);
