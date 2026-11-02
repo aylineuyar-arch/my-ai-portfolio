@@ -352,7 +352,7 @@ function PortfolioPage() {
       </div>
 
       {/* Quick-nav bubbles under the badge */}
-      <div className="fixed top-[132px] right-4 z-50 flex w-[244px] justify-center gap-2">
+      <div className="fixed top-[118px] right-4 z-50 flex w-[244px] justify-center gap-2">
         <a href="#bio" className="rounded-full border border-rose-200 bg-white/95 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.15em] text-rose-600 shadow-md shadow-rose-900/10 backdrop-blur transition-transform hover:scale-[1.04]">
           Bio
         </a>
