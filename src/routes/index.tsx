@@ -560,7 +560,7 @@ function PortfolioPage() {
           <p className="text-xs uppercase tracking-wider font-semibold text-stone-500 mb-3">Experience</p>
           <div className="relative overflow-x-auto pb-2">
             <div className="absolute left-0 right-0 top-[18px] h-px bg-stone-300" />
-            <ol className="relative flex gap-4 min-w-max">
+            <ol className="relative grid grid-cols-7 gap-3 min-w-[900px]">
               {[
                 { y: "2018–19", org: "Booz Allen Hamilton", s: "Built C++ software for a computer-vision anti-drone sensor fusion system." },
                 { y: "2019–20", org: "DCS Corporation", s: "Engineered C++ sensor integration for military vehicle operator controls." },
@@ -570,10 +570,10 @@ function PortfolioPage() {
                 { y: "2026", org: "LinguaLinq.ai", s: "Led product strategy, adoption, and GTM for an AI translation platform in 70+ languages." },
                 { y: "2026–now", org: "Rownd AI (YC)", s: "Leading agentic AI implementation and proposal automation for defense-tech workflows." },
               ].map((e) => (
-                <li key={e.org} className="w-[200px] shrink-0">
+                <li key={e.org}>
                   <span className="relative inline-block rounded-full border border-stone-500 bg-stone-200 px-3 py-1.5 text-[12px] font-semibold text-stone-800">{e.y}</span>
                   <p className="mt-3 text-sm font-semibold text-stone-900">{e.org}</p>
-                  <p className="mt-1 text-[13px] leading-snug text-stone-600">{e.s}</p>
+                  <p className="mt-1 text-[12px] leading-snug text-stone-600">{e.s}</p>
                 </li>
               ))}
             </ol>
