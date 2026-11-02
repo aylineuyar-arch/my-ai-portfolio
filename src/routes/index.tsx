@@ -241,12 +241,12 @@ function PortfolioPage() {
                           The 6 agents &amp; what they touch
                         </div>
                         <ul className="text-[14px] text-stone-800 leading-snug space-y-1.5">
-                          <li><span className="font-semibold text-violet-700">Job Search</span>, pulls roles from 130+ ATSs, Claude-scores fit, ships an 8am ranked digest <span className="text-stone-500">· Job Dashboard + Email Generator</span></li>
-                          <li><span className="font-semibold text-sky-600">Outreach</span>, drafts intros &amp; follow-ups across a 130-target contact graph, human-gated send <span className="text-stone-500">· Outreach engine</span></li>
-                          <li><span className="font-semibold text-emerald-700">Pricing &amp; GTM</span>, builds tiers, ICP, comp sets, packaging memos <span className="text-stone-500">· GTM Pricing Tool</span></li>
-                          <li><span className="font-semibold text-amber-700">Policy Desk</span>, grounded Q&amp;A across 4 policy domains, returns citations <span className="text-stone-500">· Compliance RAG</span></li>
-                          <li><span className="font-semibold text-cyan-700">Inbox &amp; Reservations</span>, sub-1s ticket triage and 8-node reservation graph <span className="text-stone-500">· CS Triage + Fork Yea!</span></li>
-                          <li><span className="font-semibold text-pink-700">Research</span>, fan-in briefs, comp pulls, shadow-eval scoring delivered to Drive <span className="text-stone-500">· Research agent → Drive</span></li>
+                          <li><span className="font-semibold text-violet-700">Job Search</span>: pulls roles from 130+ ATSs, Claude-scores fit, ships an 8am ranked digest <span className="text-stone-500">· Job Dashboard + Email Generator</span></li>
+                          <li><span className="font-semibold text-sky-600">Outreach</span>: drafts intros &amp; follow-ups across a 130-target contact graph, human-gated send <span className="text-stone-500">· Outreach engine</span></li>
+                          <li><span className="font-semibold text-emerald-700">Pricing &amp; GTM</span>: builds tiers, ICP, comp sets, packaging memos <span className="text-stone-500">· GTM Pricing Tool</span></li>
+                          <li><span className="font-semibold text-amber-700">Policy Desk</span>: grounded Q&amp;A across 4 policy domains, returns citations <span className="text-stone-500">· Compliance RAG</span></li>
+                          <li><span className="font-semibold text-cyan-700">Inbox &amp; Reservations</span>: sub-1s ticket triage and 8-node reservation graph <span className="text-stone-500">· CS Triage + Fork Yea!</span></li>
+                          <li><span className="font-semibold text-pink-700">Research</span>: fan-in briefs, comp pulls, shadow-eval scoring delivered to Drive <span className="text-stone-500">· Research agent → Drive</span></li>
                         </ul>
                       </div>
 
@@ -255,7 +255,7 @@ function PortfolioPage() {
                           What it proves
                         </div>
                         <p className="text-[15px] text-stone-800 leading-snug">
-                          End-to-end <span className="font-semibold">AI deployment</span>: orchestration, evals, memory, and observability, designed, shipped, and run in production.
+                          End-to-end <span className="font-semibold">AI deployment</span>: orchestration, evals, memory, and observability. Designed, shipped, and run in production.
                         </p>
                       </div>
 
@@ -371,7 +371,7 @@ function PortfolioPage() {
               { num: "No. 02", id: "project-3", numCls: "text-emerald-700", title: "Compliance RAG Chatbot", blurb: "Grounded policy Q&A for regulated financial services teams, with citations on every answer.", outcome: "Frees compliance teams from hunting through policy PDFs, cuts research time and keeps every answer auditable.", sub: "Claude · Python · Streamlit", metric: "Zero embedding cost", tools: ["Claude", "Python", "Streamlit", "RAG"] },
               { num: "No. 03", id: "project-4", numCls: "text-indigo-700", title: "Customer Service Triage Agent", blurb: "Classifies, prioritizes, drafts a grounded reply, and completes the action end to end.", outcome: "Turns a support queue that used to sit for hours into replies that ship inside a single shift.", sub: "Claude · LangGraph · Python · FastAPI", metric: "Under 640ms end to end", tools: ["Claude", "LangGraph", "Python", "FastAPI"] },
               { num: "No. 04", id: "project-gtm", numCls: "text-teal-700", title: "GTM Pricing Tool", blurb: "Models revenue, pricing, and scenarios for founders, consultants, operators, and investors.", outcome: "Compresses a multi-week pricing exercise into a 20-minute recommendation grounded in real benchmarks.", sub: "Claude · Python · Railway", metric: "4 personas modeled", tools: ["Claude", "Python", "Railway"] },
-              { num: "No. 05", id: "project-restaurant", numCls: "text-rose-600", title: "Fork Yea!: Multi-Agentic Reservation Agent", blurb: "Finds and books the right restaurant, with a Haiku judge scoring every pick.", outcome: "Collapses hours of research and 20+ tab-switches into one confident booking.", sub: "Cursor · LangGraph · Claude · Playwright", metric: "LLM-as-judge scored", tools: ["Cursor", "LangGraph", "Claude", "Playwright", "Tavily", "FastAPI"] },
+              { num: "No. 05", id: "project-restaurant", numCls: "text-rose-600", title: "Fork Yea! — Multi-Agentic Reservation Agent", blurb: "Finds and books the right restaurant, with a Haiku judge scoring every pick.", outcome: "Collapses hours of research and 20+ tab-switches into one confident booking.", sub: "Cursor · LangGraph · Claude · Playwright", metric: "LLM-as-judge scored", tools: ["Cursor", "LangGraph", "Claude", "Playwright", "Tavily", "FastAPI"] },
               { num: "No. 06", id: "project-2", numCls: "text-amber-700", title: "Agentic Email Generator", blurb: "Always-on agent emails a ranked digest at 8am ET daily.", outcome: "Removes manual research: every morning, the right opportunities are surfaced, ranked, and ready to act on.", sub: "n8n · Claude · Supabase", metric: "8am ET daily digest", tools: ["Claude", "n8n", "Railway", "Resend", "Supabase"] },
 
             ].map((p) => {
