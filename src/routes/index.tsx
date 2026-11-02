@@ -350,7 +350,7 @@ function PortfolioPage() {
 
         <div className="mt-12 mb-2 flex items-center gap-4">
           <span className="shrink-0 text-[12px] uppercase tracking-[0.3em] font-semibold text-rose-600">AylinOS Breakdown</span>
-          <div className="h-[2px] flex-1 rounded-full bg-gradient-to-r from-rose-400 to-transparent" />
+          <div className="flex-1 border-t-2 border-rose-300" />
         </div>
 
         {/* Combined section header — credibility number + section title */}
