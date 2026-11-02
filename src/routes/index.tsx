@@ -342,7 +342,7 @@ function PortfolioPage() {
                 { y: "2014–18", edu: true, org: "George Washington University", t: "B.S. Electrical Engineering", s: "Electrical engineering degree; Dean's Commendation List x3 and Merit Scholarship." },
               ].map((e) => (
                 <li key={e.org}>
-                  <span className={`relative inline-block whitespace-nowrap rounded-full border px-3 py-1.5 text-[12px] font-semibold ${e.edu ? "border-sky-300 bg-sky-50 text-sky-800" : "border-rose-200 bg-rose-50 text-rose-700"}`}>{e.y}</span>
+                  <span className={`relative inline-block whitespace-nowrap rounded-full border px-3 py-1.5 text-[12px] font-semibold ${e.y.includes("now") ? "border-emerald-300 bg-emerald-50 text-emerald-800" : e.edu ? "border-sky-300 bg-sky-50 text-sky-800" : "border-rose-200 bg-rose-50 text-rose-700"}`}>{e.y}</span>
                   <p className="mt-3 text-sm font-semibold text-stone-900">{e.org}</p>
                   <p className="text-[11px] italic text-stone-500">{e.t}</p>
                   <p className="mt-1 text-[12px] leading-snug text-stone-600">{e.s}</p>
