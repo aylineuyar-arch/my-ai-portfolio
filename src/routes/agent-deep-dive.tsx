@@ -490,7 +490,7 @@ function AgentDeepDivePage() {
           <div className="md:col-span-8 space-y-6">
             <div className="p-5 rounded-xl bg-teal-50/70 border-l-4 border-teal-400">
               <p className="text-xs uppercase tracking-wider text-teal-700 font-semibold mb-2">
-                The GTM operating system
+                The GTM operations system
               </p>
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
                 Market benchmarks, pricing architecture, and scenario forecasting, in <strong className="text-stone-900">one connected workflow</strong>. Pick a role and the tool sequences the right modules behind the scenes.
