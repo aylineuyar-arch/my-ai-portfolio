@@ -353,10 +353,10 @@ function PortfolioPage() {
 
       {/* Quick-nav bubbles under the badge */}
       <div className="fixed top-[118px] right-4 z-50 flex w-[244px] flex-col gap-2">
-        <a href="#bio" className="rounded-full bg-stone-200 px-5 py-3 text-center text-[13px] font-semibold uppercase tracking-[0.15em] text-stone-800 shadow-md shadow-stone-900/10 hover:bg-stone-300 transition-transform hover:scale-[1.04]">
+        <a href="#bio" className="rounded-full border border-stone-500 bg-stone-200 px-5 py-3 text-center text-[13px] font-semibold uppercase tracking-[0.15em] text-stone-800 shadow-md shadow-stone-900/10 hover:bg-stone-300 transition-transform hover:scale-[1.04]">
           Bio
         </a>
-        <a href="#project-1" className="rounded-full bg-stone-200 px-5 py-3 text-center text-[13px] font-semibold uppercase tracking-[0.15em] text-stone-800 shadow-md shadow-stone-900/10 hover:bg-stone-300 transition-transform hover:scale-[1.04]">
+        <a href="#project-1" className="rounded-full border border-stone-500 bg-stone-200 px-5 py-3 text-center text-[13px] font-semibold uppercase tracking-[0.15em] text-stone-800 shadow-md shadow-stone-900/10 hover:bg-stone-300 transition-transform hover:scale-[1.04]">
           Agent Deep Dive
         </a>
       </div>
@@ -553,6 +553,31 @@ function PortfolioPage() {
 
 
 
+        </section>
+
+        {/* === Experience timeline === */}
+        <section data-track-section="experience-timeline" className="mt-8">
+          <p className="text-xs uppercase tracking-wider font-semibold text-stone-500 mb-3">Experience</p>
+          <div className="relative overflow-x-auto pb-2">
+            <div className="absolute left-0 right-0 top-[18px] h-px bg-stone-300" />
+            <ol className="relative grid grid-cols-7 gap-3 min-w-[900px]">
+              {[
+                { y: "2018–19", org: "Booz Allen Hamilton", s: "Built C++ software for a computer-vision anti-drone sensor fusion system." },
+                { y: "2019–20", org: "DCS Corporation", s: "Engineered C++ sensor integration for military vehicle operator controls." },
+                { y: "2020–24", org: "Deloitte Consulting", s: "Led tech strategy for $150M–$500M cloud transformations; Interim Chief of Staff for a 2,500-person program." },
+                { y: "2024–26", org: "Dartmouth Tuck MBA", s: "MBA with a London Business School exchange; Startup Builder Fellow." },
+                { y: "2025", org: "Skild AI", s: "PM intern driving GTM strategy, deployment, and a zero-to-one PRD for a flagship robotics client." },
+                { y: "2026", org: "LinguaLinq.ai", s: "Led product strategy, adoption, and GTM for an AI translation platform in 70+ languages." },
+                { y: "2026–now", org: "Rownd AI (YC)", s: "Leading agentic AI implementation and proposal automation for defense-tech workflows." },
+              ].map((e) => (
+                <li key={e.org}>
+                  <span className="relative inline-block rounded-full border border-stone-500 bg-stone-200 px-3 py-1.5 text-[12px] font-semibold text-stone-800">{e.y}</span>
+                  <p className="mt-3 text-sm font-semibold text-stone-900">{e.org}</p>
+                  <p className="mt-1 text-[12px] leading-snug text-stone-600">{e.s}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
         </section>
         {/* === end AylinOS section === */}
 
