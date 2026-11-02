@@ -560,19 +560,21 @@ function PortfolioPage() {
           <p className="text-xs uppercase tracking-wider font-semibold text-stone-500 mb-3">Experience</p>
           <div className="relative overflow-x-auto pb-2">
             <div className="absolute left-0 right-0 top-[18px] h-px bg-stone-300" />
-            <ol className="relative grid grid-cols-7 gap-3 min-w-[900px]">
+            <ol className="relative grid grid-cols-8 gap-3 min-w-[1000px]">
               {[
-                { y: "2018–19", org: "Booz Allen Hamilton", s: "Built C++ software for a computer-vision anti-drone sensor fusion system." },
-                { y: "2019–20", org: "DCS Corporation", s: "Engineered C++ sensor integration for military vehicle operator controls." },
-                { y: "2020–24", org: "Deloitte Consulting", s: "Led tech strategy for $150M–$500M cloud transformations; Interim Chief of Staff for a 2,500-person program." },
-                { y: "2024–26", org: "Dartmouth Tuck MBA", s: "MBA with a London Business School exchange; Startup Builder Fellow." },
-                { y: "2025", org: "Skild AI", s: "PM intern driving GTM strategy, deployment, and a zero-to-one PRD for a flagship robotics client." },
-                { y: "2026", org: "LinguaLinq.ai", s: "Led product strategy, adoption, and GTM for an AI translation platform in 70+ languages." },
-                { y: "2026–now", org: "Rownd AI (YC)", s: "Leading agentic AI implementation and proposal automation for defense-tech workflows." },
+                { y: "2026–now", org: "Rownd AI (YC)", t: "AI Implementation Strategist", s: "Leading agentic AI implementation and proposal automation for defense-tech workflows." },
+                { y: "2026", org: "LinguaLinq.ai", t: "Product Strategy & Operations", s: "Led product strategy, adoption, and GTM for an AI translation platform in 70+ languages." },
+                { y: "2025", org: "Skild AI", t: "Product Management Intern", s: "PM intern driving GTM strategy, deployment, and a zero-to-one PRD for a flagship robotics client." },
+                { y: "2024–26", org: "Dartmouth Tuck", t: "MBA", s: "MBA with a London Business School exchange; Startup Builder Fellow." },
+                { y: "2020–24", org: "Deloitte Consulting", t: "Tech Strategy Senior Consultant", s: "Led tech strategy for $150M–$500M cloud transformations; Interim Chief of Staff for a 2,500-person program." },
+                { y: "2019–20", org: "DCS Corporation", t: "Sensor Integration Engineer", s: "Engineered C++ sensor integration for military vehicle operator controls." },
+                { y: "2018–19", org: "Booz Allen Hamilton", t: "Staff Engineer", s: "Built C++ software for a computer-vision anti-drone sensor fusion system." },
+                { y: "2014–18", org: "George Washington University", t: "B.S. Electrical Engineering", s: "Electrical engineering degree; Dean's Commendation List x3 and Merit Scholarship." },
               ].map((e) => (
                 <li key={e.org}>
                   <span className="relative inline-block rounded-full border border-stone-500 bg-stone-200 px-3 py-1.5 text-[12px] font-semibold text-stone-800">{e.y}</span>
                   <p className="mt-3 text-sm font-semibold text-stone-900">{e.org}</p>
+                  <p className="text-[11px] italic text-stone-500">{e.t}</p>
                   <p className="mt-1 text-[12px] leading-snug text-stone-600">{e.s}</p>
                 </li>
               ))}
