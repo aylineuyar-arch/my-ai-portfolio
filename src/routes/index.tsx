@@ -319,6 +319,7 @@ function PortfolioPage() {
           <div className="mb-4 flex items-baseline gap-3">
             <span className="text-3xl md:text-4xl font-medium tracking-tight text-rose-600 leading-none">6+</span>
             <h3 className="text-base md:text-lg uppercase tracking-[0.18em] text-stone-700 font-semibold">Years of experience</h3>
+            <span className="ml-auto text-xs italic text-stone-500 md:hidden">swipe →</span>
           </div>
           <div className="relative overflow-x-auto pb-2">
             <ol className="relative grid grid-cols-8 gap-3 min-w-[1000px] pt-9">
