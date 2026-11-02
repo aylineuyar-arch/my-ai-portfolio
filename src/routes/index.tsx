@@ -110,11 +110,11 @@ function PortfolioPage() {
       </div>
 
       {/* Quick-nav bubbles under the badge */}
-      <div className="relative mx-6 mt-2 grid grid-cols-2 gap-2 md:mx-0 md:mt-0 md:fixed md:top-[118px] md:right-4 z-50 md:flex md:w-[244px] md:flex-col">
-        <a href="#bio" className="rounded-full border border-stone-500 bg-stone-200 px-3 py-2 md:px-5 md:py-3 text-center text-[11px] md:text-[13px] font-semibold uppercase tracking-[0.12em] md:tracking-[0.15em] text-stone-800 shadow-md shadow-stone-900/10 hover:bg-stone-300 transition-transform hover:scale-[1.04]">
+      <div className="relative mx-6 mt-2 grid grid-cols-2 gap-2 md:mx-0 md:mt-0 md:fixed md:top-[118px] md:right-4 z-50 md:flex md:w-[183px] md:flex-col">
+        <a href="#bio" className="rounded-full border border-stone-500 bg-stone-200 px-2.5 py-1.5 md:px-4 md:py-2 text-center text-[9px] md:text-[10px] font-semibold uppercase tracking-[0.12em] md:tracking-[0.15em] text-stone-800 shadow-md shadow-stone-900/10 hover:bg-stone-300 transition-transform hover:scale-[1.04]">
           Bio
         </a>
-        <a href="/agent-deep-dive" className="rounded-full border border-stone-500 bg-stone-200 px-3 py-2 md:px-5 md:py-3 text-center text-[11px] md:text-[13px] font-semibold uppercase tracking-[0.12em] md:tracking-[0.15em] text-stone-800 shadow-md shadow-stone-900/10 hover:bg-stone-300 transition-transform hover:scale-[1.04]">
+        <a href="/agent-deep-dive" className="rounded-full border border-stone-500 bg-stone-200 px-2.5 py-1.5 md:px-4 md:py-2 text-center text-[9px] md:text-[10px] font-semibold uppercase tracking-[0.12em] md:tracking-[0.15em] text-stone-800 shadow-md shadow-stone-900/10 hover:bg-stone-300 transition-transform hover:scale-[1.04]">
           Agent Deep Dive
         </a>
       </div>
