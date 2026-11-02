@@ -122,7 +122,7 @@ function PortfolioPage() {
       {/* Hero */}
       <header className="relative mx-auto max-w-6xl px-6 pt-6 pb-8 md:pt-8 md:pb-10 scroll-mt-8">
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-light leading-[1.05] tracking-tight flex flex-wrap items-center gap-x-4 md:gap-x-5 gap-y-2 md:pr-[240px]">
-          <img src={headshot.url} alt="Aylin Uyar headshot" className="h-16 w-16 md:h-20 md:w-20 shrink-0 rounded-full object-cover object-[50%_25%] ring-2 ring-rose-200 shadow-sm" />
+          <img src={headshot.url} alt="Aylin Uyar headshot" className="h-20 w-20 md:h-24 md:w-24 shrink-0 rounded-full object-cover object-[50%_25%] ring-2 ring-rose-200 shadow-sm" />
           <span>Aylin Uyar</span>
         </h1>
 
