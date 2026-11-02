@@ -318,9 +318,10 @@ function PortfolioPage() {
           <div className="relative overflow-x-auto pb-2">
             <div className="absolute left-0 right-0 top-[54px] h-px bg-stone-300" />
             <ol className="relative grid grid-cols-8 gap-3 min-w-[1000px] pt-9">
-              <div className="pointer-events-none absolute top-[2px] left-[34%] -translate-x-1/2 flex flex-col items-center" title="London Business School MBA exchange, 2025">
+              <div className="pointer-events-none absolute top-[2px] h-[57px] left-[34%] -translate-x-1/2 flex flex-col items-center" title="London Business School MBA exchange, 2025">
                 <span className="whitespace-nowrap text-[10px] font-semibold uppercase tracking-wider text-sky-700 leading-tight text-center">London Business School<br /><span className="font-medium normal-case italic tracking-normal text-sky-600">MBA Exchange · 2025</span></span>
-                <span className="mt-[2px] h-2.5 w-2.5 rounded-full border border-sky-400 bg-sky-200" />
+                <span className="my-0.5 w-0 flex-1 border-l border-dashed border-sky-200" />
+                <span className="h-2.5 w-2.5 shrink-0 rounded-full border border-sky-400 bg-sky-200" />
               </div>
               {[
                 { y: "2026–now", org: "Rownd AI (YC)", t: "AI Implementation Strategist", s: "Leading agentic AI implementation and proposal automation for defense-tech workflows." },
