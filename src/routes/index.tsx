@@ -315,7 +315,7 @@ function PortfolioPage() {
         {/* === Experience timeline === */}
         <section data-track-section="experience-timeline" className="mt-8">
           <div className="mb-4 flex items-baseline gap-3">
-            <span className="text-3xl md:text-4xl font-medium tracking-tight text-rose-600 leading-none">8+</span>
+            <span className="text-3xl md:text-4xl font-medium tracking-tight text-rose-600 leading-none">6+</span>
             <h3 className="text-base md:text-lg uppercase tracking-[0.18em] text-stone-700 font-semibold">Years of experience</h3>
           </div>
           <div className="relative overflow-x-auto pb-2">
