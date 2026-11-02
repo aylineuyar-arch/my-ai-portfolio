@@ -442,7 +442,7 @@ function AgentDeepDivePage() {
               ))}
             </div>
             <Collapsible className="mt-8">
-              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-teal-200 bg-teal-50/60 px-4 py-3 text-sm font-medium text-teal-800 hover:bg-teal-50 transition-colors">
+              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-teal-300 bg-teal-100 px-4 py-3 text-sm font-medium text-teal-900 hover:bg-teal-200 transition-colors">
                 <span className="uppercase tracking-wider text-xs">See technical details</span>
                 <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
               </CollapsibleTrigger>
@@ -569,7 +569,7 @@ function AgentDeepDivePage() {
               ))}
             </div>
             <Collapsible className="mt-8">
-              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-rose-200 bg-rose-50/60 px-4 py-3 text-sm font-medium text-rose-800 hover:bg-rose-50 transition-colors">
+              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-rose-300 bg-rose-100 px-4 py-3 text-sm font-medium text-rose-900 hover:bg-rose-200 transition-colors">
                 <span className="uppercase tracking-wider text-xs">See technical details</span>
                 <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
               </CollapsibleTrigger>
@@ -844,7 +844,7 @@ function AgentDeepDivePage() {
               ))}
             </div>
             <Collapsible className="mt-8">
-              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-stone-300 bg-stone-50 px-4 py-3 text-sm font-medium text-stone-700 hover:bg-stone-100 transition-colors">
+              <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border border-amber-300 bg-amber-100 px-4 py-3 text-sm font-medium text-amber-900 hover:bg-amber-200 transition-colors">
                 <span className="uppercase tracking-wider text-xs">See technical details</span>
                 <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
               </CollapsibleTrigger>
