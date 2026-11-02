@@ -159,10 +159,6 @@ function PortfolioPage() {
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-rose-600/95 text-white text-[11px] uppercase tracking-wider font-semibold px-2.5 py-1 shadow-sm backdrop-blur">
                     Demo — more to come
                   </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-indigo-600/95 text-white text-[11px] uppercase tracking-wider font-semibold px-2.5 py-1 shadow-sm backdrop-blur">
-                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                    Use case: Job Search
-                  </span>
                 </div>
                 <video
                   src="/__l5e/assets-v1/7617be75-5049-45ba-b653-97f26b957c4c/screen-recording.mp4"
