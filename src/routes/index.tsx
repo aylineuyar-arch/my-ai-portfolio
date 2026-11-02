@@ -152,10 +152,10 @@ function PortfolioPage() {
 
 
 
-          <div className="mx-auto max-w-[1100px] rounded-2xl bg-white/80 backdrop-blur border border-stone-200 overflow-hidden shadow-sm">
+          <div className="mx-auto max-w-[980px] rounded-2xl bg-white/80 backdrop-blur border border-stone-200 overflow-hidden shadow-sm">
             <div className="grid md:grid-cols-5 gap-0">
               {/* Video */}
-              <div className="relative bg-stone-100 border-b md:border-b-0 md:border-r border-stone-200 md:col-span-3 md:min-h-[440px]">
+              <div className="relative bg-stone-100 border-b md:border-b-0 md:border-r border-stone-200 md:col-span-3 md:min-h-[400px]">
                 <div className="absolute top-3 left-3 z-20 flex flex-col gap-1.5">
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-rose-600/95 text-white text-[11px] uppercase tracking-wider font-semibold px-2.5 py-1 shadow-sm backdrop-blur">
                     Demo — more to come
