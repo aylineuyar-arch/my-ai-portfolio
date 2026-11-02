@@ -348,10 +348,9 @@ function PortfolioPage() {
         </section>
         {/* === end AylinOS section === */}
 
-        <div className="mt-12 mb-4">
-          <div className="h-px bg-gradient-to-r from-transparent via-rose-300/40 to-transparent" />
-          <div className="mt-1 h-[3px] rounded-full bg-gradient-to-r from-transparent via-rose-500 to-transparent" />
-          <div className="mt-1 h-px bg-gradient-to-r from-transparent via-rose-300/40 to-transparent" />
+        <div className="mt-12 mb-2 flex items-center gap-4">
+          <span className="shrink-0 text-[12px] uppercase tracking-[0.3em] font-semibold text-rose-600">AylinOS Breakdown</span>
+          <div className="h-[2px] flex-1 rounded-full bg-gradient-to-r from-rose-400 to-transparent" />
         </div>
 
         {/* Combined section header — credibility number + section title */}
