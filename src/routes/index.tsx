@@ -353,10 +353,10 @@ function PortfolioPage() {
 
       {/* Quick-nav bubbles under the badge */}
       <div className="fixed top-[118px] right-4 z-50 flex w-[244px] flex-col gap-2">
-        <a href="#bio" className="rounded-full bg-rose-600 px-5 py-3 text-center text-[13px] font-semibold uppercase tracking-[0.15em] text-white shadow-md shadow-rose-900/20 hover:bg-rose-700 transition-transform hover:scale-[1.04]">
+        <a href="#bio" className="rounded-full bg-stone-700 px-5 py-3 text-center text-[13px] font-semibold uppercase tracking-[0.15em] text-white shadow-md shadow-stone-900/20 hover:bg-stone-800 transition-transform hover:scale-[1.04]">
           Bio
         </a>
-        <a href="#project-1" className="rounded-full bg-rose-600 px-5 py-3 text-center text-[13px] font-semibold uppercase tracking-[0.15em] text-white shadow-md shadow-rose-900/20 hover:bg-rose-700 transition-transform hover:scale-[1.04]">
+        <a href="#project-1" className="rounded-full bg-stone-700 px-5 py-3 text-center text-[13px] font-semibold uppercase tracking-[0.15em] text-white shadow-md shadow-stone-900/20 hover:bg-stone-800 transition-transform hover:scale-[1.04]">
           Agent Deep Dive
         </a>
       </div>
