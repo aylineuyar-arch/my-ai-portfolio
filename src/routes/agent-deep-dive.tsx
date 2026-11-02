@@ -44,7 +44,7 @@ function AgentDeepDivePage() {
 
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-orange-700 font-medium">
-              No. 04 · Built with Claude
+              No. 01 · Built with Claude
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
               Live AI Job Search Dashboard
@@ -156,7 +156,7 @@ function AgentDeepDivePage() {
 
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-emerald-700 font-medium">
-              No. 05 · Built with Claude
+              No. 02 · Built with Claude
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
               Compliance RAG Chatbot
@@ -264,7 +264,7 @@ function AgentDeepDivePage() {
 
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-indigo-700 font-medium">
-              No. 02 · Built with Claude + LangGraph
+              No. 03 · Built with Claude + LangGraph
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
               Customer Service Triage Agent
@@ -424,7 +424,7 @@ function AgentDeepDivePage() {
 
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-teal-700 font-medium">
-              No. 03 · Built with Claude + Python
+              No. 04 · Built with Claude + Python
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
               GTM Pricing Tool
@@ -549,7 +549,7 @@ function AgentDeepDivePage() {
 
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-rose-700 font-medium">
-              No. 01 · Built with LangGraph + Claude
+              No. 05 · Built with LangGraph + Claude
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
               <em className="italic">Fork Yea!</em> — Multi-Agentic Reservation Agent
