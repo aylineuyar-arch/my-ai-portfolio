@@ -316,13 +316,17 @@ function PortfolioPage() {
         <section data-track-section="experience-timeline" className="mt-8">
           <p className="text-xs uppercase tracking-wider font-semibold text-stone-500 mb-3">Experience</p>
           <div className="relative overflow-x-auto pb-2">
-            <div className="absolute left-0 right-0 top-[18px] h-px bg-stone-300" />
-            <ol className="relative grid grid-cols-8 gap-3 min-w-[1000px]">
+            <div className="absolute left-0 right-0 top-[38px] h-px bg-stone-300" />
+            <ol className="relative grid grid-cols-8 gap-3 min-w-[1000px] pt-5">
+              <div className="pointer-events-none absolute top-0 left-[calc(37.5%-1px)] -translate-x-1/2 flex flex-col items-center" title="London Business School MBA exchange, 2025">
+                <span className="whitespace-nowrap text-[10px] font-semibold uppercase tracking-wider text-sky-700">LBS '25</span>
+                <span className="mt-[5px] h-2.5 w-2.5 rounded-full border border-sky-400 bg-sky-200" />
+              </div>
               {[
                 { y: "2026–now", org: "Rownd AI (YC)", t: "AI Implementation Strategist", s: "Leading agentic AI implementation and proposal automation for defense-tech workflows." },
                 { y: "2026", org: "LinguaLinq.ai", t: "Product Strategy & Operations", s: "Led product strategy, adoption, and GTM for an AI translation platform in 70+ languages." },
                 { y: "2025", org: "Skild AI", t: "Product Management Intern", s: "PM intern driving GTM strategy, deployment, and a zero-to-one PRD for a flagship robotics client." },
-                { y: "2024–26", edu: true, org: "Dartmouth Tuck", t: "MBA", sub: "+ LBS Exchange · 2025", s: "Forté Fellow and Startup Builder Fellow at the Center for Entrepreneurship." },
+                { y: "2024–26", edu: true, org: "Dartmouth Tuck", t: "MBA", s: "Forté Fellow and Startup Builder Fellow at the Center for Entrepreneurship." },
                 { y: "2020–24", org: "Deloitte Consulting", t: "Tech Strategy Senior Consultant", s: "Led tech strategy for $150M–$500M cloud transformations; Interim Chief of Staff for a 2,500-person program." },
                 { y: "2019–20", org: "DCS Corporation", t: "Sensor Integration Engineer", s: "Engineered C++ sensor integration for military vehicle operator controls." },
                 { y: "2018–19", org: "Booz Allen Hamilton", t: "Staff Engineer", s: "Built C++ software for a computer-vision anti-drone sensor fusion system." },
@@ -332,9 +336,6 @@ function PortfolioPage() {
                   <span className={`relative inline-block whitespace-nowrap rounded-full border px-3 py-1.5 text-[12px] font-semibold ${e.edu ? "border-sky-300 bg-sky-50 text-sky-800" : "border-rose-200 bg-rose-50 text-rose-700"}`}>{e.y}</span>
                   <p className="mt-3 text-sm font-semibold text-stone-900">{e.org}</p>
                   <p className="text-[11px] italic text-stone-500">{e.t}</p>
-                  {"sub" in e && e.sub && (
-                    <span className="mt-1.5 inline-block whitespace-nowrap rounded-full border border-sky-300 bg-sky-50 px-2 py-0.5 text-[10.5px] font-medium text-sky-800">{e.sub}</span>
-                  )}
                   <p className="mt-1 text-[12px] leading-snug text-stone-600">{e.s}</p>
                 </li>
               ))}
