@@ -441,7 +441,7 @@ function PortfolioPage() {
               <div className="p-8 md:p-10 flex flex-col justify-center md:col-span-2">
                 <div className="flex items-center gap-3">
                   <span className="text-xs uppercase tracking-wider font-semibold text-rose-600">
-                    Featured · The layer above all 6
+                    Featured
                   </span>
 
                   <span className="inline-flex items-center gap-1 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-1.5 py-0.5 rounded-full font-medium">
@@ -538,7 +538,7 @@ function PortfolioPage() {
 
                 <div className="mt-6 flex items-center gap-4">
                   <a
-                    href="https://aylinos.lovable.app"
+                    href="https://aylinos.lovable.app/aylinos-app"
                     target="_blank"
                     rel="noreferrer"
                     data-track-click="launch-aylinos"
