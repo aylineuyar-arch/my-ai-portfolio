@@ -124,9 +124,6 @@ function PortfolioPage() {
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-light leading-[1.05] tracking-tight flex flex-wrap items-center gap-x-4 md:gap-x-5 gap-y-2 md:pr-[240px]">
           <img src={headshot.url} alt="Aylin Uyar headshot" className="h-16 w-16 md:h-20 md:w-20 shrink-0 rounded-full object-cover object-[50%_25%] ring-2 ring-rose-200 shadow-sm" />
           <span>Aylin Uyar</span>
-          <span className="text-xl sm:text-2xl md:text-4xl uppercase tracking-[0.2em] text-rose-600 font-medium">
-            AI Portfolio
-          </span>
         </h1>
 
         {/* Tagline — the through-line of the work */}
