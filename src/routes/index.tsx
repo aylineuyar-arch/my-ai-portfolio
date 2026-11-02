@@ -10,6 +10,7 @@ import emailGenImg from "@/assets/email-generator-screenshot.png";
 import complianceRagImg from "@/assets/project-3-compliance-rag.png";
 import forkYeahResults from "@/assets/fork-yeah-results.png";
 import forkYeahLoading from "@/assets/fork-yeah-loading.png";
+import headshot from "@/assets/aylin-headshot.jpg.asset.json";
 import gtmHome from "@/assets/gtm-pricing-home.png";
 import { TAG_COLORS, TOOL_LOGOS, ToolIcons, Tag, GradientDivider, AgentFlowMarquee, ProjectCollapse, type AgentStep } from "@/components/portfolio-kit";
 
@@ -119,8 +120,9 @@ function PortfolioPage() {
       </div>
 
       {/* Hero */}
-      <header id="bio" className="relative mx-auto max-w-6xl px-6 pt-6 pb-8 md:pt-8 md:pb-10 scroll-mt-8">
-        <h1 className="text-5xl md:text-7xl font-light leading-[1.05] tracking-tight flex flex-wrap items-end gap-x-5 gap-y-2 pr-[240px]">
+      <header className="relative mx-auto max-w-6xl px-6 pt-6 pb-8 md:pt-8 md:pb-10 scroll-mt-8">
+        <h1 className="text-5xl md:text-7xl font-light leading-[1.05] tracking-tight flex flex-wrap items-center gap-x-5 gap-y-2 pr-[240px]">
+          <img src={headshot.url} alt="Aylin Uyar headshot" className="h-16 w-16 md:h-20 md:w-20 shrink-0 rounded-full object-cover object-[50%_25%] ring-2 ring-rose-200 shadow-sm" />
           <span>Aylin Uyar</span>
           <span className="text-base md:text-lg uppercase tracking-[0.3em] text-rose-600 font-medium pb-2 md:pb-3">
             AI Portfolio
@@ -313,7 +315,7 @@ function PortfolioPage() {
         </section>
 
         {/* === Experience timeline === */}
-        <section data-track-section="experience-timeline" className="mt-8">
+        <section id="bio" data-track-section="experience-timeline" className="mt-8 scroll-mt-8">
           <div className="mb-4 flex items-baseline gap-3">
             <span className="text-3xl md:text-4xl font-medium tracking-tight text-rose-600 leading-none">6+</span>
             <h3 className="text-base md:text-lg uppercase tracking-[0.18em] text-stone-700 font-semibold">Years of experience</h3>
