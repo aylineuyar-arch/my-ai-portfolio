@@ -152,10 +152,10 @@ function PortfolioPage() {
 
 
 
-          <div className="mx-auto max-w-[1280px] rounded-2xl bg-white/80 backdrop-blur border border-stone-200 overflow-hidden shadow-sm">
+          <div className="mx-auto max-w-[1100px] rounded-2xl bg-white/80 backdrop-blur border border-stone-200 overflow-hidden shadow-sm">
             <div className="grid md:grid-cols-5 gap-0">
               {/* Video */}
-              <div className="relative bg-stone-100 border-b md:border-b-0 md:border-r border-stone-200 md:col-span-3 md:min-h-[520px]">
+              <div className="relative bg-stone-100 border-b md:border-b-0 md:border-r border-stone-200 md:col-span-3 md:min-h-[440px]">
                 <div className="absolute top-3 left-3 z-20 flex flex-col gap-1.5">
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-rose-600/95 text-white text-[11px] uppercase tracking-wider font-semibold px-2.5 py-1 shadow-sm backdrop-blur">
                     Demo — more to come
@@ -195,7 +195,7 @@ function PortfolioPage() {
               </div>
 
               {/* Copy */}
-              <div className="p-8 md:p-10 flex flex-col justify-center md:col-span-2">
+              <div className="p-6 md:p-8 flex flex-col justify-center md:col-span-2">
                 <div className="flex items-center gap-3">
                   <span className="text-xs uppercase tracking-wider font-semibold text-rose-600">
                     Featured
@@ -314,7 +314,10 @@ function PortfolioPage() {
 
         {/* === Experience timeline === */}
         <section data-track-section="experience-timeline" className="mt-8">
-          <p className="text-xs uppercase tracking-wider font-semibold text-stone-500 mb-3">Experience</p>
+          <div className="mb-4 flex items-baseline gap-3">
+            <span className="text-3xl md:text-4xl font-medium tracking-tight text-rose-600 leading-none">8+</span>
+            <h3 className="text-base md:text-lg uppercase tracking-[0.18em] text-stone-700 font-semibold">Years of experience</h3>
+          </div>
           <div className="relative overflow-x-auto pb-2">
             <div className="absolute left-0 right-0 top-[54px] h-px bg-stone-300" />
             <ol className="relative grid grid-cols-8 gap-3 min-w-[1000px] pt-9">
@@ -345,7 +348,11 @@ function PortfolioPage() {
         </section>
         {/* === end AylinOS section === */}
 
-        <div className="mt-6 h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent" />
+        <div className="mt-12 mb-4">
+          <div className="h-px bg-gradient-to-r from-transparent via-rose-300/40 to-transparent" />
+          <div className="mt-1 h-[3px] rounded-full bg-gradient-to-r from-transparent via-rose-500 to-transparent" />
+          <div className="mt-1 h-px bg-gradient-to-r from-transparent via-rose-300/40 to-transparent" />
+        </div>
 
         {/* Combined section header — credibility number + section title */}
         <div className="mt-8 flex items-baseline justify-between gap-4 flex-wrap">
