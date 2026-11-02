@@ -33,7 +33,7 @@ function AgentDeepDivePage() {
       <header className="mx-auto max-w-6xl px-6 pt-8 pb-6">
         <a href="/" className="inline-flex items-center gap-1 rounded-full border border-stone-500 bg-stone-200 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-stone-800 hover:bg-stone-300">← Back to portfolio</a>
         <h1 className="mt-5 text-4xl md:text-6xl font-light tracking-tight">Agent Deep Dive</h1>
-        <p className="mt-3 text-stone-600">Six production AI agents, how each one works, what it touches, and the outcome it drives.</p>
+        <p className="mt-3 text-stone-600">Six production AI agents: how each one works, what it touches, and the outcome it drives.</p>
       </header>
       <GradientDivider />
 
@@ -82,7 +82,7 @@ function AgentDeepDivePage() {
                 <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
                   <li className="flex gap-3"><span className="text-orange-500">▸</span>~300 deduplicated roles per run across 130+ target companies</li>
                   <li className="flex gap-3"><span className="text-orange-500">▸</span>Honest conversion scoring: Anthropic 10–25, early-stage startups 45–65</li>
-                  <li className="flex gap-3"><span className="text-orange-500">▸</span>Apply-now list: fit ≥ 65 AND conversion ≥ 45, actionable, not a dump</li>
+                  <li className="flex gap-3"><span className="text-orange-500">▸</span>Apply-now list: fit ≥ 65 AND conversion ≥ 45. Actionable, not a dump</li>
                   <li className="flex gap-3"><span className="text-orange-500">▸</span>Eliminated manual checking of Anthropic, Ramp, Rippling, Databricks + 126 more</li>
                   <li className="flex gap-3"><span className="text-orange-500">▸</span>Deployed on Railway: zero infrastructure overhead</li>
                 </ul>
@@ -179,14 +179,14 @@ function AgentDeepDivePage() {
                   </div>
                   <div className="p-4 rounded-lg bg-emerald-50/60 border border-emerald-200">
                     <div className="text-xs uppercase tracking-wider text-emerald-700 font-semibold">Grounded by default</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Confidence threshold + cross-document synthesis callout, falls back honestly when policies don't cover the question.</p>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Confidence threshold + cross-document synthesis callout. Falls back honestly when policies don't cover the question.</p>
                   </div>
                 </div>
                 <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
-                  <li className="flex gap-3"><span className="text-emerald-500">▸</span>Streaming token-by-token answers with conversation memory, follow-ups like "what about exceptions?" stay in context</li>
+                  <li className="flex gap-3"><span className="text-emerald-500">▸</span>Streaming token-by-token answers with conversation memory, so follow-ups like "what about exceptions?" stay in context</li>
                   <li className="flex gap-3"><span className="text-emerald-500">▸</span>Suggested follow-up questions + CSV session export, built for analyst workflows and audit trails</li>
                   <li className="flex gap-3"><span className="text-emerald-500">▸</span>Local embeddings = $0 per query on retrieval; only generation hits the Claude API</li>
-                  <li className="flex gap-3"><span className="text-emerald-500">▸</span>Deployed on Streamlit Cloud with claude-haiku-4-5, production-grade UX, demo-grade cost</li>
+                  <li className="flex gap-3"><span className="text-emerald-500">▸</span>Deployed on Streamlit Cloud with claude-haiku-4-5. Production-grade UX, demo-grade cost</li>
                 </ul>
               </CollapsibleContent>
             </Collapsible>
@@ -240,7 +240,7 @@ function AgentDeepDivePage() {
             <figure>
               <img
                 src={complianceRagImg}
-                alt="Compliance Policy Q&A chatbot, indexed AML, KYC, Trade Surveillance, and Data Governance documents with example questions"
+                alt="Compliance Policy Q&A chatbot with indexed AML, KYC, Trade Surveillance, and Data Governance documents with example questions"
                 className="w-full rounded-lg shadow-lg ring-1 ring-emerald-200"
                 loading="eager"
               />
@@ -291,11 +291,11 @@ function AgentDeepDivePage() {
                   </div>
                   <div className="p-4 rounded-lg bg-indigo-50/60 border border-indigo-200">
                     <div className="text-xs uppercase tracking-wider text-indigo-700 font-semibold">Draft-first agent UX</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Triage classifies AND drafts the reply, agents edit instead of writing from scratch, collapsing handle time.</p>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Triage classifies AND drafts the reply, so agents edit instead of writing from scratch, collapsing handle time.</p>
                   </div>
                 </div>
                 <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
-                  <li className="flex gap-3"><span className="text-indigo-500">▸</span>~640ms end-to-end on claude-haiku-4-5, sub-second triage at production scale</li>
+                  <li className="flex gap-3"><span className="text-indigo-500">▸</span>~640ms end-to-end on claude-haiku-4-5. Sub-second triage at production scale</li>
                   <li className="flex gap-3"><span className="text-indigo-500">▸</span>Replaces brittle keyword routing with a single grounded LLM call, fewer rules, better recall</li>
                   <li className="flex gap-3"><span className="text-indigo-500">▸</span>Color-coded priority + category badges built for the ticketing UIs ops teams already use</li>
                   <li className="flex gap-3"><span className="text-indigo-500">▸</span>Structured output = trivially loggable, A/B-testable, and auditable per ticket</li>
@@ -454,11 +454,11 @@ function AgentDeepDivePage() {
                   </div>
                   <div className="p-4 rounded-lg bg-teal-50/60 border border-teal-200">
                     <div className="text-xs uppercase tracking-wider text-teal-700 font-semibold">Claude-powered ICP</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Describe your product in a sentence, Claude recommends industry, customer segment, and pricing model before you touch a slider.</p>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Describe your product in a sentence and Claude recommends industry, customer segment, and pricing model before you touch a slider.</p>
                   </div>
                   <div className="p-4 rounded-lg bg-teal-50/60 border border-teal-200">
                     <div className="text-xs uppercase tracking-wider text-teal-700 font-semibold">Benchmark library</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">25+ benchmarks across 8 industries and 3 segments (SMB, Mid-Market, Enterprise), ACV, CAC payback, NRR, gross margin grounded in real comps.</p>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">25+ benchmarks across 8 industries and 3 segments (SMB, Mid-Market, Enterprise): ACV, CAC payback, NRR, gross margin grounded in real comps.</p>
                   </div>
                   <div className="p-4 rounded-lg bg-teal-50/60 border border-teal-200">
                     <div className="text-xs uppercase tracking-wider text-teal-700 font-semibold">Connected workflow</div>
@@ -466,7 +466,7 @@ function AgentDeepDivePage() {
                   </div>
                 </div>
                 <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
-                  <li className="flex gap-3"><span className="text-teal-500">▸</span>Three scenarios per model, base, upside, downside, for stress-testing assumptions</li>
+                  <li className="flex gap-3"><span className="text-teal-500">▸</span>Three scenarios per model (base, upside, downside) for stress-testing assumptions</li>
                   <li className="flex gap-3"><span className="text-teal-500">▸</span>Unit-economics view: LTV/CAC, payback, gross margin, burn multiple, all computed live</li>
                   <li className="flex gap-3"><span className="text-teal-500">▸</span>Deployed on Railway behind a private-beta gate; zero infra babysitting</li>
                 </ul>
@@ -577,7 +577,7 @@ function AgentDeepDivePage() {
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
                     <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Cost-aware role-based model routing</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Eight specialized sub-agents in a LangGraph pipeline, each routed to the cheapest model that can do the job: Haiku for fast parsing, Sonnet for deep ranking, Haiku again as judge, no single model does everything.</p>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Eight specialized sub-agents in a LangGraph pipeline, each routed to the cheapest model that can do the job: Haiku for fast parsing, Sonnet for deep ranking, Haiku again as judge. No single model does everything.</p>
                   </div>
                   <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
                     <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Persistent vector memory</div>
@@ -585,7 +585,7 @@ function AgentDeepDivePage() {
                   </div>
                   <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
                     <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Real browser automation</div>
-                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Playwright over Chrome DevTools Protocol drives an isolated profile, navigates OpenTable, selects a slot, sandboxed from personal Chrome.</p>
+                    <p className="mt-1.5 text-sm text-stone-700 leading-snug">Playwright over Chrome DevTools Protocol drives an isolated profile. It navigates OpenTable, selects a slot, sandboxed from personal Chrome.</p>
                   </div>
                   <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
                     <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">LLM-as-judge eval layer</div>
@@ -620,12 +620,12 @@ function AgentDeepDivePage() {
                 </div>
 
                 <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
-                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Single natural-language input: "Italian in NYC for 2 on June 1", drives the full pipeline</li>
+                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Single natural-language input: "Italian in NYC for 2 on June 1" drives the full pipeline</li>
                   <li className="flex gap-3"><span className="text-rose-500">▸</span>Tavily searches OpenTable, then enriches each candidate with ratings, neighborhood, price tier</li>
                   <li className="flex gap-3"><span className="text-rose-500">▸</span>FastAPI exposes the agent to a React + Vite + Tailwind frontend</li>
-                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Emails a pre-filled one-click checkout link via Gmail SMTP, agent handles every step up to confirm</li>
+                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Emails a pre-filled one-click checkout link via Gmail SMTP. The agent handles every step up to confirm</li>
                   <li className="flex gap-3"><span className="text-rose-500">▸</span>Isolated <code className="text-xs bg-rose-100 px-1.5 py-0.5 rounded">.chrome-dev-profile/</code>, never touches personal Chrome data</li>
-                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Haiku judge re-scores Sonnet's top pick with a one-sentence verdict, production pattern for catching bad outputs without human review</li>
+                  <li className="flex gap-3"><span className="text-rose-500">▸</span>Haiku judge re-scores Sonnet's top pick with a one-sentence verdict, a production pattern for catching bad outputs without human review</li>
                   <li className="flex gap-3"><span className="text-rose-500">▸</span>Observability dashboard logs node latency, confidence, escalation flags, and eval scores to SQLite (WAL); review queue surfaces low-confidence runs</li>
                   <li className="flex gap-3"><span className="text-rose-500">▸</span>Thumbs up/down ratings persist to the monitor DB and render inline in the run-detail trace next to the pipeline timeline</li>
                 </ul>
@@ -652,7 +652,7 @@ function AgentDeepDivePage() {
                 Why this one is the most complex
               </p>
               <p className="text-sm md:text-base text-stone-700 leading-relaxed">
-                Finding the <strong className="text-stone-900">perfect reservation</strong> takes a team of AI agents, they understand the ask, search, rank the best fit, <strong className="text-stone-900">books the reservation</strong>, and emails you to confirm.
+                Finding the <strong className="text-stone-900">perfect reservation</strong> takes a team of AI agents. They understand the ask, search, rank the best fit, <strong className="text-stone-900">books the reservation</strong>, and emails you to confirm.
               </p>
             </div>
 
@@ -717,7 +717,7 @@ function AgentDeepDivePage() {
                 <div className="aspect-video w-full bg-stone-950 flex items-center justify-center">
                   <img
                     src={forkYeahLoading}
-                    alt="Fork Yeah! agent working, sub-agents checking past searches, querying OpenTable, enriching with Maps & reviews."
+                    alt="Fork Yeah! agent working: sub-agents checking past searches, querying OpenTable, enriching with Maps & reviews."
                     loading="lazy"
                     className="w-full h-full object-cover object-top block"
                   />
@@ -863,7 +863,7 @@ function AgentDeepDivePage() {
                 <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
                   <li className="flex gap-3"><span className="text-stone-500">▸</span>Cron-triggered daily: zero manual touch, runs while I sleep</li>
                   <li className="flex gap-3"><span className="text-stone-500">▸</span>Claude scores every posting on relevance, dedupes against yesterday's run via Supabase</li>
-                  <li className="flex gap-3"><span className="text-stone-500">▸</span>Self-hosted n8n on Railway, own the workflow, no per-execution SaaS fees</li>
+                  <li className="flex gap-3"><span className="text-stone-500">▸</span>Self-hosted n8n on Railway: own the workflow, no per-execution SaaS fees</li>
                   <li className="flex gap-3"><span className="text-stone-500">▸</span>Resend delivers a clean HTML digest straight to inbox, ready to skim with morning coffee</li>
                   <li className="flex gap-3"><span className="text-stone-500">▸</span>Built to demonstrate AI fluency across orchestration tools, not just one</li>
                 </ul>
