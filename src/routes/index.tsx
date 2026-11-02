@@ -376,7 +376,7 @@ function PortfolioPage() {
         </p>
 
         <p className="mt-3 max-w-4xl text-xl md:text-2xl font-light text-stone-800 leading-tight">
-          Tuck MBA <span className="text-stone-400">|</span> Ex Deloitte and Skild AI <span className="text-stone-400">|</span> AI Deployment, Strategy, Ops
+          Tuck MBA <span className="text-stone-400">|</span> Ex Deloitte and Skild AI <span className="text-stone-400">|</span> AI Deployment, Technical Strategy, Ops
         </p>
 
         {/* One-sentence positioning */}
