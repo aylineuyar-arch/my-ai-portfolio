@@ -351,8 +351,18 @@ function PortfolioPage() {
         </div>
       </div>
 
+      {/* Quick-nav bubbles under the badge */}
+      <div className="fixed top-[132px] right-4 z-50 flex w-[244px] justify-center gap-2">
+        <a href="#bio" className="rounded-full border border-rose-200 bg-white/95 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.15em] text-rose-600 shadow-md shadow-rose-900/10 backdrop-blur transition-transform hover:scale-[1.04]">
+          Bio
+        </a>
+        <a href="#project-1" className="rounded-full border border-rose-200 bg-white/95 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.15em] text-rose-600 shadow-md shadow-rose-900/10 backdrop-blur transition-transform hover:scale-[1.04]">
+          Agent Deep Dive
+        </a>
+      </div>
+
       {/* Hero */}
-      <header className="relative mx-auto max-w-6xl px-6 pt-8 pb-16 md:pt-10 md:pb-20">
+      <header id="bio" className="relative mx-auto max-w-6xl px-6 pt-8 pb-16 md:pt-10 md:pb-20 scroll-mt-8">
         <h1 className="text-5xl md:text-7xl font-light leading-[1.05] tracking-tight flex flex-wrap items-end gap-x-5 gap-y-2 pr-[240px]">
           <span>Aylin Uyar</span>
           <span className="text-base md:text-lg uppercase tracking-[0.3em] text-rose-600 font-medium pb-2 md:pb-3">
