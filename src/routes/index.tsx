@@ -319,8 +319,8 @@ function PortfolioPage() {
             <h3 className="text-base md:text-lg uppercase tracking-[0.18em] text-stone-700 font-semibold">Years of experience</h3>
           </div>
           <div className="relative overflow-x-auto pb-2">
-            <div className="absolute left-0 right-0 top-[54px] h-px bg-stone-300" />
             <ol className="relative grid grid-cols-8 gap-3 min-w-[1000px] pt-9">
+              <div className="pointer-events-none absolute left-0 right-0 top-[54px] h-px bg-stone-300" />
               <div className="pointer-events-none absolute top-[2px] h-[57px] left-[34%] -translate-x-1/2 flex flex-col items-center" title="London Business School MBA exchange, 2025">
                 <span className="whitespace-nowrap text-[10px] font-semibold uppercase tracking-wider text-sky-700 leading-tight text-center">London Business School<br /><span className="font-medium normal-case italic tracking-normal text-sky-600">MBA Exchange · 2025</span></span>
                 <span className="my-0.5 w-0 flex-1 border-l border-dashed border-sky-300" />
