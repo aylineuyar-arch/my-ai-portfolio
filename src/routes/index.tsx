@@ -362,7 +362,7 @@ function PortfolioPage() {
       </div>
 
       {/* Hero */}
-      <header id="bio" className="relative mx-auto max-w-6xl px-6 pt-8 pb-16 md:pt-10 md:pb-20 scroll-mt-8">
+      <header id="bio" className="relative mx-auto max-w-6xl px-6 pt-6 pb-8 md:pt-8 md:pb-10 scroll-mt-8">
         <h1 className="text-5xl md:text-7xl font-light leading-[1.05] tracking-tight flex flex-wrap items-end gap-x-5 gap-y-2 pr-[240px]">
           <span>Aylin Uyar</span>
           <span className="text-base md:text-lg uppercase tracking-[0.3em] text-rose-600 font-medium pb-2 md:pb-3">
@@ -371,27 +371,27 @@ function PortfolioPage() {
         </h1>
 
         {/* Tagline — the through-line of the work */}
-        <p className="mt-6 text-xl md:text-2xl font-medium italic text-rose-700 leading-tight">
+        <p className="mt-4 text-xl md:text-2xl font-medium italic text-rose-700 leading-tight">
           Designing AI systems people actually adopt.
         </p>
 
-        <p className="mt-6 max-w-4xl text-xl md:text-2xl font-light text-stone-800 leading-tight">
+        <p className="mt-3 max-w-4xl text-xl md:text-2xl font-light text-stone-800 leading-tight">
           Tuck MBA <span className="text-stone-400">|</span> Ex Deloitte and Skild AI <span className="text-stone-400">|</span> AI Deployment, Strategy, Ops
         </p>
 
         {/* One-sentence positioning */}
-        <p className="mt-5 max-w-3xl text-base md:text-lg text-stone-700 leading-relaxed">
+        <p className="mt-3 max-w-3xl text-base md:text-lg text-stone-700 leading-relaxed">
           Engineer turned AI deployment and strategy leader — helping organizations operationalize AI through workflow redesign, adoption, and measurable business outcomes.
         </p>
 
         {/* Principles as header subtext */}
-        <p className="mt-3 max-w-3xl text-sm md:text-base text-stone-500 leading-relaxed">
+        <p className="mt-2 max-w-3xl text-sm md:text-base text-stone-500 leading-relaxed">
           Bottlenecks first. Ship fast. Measure adoption.
         </p>
 
 
         {/* === AylinOS meta-project demo === */}
-        <section data-track-section="aylinos-demo" className="mt-12 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen px-6 md:px-16 lg:px-24">
+        <section data-track-section="aylinos-demo" className="mt-8 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen px-6 md:px-16 lg:px-24">
 
 
 
@@ -556,7 +556,7 @@ function PortfolioPage() {
         </section>
         {/* === end AylinOS section === */}
 
-        <div className="mt-10 h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent" />
+        <div className="mt-6 h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent" />
 
         {/* Combined section header — credibility number + section title */}
         <div className="mt-8 flex items-baseline justify-between gap-4 flex-wrap">
@@ -707,7 +707,7 @@ function PortfolioPage() {
       <GradientDivider />
 
       {/* Project 1 */}
-      <section id="project-1" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
+      <section id="project-1" className="mx-auto max-w-6xl px-6 py-6 md:py-8 scroll-mt-8">
         <ProjectCollapse id="project-1" num="No. 01 · AI Job Search" numCls="text-orange-700" title="Live AI Job Search Dashboard" sub="Claude · Python · Railway">
         <div className="grid md:grid-cols-12 gap-10">
 
@@ -819,7 +819,7 @@ function PortfolioPage() {
       <GradientDivider />
 
       {/* Project 2 — Compliance RAG Chatbot */}
-      <section id="project-3" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
+      <section id="project-3" className="mx-auto max-w-6xl px-6 py-6 md:py-8 scroll-mt-8">
         <ProjectCollapse id="project-3" num="No. 02 · Compliance RAG Chatbot" numCls="text-emerald-700" title="Compliance RAG Chatbot" sub="Claude · Python · Streamlit">
         <div className="grid md:grid-cols-12 gap-10">
 
@@ -927,7 +927,7 @@ function PortfolioPage() {
       <GradientDivider />
 
       {/* Project 3 — Customer Service Triage */}
-      <section id="project-4" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
+      <section id="project-4" className="mx-auto max-w-6xl px-6 py-6 md:py-8 scroll-mt-8">
         <ProjectCollapse id="project-4" num="No. 03 · Customer Service Triage Agent" numCls="text-indigo-700" title="Customer Service Triage Agent" sub="Claude · LangGraph · Python · FastAPI">
         <div className="grid md:grid-cols-12 gap-10">
 
@@ -1087,7 +1087,7 @@ function PortfolioPage() {
 
       <GradientDivider />
       {/* Project GTM — GTM Pricing Tool */}
-      <section id="project-gtm" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
+      <section id="project-gtm" className="mx-auto max-w-6xl px-6 py-6 md:py-8 scroll-mt-8">
         <ProjectCollapse id="project-gtm" num="No. 04 · GTM Pricing Tool" numCls="text-teal-700" title="GTM Pricing Tool" sub="Claude · Python · Railway">
         <div className="grid md:grid-cols-12 gap-10">
 
@@ -1212,7 +1212,7 @@ function PortfolioPage() {
       <GradientDivider />
 
       {/* Project Restaurant — Multi-Agentic Reservation Agent */}
-      <section id="project-restaurant" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
+      <section id="project-restaurant" className="mx-auto max-w-6xl px-6 py-6 md:py-8 scroll-mt-8">
         <ProjectCollapse id="project-restaurant" num="No. 05 · Multi-Agentic Reservation Agent" numCls="text-rose-700" title={<><em className="italic">Fork Yea!</em> — Multi-Agentic Reservation Agent</>} sub="Cursor · LangGraph · Claude · Playwright">
         <div className="grid md:grid-cols-12 gap-10">
 
@@ -1493,7 +1493,7 @@ function PortfolioPage() {
 
       <GradientDivider />
 
-      <section id="project-2" className="mx-auto max-w-6xl px-6 py-10 md:py-12 scroll-mt-8">
+      <section id="project-2" className="mx-auto max-w-6xl px-6 py-6 md:py-8 scroll-mt-8">
         <ProjectCollapse id="project-2" num="No. 06 · Agentic Email Generator" numCls="text-amber-700" title="Agentic Email Generator" sub="n8n · Claude · Supabase">
         <div className="grid md:grid-cols-12 gap-10">
 
@@ -1607,7 +1607,7 @@ function PortfolioPage() {
 
 
       {/* Footer */}
-      <footer className="mx-auto max-w-6xl px-6 py-16 text-sm text-stone-600">
+      <footer className="mx-auto max-w-6xl px-6 py-10 text-sm text-stone-600">
         <div className="flex flex-wrap justify-between gap-4">
           <div>Aylin Uyar · AI Portfolio · 2026</div>
           <div className="flex gap-6">
