@@ -310,8 +310,8 @@ function PortfolioPage() {
         </section>
 
         <div className="mt-12 mb-2 flex items-center gap-4">
-          <span className="shrink-0 text-[12px] uppercase tracking-[0.3em] font-semibold text-rose-600">Bio</span>
-          <div className="flex-1 border-t-2 border-rose-300" />
+          <h2 className="text-lg md:text-xl font-semibold leading-snug text-section-divider">Bio</h2>
+          <div className="min-w-8 flex-1 border-t border-section-divider/40" />
         </div>
 
         {/* === Experience timeline === */}
@@ -352,8 +352,8 @@ function PortfolioPage() {
         {/* === end AylinOS section === */}
 
         <div className="mt-12 mb-6 flex items-center gap-4 md:mt-14">
-          <h3 className="shrink-0 text-[12px] uppercase font-semibold text-section-divider">AylinOS Breakdown</h3>
-          <div className="flex-1 border-t border-section-divider/40" />
+          <h2 className="text-lg md:text-xl font-semibold leading-snug text-section-divider">AylinOS Breakdown</h2>
+          <div className="min-w-8 flex-1 border-t border-section-divider/40" />
         </div>
         <div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-3 items-stretch">
@@ -421,14 +421,12 @@ function PortfolioPage() {
 
         </div>
 
-        <div className="mt-6 h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent" />
-
         {/* Demonstrated skills — category-colored marquee */}
-        <div className="mt-8 flex items-baseline justify-between gap-4 flex-wrap">
-          <h3 className="text-base md:text-lg uppercase tracking-[0.18em] text-stone-700 font-semibold">
+        <div className="mt-12 mb-6 flex items-center gap-4 md:mt-14">
+          <h2 className="text-lg md:text-xl font-semibold leading-snug text-section-divider">
             Demonstrated skills
-          </h3>
-          <span className="text-sm text-stone-500 italic">color-coded by category</span>
+          </h2>
+          <div className="min-w-8 flex-1 border-t border-section-divider/40" />
         </div>
         <div className="mt-3 rounded-2xl border border-stone-300/70 bg-white/70 backdrop-blur-sm p-3 md:p-4 space-y-2">
           {[
