@@ -30,6 +30,8 @@ export const Route = createFileRoute("/")({
         content:
           "Aylin Uyar, Tuck MBA 2026, ex-Deloitte Tech Strategy, PM Intern at Skild AI. Six live, shipped AI projects across deployment, strategy, and ops: Claude agent pipelines, agentic email automation, RAG compliance, and customer-service triage.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "https://aylin-uyar-portfolio.lovable.app/" },
       { name: "twitter:title", content: "Aylin Uyar — AI Deployment, Strategy & Ops Portfolio" },
       {
@@ -349,9 +351,9 @@ function PortfolioPage() {
         </section>
         {/* === end AylinOS section === */}
 
-        <div className="mt-12 mb-2 flex items-center gap-4">
-          <span className="shrink-0 text-[12px] uppercase tracking-[0.3em] font-semibold text-rose-600">AylinOS Breakdown</span>
-          <div className="flex-1 border-t-2 border-rose-300" />
+        <div className="mt-20 mb-6 flex items-center gap-5">
+          <span className="shrink-0 text-sm uppercase tracking-[0.3em] font-semibold text-section-divider">AylinOS Breakdown</span>
+          <div className="flex-1 border-t-[3px] border-section-divider/50" />
         </div>
 
         {/* Combined section header — credibility number + section title */}
