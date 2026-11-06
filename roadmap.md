@@ -2,5 +2,5 @@
 - [x] Correct deep-dive AylinOS links.
 - [x] Strengthen timeline-to-project divider.
 - [x] Fit technical details to their column widths.
-- [ ] Verify compliance Q&A deployment.
+- [ ] Restore compliance Q&A responses: blocked by Render's invalid AI API key; health succeeds but a real compliance query fails before routing.
 - [x] Check updated links and layout in browser.
