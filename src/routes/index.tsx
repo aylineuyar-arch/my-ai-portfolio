@@ -351,22 +351,17 @@ function PortfolioPage() {
         </section>
         {/* === end AylinOS section === */}
 
-        <div className="mt-20 mb-6 flex items-center gap-5">
-          <span className="shrink-0 text-sm uppercase tracking-[0.3em] font-semibold text-section-divider">AylinOS Breakdown</span>
-          <div className="flex-1 border-t-[3px] border-section-divider/50" />
-        </div>
-
-        {/* Combined section header — credibility number + section title */}
-        <div className="mt-8 flex items-baseline justify-between gap-4 flex-wrap">
-          <div className="flex items-baseline gap-3">
-            <span className="text-3xl md:text-4xl font-medium tracking-tight text-rose-600 leading-none">6</span>
-            <h3 className="text-base md:text-lg uppercase tracking-[0.18em] text-stone-700 font-semibold">
-              AI portfolio projects live in production
-            </h3>
+        <div className="relative mt-16 border-t border-border pt-10 pb-8 md:mt-20 md:pt-12">
+          <span aria-hidden="true" className="absolute left-0 top-0 h-1 w-16 bg-section-divider" />
+          <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
+            <div className="min-w-0">
+              <h3 className="text-3xl md:text-4xl font-light text-foreground">AylinOS Breakdown</h3>
+              <p className="mt-2 text-sm text-muted-foreground">6 AI projects, live in production</p>
+            </div>
+            <span aria-hidden="true" className="shrink-0 text-5xl md:text-6xl font-light text-section-divider/25">06</span>
           </div>
-          <span className="text-sm text-rose-700 font-medium">click any card for the deep dive →</span>
         </div>
-        <div className="mt-4">
+        <div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-3 items-stretch">
             {[
               { num: "No. 01", id: "project-1", numCls: "text-orange-700", title: "AI Job Search Dashboard", blurb: "Scores 130+ ATS feeds for fit and conversion likelihood.", outcome: "Turns hours of daily job-board scrolling into a ranked 5-minute morning triage.", sub: "Claude · Python · Railway", metric: "286 roles per run", tools: ["Claude", "Python", "Railway", "ATS"] },
