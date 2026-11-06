@@ -330,7 +330,7 @@ function PortfolioPage() {
               {[
                 { y: "2026–now", org: "Rownd AI (YC)", t: "AI Implementation Strategist", s: "Leading agentic AI implementation and proposal automation for defense-tech workflows." },
                 { y: "2026", org: "LinguaLinq.ai", t: "Product Strategy & Operations", s: "Led product strategy, adoption, and GTM for an AI translation platform in 70+ languages." },
-                { y: "2025", org: "Skild AI", t: "Product Management Intern", s: "PM intern driving GTM strategy, deployment, and a zero-to-one PRD for a flagship robotics client." },
+                { y: "2025", org: "Skild AI (Forbes AI 50)", t: "Product Management Intern", s: "PM intern driving GTM strategy, deployment, and a zero-to-one PRD for a flagship robotics client." },
                 { y: "2024–26", edu: true, org: "Dartmouth Tuck", t: "MBA", s: "Forté Fellow and Startup Builder Fellow at the Center for Entrepreneurship." },
                 { y: "2020–24", org: "Deloitte Consulting", t: "Tech Strategy Senior Consultant", s: "Led tech strategy for $150M–$500M cloud transformations; Interim Chief of Staff for a 2,500-person program." },
                 { y: "2019–20", org: "DCS Corporation", t: "Sensor Integration Engineer", s: "Engineered C++ sensor integration for military vehicle operator controls." },
