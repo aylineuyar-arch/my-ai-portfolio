@@ -424,7 +424,7 @@ function PortfolioPage() {
         {/* Demonstrated skills — category-colored marquee */}
         <div className="mt-12 mb-6 flex items-center gap-4 md:mt-14">
           <h2 className="text-lg md:text-xl font-semibold leading-snug text-section-divider">
-            Demonstrated skills
+            Demonstrated Skills
           </h2>
           <div className="min-w-8 flex-1 border-t border-section-divider/40" />
         </div>
