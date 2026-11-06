@@ -351,8 +351,9 @@ function PortfolioPage() {
         </section>
         {/* === end AylinOS section === */}
 
-        <div className="mt-10 mb-6 border-y border-border bg-muted/40 px-4 py-4 md:mt-12 md:px-5">
-          <h3 className="text-base font-semibold text-foreground">AylinOS Breakdown</h3>
+        <div className="mt-12 mb-6 flex items-center gap-4 md:mt-14">
+          <h3 className="shrink-0 text-[12px] uppercase font-semibold text-section-divider">AylinOS Breakdown</h3>
+          <div className="flex-1 border-t border-section-divider/40" />
         </div>
         <div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-3 items-stretch">
