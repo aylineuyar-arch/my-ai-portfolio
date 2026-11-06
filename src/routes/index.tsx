@@ -351,15 +351,8 @@ function PortfolioPage() {
         </section>
         {/* === end AylinOS section === */}
 
-        <div className="relative mt-16 border-t border-border pt-10 pb-8 md:mt-20 md:pt-12">
-          <span aria-hidden="true" className="absolute left-0 top-0 h-1 w-16 bg-section-divider" />
-          <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
-            <div className="min-w-0">
-              <h3 className="text-3xl md:text-4xl font-light text-foreground">AylinOS Breakdown</h3>
-              <p className="mt-2 text-sm text-muted-foreground">6 AI projects, live in production</p>
-            </div>
-            <span aria-hidden="true" className="shrink-0 text-5xl md:text-6xl font-light text-section-divider/25">06</span>
-          </div>
+        <div className="mt-10 mb-6 border-y border-border bg-muted/40 px-4 py-4 md:mt-12 md:px-5">
+          <h3 className="text-base font-semibold text-foreground">AylinOS Breakdown</h3>
         </div>
         <div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-3 items-stretch">
