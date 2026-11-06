@@ -42,7 +42,7 @@ function AgentDeepDivePage() {
         <ProjectCollapse id="project-1" num="No. 01 · AI Job Search" numCls="text-orange-700" title="Live AI Job Search Dashboard" sub="Claude · Python · Railway">
         <div className="grid md:grid-cols-12 gap-10">
 
-          <div className="md:col-span-4">
+          <div className="@container min-w-0 md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-orange-700 font-medium">
               No. 01 · Built with Claude
             </p>
@@ -67,8 +67,8 @@ function AgentDeepDivePage() {
                 <span className="uppercase tracking-wider text-xs">See technical details</span>
                 <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
               </CollapsibleTrigger>
-              <CollapsibleContent className="space-y-6 pt-6">
-                <div className="grid sm:grid-cols-2 gap-4">
+              <CollapsibleContent className="min-w-0 space-y-6 pt-6 [overflow-wrap:anywhere] [&_li>span]:shrink-0">
+                <div className="grid grid-cols-1 @min-[520px]:grid-cols-2 gap-4">
                   <div className="p-4 rounded-lg bg-orange-50/60 border border-orange-200">
                     <div className="text-xs uppercase tracking-wider text-orange-700 font-semibold">Fit Score (0–100)</div>
                     <p className="mt-1.5 text-sm text-stone-700 leading-snug">How well the role matches background, industry, and stated goals.</p>
@@ -89,7 +89,7 @@ function AgentDeepDivePage() {
               </CollapsibleContent>
             </Collapsible>
             <a
-              href="https://aylinos.onrender.com"
+              href="https://aylinos.lovable.app/aylinos-app"
               target="_blank"
               rel="noreferrer"
               aria-label="Try this agent in AylinOS"
@@ -101,7 +101,7 @@ function AgentDeepDivePage() {
             </a>
           </div>
 
-          <div className="md:col-span-8 space-y-6">
+          <div className="min-w-0 md:col-span-8 space-y-6">
 
             <div className="rounded-xl border border-orange-200 bg-orange-50/60 p-5">
               <div className="text-xs uppercase tracking-[0.22em] text-orange-700 font-bold mb-5">Live signals</div>
@@ -154,7 +154,7 @@ function AgentDeepDivePage() {
         <ProjectCollapse id="project-3" num="No. 02 · Compliance RAG Chatbot" numCls="text-emerald-700" title="Compliance RAG Chatbot" sub="Claude · Python · Streamlit">
         <div className="grid md:grid-cols-12 gap-10">
 
-          <div className="md:col-span-4">
+          <div className="@container min-w-0 md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-emerald-700 font-medium">
               No. 02 · Built with Claude
             </p>
@@ -171,8 +171,8 @@ function AgentDeepDivePage() {
                 <span className="uppercase tracking-wider text-xs">See technical details</span>
                 <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
               </CollapsibleTrigger>
-              <CollapsibleContent className="space-y-6 pt-6">
-                <div className="grid sm:grid-cols-2 gap-4">
+              <CollapsibleContent className="min-w-0 space-y-6 pt-6 [overflow-wrap:anywhere] [&_li>span]:shrink-0">
+                <div className="grid grid-cols-1 @min-[520px]:grid-cols-2 gap-4">
                   <div className="p-4 rounded-lg bg-emerald-50/60 border border-emerald-200">
                     <div className="text-xs uppercase tracking-wider text-emerald-700 font-semibold">Retrieval pipeline</div>
                     <p className="mt-1.5 text-sm text-stone-700 leading-snug">Sentence-transformers embeddings → cosine search → top-k chunks injected into Claude prompt with citations.</p>
@@ -192,7 +192,7 @@ function AgentDeepDivePage() {
             </Collapsible>
             <div className="mt-4 flex flex-wrap gap-2">
               <a
-                href="https://aylinos.onrender.com"
+                href="https://aylinos.lovable.app/aylinos-app"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Try this agent in AylinOS"
@@ -205,7 +205,7 @@ function AgentDeepDivePage() {
             </div>
           </div>
 
-          <div className="md:col-span-8 space-y-6">
+          <div className="min-w-0 md:col-span-8 space-y-6">
             <div className="p-5 rounded-xl bg-stone-50 border-l-4 border-emerald-400">
               <p className="text-xs uppercase tracking-wider text-emerald-700 font-semibold mb-2">
                 Why this matters
@@ -262,7 +262,7 @@ function AgentDeepDivePage() {
         <ProjectCollapse id="project-4" num="No. 03 · Customer Service Triage Agent" numCls="text-indigo-700" title="Customer Service Triage Agent" sub="Claude · LangGraph · Python · FastAPI">
         <div className="grid md:grid-cols-12 gap-10">
 
-          <div className="md:col-span-4">
+          <div className="@container min-w-0 md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-indigo-700 font-medium">
               No. 03 · Built with Claude + LangGraph
             </p>
@@ -283,8 +283,8 @@ function AgentDeepDivePage() {
                 <span className="uppercase tracking-wider text-xs">See technical details</span>
                 <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
               </CollapsibleTrigger>
-              <CollapsibleContent className="space-y-6 pt-6">
-                <div className="grid sm:grid-cols-2 gap-4">
+              <CollapsibleContent className="min-w-0 space-y-6 pt-6 [overflow-wrap:anywhere] [&_li>span]:shrink-0">
+                <div className="grid grid-cols-1 @min-[520px]:grid-cols-2 gap-4">
                   <div className="p-4 rounded-lg bg-indigo-50/60 border border-indigo-200">
                     <div className="text-xs uppercase tracking-wider text-indigo-700 font-semibold">Prompt → JSON contract</div>
                     <p className="mt-1.5 text-sm text-stone-700 leading-snug">Single Claude call returns <code className="text-[11px]">{`{summary, category, priority, next_action}`}</code>, drops straight into Zendesk / Intercom / Front.</p>
@@ -303,7 +303,7 @@ function AgentDeepDivePage() {
               </CollapsibleContent>
             </Collapsible>
             <a
-              href="https://aylinos.onrender.com"
+              href="https://aylinos.lovable.app/aylinos-app"
               target="_blank"
               rel="noreferrer"
               aria-label="Try this agent in AylinOS"
@@ -315,7 +315,7 @@ function AgentDeepDivePage() {
             </a>
           </div>
 
-          <div className="md:col-span-8 space-y-6">
+          <div className="min-w-0 md:col-span-8 space-y-6">
             <div className="grid sm:grid-cols-3 gap-3">
               <div className="p-4 rounded-xl bg-stone-50 border-l-4 border-rose-400">
                 <div className="text-[11px] uppercase tracking-[0.18em] text-rose-700 font-bold">Problem</div>
@@ -422,7 +422,7 @@ function AgentDeepDivePage() {
         <ProjectCollapse id="project-gtm" num="No. 04 · GTM Pricing Tool" numCls="text-teal-700" title="GTM Pricing Tool" sub="Claude · Python · Railway">
         <div className="grid md:grid-cols-12 gap-10">
 
-          <div className="md:col-span-4">
+          <div className="@container min-w-0 md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-teal-700 font-medium">
               No. 04 · Built with Claude + Python
             </p>
@@ -446,8 +446,8 @@ function AgentDeepDivePage() {
                 <span className="uppercase tracking-wider text-xs">See technical details</span>
                 <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
               </CollapsibleTrigger>
-              <CollapsibleContent className="space-y-6 pt-6">
-                <div className="grid sm:grid-cols-2 gap-4">
+              <CollapsibleContent className="min-w-0 space-y-6 pt-6 [overflow-wrap:anywhere] [&_li>span]:shrink-0">
+                <div className="grid grid-cols-1 @min-[520px]:grid-cols-2 gap-4">
                   <div className="p-4 rounded-lg bg-teal-50/60 border border-teal-200">
                     <div className="text-xs uppercase tracking-wider text-teal-700 font-semibold">Role-based workflows</div>
                     <p className="mt-1.5 text-sm text-stone-700 leading-snug">Four distinct paths: Founder, Consultant, GTM Operator, Investor, each surfaces the modules that matter for that lens.</p>
@@ -474,7 +474,7 @@ function AgentDeepDivePage() {
             </Collapsible>
             <div className="mt-4 flex flex-wrap items-center gap-2">
               <a
-                href="https://aylinos.onrender.com"
+                href="https://aylinos.lovable.app/aylinos-app"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Try this agent in AylinOS"
@@ -487,7 +487,7 @@ function AgentDeepDivePage() {
             </div>
           </div>
 
-          <div className="md:col-span-8 space-y-6">
+          <div className="min-w-0 md:col-span-8 space-y-6">
             <div className="p-5 rounded-xl bg-teal-50/70 border-l-4 border-teal-400">
               <p className="text-xs uppercase tracking-wider text-teal-700 font-semibold mb-2">
                 The GTM operations system
@@ -547,7 +547,7 @@ function AgentDeepDivePage() {
         <ProjectCollapse id="project-restaurant" num="No. 05 · Multi-Agentic Reservation Agent" numCls="text-rose-700" title={<><em className="italic">Fork Yea!</em> — Multi-Agentic Reservation Agent</>} sub="Cursor · LangGraph · Claude · Playwright">
         <div className="grid md:grid-cols-12 gap-10">
 
-          <div className="md:col-span-4">
+          <div className="@container min-w-0 md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-rose-700 font-medium">
               No. 05 · Built with LangGraph + Claude
             </p>
@@ -573,8 +573,8 @@ function AgentDeepDivePage() {
                 <span className="uppercase tracking-wider text-xs">See technical details</span>
                 <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
               </CollapsibleTrigger>
-              <CollapsibleContent className="space-y-6 pt-6">
-                <div className="grid sm:grid-cols-2 gap-4">
+              <CollapsibleContent className="min-w-0 space-y-6 pt-6 [overflow-wrap:anywhere] [&_li>span]:shrink-0">
+                <div className="grid grid-cols-1 @min-[520px]:grid-cols-2 gap-4">
                   <div className="p-4 rounded-lg bg-rose-50/60 border border-rose-200">
                     <div className="text-xs uppercase tracking-wider text-rose-700 font-semibold">Cost-aware role-based model routing</div>
                     <p className="mt-1.5 text-sm text-stone-700 leading-snug">Eight specialized sub-agents in a LangGraph pipeline, each routed to the cheapest model that can do the job: Haiku for fast parsing, Sonnet for deep ranking, Haiku again as judge. No single model does everything.</p>
@@ -603,19 +603,19 @@ function AgentDeepDivePage() {
 
                 <div className="rounded-lg border border-stone-200 bg-white/70 p-4">
                   <div className="text-xs uppercase tracking-[0.22em] text-stone-700 font-bold mb-3">The tool stack</div>
-                  <div className="grid sm:grid-cols-2 gap-2.5 text-sm">
-                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Agent graph</span><span className="text-stone-600">LangGraph: stateful, conditional</span></div>
-                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Parsing LLM</span><span className="text-stone-600">Claude Haiku 4.5</span></div>
-                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Ranking LLM</span><span className="text-stone-600">Claude Sonnet</span></div>
-                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Judge LLM</span><span className="text-stone-600">Claude Haiku: independent scorer</span></div>
-                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Observability</span><span className="text-stone-600">SQLite (WAL) + run dashboard</span></div>
-                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Feedback</span><span className="text-stone-600">Thumbs ratings → monitor DB</span></div>
-                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Web search</span><span className="text-stone-600">Tavily API → OpenTable + Google Maps</span></div>
-                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Vector memory</span><span className="text-stone-600">ChromaDB (local persistence)</span></div>
-                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Browser</span><span className="text-stone-600">Playwright over Chrome CDP</span></div>
-                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">API</span><span className="text-stone-600">FastAPI (Python 3.10+)</span></div>
-                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Frontend</span><span className="text-stone-600">React + Vite + Tailwind</span></div>
-                    <div className="flex gap-3"><span className="font-semibold text-stone-900 min-w-[110px]">Notify</span><span className="text-stone-600">Gmail SMTP (App Password)</span></div>
+                  <div className="grid min-w-0 grid-cols-1 gap-3 text-sm">
+                    <div className="grid min-w-0 grid-cols-[minmax(0,100px)_minmax(0,1fr)] gap-3"><span className="font-semibold text-stone-900">Agent graph</span><span className="text-stone-600">LangGraph: stateful, conditional</span></div>
+                    <div className="grid min-w-0 grid-cols-[minmax(0,100px)_minmax(0,1fr)] gap-3"><span className="font-semibold text-stone-900">Parsing LLM</span><span className="text-stone-600">Claude Haiku 4.5</span></div>
+                    <div className="grid min-w-0 grid-cols-[minmax(0,100px)_minmax(0,1fr)] gap-3"><span className="font-semibold text-stone-900">Ranking LLM</span><span className="text-stone-600">Claude Sonnet</span></div>
+                    <div className="grid min-w-0 grid-cols-[minmax(0,100px)_minmax(0,1fr)] gap-3"><span className="font-semibold text-stone-900">Judge LLM</span><span className="text-stone-600">Claude Haiku: independent scorer</span></div>
+                    <div className="grid min-w-0 grid-cols-[minmax(0,100px)_minmax(0,1fr)] gap-3"><span className="font-semibold text-stone-900">Observability</span><span className="text-stone-600">SQLite (WAL) + run dashboard</span></div>
+                    <div className="grid min-w-0 grid-cols-[minmax(0,100px)_minmax(0,1fr)] gap-3"><span className="font-semibold text-stone-900">Feedback</span><span className="text-stone-600">Thumbs ratings → monitor DB</span></div>
+                    <div className="grid min-w-0 grid-cols-[minmax(0,100px)_minmax(0,1fr)] gap-3"><span className="font-semibold text-stone-900">Web search</span><span className="text-stone-600">Tavily API → OpenTable + Google Maps</span></div>
+                    <div className="grid min-w-0 grid-cols-[minmax(0,100px)_minmax(0,1fr)] gap-3"><span className="font-semibold text-stone-900">Vector memory</span><span className="text-stone-600">ChromaDB (local persistence)</span></div>
+                    <div className="grid min-w-0 grid-cols-[minmax(0,100px)_minmax(0,1fr)] gap-3"><span className="font-semibold text-stone-900">Browser</span><span className="text-stone-600">Playwright over Chrome CDP</span></div>
+                    <div className="grid min-w-0 grid-cols-[minmax(0,100px)_minmax(0,1fr)] gap-3"><span className="font-semibold text-stone-900">API</span><span className="text-stone-600">FastAPI (Python 3.10+)</span></div>
+                    <div className="grid min-w-0 grid-cols-[minmax(0,100px)_minmax(0,1fr)] gap-3"><span className="font-semibold text-stone-900">Frontend</span><span className="text-stone-600">React + Vite + Tailwind</span></div>
+                    <div className="grid min-w-0 grid-cols-[minmax(0,100px)_minmax(0,1fr)] gap-3"><span className="font-semibold text-stone-900">Notify</span><span className="text-stone-600">Gmail SMTP (App Password)</span></div>
                   </div>
                 </div>
 
@@ -646,7 +646,7 @@ function AgentDeepDivePage() {
             </div>
           </div>
 
-          <div className="md:col-span-8 space-y-6">
+          <div className="min-w-0 md:col-span-8 space-y-6">
             <div className="p-5 rounded-xl bg-rose-50/70 border-l-4 border-rose-400">
               <p className="text-xs uppercase tracking-wider text-rose-700 font-semibold mb-2">
                 Why this one is the most complex
@@ -828,7 +828,7 @@ function AgentDeepDivePage() {
         <ProjectCollapse id="project-2" num="No. 06 · Agentic Email Generator" numCls="text-amber-700" title="Agentic Email Generator" sub="n8n · Claude · Supabase">
         <div className="grid md:grid-cols-12 gap-10">
 
-          <div className="md:col-span-4">
+          <div className="@container min-w-0 md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-amber-700 font-medium">
               No. 06 · Built with n8n + Claude
             </p>
@@ -848,8 +848,8 @@ function AgentDeepDivePage() {
                 <span className="uppercase tracking-wider text-xs">See technical details</span>
                 <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
               </CollapsibleTrigger>
-              <CollapsibleContent className="space-y-6 pt-6">
-                <div className="grid sm:grid-cols-2 gap-4">
+              <CollapsibleContent className="min-w-0 space-y-6 pt-6 [overflow-wrap:anywhere] [&_li>span]:shrink-0">
+                <div className="grid grid-cols-1 @min-[520px]:grid-cols-2 gap-4">
                   <div className="p-4 rounded-lg bg-stone-50 border border-stone-200">
                     <div className="text-xs uppercase tracking-wider text-stone-600 font-semibold">Agentic Workflow</div>
                     <p className="mt-1.5 text-sm text-stone-700 leading-snug">n8n orchestrates search → Claude scoring → dedupe → email, no human in the loop.</p>
@@ -871,7 +871,7 @@ function AgentDeepDivePage() {
             </Collapsible>
             <div className="mt-4 flex flex-wrap gap-2">
               <a
-                href="https://aylinos.onrender.com"
+                href="https://aylinos.lovable.app/aylinos-app"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Try this agent in AylinOS"
@@ -884,7 +884,7 @@ function AgentDeepDivePage() {
             </div>
           </div>
 
-          <div className="md:col-span-8 space-y-6">
+          <div className="min-w-0 md:col-span-8 space-y-6">
             <div className="p-5 rounded-xl bg-amber-50/70 border-l-4 border-amber-400">
               <p className="text-xs uppercase tracking-wider text-amber-700 font-semibold mb-2">
                 Why this matters

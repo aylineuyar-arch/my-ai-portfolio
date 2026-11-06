@@ -24,11 +24,13 @@
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-ring: var(--ring);
+  --color-section-divider: var(--section-divider);
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
   --radius: 0.75rem;
+  --section-divider: oklch(0.586 0.253 17.585);
   --canvas: oklch(0.984 0.005 80);
   --surface: oklch(0.96 0.008 80);
   --ink: oklch(0.18 0.008 60);
