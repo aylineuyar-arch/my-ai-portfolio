@@ -310,14 +310,15 @@ function PortfolioPage() {
         </section>
 
         <div className="mt-12 mb-2 flex items-center gap-4">
-          <h2 className="text-lg md:text-xl font-semibold leading-snug text-foreground">Experience</h2>
+          <h2 className="text-lg md:text-xl font-semibold leading-snug text-section-divider">Bio</h2>
           <div className="min-w-8 flex-1 border-t border-section-divider/40" />
         </div>
 
         {/* === Experience timeline === */}
         <section id="bio" data-track-section="experience-timeline" className="mt-8 scroll-mt-8">
           <div className="mb-4 flex items-baseline gap-3">
-            <p className="text-sm text-muted-foreground">6+ years of experience</p>
+            <span className="text-3xl md:text-4xl font-medium tracking-tight text-section-divider leading-none">6+</span>
+            <h3 className="text-base md:text-lg uppercase tracking-[0.18em] text-stone-700 font-semibold">Years of experience</h3>
             <span className="ml-auto text-xs italic text-stone-500 md:hidden">swipe →</span>
           </div>
           <div className="relative overflow-x-auto pb-2">
@@ -351,7 +352,7 @@ function PortfolioPage() {
         {/* === end AylinOS section === */}
 
         <div className="mt-12 mb-6 flex items-center gap-4 md:mt-14">
-          <h2 className="text-lg md:text-xl font-semibold leading-snug text-foreground">Selected AI Projects</h2>
+          <h2 className="text-lg md:text-xl font-semibold leading-snug text-section-divider">AylinOS Breakdown</h2>
           <div className="min-w-8 flex-1 border-t border-section-divider/40" />
         </div>
         <div>
@@ -422,7 +423,7 @@ function PortfolioPage() {
 
         {/* Demonstrated skills — category-colored marquee */}
         <div className="mt-12 mb-6 flex items-center gap-4 md:mt-14">
-          <h2 className="text-lg md:text-xl font-semibold leading-snug text-foreground">
+          <h2 className="text-lg md:text-xl font-semibold leading-snug text-section-divider">
             Demonstrated Skills
           </h2>
           <div className="min-w-8 flex-1 border-t border-section-divider/40" />
