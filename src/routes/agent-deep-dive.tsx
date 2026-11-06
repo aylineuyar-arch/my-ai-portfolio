@@ -192,15 +192,15 @@ function AgentDeepDivePage() {
             </Collapsible>
             <div className="mt-4 flex flex-wrap gap-2">
               <a
-                href="https://aylinos.lovable.app/aylinos-app"
+                href="https://github.com/aylineuyar-arch/compliance-rag-chatbot"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Try this agent in AylinOS"
-                title="Try this agent in AylinOS"
+                aria-label="View repository on GitHub"
+                title="View repository on GitHub"
                 className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
               >
-                <MessageSquare className="w-4 h-4" />
-                <span>Try in AylinOS</span>
+                <Github className="w-4 h-4" />
+                <span>Repository</span>
               </a>
             </div>
           </div>
